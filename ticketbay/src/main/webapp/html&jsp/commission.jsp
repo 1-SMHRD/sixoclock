@@ -4,30 +4,16 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../css/sales.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body id="popupPage">
-<style>
-tr{
-text-align: center;
-}
-th{
-text-align: center;
-}
-p{
-text-size:3px;
-}
-</style>
 
 	<div class="container">
 		<h2>수수료안내</h2>
-		<p>본 판매수수료는, 총 판매수량과 상관없는, 장당 판매 수수료율 입니다.
-수수료는 등급별 차등 적용됩니다</p>
+		<p>본 판매수수료는, 총 판매수량과 상관없는, 장당 판매 수수료율 입니다. 수수료는 등급별 차등 적용됩니다</p>
 		<table
 			class="table table-striped table-bordered table-hover table-condensed">
 			<thead>
