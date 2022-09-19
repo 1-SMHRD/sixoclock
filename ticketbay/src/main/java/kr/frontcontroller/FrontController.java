@@ -11,15 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 import kr.controller.Controller;
 
 @WebServlet("*.do")
-public class BoardFrontController extends HttpServlet {
+public class FrontController extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.setCharacterEncoding("utf-8");
 		// 1. 어떤 요청인지 파악하는것(command 구하기)
 		String reqPath=request.getRequestURI();
-		// System.out.println(reqPath);
 		String cpath=request.getContextPath();
-		// System.out.println(cpath);
 		String command=reqPath.substring(cpath.length());
 		System.out.println(command);
 		// 2. command에 따른 처리(if else -> HandlerMapping으로 이동)

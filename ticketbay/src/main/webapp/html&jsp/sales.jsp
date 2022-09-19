@@ -19,11 +19,10 @@
 </script>
 <head>
 <meta charset="UTF-8">
-<title>상품등록|티켓</title>
+<title>상품등록 | 티켓베이</title>
 <link rel="stylesheet" href="../css/sales.css">
 </head>
-<body id="body">
-
+<body class="goog-te-combo_in">
 	<div id="container" class="bg_01">
 		<main id="contents" class="wd_100p">
 			<form name="major" action="/web/myproduct/productRegistDo"
@@ -138,7 +137,7 @@
 							</div>
 						</div>
 					</div>
-					<div></div>
+				</div>
 			</form>
 		</main>
 	</div>

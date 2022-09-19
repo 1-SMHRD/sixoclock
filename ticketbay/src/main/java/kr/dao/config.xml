@@ -16,6 +16,6 @@
     </environment>
   </environments>
   <mappers>
-    <mapper resource="kr/dao/BoardMapper.xml"/>
+    <mapper resource="kr/dao/Mapper.xml"/>
   </mappers>
 </configuration>
