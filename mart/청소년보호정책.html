@@ -1,0 +1,2996 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!--[if lt IE 7]><meta name="ie-version" content="6" /><![endif]-->
+<!--[if IE 7]><meta name="ie-version" content="7" /><![endif]-->
+<!--[if IE 8]><meta name="ie-version" content="8" /><![endif]-->
+<!--[if IE 9]><meta name="ie-version" content="9" /><![endif]-->
+<!-- <meta name="description" content="온라인 티켓마켓, 티켓거래, 콘서트 및 공연, 스포츠 티켓, 매진티켓 구매, 판매, 양도, 할인혜택"> -->
+<meta name="description" content="180만 회원이 선택한 티켓 거래 플랫폼, 안전거래보장서비스, 공연취소환불서비스, 입장안심서비스">
+<meta name="google-signin-client_id" content="88916444202-3fs3q3c9117ma3585lqlj5g29que64s2.apps.googleusercontent.com">
+<meta name="facebook-domain-verification" content="8vzvk1ad8i86iav8cw4avy5v7bfsq0" />
+<meta name="naver-site-verification" content="27dd2c0d7e972b034bd16f4901a9552ac433759c" />
+
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"9a7eddd397",applicationID:"14471137"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script><link rel="Shortcut Icon" type="image/ico" href="/resources/img/common/favicon.ico" />
+<title>청소년 보호정책 | 티켓베이</title>
+
+
+
+<!--[if lt IE 9]>
+<script>
+	document.createElement('nav');
+	document.createElement('main');
+	document.createElement('aside');
+	document.createElement('header');
+	document.createElement('footer');
+	document.createElement('section');
+</script>
+<![endif]-->
+<link rel="stylesheet" href="/resources/css/common.css?${build.timestamp.millis}">
+<link rel="stylesheet" href="/resources/css/contents.css?${build.timestamp.millis}">
+<style>
+.cke_voice_label,
+.cke_combo_label,
+.cke_button_label { display: none !important; }
+.cke_combo_open { display: inline-block !important; }
+
+/* ie11 label bug fix */
+label{ display: inline-block; }
+label img { pointer-events: none; }
+
+/* input X버튼 숨김 */
+input[type=text]::-ms-clear{display: none; }
+</style>
+
+
+<script src="/resources/js/plugin/jquery.min.js?${build.timestamp.millis}"></script>
+
+<script src="/resources/js/plugin/jquery-ui.min.js?${build.timestamp.millis}"></script>
+<script src="/resources/js/plugin/iscroll.min.js?${build.timestamp.millis}"></script>
+<script src="/resources/js/ui/feSeries.min.js?${build.timestamp.millis}"></script>
+<script src="/resources/js/ui/fe-common.js?${build.timestamp.millis}"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="/resources/js/plugin/pieIE678.js?${build.timestamp.millis}"></script>
+<![endif]-->
+<!--[if IE 9]>
+<script type="text/javascript" src="/resources/js/plugin/pieIE9.js?${build.timestamp.millis}"></script>
+<![endif]-->
+
+<script src="/resources/js/plugin/underscore-min.js?${build.timestamp.millis}"></script>
+<script src="/resources/js/plugin/underscore.string.min.js?${build.timestamp.millis}"></script>
+<script src="/resources/js/plugin/jquery.tmpl.min.js?${build.timestamp.millis}"></script>
+<script src="/resources/js/plugin/jquery.form.min.js?${build.timestamp.millis}"></script>
+<script src="/resources/js/plugin/jquery.cookie.js?${build.timestamp.millis}"></script>
+<script src="/resources/js/plugin/moment.min.js?${build.timestamp.millis}"></script>
+<script src="/resources/js/plugin/ckeditor/ckeditor.js?${build.timestamp.millis}"></script>
+<script src="/resources/js/plugin/ckeditor/adapters/jquery.js?${build.timestamp.millis}"></script>
+<script src="/resources/js/plugin/eventPause-min.js?${build.timestamp.millis}"></script>
+
+<script src="/resources/js/common/tb.core.js"></script>
+<script src="/resources/js/common/tb.util.js"></script>
+
+<script>
+(function() {
+	GA_CATE_SEQ = '';
+	GA_DEPTH_SEQ1 = '';
+	GA_DEPTH_SEQ2 = '';
+})();
+</script>
+		
+<script src="/resources/js/log/analyticsGrouping.js"></script>
+<script src="/resources/js/log/analytics.js"></script>
+<script>
+// site global 변수 정의
+tb.setConstantAll({
+	siteDomainName: 'http://www.ticketbay.co.kr',
+	env: 'prd',
+	deviceType: 'NORMAL',
+	resRootDir: '/resources',
+	attachProdImgRootDir: '/attach/productImage',
+	attachDispImgRootDir: '/attach/displayImage',
+	attachPinNImgRootDir: '/attach/pinNumberImage',
+	attachBannerImgRootDir: '/attach/bannerImage', 
+	attachCampaignImgRootDir: '/attach/campaignImage',
+	attachPrivilegeImgRootDir: '/attach/privilegeImage',
+	attachFandingalbumImgRootDir: '',
+	attachPrImgRootDir: ''
+	
+});
+</script>
+
+<script src="/resources/js/common/tb.common.js"></script>
+<script src="/resources/js/web/tb.web.common.js"></script>
+
+<!-- 카카오톡 링크 -->
+<script src="/resources/js/plugin/kakao.min.js?${build.timestamp.millis}"></script>
+<!-- 클립보드 복사 -->
+<script src="/resources/js/plugin/clipboard.min.js?${build.timestamp.millis}"></script>
+<!-- ADSSOM 공통 SCRIPT -->
+<script type="text/javascript" src="https://sc.11h11m.net/s/E812.js"></script>
+<!-- Paging -->
+
+<!-- 카카오픽셀 -->
+<script type="text/javascript" charset="UTF-8" src="//t1.daumcdn.net/adfit/static/kp.js"></script>
+
+<!-- 방문 -->
+
+<script type="text/javascript">
+	kakaoPixel('2022283441992256611').pageView();
+</script>
+
+
+ <!-- Facebook Pixel Code 추가 -->
+<script>
+	!function(f,b,e,v,n,t,s)
+	{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+	if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+	n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];
+	s.parentNode.insertBefore(t,s)}(window,document,'script',
+	'https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '128990054398193'); 
+	fbq('track', 'PageView');
+</script>
+
+<!-- adinsight 공통스크립트 start -->
+<!-- <script type="text/javascript">
+var TRS_AIDX = 11128;
+var TRS_PROTOCOL = document.location.protocol;
+document.writeln();
+var TRS_URL = TRS_PROTOCOL + '//' + ((TRS_PROTOCOL=='https:')?'analysis.adinsight.co.kr':'adlog.adinsight.co.kr') +  '/emnet/trs_esc.js';
+document.writeln("<scr"+"ipt language='javascript' src='" + TRS_URL + "'></scr"+"ipt>");
+</script> -->
+<!-- adinsight 공통스크립트 end -->
+
+<!-- <script type="text/javascript">
+(function() {
+	var locLang = 'ko';
+	var appType = navigator.appName;
+	var navLang = "";
+
+	// IE 구버전 대응
+	if(appType == "Netscape"){
+		navLang = navigator.language;	
+	}else{
+		navLang = navigator.userLanguage;
+	}
+	if(typeof navLang == 'undefined'){
+		navLang = locLang;
+	}
+
+	navLang = "zh-CN";
+	if(navLang == "zh-CN" || navLang == "zh_TW"){
+		document.write('<' + 'script type=\"text/javascript\" src=\"//translate.google.cn/translate_a/element.js?cb=googleTranslateElementInit\"' + '><' + '/script' + '>');	
+	}else{
+		document.writeln("<scr"+"ipt language='javascript' src='//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'></scr"+"ipt>");
+		
+	}
+})();
+
+
+function googleTranslateElementInit() 
+	{
+	var locLang = 'ko';
+	var appType = navigator.appName;
+	var navLang = "";
+	
+	// IE 구버전 대응
+	if(appType == "Netscape"){
+		navLang = navigator.language;	
+	}else{
+		navLang = navigator.userLanguage;
+	}
+	if(typeof navLang == 'undefined'){
+		navLang = locLang;
+	}
+	
+	// OS언어별 구글Translate 자동변환
+	if(navLang == "ko" || navLang == "ko-KR"){
+		transLang = '/ko';
+	}else if(navLang == "ja" || navLang == "ja-JP"){
+		transLang = '/ko/ja';
+	}else if(navLang == "en" || navLang == "en-US"){
+		transLang = '/ko/en';
+	}else if(navLang == "zh-CN"){
+		transLang = '/ko/zh-CN';
+	}else if(navLang == "zh_TW"){
+		transLang = '/ko/zh-TW';
+	}else{
+		transLang = '/ko';
+	}
+	$.cookie('googtrans', transLang)
+		
+	new google.translate.TranslateElement({pageLanguage: 'ko', includedLanguages: 'en,ja,ko,zh-CN,zh-TW'}, 'google_translate_element');
+}
+</script> -->
+
+<noscript>
+	<img height="1" width="1" src="https://www.facebook.com/tr?id=128990054398193&ev=PageView&noscript=1"/>
+</noscript>
+  <!-- Facebook Pixel Code 추가 -->
+  
+  <!-- //구글로그인 추가 -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<!-- //구글로그인 추가 -->
+<!-- 바이두 시작 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?154c02a248c234baca824f0ed76bc3eb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+ <!-- 바이두 끝 --> 
+<script>
+	//var memberSeq = "";
+	//var isLogin = ;
+	//var SEQ = "";
+</script>
+
+<script>
+	$(document).ready(function(){
+		
+		$(".list_agree li").on("click", function(){
+			$(".list_agree li").removeClass("on");
+			$(this).addClass("on");
+		});
+		
+		 
+	});
+</script>
+
+<style>
+	#container{margin-bottom: -100px; padding-top: 20px;}
+	.agree_tab{display: none;}
+</style>
+
+
+<script src="/resources/js/web/common/headerNavigator.js?${build.timestamp.millis}"></script>
+<script src="/resources/js/web/common/recentAndCompare.js"></script>
+
+<link rel="stylesheet" href="/resources/css/header_20190430.css?${build.timestamp.millis}">
+<link rel="stylesheet" href="/resources/css/style_v2.css?${build.timestamp.millis}">
+<style>
+	#floatMenu { position: absolute; top: 810px; left: 0px; width: 100%; height: 160px; background-color: #111111; color: #fff; z-index:999999999; }
+</style>
+<body>
+	<!-- wrap -->
+	<div id="wrap">
+		<a class="skipToContents" href="#contents">Skip to Contents</a>
+		<!-- header -->
+		<header id="header">
+			<!-- topNav -->
+			<div id="topNav">
+				<div class="topNav_gr">
+				<!-- <div id = "floatMenu"></div> -->
+					<style>				
+						.Execute_Purchase{margin: 5px 0 0 -7px !important;}
+						.Execute_Purchase a{padding: 3px 10px 1px 10px !important; background: #fff; border: 1px solid #ccc; border-radius: 5px; color: #666 !important; font-weight: normal !important; line-height: 14px; letter-spacing: 0 !important;}
+						.Execute_Purchase .line{display: none;}
+					</style>
+					<!-- div id="google_translate_element"></div -->
+					<div class="Execute_Purchase">
+						<div class="line"></div>
+						<a href="https://www.ticketbayglobal.com" target="_blank">Ticketbay GLOBAL</a>
+					</div>
+					<div class="app_download">
+						<a href="javascript:void(0);" class="down_btn">앱 다운로드</a>
+						<div class="app_bullon" style="display:none;">
+							<div class="app_detail">
+								<div class="app_store">
+									<a href="http://bit.ly/3kTU8aA" class="app_img" target="_blank"><img src="/resources/img/header/img_google.png" alt="get it on google play" ></a>
+									<a href="http://apple.co/3ehRKcl" class="app_img" target="_blank"><img src="/resources/img/header/img_apple.png" alt="download on the app store" ></a>
+								</div>
+								<div class="app_input">
+									<p>SMS로 앱 설치 URL 받기</p>
+									<div class="os_radio">
+										<label><input type="radio" name="LINK_OS" value="http://bit.ly/3kTU8aA" class="stFormEl01">안드로이드</label>
+										<label><input type="radio" name="LINK_OS" value="http://apple.co/3ehRKcl" class="stFormEl01">아이폰</label>
+									</div>
+									<input type="text" id="APP_MOBILE" placeholder="숫자만 입력해 주세요">
+								</div>
+							</div>
+							<div class="app_btn_wrap">
+								<a href="javascript:void(0);" id="APP_LINK_SEND" class="btn">문자보내기</a>
+							</div>
+						</div>
+					</div>
+					<!-- <script>
+						$('.app_download .down_btn').click(function(){
+							var appDown = $(this).next();
+
+							if($(this).hasClass('is-active') === true){
+								$(this).removeClass('is-active');
+								appDown.hide();
+							} else {
+								$(this).addClass('is-active');
+								appDown.show();
+							}
+						})
+					</script> -->
+					<ul>
+						
+							
+							
+							<li class="google_off"><a href="/web/member/login">로그인</a></li>
+							<li class="google_on"><a href="/web/member/login"><img src="/resources/img/all_img/txt_img_LOGIN.gif" alt="login" style="margin-top: 3px;"></a></li>
+							<li class="join google_off"><a href="/web/signup/renew/join_hub">회원가입</a></li>
+							<li class="join google_on"><a href="/web/signup/renew/join_hub"><img src="/resources/img/all_img/txt_img_SIGN_UP.gif" alt="SIGN UP" style="margin-top: 3px;"></a></li>
+							
+						
+						<li><a href="/web/myservice/myserviceMain">MY티켓베이</a></li>
+						<li><a href="/web/event/eventListView">이벤트</a></li>
+						<li class="google_off"><a href="/web/couponzone/couponZoneView">혜택존</a></li>
+						<!-- <li><a href="/web/point/freeCharge"><em class="new-ico">무료충전소</em></a></li> -->
+						<li class="google_on"><a href="/web/couponzone/couponZoneView">Coupon zone</a></li>
+						<li><a href="/web/cs/csMain?cateSeq1=74&searchValue=">고객센터</a></li>
+						<!-- <li><a href="/web/want/wantListView">구합니다!</a></li> -->
+						<li><a href="/web/myproduct/productRegist"><em>판매등록</em></a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!-- //topNav -->
+			<div class="h_gr">
+				<h1><img src="/resources/img/all_img/logo_bi.jpg" alt="티켓베이" style="width: 0px; height: 0px; position: absolute;"><a href="/"><img src="/resources/img/all_img/logo_bi.svg" alt="티켓베이"></a></h1>
+				<!-- totSearch -->
+				<div class="totSearch">
+					<form id="searchForm" name="searchForm">
+						<fieldset>
+							<legend>통합검색</legend>
+							<input type="text" class="searchInp" title="검색어" id="searchInput" value="" maxlength="20">
+							<input type="image" class="searchBtn" src="/resources/img/all_img/icon_top_sh.svg" alt="검색" onclick="btn_Search('searchInput'); return false;">
+						</fieldset>
+					</form>
+				</div>
+				<!-- 
+					<li><a class="icon_time">최근 검색어 내역이 없습니다.</a><div class="clear"></div></li>
+					<li>
+						<a class="icon_time">야구 티켓 예매 잠실구장 주말 경기</a>
+						<a class="btn_data_del">삭제</a>
+						<div class="clear"></div>
+					</li> 
+				-->
+				<div class="time_sh_data_gr" style="display:none">
+					 <script id="favSearchList" type="text/x-jquery-tmpl">
+
+					 	<ul class="style_ul_01">
+							{{each(i, row) DATA.list}}
+								<li>
+									<a class="icon_time" onclick="favWordLinkBtn('{{= row}}');">{{= row}}</a>
+									<a class="btn_data_del" onclick="favWordDelBtn('{{= i}}');">삭제</a>
+									<div class="clear"></div>
+								</li>
+							{{/each}}
+						</ul>
+						<div class="fav_search_btn_br">
+							<a id="data_all_del" onclick="favWordDelBtn('all');">최근 검색어 삭제</a>
+							<a id="btnTopPopularSearchWordClose" onclick="favClose();">닫기</a>
+							<div class="clear"></div>
+						</div>
+						<div class="clear"></div>
+					</script>
+
+				</div>
+				<!-- rankWrap -->
+				<div class="top_info_bn">
+					Hello, Global K-Pop fans.<!-- a href="/web/cs/ticketBayUse/2"></a -->
+				</div>
+				<div class="rankWrap">
+					<strong>인기 검색어</strong>
+					<!-- rankItem -->
+					
+					 
+					<a href="javascript:void(0);" class="feSlItem rankItem" onclick="goPopularLink('','아이유');">
+						
+							
+								<em class="num01">1위</em>
+							
+							
+										
+						<strong>아이유</strong>
+					</a>
+					
+					
+					 
+					<a href="javascript:void(0);" class="feSlItem rankItem" onclick="goPopularLink('','하이라이트');">
+						
+							
+								<em class="num02">2위</em>
+							
+							
+										
+						<strong>하이라이트</strong>
+					</a>
+					
+					
+					 
+					<a href="javascript:void(0);" class="feSlItem rankItem" onclick="goPopularLink('','더팩트');">
+						
+							
+								<em class="num03">3위</em>
+							
+							
+										
+						<strong>더팩트</strong>
+					</a>
+					
+					
+					 
+					<a href="javascript:void(0);" class="feSlItem rankItem" onclick="goPopularLink('','김호중');">
+						
+							
+								<em class="num04">4위</em>
+							
+							
+										
+						<strong>김호중</strong>
+					</a>
+					
+					
+					 
+					<a href="javascript:void(0);" class="feSlItem rankItem" onclick="goPopularLink('','야구');">
+						
+							
+								<em class="num05">5위</em>
+							
+							
+										
+						<strong>야구</strong>
+					</a>
+					
+					
+					 
+					<a href="javascript:void(0);" class="feSlItem rankItem" onclick="goPopularLink('','크리스토퍼');">
+						
+							
+								<em class="num06">6위</em>
+							
+							
+										
+						<strong>크리스토퍼</strong>
+					</a>
+					
+					
+					 
+					<a href="javascript:void(0);" class="feSlItem rankItem" onclick="goPopularLink('','블랙핑크');">
+						
+							
+								<em class="num07">7위</em>
+							
+							
+										
+						<strong>블랙핑크</strong>
+					</a>
+					
+					
+					 
+					<a href="javascript:void(0);" class="feSlItem rankItem" onclick="goPopularLink('','포레스텔라');">
+						
+							
+								<em class="num08">8위</em>
+							
+							
+										
+						<strong>포레스텔라</strong>
+					</a>
+					
+					
+					 
+					<a href="javascript:void(0);" class="feSlItem rankItem" onclick="goPopularLink('','미라클라스');">
+						
+							
+								<em class="num09">9위</em>
+							
+							
+										
+						<strong>미라클라스</strong>
+					</a>
+					
+					
+					 
+					<a href="javascript:void(0);" class="feSlItem rankItem" onclick="goPopularLink('','nct');">
+						
+							
+							
+								<em class="num10">10위</em>
+							
+										
+						<strong>nct</strong>
+					</a>
+					
+					
+				</div>
+				<!-- //rankWrap -->
+			</div>
+			<!-- gnb -->
+			<!-- class 설명
+			    menu_ctg_on : 대메뉴 클릭시 추가
+				point_title : 메뉴 강조 
+				menu_sub_sub_on : 3뎁스 펼침
+				menu_sub_sub_off : 3뎁스 닫침(기본)
+			 -->
+			<nav id="gnb_box">
+				<div class="menu_gr">
+					<!-- div class="menu_ctg_txt_nc">NC 다이노스</div -->
+					<div class="menu_ctg_txt_beauty">상품권 초특가!</div>
+					<div class="menu_ctg_txt_fanding">팬클럽 광고 쇼핑몰</div>
+					<ul> 
+						<li class="menu_ctg_3 menu_onffo" data-seq="3"><span onclick="gnb1depth('menu_ctg_3');">콘서트</span>
+							<!-- // 콘서트 서브 -->
+							<div class="menu_sub_gr ctg_sub_3">
+								<ul> 
+									
+										
+											
+												
+													
+														 
+															<li class="point_title menu_sub_sub_off cate_2depth" title="2depth">
+														
+														
+														<a href="#"><span>더팩트 뮤직 어워즈</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/2446"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3882"><span>TMA 2022</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														 
+															<li class="point_title menu_sub_sub_off cate_2depth" title="2depth">
+														
+														
+														<a href="#"><span>아이유</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/177"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3832"><span>아이유 2022 - 서울</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														 
+															<li class="point_title menu_sub_sub_off cate_2depth" title="2depth">
+														
+														
+														<a href="#"><span>김호중</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/2695"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3877"><span>김호중 2022 - 서울</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														 
+															<li class="point_title menu_sub_sub_off cate_2depth" title="2depth">
+														
+														
+														<a href="#"><span>나훈아</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/1234"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3787"><span>나훈아 2022 - 광주</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														 
+															<li class="point_title menu_sub_sub_off cate_2depth" title="2depth">
+														
+														
+														<a href="#"><span>영탁</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/3763"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3808"><span>영탁 2022 - 창원</span></a></li>
+																	
+																
+																	
+																	 
+																		<li><a href="/web/submain/3828"><span>영탁 2022 - 부산</span></a></li>
+																	
+																
+																	
+																	 
+																		<li><a href="/web/submain/3841"><span>영탁 2022 - 전주</span></a></li>
+																	
+																
+																	
+																	 
+																		<li><a href="/web/submain/3850"><span>영탁 2022 - 안동</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														 
+															<li class="point_title menu_sub_sub_off cate_2depth" title="2depth">
+														
+														
+														<a href="#"><span>LOVE IN SEOUL</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/3871"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3872"><span>LOVE IN SEOUL 2022</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														 
+															<li class="point_title menu_sub_sub_off cate_2depth" title="2depth">
+														
+														
+														<a href="#"><span>그랜드 민트 페스티벌</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/3211"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3860"><span>GMF 2022 - 서울</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>김명수</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/3864"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3865"><span>김명수 2022 - 서울</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>김재중</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/290"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3836"><span>김재중 2022 - 서울</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>넬</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/199"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3428"><span>NELL 2022 - 서울</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>류준열</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/266"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3866"><span>류준열 2022 - 서울</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>미라클라스</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/3199"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3887"><span>미라클라스 2022 - 고양</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>박지훈</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/2142"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3880"><span>박지훈 2022 - 서울 (10월)</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>박창근</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/3812"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3839"><span>박창근 2022 - 서울 외</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														 
+															<li class="point_title menu_sub_sub_off cate_2depth" title="2depth">
+														
+														
+														<a href="#"><span>블랙핑크</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/1915"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3856"><span>블랙핑크 2022 - 서울</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>빅톤</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/2854"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3884"><span>빅톤 2022 - 서울 (10월)</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>사이먼 래틀&조성진</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/3821"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3822"><span>사이먼 래틀&조성진 2022 - 서울</span></a></li>
+																	
+																
+																	
+																	 
+																		<li><a href="/web/submain/3823"><span>사이먼 래틀&조성진 2022 - 대전</span></a></li>
+																	
+																
+																	
+																	 
+																		<li><a href="/web/submain/3875"><span>사이먼 래틀&조성진 2022 - 대구</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>신승훈</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/932"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3772"><span>신승훈 2022 - 대구</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														 
+															<li class="point_title menu_sub_sub_off cate_2depth" title="2depth">
+														
+														
+														<a href="#"><span>스트레이키즈</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/1503"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3851"><span>스트레이키즈 2022 - 서울(9월)</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>슬로우라이프 슬로우라이브</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/3861"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3862"><span>슬라슬라 2022 - 서울</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>알렌 워커</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/2071"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3719"><span>알렌 워커 2022 - 서울</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>NCT 127</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/2347"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3878"><span>NCT 127 2022 - 서울</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>엔플라잉</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/944"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3796"><span>엔플라잉 2022 - 서울 외</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>엔하이픈</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/3378"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3837"><span>엔하이픈 2022 - 서울</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>이문세</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/224"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3353"><span>이문세 2022 - 전국투어 (서울 외)</span></a></li>
+																	
+																
+																	
+																	 
+																		<li><a href="/web/submain/3736"><span>이문세 2022 - 서울</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>이민우</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/204"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3858"><span>이민우 2022 - 서울</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>이적</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/2002"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3843"><span>이적 2022 - 서울</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>임재범</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/110"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3876"><span>임재범 2022 - 서울</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>임창정</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/159"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3661"><span>임창정 2022 - 전국투어</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>케시</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/3800"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3801"><span>케시 2022 - 서울</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>케이윌</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/158"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3848"><span>케이윌 2022 - 서울</span></a></li>
+																	
+																
+																	
+																	 
+																		<li><a href="/web/submain/3849"><span>케이윌 2022 - 전국투어</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>케플러</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/3873"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3874"><span>케플러 2022 - 서울</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>팜트리 아일랜드</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/3854"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3855"><span>팜트리 아일랜드 2022 - 서울</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>포레스텔라</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/1443"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3857"><span>포레스텔라 2022 LOVE IN SEOUL</span></a></li>
+																	
+																
+																	
+																	 
+																		<li><a href="/web/submain/3881"><span>포레스텔라 2022 - 수원</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>폴킴</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/895"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3869"><span>폴킴 2022 - 서울 (10월)</span></a></li>
+																	
+																
+																	
+																	 
+																		<li><a href="/web/submain/3870"><span>폴킴 2022 - 전국투어 (서울 외)</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>프로미스나인</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/3639"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3890"><span>프로미스나인 2022 - 서울 (9월)</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+														 
+															<li class="point_title menu_sub_sub_off cate_2depth" title="2depth">
+														
+														
+														<a href="#"><span>하이라이트</span></a>
+															<div class="menu_sub_sub">
+																<ul>
+																<li><a href="/web/submain/829"><span>전체상품보기</span></a></li>
+																
+																	
+																	 
+																		<li><a href="/web/submain/3879"><span>하이라이트 2022 - 서울 (10월)</span></a></li>
+																	
+																			
+																</ul>
+															</div>
+														</li>
+													
+													
+												
+											
+												
+													
+													
+														
+														 
+															<li title="2depth">
+														
+														<a href="/web/submain/291"><span>뮤직 페스티벌 (MUSIC FESTIVAL)</span></a></li>
+													
+												
+											
+												
+													
+													
+														
+														 
+															<li title="2depth">
+														
+														<a href="/web/submain/63"><span>팬미팅 (Fanmeeting)</span></a></li>
+													
+												
+											
+												
+													
+													
+														
+														 
+															<li title="2depth">
+														
+														<a href="/web/submain/831"><span>K-POP 스타 해외공연</span></a></li>
+													
+												
+											
+												
+													
+													
+														
+														 
+															<li title="2depth">
+														
+														<a href="/web/submain/30"><span>기타-콘서트</span></a></li>
+													
+												
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+								</ul>			
+								
+										
+							</div> 
+							<!-- 콘서트 서브 // -->
+						</li>
+						<li class="menu_ctg_5 menu_onffo" data-seq="5"><span onclick="gnb1depth('menu_ctg_5');">스포츠</span>
+							<!-- // 스포츠 서브 -->
+							<div class="menu_sub_gr ctg_sub_5">
+								<ul> 
+									
+										
+									
+										
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/33"><span>야구 - 고척 돔 야구장 [키움]</span></a></li>
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/300"><span>야구 - 광주 챔피언스 필드 [KIA]</span></a></li>
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/301"><span>야구 - 대구 라이온즈 파크 [삼성]</span></a></li>
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/302"><span>야구 - 대전 이글스 파크 [한화]</span></a></li>
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/304"><span>야구 - 부산 사직 야구장 [롯데]</span></a></li>
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/305"><span>야구 - 수원 위즈 파크 [KT]</span></a></li>
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/306"><span>야구 - 인천 SSG랜더스필드 [SSG]</span></a></li>
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/307"><span>야구 - 잠실야구장 [LG (home)]</span></a></li>
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/1868"><span>야구 - 잠실야구장 [두산 (home)]</span></a></li>
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/303"><span>야구 - 창원NC파크 [NC]</span></a></li>
+												
+											
+												
+														
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>골프 양도</span></a>
+														<div class="menu_sub_sub">
+															<ul>
+															<li><a href="/web/submain/2898"><span>전체상품보기</span></a></li>
+															
+																
+																 
+																	<li><a href="/web/submain/2899"><span>골프장 - 경기북부</span></a></li>
+																
+															
+																
+																 
+																	<li><a href="/web/submain/2900"><span>골프장 - 경기남부</span></a></li>
+																
+															
+																
+																 
+																	<li><a href="/web/submain/2901"><span>골프장 - 충청</span></a></li>
+																
+															
+																
+																 
+																	<li><a href="/web/submain/2902"><span>골프장 - 강원</span></a></li>
+																
+															
+																
+																 
+																	<li><a href="/web/submain/2903"><span>골프장 - 전라</span></a></li>
+																
+															
+																
+																 
+																	<li><a href="/web/submain/2904"><span>골프장 - 경상</span></a></li>
+																
+															
+																
+																 
+																	<li><a href="/web/submain/2905"><span>골프장 - 제주</span></a></li>
+																
+															
+																
+																 
+																	<li><a href="/web/submain/2906"><span>회원권/이용권</span></a></li>
+																
+																		
+															</ul>
+														</div>
+													</li>
+												
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/218"><span>국내 농구</span></a></li>
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/2856"><span>국내 배구 (남자)</span></a></li>
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/2855"><span>국내 배구 (여자)</span></a></li>
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/34"><span>국내 축구</span></a></li>
+												
+											
+												
+												
+													 
+														<li class="point_title" title="2depth">
+													
+													
+													<a href="/web/submain/3213"><span>LCK (롤 챔피언스 코리아)</span></a></li>
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/219"><span>E-스포츠</span></a></li>
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/35"><span>기타-스포츠</span></a></li>
+												
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+								</ul>			
+									
+							</div>
+							<!-- 스포츠 서브 // -->
+						</li>
+						<li class="menu_ctg_2 menu_onffo" data-seq="2"><span onclick="gnb1depth('menu_ctg_2');">뮤지컬/연극</span>
+							<!-- // 뮤지컬/연극 서브 -->
+							<div class="menu_sub_gr ctg_sub_2">
+								<ul> 
+									
+										
+									
+										
+									
+										
+											
+												
+													
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>마틸다</span></a>
+														<div class="menu_sub_sub">
+															<ul>
+															<li><a href="/web/submain/1993"><span>전체상품보기</span></a></li>
+															
+																
+																 
+																	<li><a href="/web/submain/3817"><span>마틸다 2022 - 서울</span></a></li>
+																
+																		
+															</ul>
+														</div>
+													</li>
+												
+												
+											
+												
+													
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>미세스 다웃파이어</span></a>
+														<div class="menu_sub_sub">
+															<ul>
+															<li><a href="/web/submain/3791"><span>전체상품보기</span></a></li>
+															
+																
+																 
+																	<li><a href="/web/submain/3792"><span>미세스 다웃파이어 2022 - 서울</span></a></li>
+																
+																		
+															</ul>
+														</div>
+													</li>
+												
+												
+											
+												
+													
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>미아 파밀리아</span></a>
+														<div class="menu_sub_sub">
+															<ul>
+															<li><a href="/web/submain/3656"><span>전체상품보기</span></a></li>
+															
+																
+																 
+																	<li><a href="/web/submain/3657"><span>미아 파밀리아 2022 - 서울</span></a></li>
+																
+																		
+															</ul>
+														</div>
+													</li>
+												
+												
+											
+												
+													
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>번지점프를하다</span></a>
+														<div class="menu_sub_sub">
+															<ul>
+															<li><a href="/web/submain/3739"><span>전체상품보기</span></a></li>
+															
+																
+																 
+																	<li><a href="/web/submain/3740"><span>번지점프를 하다 2022 - 서울</span></a></li>
+																
+																		
+															</ul>
+														</div>
+													</li>
+												
+												
+											
+												
+													
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>배니싱</span></a>
+														<div class="menu_sub_sub">
+															<ul>
+															<li><a href="/web/submain/2056"><span>전체상품보기</span></a></li>
+															
+																
+																 
+																	<li><a href="/web/submain/3859"><span>배니싱 2022 - 서울</span></a></li>
+																
+																		
+															</ul>
+														</div>
+													</li>
+												
+												
+											
+												
+													
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>사랑의 불시착</span></a>
+														<div class="menu_sub_sub">
+															<ul>
+															<li><a href="/web/submain/3809"><span>전체상품보기</span></a></li>
+															
+																
+																 
+																	<li><a href="/web/submain/3810"><span>사랑의 불시착 2022 - 서울</span></a></li>
+																
+																		
+															</ul>
+														</div>
+													</li>
+												
+												
+											
+												
+													
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>사의찬미</span></a>
+														<div class="menu_sub_sub">
+															<ul>
+															<li><a href="/web/submain/2249"><span>전체상품보기</span></a></li>
+															
+																
+																 
+																	<li><a href="/web/submain/3806"><span>사의찬미 2022 - 서울</span></a></li>
+																
+																		
+															</ul>
+														</div>
+													</li>
+												
+												
+											
+												
+													
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>삼총사</span></a>
+														<div class="menu_sub_sub">
+															<ul>
+															<li><a href="/web/submain/1421"><span>전체상품보기</span></a></li>
+															
+																
+																 
+																	<li><a href="/web/submain/3824"><span>삼총사 2022 - 서울</span></a></li>
+																
+																		
+															</ul>
+														</div>
+													</li>
+												
+												
+											
+												
+													
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>서편제</span></a>
+														<div class="menu_sub_sub">
+															<ul>
+															<li><a href="/web/submain/1124"><span>전체상품보기</span></a></li>
+															
+																
+																 
+																	<li><a href="/web/submain/3825"><span>서편제 2022 - 서울</span></a></li>
+																
+																		
+															</ul>
+														</div>
+													</li>
+												
+												
+											
+												
+													 
+															<li class="point_title menu_sub_sub_off cate_2depth" title="2depth">
+														
+														
+														<a href="#"><span>엘리자벳</span></a>
+														<div class="menu_sub_sub">
+															<ul>
+															<li><a href="/web/submain/12"><span>전체상품보기</span></a></li>
+															
+																
+																 
+																	<li><a href="/web/submain/3790"><span>엘리자벳 2022 - 서울</span></a></li>
+																
+																		
+															</ul>
+														</div>
+													</li>
+												
+												
+											
+												
+													
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>인간의 법정</span></a>
+														<div class="menu_sub_sub">
+															<ul>
+															<li><a href="/web/submain/3885"><span>전체상품보기</span></a></li>
+															
+																
+																 
+																	<li><a href="/web/submain/3886"><span>인간의 법정 2022 - 서울</span></a></li>
+																
+																		
+															</ul>
+														</div>
+													</li>
+												
+												
+											
+												
+													
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>지저스 크라이스트 수퍼스타</span></a>
+														<div class="menu_sub_sub">
+															<ul>
+															<li><a href="/web/submain/3888"><span>전체상품보기</span></a></li>
+															
+																
+																 
+																	<li><a href="/web/submain/3889"><span>JCS 2022 - 서울</span></a></li>
+																
+																		
+															</ul>
+														</div>
+													</li>
+												
+												
+											
+												
+													
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>킹키부츠</span></a>
+														<div class="menu_sub_sub">
+															<ul>
+															<li><a href="/web/submain/2604"><span>전체상품보기</span></a></li>
+															
+																
+																 
+																	<li><a href="/web/submain/3703"><span>킹키부츠 2022 - 서울</span></a></li>
+																
+															
+																
+																 
+																	<li><a href="/web/submain/3883"><span>킹키부츠 2022 - 서울 외</span></a></li>
+																
+																		
+															</ul>
+														</div>
+													</li>
+												
+												
+											
+												
+													
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>태양의 서커스</span></a>
+														<div class="menu_sub_sub">
+															<ul>
+															<li><a href="/web/submain/3804"><span>전체상품보기</span></a></li>
+															
+																
+																 
+																	<li><a href="/web/submain/3805"><span>태양의 서커스 2022 - 서울</span></a></li>
+																
+																		
+															</ul>
+														</div>
+													</li>
+												
+												
+											
+												
+													
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>터칭 더 보이드</span></a>
+														<div class="menu_sub_sub">
+															<ul>
+															<li><a href="/web/submain/3708"><span>전체상품보기</span></a></li>
+															
+																
+																 
+																	<li><a href="/web/submain/3709"><span>터칭 더 보이드 2022 - 서울</span></a></li>
+																
+																		
+															</ul>
+														</div>
+													</li>
+												
+												
+											
+												
+													
+														 
+															<li class="menu_sub_sub_off cate_2depth" title="2depth">
+														
+														<a href="#"><span>테레즈 라캥</span></a>
+														<div class="menu_sub_sub">
+															<ul>
+															<li><a href="/web/submain/3867"><span>전체상품보기</span></a></li>
+															
+																
+																 
+																	<li><a href="/web/submain/3868"><span>테레즈 라캥 2022 - 서울</span></a></li>
+																
+																		
+															</ul>
+														</div>
+													</li>
+												
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/18"><span>기타-뮤지컬</span></a></li>
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/658"><span>기타-연극</span></a></li>
+												
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+								</ul>		
+								
+							</div>
+							<!-- 뮤지컬/연극 서브 // -->
+						</li>
+						<li class="menu_ctg_4 menu_onffo" data-seq="4"><span onclick="gnb1depth('menu_ctg_4');">영화/전시</span>
+							<!-- // 영화/행사 서브 -->
+							<div class="menu_sub_gr ctg_sub_4">
+								<ul> 
+									
+										
+									
+										
+									
+										
+									
+										
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/509"><span>영화 티켓 (관람권)</span></a></li>
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/420"><span>영화 무대인사</span></a></li>
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/660"><span>전시회 · 사진전</span></a></li>
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/2302"><span>기타 행사</span></a></li>
+												
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+								</ul>		
+								
+							</div>
+							<!-- 영화/행사 서브 // -->
+						</li>
+						<li class="menu_ctg_6 menu_onffo" data-seq="6"><span onclick="gnb1depth('menu_ctg_6');">숙박/여행</span>
+							<!-- // 숙박/여행 -->
+							<div class="menu_sub_gr ctg_sub_6">
+								<ul> 
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/37"><span>[국내] 숙박 (호텔,리조트,펜션)</span></a></li>
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/2305"><span>[해외] 숙박</span></a></li>
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/474"><span>[국내] 테마파크 · 교통패스</span></a></li>
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/2304"><span>[해외] 테마파크 · 교통패스</span></a></li>
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/38"><span>항공권</span></a></li>
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/40"><span>기타 - 레저·입장권</span></a></li>
+												
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+								</ul>		
+								
+							</div>
+							<!-- 레저/여행 서브 // -->
+						</li>
+						<li class="menu_ctg_8 menu_onffo" data-seq="8"><span onclick="gnb1depth('menu_ctg_8');">상품권/쿠폰</span>
+							<!-- // 쿠폰/기타 -->
+							<div class="menu_sub_gr ctg_sub_8">
+								<ul> 
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/678"><span>상품권 (지류)</span></a></li>
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/2356"><span>모바일/e-쿠폰</span></a></li>
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/2357"><span>기타</span></a></li>
+												
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+								</ul>		
+								
+							</div>
+							<!-- 쿠폰/기타 서브 // -->
+						</li>
+						<li class="menu_ctg_1446 menu_onffo" data-seq="1446"><span class="menu_ctg_span_1446" onclick="gnb1depth('menu_ctg_1446');">
+								<strong class="google_off">굿즈</strong>
+								<strong class="google_on">Goods</strong>
+							</span>
+							<!-- // 굿즈 서브 -->
+							<div class="menu_sub_gr ctg_sub_1446">
+								<ul> 
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											
+												
+														 
+															<li class="point_title menu_sub_sub_off cate_2depth" title="2depth">
+														
+														
+														<a href="#"><span>방탄소년단 굿즈</span></a>
+														<div class="menu_sub_sub">
+															<ul>
+															<li><a href="/web/submain/1618"><span>전체상품보기</span></a></li>
+															
+																
+																 
+																	<li><a href="/web/submain/1619"><span>팬클럽 키트 [BTS]</span></a></li>
+																
+															
+																
+																 
+																	<li><a href="/web/submain/1620"><span>응원봉 [BTS]</span></a></li>
+																
+															
+																
+																 
+																	<li><a href="/web/submain/1621"><span>앨범/포카 [BTS]</span></a></li>
+																
+															
+																
+																 
+																	<li><a href="/web/submain/1623"><span>기타 굿즈 [BTS]</span></a></li>
+																
+																		
+															</ul>
+														</div>
+													</li>
+												
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/3269"><span>아이돌 굿즈</span></a></li>
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/3270"><span>뮤지컬 굿즈</span></a></li>
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/3271"><span>스포츠 굿즈</span></a></li>
+												
+											
+												
+												
+													
+													 
+														<li title="2depth">
+													
+													<a href="/web/submain/1526"><span>기타 굿즈</span></a></li>
+												
+											
+										
+									
+										
+									
+										
+									
+										
+									
+								</ul>		
+								
+							</div>
+							<!-- 굿즈 서브 // -->
+						</li>
+						<a href="/web/belowCost"><li class="menu_s_ctg"><span>정가이하</span></li></a>
+						<li class="menu_ctg_dailycal"><a href="/web/dailytb/dailycal"><span>티켓팅 알림이</span></a></li>
+						<li class="menu_ctg_fanding"><a href="/web/fanding/fandingMain"><span class="">팬딩마켓</span><img src="/resources/img/all_img/b2c_icon_new_mark.png" alt="닫기" class="mark"></a></li>
+						<li class="menu_ctg_sale"><a href="/web/b2cSubmain/2161"><span class="" onclick="gnb1depth('menu_ctg_beauty');">특가마켓</span></a></li>
+						<!-- <li class="menu_ctg_tour"><a href="/web/b2cSubmain/566"><span class="" onclick="gnb1depth('menu_ctg_tour');">투어마켓</span></a></li> -->
+						<!-- li class="menu_ctg_nc"><a href="/web/rev/baseBall"><span class="" onclick="gnb1depth('menu_ctg_nc');">공식예매</span></a></li -->
+						<li class="clear"></li>
+					</ul>
+				</div>
+				
+			</nav>
+			<!-- //gnb -->
+			
+			<!-- 야구티켓 거래방법 안내 말풍선 // -->
+			<style>
+				.guide_info_mg_kbo{position: fixed !important; z-index: 1000000; margin: auto auto; bottom: 130px; left: 0; right:-1150px; width: 100px;}
+				.guide_info_mg_kbo_x img{width: 25px; height: 25px; border-radius: 100%; position: absolute; margin:0 0 0 73px; cursor: pointer; display: block;}
+				.guide_info_mg_kbo_btn img{width: 95px; height: 95px;}
+			</style>
+			<div class="guide_info_mg_kbo" style="display:none">
+				<div class="guide_info_mg_kbo_x"><img src="/resources/img/guide_kbo_pc/btn_guide_kbo_x.png" alt="닫기"></div>
+				<a class="guide_info_mg_kbo_btn" href="/web/cs/guide_kbo"><img src="/resources/img/guide_kbo_pc/btn_guide_kbo_mg.png" alt="야구티켓 거래방법 보러가기"></a>
+			</div>
+			<script>
+			$('.guide_info_mg_kbo_x').click(function(){
+				closeBaseballOkay();
+				//$( '.guide_info_mg_kbo' ).slideToggle('hidden')
+			});
+			</script>
+			<!-- // 야구티켓 거래방법 안내 말풍선 -->
+			
+			
+			<!-- lottecard 안내 말풍선 //
+			<style>
+				.guide_info_mg_lottecard{position: fixed !important; z-index: 1000000; margin: auto auto; bottom: 130px; left: 0; right:-1150px; width: 100px;}
+				.guide_info_mg_lottecard_x img{width: 25px; height: 25px; border-radius: 100%; position: absolute; margin:0 0 0 73px; cursor: pointer; display: block;}
+				.guide_info_mg_lottecard_btn img{width: 95px; height: 95px;}
+			</style>
+			<div class="guide_info_mg_lottecard" style="display:none">
+				<div class="guide_info_mg_lottecard_x"><img src="/resources/img/guide_kbo_pc/btn_guide_kbo_x.png" alt="닫기"></div>
+				<a class="guide_info_mg_lottecard_btn" href="https://www.lottecard.co.kr/app/LPBNFDA_V340.lc?evnBultSeq=688" target="_blank"><img src="/resources/img/all_img/btn_guide_lottecard_mg.png" alt="야구티켓 거래방법 보러가기"></a>
+				
+			</div>
+			<script>
+			$('.guide_info_mg_lottecard_x').click(function(){
+				closeLotte();
+				//$( '.guide_info_mg_lottecard' ).slideToggle('hidden')
+			});
+			</script>
+			 // lottecard 안내 말풍선 -->
+			 
+			 
+		</header>
+		<!-- //header -->
+
+		 <div class="popup_timesale" id="POPUP_TIMESALE_01" style="display:none;">
+			<div class="popup_timesale_wrap">
+				<img id="POPUP_TIMESALE_01_IMG" alt="사람들에게 관심 받고 있는 티켓">
+				<p class="num"><strong id="POPUP_TIMESALE_01_QTY">0</strong>명</p>
+				<div id="POPUP_TIMESALE_01_BTN" class="btn_wrap">
+					<a id="POPUP_TIMESALE_01_A" class="btn" style="background:#ff7aa3; border:1px solid #ff7aa3; color:#fff;"><img src="/resources/img/popup/popup_interest_icon.png" alt="사람들에게 관심으 받고 있느 쿠폰" >타임쿠폰 받기</a>
+				</div>
+				<div class="close_wrap">
+					<a href="javascript:void(0);" class="nomore_close">더 이상 보지 않기</a>
+					<a href="javascript:void(0);" class="close">닫기</a>
+				</div>
+			</div>
+			<script>
+				$(document).ready(function(){
+					var POPUP_TIMESALE_01 = $("#POPUP_TIMESALE_01");
+					/* if($.cookie('timesale_popup_close_01') != 'Y') {
+						POPUP_TIMESALE_01.show();
+					} */
+					POPUP_TIMESALE_01.on('click', '.close', function(){
+						POPUP_TIMESALE_01.hide();
+					});
+					POPUP_TIMESALE_01.on('click', '.nomore_close', function(){
+						var id = 'timesale_popup_close_01_'+POPUP_TIMESALE_01.data('seq');
+						
+						tb.Member.setCookie(id, 'Y', 365, '/');
+						POPUP_TIMESALE_01.hide();
+						window.parent.$("html, body").scrollTop(0);//상단으로 이동
+						return true;
+					});
+				});
+			</script>
+		</div>
+		
+		<div class="popup_timesale" id="POPUP_TIMESALE_02" style="display:none;">
+			<div class="popup_timesale_wrap">
+				<img id="POPUP_TIMESALE_02_IMG" alt="사람들에게 인기 많은 티켓">
+				<p class="num"><strong id="POPUP_TIMESALE_02_QTY">321</strong>명</p>
+				<div id="POPUP_TIMESALE_02_BTN" class="btn_wrap">
+					<a id="POPUP_TIMESALE_02_A" class="btn" style="background:#ff7aa3; border:1px solid #ff7aa3; color:#fff;"><img src="/resources/img/popup/popup_interest_icon.png" alt="사람들에게 관심으 받고 있느 쿠폰" >타임쿠폰 받기</a>
+				</div>
+				<div class="close_wrap">
+					<a href="javascript:void(0);" class="nomore_close">더 이상 보지 않기</a>
+					<a href="javascript:void(0);" class="close">닫기</a>
+				</div>
+			</div>
+			<script>
+				$(document).ready(function(){
+					var POPUP_TIMESALE_02 = $("#POPUP_TIMESALE_02");
+					/* if($.cookie('timesale_popup_close_02') != 'Y') {
+						POPUP_TIMESALE_02.show();
+					} */
+					POPUP_TIMESALE_02.on('click', '.close', function(){
+						POPUP_TIMESALE_02.hide();
+					});
+					POPUP_TIMESALE_02.on('click', '.nomore_close', function(){
+						var id = 'timesale_popup_close_02_'+POPUP_TIMESALE_02.data('seq');
+						
+						tb.Member.setCookie(id, 'Y', 365, '/');
+						POPUP_TIMESALE_02.hide();
+						window.parent.$("html, body").scrollTop(0);//상단으로 이동
+						return true;
+					});
+					
+					//setReferrer();
+				});
+			</script>
+		</div>
+		
+<!-- container -->
+<!-- 2016-11-29 이용약관 추가및 수정시작 -->
+<div id="container" class="cont_agreement">
+	<!-- main -->
+	<main id="contents">
+		
+			<div class="agree_tab">
+				<ul class="list_agree">
+					<li>
+						
+							
+							
+								<a href="/web/info/terms" class="link_agree">이용약관</a>
+							
+						
+					</li>
+					<li>
+						
+							
+							
+								<a href="/web/info/privacy" class="link_agree">개인정보처리방침</a>
+							
+						
+					</li>
+					<li class="on">
+						
+							
+							
+								<a href="/web/info/youthprotect_20180424" class="link_agree">청소년 보호정책</a>
+							
+						
+					</li>
+					<li>
+						
+							
+							
+								<a href="/web/info/email_20180424" class="link_agree">이메일 무단수집 거부</a>
+							
+						
+					</li>
+				</ul>
+			</div>
+			
+			<div id="popupWrap" class="paymentPop footerPop">
+					<!-- txtArea -->
+					<div class="txtArea01">
+							<!-- type -->
+							<div class="type" style="display:block">
+								<div class="agree_top">
+									<h1 class="tit_agree"><span class="txt_agree txt_agree3">청소년 보호정책</span></h1>
+								</div>
+								<table style="width:100%">
+									<tbody>
+										<tr>
+											<td>
+												<p>
+													(주)TIM PLUS(이하 ‘회사’라고 합니다)는 청소년이 건전한 인격체로 성장할 수 있도록 하기 위하여 정보통신망 이용 촉진 및 정보 보호 등에 관한 법률 및 청소년보호법, 방송통신 심의위원회의 심의규정 및 청소년 보호 위원회가 지정하는 청소년 유해매체물 등에 근거하여 청소년 보호정책을 수립, 시행하고 있습니다. 회사는 만 19세 미만의 청소년들이 유해정보에 접근할 수 없도록 방지 및 제재하고 있는 바, 본 청소년 보호정책을 통하여 회사가 청소년보호를 위해 어떠한 조치를 취하고 있는지 알려드립니다.
+												</p><!-- 2018-03-20 텍스트 수정 -->
+												<p></p>
+												<p>
+													<b>1. 청소년 보호 정책 </b><br>
+													회사는 각종 청소년 유해정보로부터 청소년을 보호하고자 관계법령에 따라 만 19세 미만의 청소년들이 유해정보에 접근할 수 없도록 청소년보호정책을 마련하여 시행하고 있습니다. 또한 회사는 청소년의 건전한 성장을 저해하는 음란, 불법 등의 유해정보와 비윤리적, 반사회적 행위에 대해서는 엄격하게 제재하기 위하여 다음과 같이 활동하고 있습니다.
+													<span class="txt_policy">
+														- 청소년유해정보로부터의 청소년보호계획의 수립<br>
+														- 청소년유해정보에 대한 성인인증 장치를 통한 청소년접근제한 및 관리조치<br>
+														- 정보통신업무 종사자에 대한 청소년유해정보로부터의 청소년보호를 위한 교육<br>
+														- 고객센터를 통한 청소년유해정보 피해상담 및 고충처리<br>
+														- 그 밖에 청소년유해정보로부터 청소년을 보호하기 위하여 필요한 사항
+													</span>
+												</p>	
+												<p></p>
+												<p>
+													<b>2. 청소년 윤리 강령 및 청소년 보호 법규 준수</b><br>
+													<span class="txt_policy">
+														<span class="txt_depth1">①</span><span class="txt_policy"> 회사는 청소년들이 인터넷을 이용함에 있어, 밝고 건전한 환경을 조성하고, 올바른 인터넷 이용을 선도하며 청소년이 나와 타인을 존중 할 수 있는 인격체로의 성장할 수 있도록 돕기 위해 "청소년보호를 위한 인터넷기업 윤리강령"과 “실천지침”을 준수합니다.</span> 
+														<span class="txt_depth1">②</span> <span class="txt_policy">회사는 다음과 같은 청소년 보호 관련 법규를 준수합니다.</span>
+														<span class="txt_policy">- 방송통신심의위원회 심의규정</span>
+														<span class="txt_policy">- 청소년보호위원회 청소년 유해매체물 심의규정</span>
+													</span>
+												</p>	
+												<p></p>
+												<p>
+													<b>3. 티켓베이 청소년보호 책임자 및 담당자의 성명, 소속, 직위 및 연락처</b><br>
+												</p>
+												<table width="990" style="border-collapse:collapse;border:1px solid #cecece" cellspacing="1" cellpadding="1" border="0">
+													<caption>청소년 보호정책</caption>
+													<thead>
+														<tr valign="top">
+															<th width="50%" scope="col" style="text-align:center;border-bottom:1px solid #cecece;border-right:1px solid #cecece">청소년 보호 책임자</th>
+															<th width="50%" scope="col" style="text-align:center;border-bottom:1px solid #cecece;border-right:1px solid #cecece">청소년 보호 담당자</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td bgcolor="#fffbf5" style="text-align:left;padding: 14px 15px;border-bottom:1px solid #cecece;border-right:1px solid #cecece">
+																- 소속 : 정책담당<br>
+																- 직위 : 대표이사<br>
+																- 성명 : 한혜진<br>
+																- 전화번호 : 1644-0633<br>
+																- 팩스번호 : 02-2138-1110<br>
+																- 이메일 : help@ticketbay.co.kr
+															</td><!-- 2018-03-20 텍스트 수정 -->
+															<td bgcolor="#fffbf5" style="text-align:left;padding: 14px 15px;border-bottom:1px solid #cecece;border-right:1px solid #cecece">
+																- 소속 : 정책담당<br>
+																- 직위 : 실장<br>
+																- 성명 : 이정범<br>
+																- 전화번호 : 1644-0633<br>
+																- 팩스번호 : 02-2138-1110<br>
+																- 이메일 : help@ticketbay.co.kr
+															</td><!-- 2018-03-20 텍스트 수정 -->
+														</tr>
+													</tbody>
+												</table>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						<!-- // type-->
+					<!-- // txtArea -->
+			</div>
+		</div>
+	</main>
+	<!-- //main -->
+</div>
+<!-- //container -->
+<!-- 2016-11-29 이용약관 추가및 수정끝 -->
+
+
+		
+		<!-- B2C 옵션영역 스크롤 처리 // -->
+		<style>
+			#outbox{position: relative; width: 0px; height: 0px; top: -800px; font-size: 0;}
+			.out_box_class .op_gr{bottom: 410px;}
+			.out_box_class .btn_gr{bottom: 350px !important;}
+			.op_fixed .icon_btn_x{right:20px;}
+			.op_gr, .btn_gr{transition : all 0.3s ease !important;}
+		</style>
+		<div id="outbox">outbox</div>
+		<script>
+		jQuery(document).ready(function() {
+			var bodyOffset = jQuery('#outbox').offset();
+			jQuery(window).scroll(function() {
+				if (jQuery(document).scrollTop() > bodyOffset.top) {
+					jQuery('.op_fixed').addClass('out_box_class');
+				} else {
+					jQuery('.op_fixed').removeClass('out_box_class');
+				}
+			});
+		});
+		</script>
+		<!-- // B2C 옵션영역 스크롤 처리 -->
+		
+		<!-- footer -->
+		<footer id="footer">
+		<!-- footerNav -->
+			<div class="tb_foot">
+				<style>
+					#footer{height: 330px !important;}
+					.footer_menu li{float: left; margin: 40px 25px 20px 0;}
+					.footer_menu a, .footer_menu a font{font-weight: bold; color: #ccc;}
+					.footer_menu .txt_01, .footer_menu .txt_01 font{color: #f80;}
+				</style>
+				<ul class="footer_menu">
+					<li><a href="/web/info/terms">이용약관</a></li>
+					<li><a href="/web/info/privacy" class="txt_01">개인정보처리방침</a></li>
+					<li><a href="/web/info/youthprotect_20180424">청소년보호정책</a></li>
+					<li><a href="/web/info/email_20180424">이메일무단수집거부</a></li>
+					<li><a href="javascript:onPopCertMar('fe0bde5c89c7af2163a5719f5aa57d86')" class="">NH에스크로이체 정보</a></li>
+					<li><a href="/web/info/company">회사소개</a></li>
+					<li><a href="/web/info/pr/pressReleases">PR</a></li>
+				</ul>
+				<div class="clear"></div>
+				<!-- //footerNav -->
+				<!-- address -->
+				<style>
+					#footer address span{margin-right: 18px !important;}
+				</style>
+				<address>
+					<p>
+						<span>
+							<font class="google_off">(주)팀플러스</font>
+							<font class="google_on" style="padding-right: 5px;">株式会社 </font><font class="google_on mr_10">TIMPLUS</font>
+							 서울특별시 강서구 양천로 583 우림블루나인비즈니스센터 B동 1906호
+						</span>
+					</p>
+					<p>
+						<span>고객감동센터 : +82-1644-0633</span>
+						<span class="txt_mail">E-MAIL : <a href="javascript:void(0);" onclick="outlookOnload();" class="link_mail">help@ticketbay.co.kr</a></span>
+						<span>FAX : 02-2138-1110</span>
+						<span class="txt_mail">제휴문의 : <a href="javascript:void(0);" onclick="outlookOnload_partner();" class="link_mail">partner@ticketbay.co.kr</a></span>
+					</p>
+					<p>
+						<span>대표이사 : 한혜진</span>
+						<span>사업자등록번호 : 665-86-00946</span>
+						<span>통신판매업신고 : 제 2022-서울강서-0831호</span>
+					</p>
+					<p>
+						
+	
+					</p>
+					
+					<p>
+						<em style="color:#8c8c8c !important;">티켓베이는 통신판매 중개자이며, 통신판매의 당사자가 아닙니다. 따라서 티켓베이는 상품 거래정보 및 거래에 대하여 책임을 지지 않습니다.</em>					
+					</p>
+					<!-- <p class="copyright">COPYRIGHT © TICKETBAY. ALL RIGHTS RESERVED.</p> -->
+					<p class="copyright">© TICKETBAY. ALL RIGHTS RESERVED.</p><!-- 2016-10-06 수정 -->
+				</address>
+				<!-- //address -->
+				
+				
+				<style>
+					.list_emblem li .link_emblem{background-image: url(/resources/img/main/img_emblem_v4.png) !important; margin-right: 0px !important;}
+					.list_emblem li .link_emblem1{width: 205px !important;}
+					.list_emblem li .link_emblem2{width: 215px !important; background-position: 0 -59px !important;}
+					.list_emblem li .link_emblem3{margin-right: -40px !important; background-position: 0 -120px !important;}
+					.list_emblem li .link_emblem4{background-position: 0px -177px !important;}
+					.list_emblem li .link_emblem5{background-position: 0px -236px;}
+				</style>
+				<ul class="list_emblem">
+					<li><a target="_blank" href="https://blog.naver.com/hayamaya20/221081844286" class="link_emblem link_emblem1">2017 한국 소비자 만족지수 1위 수상</a></li>
+					<li><a target="_blank" href="https://blog.naver.com/hayamaya20/221202476513" class="link_emblem link_emblem2">2018 한국 소비자 평가 최고의 브랜드</a></li>
+					<li><a href="javascript:onPopCertMar('fe0bde5c89c7af2163a5719f5aa57d86')" class="link_emblem link_emblem3">구매안전 NH 에스크로 이체 </a></li>
+					<li><span class="link_emblem link_emblem4">한국온라인쇼핑협회 정회원사</span></li>
+					<li><span class="link_emblem link_emblem5">코리아스타트업포럼 정회원사</span></li>
+				</ul>
+				
+				
+			<!--농협 에스크로 이체 인증마크 적용 시작-->
+				<script>
+					function onPopCertMar(key){
+						window.open('','self','height=700, width=650, status=yes, toolbar=no, menubar=no, location=no');
+						document.CERTMARK_FORM.certMarkURLKey.value = key;
+						document.CERTMARK_FORM.action='https://escrow.nonghyup.com/?certMarkURLKey=' + key;
+						document.CERTMARK_FORM.target='self';
+						document.CERTMARK_FORM.submit();
+					}
+				</script>
+				<form name="CERTMARK_FORM" method="POST"> 
+					<input type="hidden" name="certMarkURLKey" /> 
+				</form> 
+			<!--농협 에스크로 이체 인증마크 적용 종료-->
+			<!-- 푸터이미지파일 수정해야함 -->
+				
+				
+			<!-- //푸터이미지파일 수정해야함 -->
+			<!--농협 에스크로 이체 인증마크 적용 종료-->
+			
+			<!-- 공통 적용 스크립트 , 모든 페이지에 노출되도록 설치. 단 전환페이지 설정값보다 항상 하단에 위치해야함 --> 
+				<script type="text/javascript" src="https://wcs.naver.net/wcslog.js"> </script> 
+				<script type="text/javascript"> 
+					if (!wcs_add) var wcs_add={};
+					wcs_add["wa"] = "s_1a8175f52131";
+					if (!_nasa) var _nasa={};
+					wcs.inflow("ticketbay.co.kr");
+					wcs_do(_nasa);
+				</script>
+			<!-- Google 리마케팅 태그 코드 -->
+				<!--FORM name='CERTMARK_FORM' METHOD='POST'>
+					<input type="hidden" name="certMarkURLKey">
+				</FORM-->
+				
+				<script type="text/javascript">
+				/* <![CDATA[ */
+				var google_conversion_id = 949365679;
+				var google_custom_params = window.google_tag_params;
+				var google_remarketing_only = true;
+				/* ]]> */
+				</script>
+				<script type="text/javascript" src="https://www.googleadservices.com/pagead/conversion.js">
+				</script>
+				<noscript>
+				<div style="display:inline;">
+				<img height="1" width="1" style="border-style:none;" alt="" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/949365679/?value=0&amp;guid=ON&amp;script=0"/>
+				</div>
+				</noscript>
+			</div>
+		</footer>
+		<!-- //footer -->
+	</div>
+	<!-- //wrap -->
+	
+	<div id="tmplContainer">
+	<script id="webPagingTmpl" type="text/x-jquery-tmpl">
+
+	<!-- paging -->
+	{{if pageList && pageList.length > 0}} 
+	<div class="paging">
+		<a href="{{= prevBlockPageUrl}}" data-page="{{= prevBlockPage}}" class="btnPrev">이전으로 이동</a>
+		
+		{{each(i, page) pageList}}
+			{{if page == currentPage}}
+			<span class="current" data-page="{{= page}}">{{= page}}</span>
+			{{/if}}
+			
+			{{if page != currentPage}}
+			<a href="{{= pageUrlList[i]}}" data-page="{{= page}}">{{= page}}</a>
+			{{/if}}
+		{{/each}}
+		
+		<a href="{{= nextBlockPageUrl}}" data-page="{{= nextBlockPage}}" class="btnNext">다음으로 이동</a>
+	</div>
+	{{/if}}
+	<!-- //paging -->
+	</script>
+
+	</div>
+	
+	
+	<!-- Page Navigation Template -->
+	<script id="pageNavigationTmpl" type="text/x-jquery-tmpl">
+
+	<div class="paging_next">	<!-- btn_comm -->
+		<a href="#" class="nav_button" data-direction="0" data-cursor-seq="{{= firstCursorSeq }}" id="nav_fir">처음</a>
+		<a href="#" class="nav_button" data-direction="3" data-cursor-seq="{{= prevtCursorSeq }}" id="nav_pre">이전</a>
+		<a href="#" class="nav_button" data-direction="2" data-cursor-seq="{{= nextCursorSeq }}" id="nav_nex">다음</a>
+		<a href="#" class="nav_button" data-direction="1" data-cursor-seq="{{= lastCursorSeq }}" id="nav_las">마지막</a>
+	</div>
+	</script>
+
+	<!-- Page Navigation Template -->
+		
+	
+	<div id="layerContainer"></div>
+	
+<!-- Bizspring Boost Script Start -->
+<script type='text/javascript' async>
+	var _boost_pfno = '5823';
+	var actScr = document.createElement('script');
+	actScr.type = 'text/javascript';
+	actScr.async = true;
+	actScr.src = location.protocol+'//fs.bizspring.net/bst/bst.js?ver=' + new Date().getTime();
+	document.head = document.head || document.getElementsByTagName('head')[0];
+	document.head.appendChild(actScr);
+</script>
+<!-- Bizspring Boost Script End -->
+
+<!-- 티켓베이 리타겟팅 광고 start -->
+<script type="text/javascript">
+   var roosevelt_params = {
+       retargeting_id:'fOyYG-hOixfC.IuQ1iI1Yw00',
+       tag_label:'HWePdDH_RGiAnoFIEm8IPQ'
+   };
+   
+   function outlookOnload(){
+	   document.location.href = 'mailto:help@ticketbay.co.kr';
+
+   };
+   
+   function outlookOnload_partner(){
+	   document.location.href = 'mailto:partner@ticketbay.co.kr';
+
+   };
+   
+   function outlookOnload_sales(){
+	   document.location.href = 'mailto:salesTB@ticketbay.co.kr';
+
+   };
+</script>
+
+<!-- WIDERPLANET PURCHASE SCRIPT START 2017.8.2 -->
+<div id="wp_tg_cts" style="display:none;"></div>
+<script type="text/javascript">
+var wptg_tagscript_vars = wptg_tagscript_vars || [];
+wptg_tagscript_vars.push(
+(function() {
+	return {
+		wp_hcuid:"",  	/*Cross device targeting을 원하는 광고주는 로그인한 사용자의 Unique ID (ex. 로그인 ID, 고객넘버 등)를 암호화하여 대입.
+				 *주의: 로그인 하지 않은 사용자는 어떠한 값도 대입하지 않습니다.*/
+		ti:"36977",	/*광고주 코드*/
+		ty:"Home",	/*트래킹태그 타입*/
+		device:"web"	/*디바이스 종류 (web 또는 mobile)*/
+	};
+}));
+
+wptg_tagscript_vars.push(
+		(function() {
+			return {
+				wp_hcuid:"",  	/*Cross device targeting을 원하는 광고주는 로그인한 사용자의 Unique ID (ex. 로그인 ID, 고객넘버 등)를 암호화하여 대입.
+						 *주의: 로그인 하지 않은 사용자는 어떠한 값도 대입하지 않습니다.*/
+				ti:"36979",	/*광고주 코드*/
+				ty:"Home",	/*트래킹태그 타입*/
+				device:"web"	/*디바이스 종류 (web 또는 mobile)*/
+			};
+		}));
+</script>
+<script type="text/javascript" async src="//cdn-aitg.widerplanet.com/js/wp_astg_4.0.js"></script>
+<!-- WIDERPLANET PURCHASE SCRIPT START 2017.8.2 -->
+
+<script type="text/javascript" src="//adimg.daumcdn.net/rt/roosevelt.js" async></script>
+<!-- 티켓베이 리타겟팅 광고 end -->
+
+<!-- NHN D&T 광고측정 스크립트 추가 -->
+<script type="text/javascript" src="/resources/js/advertisement/adssom.js"></script>
+
+<!-- ACE_TRADER_SCRIPT 추가 -->
+<script type="text/javascript" src="//static.tagmanager.toast.com/tag/view/1033"></script>
+<script type="text/javascript">
+ window.ne_tgm_q = window.ne_tgm_q || [];
+ window.ne_tgm_q.push(
+ {
+ 	tagType: 'visit',
+ 	device:'web'/*web, mobile, tablet*/,
+ 	uniqValue:'',
+ 	pageEncoding:'utf-8'
+ });
+ </script>
+ <!-- ACE_TRADER_SCRIPT 추가 -->
+
+
+<!-- Twitter universal website tag code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+// Insert Twitter Pixel ID and Standard Event data below
+twq('init','o54cj');
+twq('track','PageView');
+</script>
+<!-- End Twitter universal website tag code -->
+
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"applicationID":"14471137,14730919","applicationTime":43,"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"9a7eddd397","transactionName":"bgZabURSCEdQAkMMC1dMa0lEWghTcg5ZERZWD1RcRBwRUVNOXgsCVkxDaXd0I0kRSXAgMBA=","agent":"","errorBeacon":"bam.nr-data.net"}</script></body>
+</html>
