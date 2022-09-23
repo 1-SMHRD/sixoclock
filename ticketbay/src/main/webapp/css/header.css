@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+body{color: #666; background: #e3e3e3;}
+
+.BTN_RP{
+	display: inline-block;
+	float: right;
+	margin: 3px 15px 0 -10px;
+	padding: 4px 12px 3px 12px !important;
+	border: 2px solid #eaeaea;
+	border-radius: 10px;
+	color: #aaa;
+	font-size: 14px;
+	font-weight: bold;
+	font-family: NanumSquareRound !important;
+	cursor: pointer;
+}

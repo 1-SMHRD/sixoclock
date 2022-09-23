@@ -22,6 +22,19 @@ public class MyBatisDAO {
 		}
 	}
 	
+	// 전체리스트 가져오기	
+	public List<SalesVO> allList(){
+		SqlSession session = sqlSessionFactory.openSession();
+		List<SalesVO> list=session.selectList("allList");
+		session.close();
+		return list;
+	}
 	
-	
+	// 상세보기(pd_code)
+	public SalesVO getBypdCode(String pd_code) {
+		SqlSession session = sqlSessionFactory.openSession();
+		SalesVO vo=session.selectOne("getBypdCode", pd_code);
+		session.close();
+		return vo;
+	}
 }

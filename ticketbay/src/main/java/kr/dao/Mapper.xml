@@ -4,6 +4,13 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.dao.Mapper">
   	
-  	
+  	<!-- 전체리스트 -->
+  	<select id="allList" resultType="kr.dao.SalesVO">
+  		select * from t_product
+  	</select>
+  	<!-- 상품코드 가져오기 -->
+  	<select id="getBypdCode" parameterType="String" resultType="kr.dao.SalesVO">
+  		select * from t_product where pd_code=#{pd_code}
+  	</select>
   	
 </mapper>

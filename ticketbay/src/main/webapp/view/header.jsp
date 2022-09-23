@@ -1,13 +1,17 @@
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<c:set var="cpath" value="${pageContext.request.contextPath}" />
+<!DOCTYPE html>
 <html class="no-js" lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Mart - HTML5 Resoponsive onepage e-commerce template </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="images/favicon.png">
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="${cpath}/css/style.css">
 
     </head>
     <body>
@@ -20,9 +24,9 @@
                             <ul class="nav nav-pills navbar-right">
                                 <li><a href="#"><i class="pe-7s-gift">이벤트/혜택존</i></a></li>
                                 <li><a href="#"><i class="pe-7s-ticket">MY티켓베이</i></a></li>
-                                <li><a href="#"><i class="pe-7s-unlock"></i>로그인</a></li>
-                                <li><a href="#"><i class="pe-7s-user"></i>회원가입</a></li>
-                                <li><a href="#"><i class="pe-7s-box1"></i>판매등록</a></li>
+                                <li><a href="#"><i class="pe-7s-unlock">로그인</i></a></li>
+                                <li><a href="#"><i class="pe-7s-user">회원가입</i></a></li>
+                                <li><a href="#"><i class="pe-7s-box1">판매등록</i></a></li>
 
                             </ul>
                         </div>
