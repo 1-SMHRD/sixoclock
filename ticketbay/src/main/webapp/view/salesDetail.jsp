@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="${cpath}/css/styleList.css">
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+<jsp:include page="header.jsp"></jsp:include>
 </head>
 <body>
 
@@ -405,4 +406,5 @@
 </div>
 
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>

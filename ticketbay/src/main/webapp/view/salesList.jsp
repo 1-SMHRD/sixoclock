@@ -18,16 +18,12 @@
 <link rel="stylesheet" href="${cpath}/css/header.css">
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
-<script type="text/javascript">   
-$(document).ready( function() {
-
-$("#headers").load("../html&jsp/header-footer.html");  // 원하는 파일 경로를 삽입하면 된다
-$("#footers").load("common/footer.html");  // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
-
-});
-</script>
+<jsp:include page="header.jsp"></jsp:include>
 </head>
 <body class="goog-te-combo_in">
+
+
+
 
 <div class="bg_04 wd_100p">
   <div id="all_gr" class="container clearfix" style="position: relative;">
@@ -236,7 +232,10 @@ $("#footers").load("common/footer.html");  // 추가 인클루드를 원할 경�
       </div>
     </div>
   </div>
+  <jsp:include page="footer.jsp"></jsp:include>
 </div>
+
 <div class="footer_end"></div>
 </body>
+
 </html>

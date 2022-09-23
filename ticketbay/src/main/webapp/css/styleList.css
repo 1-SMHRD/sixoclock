@@ -191,7 +191,7 @@
 .info_txt_06{
 	border-collapse: collapse;
 	width: 995px;
-	margin: auto auto;
+	margin: auto auto 1.5% auto;
 	border-radius: 10px;
 	overflow: hidden;
 	background: #fff;
