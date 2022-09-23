@@ -1,0 +1,73 @@
+/* ======================
+   부트스트랩 건들지마세용
+ ====================== */
+ @import url(font-awesome.css) screen;
+ @import url(bootstrap.css) screen;
+ @import url(pe-icon-7-stroke.css) screen;
+
+ 
+ .clear {
+     clear: both;
+     display: block;
+     font-size: 0;
+     height: 0;
+     line-height: 0;
+     width: 100%;
+ }
+ 
+/*
+    FOOTER SECTION
+ */
+ #footer .social-media{
+    display: flex;
+    font-size:larger;
+}
+#footer {
+    height: 250px;
+    background-color: #030303;
+    display: flex;
+    position: relative;
+}
+
+#footer .tb_foot {
+    overflow: hidden;
+    position: relative;
+    width: 995px;
+    margin: 0 auto;
+}
+
+.footer_menu li {
+    list-style: none;
+    float: left;
+    margin: 40px 25px 20px 0;
+}
+
+.footer_menu a, .footer_menu a font {
+    font-weight: bold;
+    color: #ccc;
+}
+
+.footer_menu .txt_01, .footer_menu .txt_01 font {
+    color: #5EA204;
+}
+
+#footer address, #footer address p, #footer address span, #footer address em {
+    color: rgb(140, 140, 140);
+    font-family: 돋움, Dotum;
+    font-style: normal;
+}
+
+#footer address p {
+    margin-bottom: 7px;
+}
+
+#footer address span {
+    margin-right: 18px;
+}
+
+#footer .copyright {
+    margin-top: 20px;
+    color: #b8b7b7;
+    font-family: 'Arial';
+    font-weight: bold;
+}

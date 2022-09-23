@@ -1,0 +1,188 @@
+/* ======================
+   부트스트랩 건들지마세용
+ ====================== */
+@import url(font-awesome.css) screen;
+@import url(bootstrap.css) screen;
+@import url(pe-icon-7-stroke.css) screen;
+
+
+.clear {
+    clear: both;
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    width: 100%;
+}
+
+/*
+    HEADER TOP SECTION
+ */
+.header-top-section{
+    position: relative;
+    display: block;
+    height: 40px;
+    width: 100%;
+    background: #000000;
+    color: rgb(255, 255, 255);
+
+}
+
+
+.header-top-content ul li a{
+    color: #fff;
+    font-size: 12px;
+    font-weight: 100;
+    padding-left: 0;
+}
+.header-top-content ul li a:hover, .header-top-content ul li a:active, .header-top-content ul li a:focus{
+    background: transparent;
+    color: #fff;
+}
+.header-top-content ul li:last-child a i{
+    /*font-size: 20px;  */
+    position: relative;
+    top: 2px;
+}
+
+.header-top-menu ul li a{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+.header-top-menu ul li a:hover, .header-top-menu ul li a:active, .header-top-menu ul li a:focus{
+    background: transparent
+}
+
+/*
+    HEADER SECTION
+ */
+.header-section{
+    display: block;
+    width: 100%;
+    padding: 20px 0;
+    position: relative;
+    transition: all 1s;
+    background: #fff;
+}
+header.header-section.fixed {
+    position: fixed;
+    display: block;
+    width: 100%;
+    top: 0;
+    background: #fff;
+    z-index: 99999;
+    border-bottom: 1px solid #5EA204;
+    padding: 10px 0;
+    transition: all 1s;
+}
+.header-section .navbar{
+    height: auto;
+    min-height: none;
+    border-radius: 0;
+    border: none;
+    background: transparent !important;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+
+.header-section .navbar .navbar-brand b{
+    color: #5EA204;
+    font-weight: bold;
+    font-size: 42px;
+}
+
+.header-section .navbar .navbar-brand{
+    font-size: 32px;
+    font-weight: bold;
+    color: #555252;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+    text-align: center;
+    padding: 0 !important;
+    background: transparent !important;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: #555252 !important;
+}
+
+ul.navbar-nav{
+    background: transparent;
+    margin: 0 auto;
+    margin-bottom: -5px;
+    display: inline-flex;
+    float: none;
+}
+
+ul.navbar-nav li a{
+    font-size: 16px;
+    font-weight: 900;
+    color:  #555252 !important;
+    background: transparent !important;
+    text-transform: uppercase;
+
+}
+ul.navbar-nav li.active a, ul.navbar-nav li a:hover{
+    color: #5EA204 !important;
+}
+ul.navbar-nav.cart-menu li a{
+    padding-right: 0;
+    color: #0f0101;
+    font-weight: 700;
+}
+ul.navbar-nav.cart-menu li a .fa-search{
+    margin-top: 6px;
+    display: block;
+}
+
+span.shoping-cart {
+    border: 1px solid #0f0101;
+    padding: 2px 7px 2px 6px;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    background: #fff;
+}
+span.shoping-cart:after{
+    height: 90%;
+    width: 80%;
+    display: block;
+    background: transparent;
+    position: absolute;
+    content: "";
+    border: 1px solid #0f0101;
+    border-radius: 50%;
+    top: -47%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: -9999;
+}
+span.shoping-cart:hover:after{
+    top: -50%;
+}
+
+span.shoping-cart:before{
+    height: 100%;
+    width: 100%;
+    display: block;
+    background: #fff;
+    position: absolute;
+    content: "";
+    top: 0%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: -999;
+}
+span.shoping-cart {
+    border: 1px solid #0f0101;
+    padding: 2px 7px 2px 6px;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    background: #fff;
+    z-index: 9999999;
+    color: #5EA204;
+}
