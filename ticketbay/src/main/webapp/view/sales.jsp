@@ -2,30 +2,38 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <script type="text/javascript">
-	function openChild() {
-		// window.name = "부모창 이름"; 
-		window.name = "parentForm";
-		// window.open("open할 window", "자식창 이름", "팝업창 옵션");  return false          
-		window.open('http://localhost:8081/MVC7/board/ticketbay02.jsp',
-				'카테고리 선택- 프로필1', "width=700px,height=800px,top=200px;");
-	}
-	function setParentText() {
-		opener.document.getElementById("pInput").value = document
-				.getElementById("cInput").value
-	}
+
+window.onload = function(){
+    document.getElementById("goodsName").onclick = function(){
+       window2= window.open("http://localhost:8081/ticketbay/category.do",
+        		"카테고리선택","width=600px,height=780px,top=200px;");
+       window2.parentWindow = window
+    }
+
+};
+/* function goodsName11(){
+    window2 = window.open("http://localhost:8081/ticketbay/category.do",
+    		"카테고리선택","width=600px,height=780px,top=200px;");
+    window2.parentWindow = window
+ } */
+
+
+
 </script>
 <head>
 <meta charset="UTF-8">
-<title>상품등록 | 티켓베이</title>
-<link rel="stylesheet" href="../css/sales.css">
+<title>상품등록|티켓</title>
+<link rel="stylesheet" href="${cpath}/css/sales.css">
 </head>
-<body class="goog-te-combo_in">
+<body id="body">
+
 	<div id="container" class="bg_01">
 		<main id="contents" class="wd_100p">
-			<form name="major" action="/web/myproduct/productRegistDo"
+			<form name="major" action="#"
 				method="post">
 				<div class="tit_box_04">
 					<h2>판매등록</h2>
@@ -41,7 +49,7 @@
 							상품 불러오기</a>
 					</div>
 					<div class="in_box_02 mt10">
-						<input onclick="openChild()" id="goodsName" name="PROD_NAME"
+						<input id="goodsName" name="PROD_NAME"
 							type="text" class="textInp03" autocomplete="off"
 							placeholder="카테고리를 선택하세요." readonly="true">
 					</div>
@@ -64,7 +72,7 @@
 				<div class="box_style_05 mt_20 mb_20">
 					<ul class="info_txt">
 						<li>판매금액에 맞춰 수수료가 자동으로 계산됩니다. <a
-							onclick="window.open('http://localhost:8081/MVC7/board/ticketbay01.jsp', '카테고리별 수수료 안내- 프로필1','width=550, height=1000'); return false"
+							onclick="window.open('http://localhost:8081/ticketbay/html&jsp/commission.jsp', '카테고리별 수수료 안내- 프로필1','width=550, height=1000'); return false"
 							id="categoryCommisionPopupTrigger" class="btn_st_00 ml_10">카테고리별
 								수수료 보기</a>
 						</li>

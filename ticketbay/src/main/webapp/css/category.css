@@ -1,0 +1,284 @@
+@charset "EUC-KR";
+
+/* head */
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 12px;
+    font-family: '돋움', 'Dotum', sans-serif;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+}
+#popupPage {
+    background: #fff;
+}
+body {
+    color: #000;
+    font-size: 11px;
+    background: #e3e3e3 url(../img/category/bg_header2_1.gif) repeat-x 0 0;
+    /* background-color: #fff; */
+}
+#popupWrap.sumPop, #popupWrap.paymentPop, #popupWrap.myservicePop, #popupWrap.loginPop {
+    padding: 0 0 27px;
+}
+#popupWrap {
+    position: relative;
+    padding: 40px 50px;
+}
+#popupPage .sumPop h1, #popupPage .paymentPop h1, #popupPage .myservicePop h1, #popupPage .loginPop h1 {
+    top: 26px;
+    right: 50px;
+}
+#popupPage h1 {
+    position: absolute;
+    top: 36px;
+    right: 50px;
+    z-index: 1;
+}
+img {
+    border: 0;
+}
+#popupPage .sumPop h2, #popupPage .paymentPop h2, #popupPage .myservicePop h2, #popupPage .loginPop h2 {
+    height: 25px;
+    margin-bottom: 15px;
+    padding: 29px 54px 30px;
+    border-bottom: none;
+    background-color: #79a3d6;
+}
+#popupPage h2 {
+    position: relative;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #333;
+    color: #fff;
+    font-size: 25px;
+    font-family: NanumSquareRound;
+    line-height: 25px;
+}
+#popupPage .sumPop h2:after, #popupPage .paymentPop h2:after, #popupPage .myservicePop h2:after, #popupPage .loginPop h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #79a3d6 url(../img/category/sp_dashed.png) repeat -5px 0;
+}
+.sumPop .popupCont, .paymentPop .popupCont, .myservicePop .popupCont {
+    margin: 0 50px;
+}
+.popupCont {
+    overflow: hidden;
+}
+.bulSqGray {
+    position: relative;
+    padding: 0 0 0 6px;
+    color: #767676;
+    font-size: 11px;
+    line-height: 13px;
+}
+.bulSqGray:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    background: #767676;
+}
+.myservicePop .boxStyle.depsList {
+    width: 458px;
+    height: 65px;
+    margin: 29px 0 10px;
+    padding: 20px 20px;
+}
+.myservicePop .boxStyle {
+    width: 420px;
+    word-break: break-all;
+}
+[class*='boxStyle'] {
+    position: relative;
+    width: 932px;
+    margin: 0 auto 12px;
+    padding: 26px 30px;
+    background-color: #fff;
+    border: 1px solid #c7c7c7;
+    border-radius: 5px;
+    /* box-shadow: 1px 2px 6px 0px rgb(0 0 0 / 10%); */
+}
+.myservicePop .boxStyle.depsList strong {
+    display: inline-block;
+    float: none;
+    margin: 0;
+    padding: 0 0 0 16px;
+    background: url(../img/category/bul_myFavList.gif) no-repeat 0 2px;
+    color: #333;
+}
+.myservicePop .boxStyle.depsList ul {
+    overflow: hidden;
+    float: none;
+    width: auto;
+    margin: 10px 0 0 0;
+    padding: 20px 0 0 0;
+    border-top: 2px solid #000;
+}
+.threeDeps .areaDeps.deps1, .threeDeps .areaDeps.deps2, .threeDeps .areaDeps.deps3 {
+    width: 128px;
+}
+.boxStyle2.areaDeps {
+    position: relative;
+    float: left;
+    width: 130px;
+    height: 345px;
+    padding: 6px 19px 0 11px;
+}
+.popupCont .js-scroll {
+    margin-top: 20px;
+    height: 362px;
+}
+.js-scroll {
+    position: relative;
+    overflow: hidden;
+}
+
+.threeDeps .areaDeps li {
+    position: relative;
+    width: 100%;
+    text-align: left;
+}
+.areaDeps li {
+    float: left;
+    width: 48px;
+    margin: 0 8px 0 9px;
+    text-align: center;
+}
+.threeDeps .areaDeps .bulListSqGray li:before {
+    top: 18px;
+}
+.bulListSqGray li:before {
+    background-color: #767676;
+}
+[class*='bulList'] li:before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 2px;
+    height: 2px;
+}
+.threeDeps .areaDeps li a, .threeDeps .areaDeps li label {
+    display: inline-block;
+    text-align: left;
+}
+.areaDeps ul li a, .areaDeps ul li label {
+    display: block;
+    height: 14px;
+    padding: 12px 0 11px;
+    color: #444;
+    font-family: Dotum;
+    font-size: 12px;
+    text-align: center;
+    text-indent: 0;
+}
+a {
+    color: #767676;
+    font-weight: normal;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+.iScrollVerticalScrollbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #f2f2f2;
+}
+.iScrollIndicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    background-color: #919191;
+}
+.threeDeps .areaDeps.deps2, .threeDeps .areaDeps.deps3 {
+    margin-left: 6px;
+}
+.formWrap {
+    position: relative;
+}
+.threeDeps .areaDeps.deps3.dimDeps {
+    background: #fafafa;
+}
+.threeDeps .areaDeps.deps3.dimDeps ul {
+    display: none;
+}
+.formWrap:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.myservicePop .btnArea {
+    margin-top: 17px;
+}
+.btnArea {
+    position: relative;
+    height: 48px;
+    margin: 0 auto;
+    text-align: center;
+}
+.btnArea > a, .btnAnchor {
+    display: inline-block;
+}
+.btnArea > a img, .btnAnchor img {
+    display: block;
+}
+a img {
+    border: none;
+}
+.threeDeps .areaDeps li.currunt a, .threeDeps .areaDeps li a:hover {
+    letter-spacing: -1px;
+    padding-right: 19px;
+    background: url(../img/category/bg_checkpoint.gif) no-repeat 100% 12px;
+    color: #79a3d6;
+    font-weight: bold;
+    text-decoration: underline;
+}
+[class*='bulList'] li {
+    position: relative;
+    margin: 5px 3px 0;
+    padding-left: 7px;
+    color: #767676;
+    font-size: 11px;
+    line-height: 15px;
+}
+.areaDeps li.currunt a, .areaDeps li a:hover, .areaDeps li span.checked {
+    color: #444;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.areaDeps.deps2.selectCategory li {
+    width: 90%;
+}
+.areaDeps.deps2 li {
+    width: 73px;
+    margin: 0;
+}
+input#a1 {
+    width: 120px;
+    height: 30px;
+    text-align: center;
+}
+input#b2 {
+    width: 120px !important;
+    height: 30px !important;
+    text-align: center !important;
+}
+input#c3 {
+    width: 120px !important;
+    height: 30px !important;
+    text-align: center !important;
+}
+

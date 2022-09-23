@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /* sales.jsp */
-body {
+#body {
 	color: #666;
 	background: #e3e3e3 url(../img/header/bg_header2_1.gif) repeat-x 0 0;
 	background-image: url(../img/header/bg_header2_1.gif);
@@ -15,8 +15,6 @@ body {
 	background-clip: initial;
 	background-color: rgb(227, 227, 227);
 }
-
-.goog-te-combo_in{background-position: 0 40px;}
 
 /* 판매등록 */
 .tit_box_04 {
@@ -318,3 +316,12 @@ a {
     position: absolute;
     z-index: 1;
 }
+#popupWrap.sumPop, #popupWrap.paymentPop, #popupWrap.myservicePop, #popupWrap.loginPop {
+    padding: 0 0 27px;
+}
+#popupWrap {
+    position: relative;
+    padding: 40px 50px;
+}
+
+

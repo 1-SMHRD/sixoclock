@@ -13,4 +13,9 @@
   		select * from t_product where pd_code=#{pd_code}
   	</select>
   	
+  	<insert id="sm1818Insert" parameterType="kr.dao.BoardVO">
+		insert into t_copy11(a1, b2, c3)
+		values(#{a1},#{b2},#{c3})
+	</insert>
+  	
 </mapper>
