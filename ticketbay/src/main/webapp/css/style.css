@@ -137,34 +137,8 @@ a.remove {
     border-style: solid;
     border-width: 1px
 }
-h1,h2,h3,h4,h5,h6 {
-    letter-spacing: 0px;
-    font-weight: normal;
-    position: relative;
-    padding: 0 0 10px 0;
-    font-weight: normal;
-    font-family: 'Roboto', serif;
-    line-height: 140%;
-    color: #01090c;
-}
-h1 {
-    font-size: 22px;
-}
-h2 {
-    font-size: 20px;
-}
-h3 {
-    font-size: 18px;
-}
-h4 {
-    font-size: 16px;
-}
-h5 {
-    font-size: 14px;
-}
-h6 {
-    font-size: 13px;
-}
+
+
 .lead {
     font-family: 'Open Sans', Arial,sans-serif !important;
     font-size: 18px;
@@ -323,6 +297,68 @@ html, body, .wrapper{
     background: transparent
 }
 
+
+/* 드롭다운 드롭다운 드롭다운 드롭다운 드롭다운 */
+ul.navbar-nav{
+    display: inline-flex;
+    float: none;
+}
+
+ul.navbar-nav li a{
+    font-size: 16px;
+    font-weight: 900;
+    background: transparent !important;
+}
+
+
+.dropbtn {
+    background: transparent;
+    margin-bottom: -5px;
+    color: #464444;
+    padding: 16px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    margin-right: 10px;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: block;
+  }
+  
+  .dropdown-content {
+    border: 0.5px solid #4e5153;
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 150px;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    font-size: 16px;
+    color:   #3a3a3a;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+.dropdown-content a:hover {background-color: rgb(212, 212, 212);}
+
+  
+.dropdown:hover .dropdown-content {
+    display:block;
+}
+  
+  .dropdown:hover .dropbtn {
+    color:#5EA204;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+
+
 /*
     HEADER SECTION
  */
@@ -375,25 +411,11 @@ header.header-section.fixed {
     color: #555252 !important;
 }
 
-ul.navbar-nav{
-    background: transparent;
-    margin: 0 auto;
-    margin-bottom: -5px;
-    display: inline-flex;
-    float: none;
-}
 
-ul.navbar-nav li a{
-    font-size: 16px;
-    font-weight: 900;
-    color:  #555252 !important;
-    background: transparent !important;
-    text-transform: uppercase;
-
-}
-ul.navbar-nav li.active a, ul.navbar-nav li a:hover{
+ul.navbar-nav li.active a, ul.navbar-nav li{
     color: #5EA204 !important;
 }
+
 ul.navbar-nav.cart-menu li a{
     padding-right: 0;
     color: #0f0101;
@@ -649,6 +671,19 @@ a.carousel-control.right > span{
 .bn_gr_b{
     border-top: 1px solid black;
     margin-top: 15px;
+}
+
+h2{
+    font-weight: bold;
+}
+.bn_gr_b h2,h3 {
+    letter-spacing: 0px;
+    font-weight: normal;
+    position: relative;
+    padding: 0 0 10px 0;
+    font-weight: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #5c6163;
 }
 
 .bn_gr_b #무야호1{
