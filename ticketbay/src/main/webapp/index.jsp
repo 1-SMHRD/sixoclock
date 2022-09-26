@@ -2,5 +2,5 @@
     pageEncoding="UTF-8"%>
 <%
 	String cpath=request.getContextPath();	
-	response.sendRedirect(cpath+"/salesList.do");
+	response.sendRedirect(cpath+"/main.do");
 %>

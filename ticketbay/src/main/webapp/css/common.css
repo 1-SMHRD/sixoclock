@@ -50,8 +50,40 @@ input{background-color: none;}
 	border-radius: 5px;
 }
 [class*='strStyle']{font-style: normal;}
+[class*='bulList'] li:first-child {margin-top: 0;}
+[class*='bulList'] li:before {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 0;
+	width: 2px;
+	height: 2px; 
+}
 
-#header, #contents{width: 995px;margin: auto;}
+.bulListSqGray li:before {background-color: #767676;}
+
+.tableStyle [scope='col'] {
+	height: 44px;
+	background-color: #fbfbfb;
+	border-bottom: 1px solid #a5a5a5;
+	font-size:11px;
+}
+.tableStyle th {
+	font-size: 11px;
+	font-family: NanumSquareRound !important;
+	line-height: 18px;
+	overflow:hidden;
+}
+.tableStyle td:first-child {border-left: 0;}
+.tableStyle td{
+	padding: 15px 13px;
+	border-top: 1px solid #e1e1e1;
+	border-left: 1px dashed #e1e1e1;
+	text-align: center;
+	color: #767676;
+}
+
+#header, #contents{width: 995px; margin: auto;}
 #container{position: relative; min-height: 850px; overflow: hidden;}
 
 .mt5{margin-right: 5px;}

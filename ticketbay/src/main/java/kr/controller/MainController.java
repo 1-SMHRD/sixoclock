@@ -6,14 +6,15 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class sales_1Controller implements Controller {
+public class MainController implements Controller {
 
 	@Override
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
 		
-		return "sales_1";
+		
+		return "main";
 	}
 
 }

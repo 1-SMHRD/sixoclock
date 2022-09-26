@@ -1,3 +1,8 @@
+<%@page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!doctype html>
 <html class="no-js" lang="en">
     <head>
@@ -7,7 +12,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="images/favicon.png">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="${cpath}/css/style.css">
     </head>
     
     <body>
@@ -23,8 +28,7 @@
                                 <li><a href="#"><i class="pe-7s-ticket">MY티켓베이</i></a></li>
                                 <li><a href="#"><i class="pe-7s-unlock">로그인</i></a></li>
                                 <li><a href="#"><i class="pe-7s-user">회원가입</i></a></li>
-                                <li><a href="#"><i class="pe-7s-box1">판매등록</i></a></li>
-
+                                <li><a href="${cpath}/sales.do"><i class="pe-7s-box1">판매등록</i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -40,19 +44,19 @@
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                         
                         </button>
-                        <a class="navbar-brand" href="#"><b>T</b>icketbay</a>
+                        <a class="navbar-brand" href="${cpath}/main.do"><b>T</b>icketbay</a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#">콘서트</a></li>
-                            <li><a href="#">스포츠</a></li>
-                            <li><a href="#">뮤지컬/연극</a></li>
-                            <li><a href="#">영화/전시</a></li>
-                            <li><a href="#">굿즈</a></li>
-                            <li><a href="#">정가이하</a></li>
+                            <li class="active"><a href="${cpath}/main.do">Home</a></li>
+                            <li><a href="${cpath}/salesList.do">콘서트</a></li>
+                            <li><a href="${cpath}/salesList.do">스포츠</a></li>
+                            <li><a href="${cpath}/salesList.do">뮤지컬/연극</a></li>
+                            <li><a href="${cpath}/salesList.do">영화/전시</a></li>
+                            <li><a href="${cpath}/salesList.do">굿즈</a></li>
+                            <li><a href="${cpath}/salesList.do">정가이하</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right cart-menu">
                         <li><a href="#" class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></a></li>
@@ -90,19 +94,19 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                        <img src="/이미지/티켓베이 1.png" width="1648" height="600" alt="">
+                        <img src="${cpath}/img/이미지/티켓베이 1.png" width="1648" height="600" alt="">
                         <div class="carousel-caption"></div>
                     </div>
                     <div class="item">
-                        <img src="/이미지/티켓베이 2.jpg" width="1648" height="600" alt="">
+                        <img src="${cpath}/img/이미지/티켓베이 2.jpg" width="1648" height="600" alt="">
                         <div class="carousel-caption"></div>
                     </div>
                     <div class="item">
-                        <img src="/이미지/티켓베이 3.jpg" width="1648" height="600" alt="">
+                        <img src="${cpath}/img/이미지/티켓베이 3.jpg" width="1648" height="600" alt="">
                         <div class="carousel-caption"></div>
                     </div>
                     <div class="item ">
-                        <img src="/이미지/티켓베이 4.png" width="1648" height="600" alt="">
+                        <img src="${cpath}/img/이미지/티켓베이 4.png" width="1648" height="600" alt="">
                         <div class="carousel-caption"></div>
                     </div>
                 </div>
@@ -111,7 +115,7 @@
                 <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
                     <span class="pe-7s-angle-left glyphicon-chevron-left" aria-hidden="true"></span>
                 </a>
-                <a class="right carousel-control" role="button" data-slide="next"> <img src="/이미지/" alt="">
+                <a class="right carousel-control" role="button" data-slide="next"> <img src="${cpath}/img/이미지/" alt="">
                     <span class="pe-7s-angle-right glyphicon-chevron-right" aria-hidden="true"></span>
                 </a>
             </div>
@@ -127,12 +131,12 @@
                 <div class="bn_gr_b">
                     <ul>
                             <li id="무야호1">
-                                <img src="/이미지/무야호.jpg">
+                                <img src="${cpath}/img/이미지/무야호.jpg">
                                 <div><span></span></div>
                             </li>
             
                             <li id="무야호2"><a href="https://www.ticketbay.co.kr/web/review/review">
-                                <img src="/이미지/무야호2.png">
+                                <img src="${cpath}/img/이미지/무야호2.png">
                                 <div><span></span></div></a>
                                
                             </li>
@@ -146,12 +150,12 @@
                             </li>
 
                             <li id="카카오톡">
-                                <a href="https://www.kakaocorp.com/page/service/service/KakaoTalk?lang=ko"><img src="./이미지/카카오톡상담.jpg"></a>
+                                <a href="https://www.kakaocorp.com/page/service/service/KakaoTalk?lang=ko"><img src="${cpath}/img/이미지/카카오톡상담.jpg"></a>
                             </li>
 
                             <li id="SNS">
                                 <div>
-                                    <img src="./이미지/sns배너.gif">
+                                    <img src="${cpath}/img/이미지/sns배너.gif">
                                 </div>
                             </li>
                     </ul>
@@ -161,48 +165,48 @@
                     <h2>HOT ISSUE <span>지금 가장 핫한 공연을 소개합니다 !!</span></h2>
                     <ul>
                             <li>
-                                <a href=""><img src="/이미지/나훈아.jpg">
+                                <a href=""><img src="${cpath}/img/이미지/나훈아.jpg">
                                     <div><span>나훈아</span></div></a>
                             </li>
                 
             
                             <li>
-                                <a href=""> <img src="/이미지/뉴진스.jpg">
+                                <a href=""> <img src="${cpath}/img/이미지/뉴진스.jpg">
                                     <div><span>뉴진스</span></div></a>
                             </li>
             
             
                             <li>
-                                <a href=""><img src="/이미지/블랙핑크.jpg">
+                                <a href=""><img src="${cpath}/img/이미지/블랙핑크.jpg">
                                     <div><span>블랙핑크</span></div></a>
                             </li>
                      
             
                             <li>
-                                <a href=""><img src="/이미지/아이브.jpg">
+                                <a href=""><img src="${cpath}/img/이미지/아이브.jpg">
                                     <div><span>아이브</span></div></a>
                             </li>
                      
             
                             <li>
-                                <a href=""><img src="/이미지/아이유.jpg">
+                                <a href=""><img src="${cpath}/img/이미지/아이유.jpg">
                                     <div><span>아이유</span></div></a>
                             </li>
             
             
                             <li>
-                                <a href=""><img src="/이미지/이종석.jpg">
+                                <a href=""><img src="${cpath}/img/이미지/이종석.jpg">
                                     <div><span>이종석</span></div></a>
                             </li>
 
             
                             <li>
-                                <a href=""><img src="/이미지/소녀시대.jpg">
+                                <a href=""><img src="${cpath}/img/이미지/소녀시대.jpg">
                                     <div><span>소녀시대</span></div></a>
                             </li>
 
 
-                            <li><a href=""><img src="/이미지/지코.jpg">
+                            <li><a href=""><img src="${cpath}/img/이미지/지코.jpg">
                                 <div><span>지코</span></div></a>
                             </li>
                     </ul>
@@ -213,17 +217,17 @@
                     <h2>FANding Market <span>지하철광고 쇼핑몰 팬딩마켓 ♥</span></h2>
                     <ul>
                             <li>
-                                <img src="/이미지/팬딩마켓1.png">
+                                <img src="${cpath}/img/이미지/팬딩마켓1.png">
                                 <div><span></span></div>
                             </li>
             
                             <li>
-                                <img src="/이미지/팬딩마켓2.png">
+                                <img src="${cpath}/img/이미지/팬딩마켓2.png">
                                 <div><span></span></div>
                             </li>
 
                             <li>
-                                <img src="/이미지/팬딩마켓3.png">
+                                <img src="${cpath}/img/이미지/팬딩마켓3.png">
                                 <div><span></span></div>
                             </li>
                     </ul>
@@ -236,7 +240,7 @@
                 <a href="/web/review/review">
                     <div class="review_main_box">
                         <div class="box_02g">
-                            <img src="/이미지/리얼후기.jpg" alt="100% 리얼 후기"
+                            <img src="${cpath}/img/이미지/리얼후기.jpg" alt="100% 리얼 후기"
                                 style="margin-bottom: -3px;">
                             <!-- 후기 글 영역 대분류, 제목, 내용, 작성자 명, 아이디 , 등록일자-->
             
@@ -293,15 +297,15 @@
                          <h2>티켓베이의 약속</h2>
                          <ul>
                              <li>
-                                <img src="/이미지/약속1.png">
+                                <img src="${cpath}/img/이미지/약속1.png">
                                 <span>구매 확정 전까지<br> 결제대금 보관</span>
                             </li>
                             <li>
-                                 <img src="/이미지/약속2.png">
+                                 <img src="${cpath}/img/이미지/약속2.png">
                                  <span>공연(경기)이 취소될<br> 경우 100% 환불</span>
                                 </li>
                                 <li>
-                                 <img src="/이미지/약속3.png">
+                                 <img src="${cpath}/img/이미지/약속3.png">
                                  <span>입장 거부 시 <br> 결제대금 전액 보상 <br> <mark>(유료)</mark></span>
                              </li>
                          </ul>
@@ -309,7 +313,7 @@
                    <div class="bn_promise_gr2 gr_02" id="고객센터">
                            <h2>고객센터</h2>
                           <ul>
-                              <li class="call_info"><img src="/이미지/고객상담.gif">
+                              <li class="call_info"><img src="${cpath}/img/이미지/고객상담.gif">
                                   <div class="info">
                                               평일 09~18시 <br>
                                       <strong>1234-5678</strong>

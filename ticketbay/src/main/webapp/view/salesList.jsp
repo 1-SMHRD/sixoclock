@@ -10,21 +10,16 @@
 <head>
 <meta charset="UTF-8">
 <title>상품리스트 | 티켓베이</title>
-<link rel="stylesheet" href="${cpath}/css/styleList.css">
-<link rel="stylesheet" href="${cpath}/css/common.css">
-<link rel="stylesheet" href="${cpath}/css/new_list.css">
-<link rel="stylesheet" href="${cpath}/css/new_list_custom.css">
-<link rel="stylesheet" href="${cpath}/css/contents.css">
-<link rel="stylesheet" href="${cpath}/css/header.css">
+<link rel="stylesheet" href="${cpath}/css/styleList.css?after">
+<link rel="stylesheet" href="${cpath}/css/common.css?after">
+<link rel="stylesheet" href="${cpath}/css/new_list.css?after">
+<link rel="stylesheet" href="${cpath}/css/new_list_custom.css?after">
+<link rel="stylesheet" href="${cpath}/css/contents.css?after">
+<link rel="stylesheet" href="${cpath}/css/header_sales.css?after">
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script src="https://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
 <jsp:include page="header.jsp"></jsp:include>
 </head>
 <body class="goog-te-combo_in">
-
-
-
-
 <div class="bg_04 wd_100p">
   <div id="all_gr" class="container clearfix" style="position: relative;">
     <script type="text/javascript">
@@ -32,7 +27,7 @@
     
     </script>
     <!-- // sidebar -->
-    <div id="sidebar" class="is-affixed" style="height: 678px; position: relative;">
+    <div id="sidebar" class="is-affixed" style="position: relative;">
       <div class="sidebar__inner" style="position: relative;">
         <!-- 카테고리정보 -->
         <div class="sidebar_a_box">
@@ -40,9 +35,9 @@
           <div id="filter_category_box">
             <div class="new_select_style_01_div mb10" id="selList">
               <span class="label"> 전체상품보기 </span>
-              <ul class="new_select_style_01_div_sub sd_01 scroll_y" style="position: absolute; z-index: 9;">
+              <ul class="new_select_style_01_div_sub wd_01 scroll_y" style="position: absolute; z-index: 9;">
                 <a href="#">
-                 <li class="obtionitem"><span> 콘서트장소 - 날짜만큼 a태그 생성 </span></li>
+                 <li class="optionitem"><span> 콘서트장소 - 날짜만큼 a태그 생성 </span></li>
                 </a>
               </ul>
             </div>
@@ -65,8 +60,8 @@
        	  <div id="filter_ticketDate_box">
        	    <h3 class="sd_new_tit_01">사용날짜</h3>
        	    <div id="useTerm2" class="calcArea useTerm">
-       	      <input type="text" id="filter_start" name="START_DATE" class="textInp03 input_style_01 wd_100p datepicker-here hasDatepicker"
-       	      	readonly="true" title="검색 시작일" style="position: inherit;">
+       	      <input type="date" id="filter_start" name="START_DATE" class="textInp03 input_style_01 wd_100p datepicker-here hasDatepicker"
+			  title="검색 시작일" style="position: inherit;">
        	      <img class="ui-datepicker-trigger" alt="달력" title="달력">
        	    </div>
        	  </div>
@@ -234,7 +229,6 @@
   </div>
   <jsp:include page="footer.jsp"></jsp:include>
 </div>
-
 <div class="footer_end"></div>
 </body>
 

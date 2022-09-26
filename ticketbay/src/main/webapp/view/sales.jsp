@@ -9,32 +9,30 @@
 
 window.onload = function(){
     document.getElementById("goodsName").onclick = function(){
-       window2= window.open("http://localhost:8081/ticketbay/category.do",
+       window2= window.open("${cpath}/category.do",
         		"카테고리선택","width=600px,height=780px,top=200px;");
        window2.parentWindow = window
     }
-
 };
 /* function goodsName11(){
     window2 = window.open("http://localhost:8081/ticketbay/category.do",
     		"카테고리선택","width=600px,height=780px,top=200px;");
     window2.parentWindow = window
  } */
-
-
-
+ 
 </script>
+<jsp:include page="header.jsp"></jsp:include>
 <head>
 <meta charset="UTF-8">
 <title>상품등록|티켓</title>
-<link rel="stylesheet" href="${cpath}/css/sales.css">
+<link rel="stylesheet" href="${cpath}/css/styleList.css?after">
+<link rel="stylesheet" href="${cpath}/css/common.css?after">
+<link rel="stylesheet" href="${cpath}/css/header_sales.css?after">
 </head>
-<body id="body">
-
+<body class="goog-te-combo_in">
 	<div id="container" class="bg_01">
 		<main id="contents" class="wd_100p">
-			<form name="major" action="#"
-				method="post">
+			<form name="major" action="#" method="post">
 				<div class="tit_box_04">
 					<h2>판매등록</h2>
 				</div>
@@ -53,15 +51,10 @@ window.onload = function(){
 							type="text" class="textInp03" autocomplete="off"
 							placeholder="카테고리를 선택하세요." readonly="true">
 					</div>
-					<br> <br>
 					<div class="clear"></div>
 					<div class="in_box_03" style="display: block">
-						<img id="tixketimg" src="../img/티켓이미지.jpg" alt="결과 없음"> <br>
-						<br> <strong>카테고리를 먼저 선택</strong> 하시면 입력 양식이 추가 생성 됩니다.
-						<td>
-						<tr id="name1">
-						</tr>
-						</td>
+						<img id="tixketimg" src="${cpath}/img/티켓이미지.jpg" alt="결과 없음"><br><br>
+						<strong>카테고리를 먼저 선택</strong> 하시면 입력 양식이 추가 생성 됩니다.
 					</div>
 					<!-- // 안내영역 -->
 					<input type="hidden" id="CATE_SEQ" name="CATE_SEQ" value="">
@@ -102,8 +95,10 @@ window.onload = function(){
 								<div class="sell_info_txt_01" id="pop_cate"></div>
 							</div>
 							<div class="sell_info_txt_05" id="pop_ticket">
-								<span id="pop_area"></span> <span id="pop_row"></span> <span
-									id="pop_floor"></span> <span id="pop_grade"></span>
+								<span id="pop_area"></span>
+								<span id="pop_row"></span>
+								<span id="pop_floor"></span>
+								<span id="pop_grade"></span>
 							</div>
 							<div class="sell_info_txt_02" id="pop_title"></div>
 							<div class="sell_info_txt_03" id="pop_date"></div>
@@ -136,11 +131,10 @@ window.onload = function(){
 									<li>※ 세부적인 내용은 이용약관 페이지 참고</li>
 								</ul>
 							</div>
-							<div class="in_box_01"
-								style="margin: 10px 0 -10px 0; text-align: center;">
-								<label> <input name="agree_check" id="agree_check"
-									type="checkbox" class="ck_img" value=""> <span>주의사항을
-										확인하였으며 동의 합니다.</span>
+							<div class="in_box_01" style="margin: 10px 0 -10px 0; text-align: center;">
+								<label> 
+									<input name="agree_check" id="agree_check" type="checkbox" class="ck_img" value="">
+									<span>주의사항을 확인하였으며 동의합니다.</span>
 								</label>
 							</div>
 						</div>
@@ -148,6 +142,7 @@ window.onload = function(){
 				</div>
 			</form>
 		</main>
+		<jsp:include page="footer.jsp"></jsp:include>
 	</div>
 	<div class="dimds_box"></div>
 </body>

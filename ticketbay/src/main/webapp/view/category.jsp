@@ -1,4 +1,3 @@
-<%@page import="kr.dao.BoardVO"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -8,7 +7,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<title>카테고리 선택-프로필1</title>
+<title>카테고리 선택</title>
 <link rel="stylesheet" href="${cpath}/css/category.css">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +16,7 @@ window.onload = function (){
         document.getElementById("clickme").onclick = function(){
             
         	parent =  window.parentWindow
-            parent.location.href = "${cpath}/sales_1.do"
+            parent.location.href = "${cpath}/salesWrite.do"
             window.close();
             
             

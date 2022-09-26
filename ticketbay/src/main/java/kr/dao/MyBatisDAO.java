@@ -38,18 +38,4 @@ public class MyBatisDAO {
 		return vo;
 	}
 	
-	public List<BoardVO> allList1() {
-		SqlSession session = sqlSessionFactory.openSession();
-		// select * from board order by idx desc
-		List<BoardVO> list1 =session.selectList("allList1");
-		session.close();//반납
-		return list1;
-	}
-
-	public void sm1818Insert(BoardVO vo) {
-		SqlSession session = sqlSessionFactory.openSession();
-		session.insert("sm1818Insert", vo);
-		session.commit();
-		session.close();
-	}
 }

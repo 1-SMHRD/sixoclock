@@ -10,6 +10,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="${cpath}/css/sales1.css">
 <link rel="stylesheet" href="${cpath}/css/dealing.css">
+<jsp:include page="header.jsp"></jsp:include>
 </head>
 <body>
 	<form class="form-horizontal" action="${cpath}/boardWrite.do"
@@ -1978,4 +1979,5 @@
 		</div>
 	</form>
 </body>
+ <jsp:include page="footer.jsp"></jsp:include>
 </html>
