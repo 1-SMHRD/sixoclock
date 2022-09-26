@@ -9,6 +9,7 @@ import kr.controller.SalesController;
 import kr.controller.SalesDetailController;
 import kr.controller.SalesListController;
 import kr.controller.SalesWriteController;
+import kr.controller.SalesWritepageController;
 
 public class HandlerMapping {
 	private HashMap<String, Controller> mappings;	
@@ -19,6 +20,7 @@ public class HandlerMapping {
 		mappings.put("/salesDetail.do", new SalesDetailController());
 		mappings.put("/category.do", new CategoryController());
 		mappings.put("/salesWrite.do", new SalesWriteController());
+		mappings.put("/salesWrite_page.do", new SalesWritepageController());
 		mappings.put("/sales.do", new SalesController());
 	}
 	public Controller getController(String key) {

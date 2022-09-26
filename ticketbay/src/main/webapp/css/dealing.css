@@ -548,11 +548,12 @@ input {
     box-shadow: 0 3px 5px rgb(0 0 0 / 10%);
     padding: 30px 30px 25px 30px;
     box-sizing: border-box;
+    margin-bottom: 20px;
     
 }
-.box_style_04.mt_20{
+/* .box_style_04.mt_20{
 	height: 1076px !important;
-}
+} */
 .t_pay_gr .t_pay_gr_txt_03 strong {
     display: block;
     font-size: 16px !important;

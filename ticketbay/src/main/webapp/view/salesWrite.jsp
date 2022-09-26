@@ -8,12 +8,15 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
-<link rel="stylesheet" href="${cpath}/css/sales1.css">
-<link rel="stylesheet" href="${cpath}/css/dealing.css">
+<link rel="stylesheet" href="${cpath}/css/salesWrite.css?after">
+<link rel="stylesheet" href="${cpath}/css/dealing.css?after">
+<link rel="stylesheet" href="${cpath}/css/styleList.css?after">
+<link rel="stylesheet" href="${cpath}/css/common.css?after">
+<link rel="stylesheet" href="${cpath}/css/header_sales.css?after">
 <jsp:include page="header.jsp"></jsp:include>
 </head>
-<body>
-	<form class="form-horizontal" action="${cpath}/boardWrite.do"
+<body class="goog-te-combo_in">
+	<form class="form-horizontal" action="${cpath}/SalesWrite.do"
 		method="post">
 		<div class="box_style_04 mt_20" style="display: block;">
 			<h2>상품정보 등록</h2>
@@ -26,21 +29,10 @@
 					</h3>
 					<div class="float_r wd_760">
 						<div class="ck_img_btn_gr">
-							<script id="categoryPerformTmpl" type="text/x-jquery-tmpl">
 
-							{{each(i, row) DATA}}
-								<label class="ck_radio_btn">
-									<input type="radio" name="concert_date" value="{{= row.VALUE}}">
-									<span>{{= row.VIEW}}</span>
-								</label>
-							{{/each}}
-						</script>
+							<!-- 공연일 -->
+							<input name="p_code">
 
-							<label class="ck_radio_btn"> <input type="text" id="a1" name="" value="" readonly> 
-								<span> aaa
-								<td type="text" id="a1" name="" value="" readonly></td>
-								</span>
-							</label>
 						</div>
 					</div>
 					<div class="clear"></div>
@@ -656,8 +648,8 @@
 					<div class="in_box_01">
 						<!-- 수량 -->
 						<!-- .required_input 말풍선 on/off -->
-						<input type="text" id="sellTotal" name="pp_name2"
-							value="${vo.pp_name2}" class="input_style_02 txt_c"
+						<input type="number" id="sellTotal" name="p_tk_count"
+							value="${vo.p_tk_count}" class="input_style_02 txt_c"
 							style="width: 205px !important;" maxlength="4"
 							placeholder="전체 수량 입력">
 						<div class="tip_txt_mp" id="restrict_txt" style="display: none">
@@ -709,57 +701,35 @@
 						좌석정보 <span class="required">(필수)</span>
 					</h3>
 					<div class="in_box_01">
-						<select id="gradeSelect" class="select_style_01 wd_470 mb10"
+						<!-- <select id="gradeSelect" class="select_style_01 wd_470 mb10"
 							name="TICKET_GRADE">
-							<script id="categoryGradeTmpl" type="text/x-jquery-tmpl">
-
-							<option value="">선택1</option>
-							{{each(i, row) DATA}}
-								<option data-regular-price="{{= row.INFO_REGULAR_PRICE}}" data-seatplan-seq="{{= row.SEATPLAN_SEQ}}" value="{{= row.INFO_VALUE}}">{{= row.INFO_VALUE}}</option>
-							{{/each}}
-						</script>
 
 							<option value="">선택1</option>
 							<option data-regular-price="29000" data-seatplan-seq="77373"
 								value="A">A</option>
-						</select> <select id="locSelect" class="select_style_01 wd_470 mb10"
+						</select>  -->
+						<select id="locSelect" class="select_style_01 wd_470 mb10"
 							name="TICKET_FLOOR" style="display: none;">
-							<script id="categorylocTmpl" type="text/x-jquery-tmpl">
-
-							<option value="">선택2</option>
-							{{each(i, row) DATA}}
-								<option value="{{= row.INFO_VALUE}}">{{= row.INFO_VALUE}}</option>
-							{{/each}}
-						</script>
 
 						</select>
 						<!-- 구역 정보 // -->
 						<select id="areaSelect" class="select_style_01 wd_470 mb10"
 							style="display: none;">
-							<script id="categoryAreaTmpl" type="text/x-jquery-tmpl">
 
-							<option value="">구역선택</option>
-							{{each(i, row) DATA}}
-								<option value="{{= row.INFO_VALUE}}">{{= row.INFO_VALUE}}</option>
-							{{/each}}
-						</script>
-
-							<!-- <option value="0">구역선택</option>
-						<option data-regular-price="" data-seatplan-seq="" value="">888</option> -->
 						</select>
 						<!-- 구역 정보 없을 경우 기존  input 노출 -->
-						<input type="text" id="areaInput" name=""
+						<input type="text" id="areaInput" name="p_seat_info"
 							class="input_style_02 wd_470 box-sizing mb10"
 							placeholder="구역(존/블럭) 입력 EX)A" maxlength="10"
 							style="display: block;">
 						<!-- // 구역 정보  -->
-						<input type="text" name="TICKET_ROW"
+						<input type="text" name="p_seat_info"
 							class="input_style_02 wd_470 box-sizing mb10"
-							placeholder="열 입력 EX)88" maxlength="10"> <input
-							type="text" name="TICKET_ETC"
+							placeholder="열 입력 EX)88" maxlength="10"> 
+							<input
+							type="text" name="p_seat_info"
 							class="input_style_02 wd_470 box-sizing"
-							placeholder="선택사항 : 추가정보 최대 10글자 입력 가능" maxlength="10"> <input
-							type="hidden" name="TICKET_DESC">
+							placeholder="선택사항 : 추가정보 최대 10글자 입력 가능" maxlength="10"> 
 						<div class="required_txt mt_10">좌석정보는 숫자와 영문으로 입력하셔야 거래 성사율을
 							높일 수 있습니다.</div>
 						<div class="required_txt">특수문자, 한글 입력 시 외국인과의 거래 성사율이 현저히 낮아
@@ -769,41 +739,6 @@
 				</li>
 				<!-- // 좌석 정보  -->
 
-				<!-- 좌석 특이사항  // -->
-				<li id="reg_seatheed_box">
-					<h3 class="h3_style_02">
-						좌석 특이사항 <span>(중복선택가능)</span>
-					</h3>
-					<div class="float_r wd_760 mt5">
-						<div class="ck_img_btn_gr">
-							<script id="seatHeedTmpl" type="text/x-jquery-tmpl">
-
-						{{each(i, row) DATA}}
-							<label class="ck_img_btn">
-								<input name="SEATHEED" type="checkbox" data-code-name="{{= row.REMARK}}" value="{{= row.CODE}}">
-								<span>{{= row.REMARK}}</span>
-							</label>
-						{{/each}}
-						</script>
-							<label class="ck_img_btn"> <input name="SEATHEED"
-								type="checkbox" data-code-name="시야 제한석" value="1"> <span>시야
-									제한석</span>
-							</label> <label class="ck_img_btn"> <input name="SEATHEED"
-								type="checkbox" data-code-name="통로석" value="2"> <span>통로석</span>
-							</label> <label class="ck_img_btn"> <input name="SEATHEED"
-								type="checkbox" data-code-name="스피커 옆" value="4"> <span>스피커
-									옆</span>
-							</label> <label class="ck_img_btn"> <input name="SEATHEED"
-								type="checkbox" data-code-name="스탠딩 한정" value="8"> <span>스탠딩
-									한정</span>
-							</label> <label class="ck_img_btn"> <input name="SEATHEED"
-								type="checkbox" data-code-name="가변석" value="16"> <span>가변석</span>
-							</label>
-						</div>
-					</div>
-					<div class="clear"></div>
-				</li>
-				<!-- // 좌석 특이사항  -->
 
 				<!-- 상품 특이사항  // -->
 				<li id="reg_prodUnusual_box">
@@ -811,44 +746,35 @@
 						상품 특이사항 <span>(중복선택가능)</span>
 					</h3>
 					<div class="float_r wd_760 mt5">
-						<div class="ck_img_btn_gr">
-
-							<script id="prodUnusualTmpl" type="text/x-jquery-tmpl">
-
-						{{each(i, row) DATA}}
-							<label class="ck_img_btn">
-								<input name="PRODUNUSUAL" type="checkbox" data-code-name="{{= row.REMARK}}" value="{{= row.CODE}}">
-								<span>{{= row.REMARK}}</span>
-							</label>
-						{{/each}}
-						</script>
+						<div class="ck_img_btn_gr" >
 
 
-							<label class="ck_img_btn"> <input name="PRODUNUSUAL"
+
+							<label class="ck_img_btn"> <input name="p_prod_check"
 								type="checkbox" data-code-name="판매자가 입장 도움" value="16">
 								<span>판매자가 입장 도움</span>
-							</label> <label class="ck_img_btn"> <input name="PRODUNUSUAL"
+							</label> <label class="ck_img_btn"> <input name="p_prod_check"
 								type="checkbox" data-code-name="예매처 ID로 상품 전달" value="2">
 								<span>예매처 ID로 상품 전달</span>
-							</label> <label class="ck_img_btn"> <input name="PRODUNUSUAL"
+							</label> <label class="ck_img_btn"> <input name="p_prod_check"
 								type="checkbox" data-code-name="18세 이상 이용가능" value="32">
 								<span>18세 이상 이용가능</span>
-							</label> <label class="ck_img_btn"> <input name="PRODUNUSUAL"
+							</label> <label class="ck_img_btn"> <input name="p_prod_check"
 								type="checkbox" data-code-name="할인티켓 - 학생" value="64"> <span>할인티켓
 									- 학생</span>
-							</label> <label class="ck_img_btn"> <input name="PRODUNUSUAL"
+							</label> <label class="ck_img_btn"> <input name="p_prod_check"
 								type="checkbox" data-code-name="할인티켓 - 장애인" value="128">
 								<span>할인티켓 - 장애인</span>
-							</label> <label class="ck_img_btn"> <input name="PRODUNUSUAL"
+							</label> <label class="ck_img_btn"> <input name="p_prod_check"
 								type="checkbox" data-code-name="할인티켓 - 경로자" value="256">
 								<span>할인티켓 - 경로자</span>
-							</label> <label class="ck_img_btn"> <input name="PRODUNUSUAL"
+							</label> <label class="ck_img_btn"> <input name="p_prod_check"
 								type="checkbox" data-code-name="여성명의" value="512"> <span>여성명의</span>
-							</label> <label class="ck_img_btn"> <input name="PRODUNUSUAL"
+							</label> <label class="ck_img_btn"> <input name="p_prod_check"
 								type="checkbox" data-code-name="남성명의" value="1024"> <span>남성명의</span>
-							</label> <label class="ck_img_btn"> <input name="PRODUNUSUAL"
+							</label> <label class="ck_img_btn"> <input name="p_prod_check"
 								type="checkbox" data-code-name="조기입장" value="2048"> <span>조기입장</span>
-							</label> <label class="ck_img_btn"> <input name="PRODUNUSUAL"
+							</label> <label class="ck_img_btn"> <input name="p_prod_check"
 								type="checkbox" data-code-name="재관람 티켓" value="4096"> <span>재관람
 									티켓</span>
 							</label>
@@ -864,32 +790,37 @@
 						상품 사진 <span class="">(선택)</span><span class="txt_info_01">업로드
 							이미지 저작권 및<br> 초상권 관련 책임은<br> 게시자 본인에게 있습니다.
 						</span>
-					</h3> <input type="hidden" name="PRODUCT_IMAGE_YN" value="N"> <input
-					type="hidden" id="defaultimagepath"> <input type="hidden"
-					name="REPLACE_IMAGE_YN" value="N"> <input type="hidden"
+					</h3> 
+					<input type="hidden" name="PRODUCT_IMAGE_YN" value="N"> <input
+					type="hidden" id="defaultimagepath"> 
+					<input type="hidden"
+					name="REPLACE_IMAGE_YN" value="N"> 
+					<input type="hidden"
 					id="adminRegCateImgPath" value="">
 					<div class="in_box_01">
 						<div class="product_photo_frame">
 							<ul class="list clearfix">
 								<input type="hidden" name="ATTACH_REPRESENT_IMAGE">
-								<li><input id="imagesAdd1" type="file" accept="image/*">
-									<span class="picImg"> <label for="imagesAdd1"> <img
-											src="../img/카메라.svg">
+								<li><input id="imagesAdd1" type="file" accept="image/*" name="p_img_route">
+									<span class="picImg"> 
+									<label for="imagesAdd1"> 
+									<img src="${cpath}/img/카메라.svg">
 									</label>
-								</span> <span class="del btnClose hidden-object" style="display: none;">
+								</span> 
+								<span class="del btnClose hidden-object" style="display: none;">
 								</span></li>
 
-								<li><input id="imagesAdd2" type="file" accept="image/*"><span
+								<li><input id="imagesAdd2" type="file" accept="image/*" name="p_img_route"><span
 									class="picImg"><label for="imagesAdd2"><img
-											src="../img/카메라.svg"></label></span><span
+											src="${cpath}/img/카메라.svg"></label></span><span
 									class="del btnClose hidden-object" style="display: none;"></span></li>
-								<li><input id="imagesAdd3" type="file" accept="image/*"><span
+								<li><input id="imagesAdd3" type="file" accept="image/*" name="p_img_route"><span
 									class="picImg"><label for="imagesAdd3"><img
-											src="../img/카메라.svg"></label></span><span
+											src="${cpath}/img/카메라.svg"></label></span><span
 									class="del btnClose hidden-object" style="display: none;"></span></li>
-								<li><input id="imagesAdd4" type="file" accept="image/*"><span
+								<li><input id="imagesAdd4" type="file" accept="image/*" name="p_img_route"><span
 									class="picImg"><label for="imagesAdd4"><img
-											src="../img/카메라.svg"></label></span><span
+											src="${cpath}/img/카메라.svg"></label></span><span
 									class="del btnClose hidden-object" style="display: none;"></span></li>
 							</ul>
 						</div>
@@ -913,15 +844,15 @@
 						<div class="modeTransaction">
 
 							<label class="TYPE_02"><input type="checkbox"
-								name="TRANSACTION_TYPE" value="2"><span
+								name="p_deal_method" value="2"><span
 								class="TRANSACTION_TYPE2">배송거래</span></label> <label class="TYPE_01"><input
 								type="checkbox" name="TRANSACTION_TYPE" value="1"><span
-								class="TRANSACTION_TYPE1">PIN거래(E-ticket)</span></label> <label
+								class="p_deal_method">PIN거래(E-ticket)</span></label> <label
 								class="TYPE_03"><input type="checkbox"
 								name="TRANSACTION_TYPE" value="4"><span
-								class="TRANSACTION_TYPE4">현장거래</span></label> <label class="TYPE_05"><input
+								class="p_deal_method">현장거래</span></label> <label class="TYPE_05"><input
 								type="checkbox" name="TRANSACTION_TYPE" value="16"><span
-								class="TRANSACTION_TYPE5">기타</span></label>
+								class="p_deal_method">기타</span></label>
 
 							<!-- 배송비 수정 -->
 							<span class="li_type_2" style="display: none;"> <span
@@ -1013,7 +944,7 @@
 					<div class="in_box_01">
 						<label class="dp_b"> <input id="ticket_retention_type_y"
 							type="radio" name="ticket_retention_type" value="Y"
-							class="stFormEl01 ticket_retention_y"> <span>보유 :
+							class="stFormEl01 ticket_retention_y"> <span name="p_tk_possession">보유 :
 								현재 티켓 보유중 </span>
 							<div class="ticket_retention_type_info_y">
 								결제 발생 시 구매자에게 티켓 전달 일정을 꼭 알려주세요
@@ -1022,7 +953,7 @@
 							</div>
 						</label> <label class="dp_b"> <input id="ticket_retention_type_n"
 							type="radio" name="ticket_retention_type" value="N"
-							class="stFormEl01 ticket_retention_n"> <span>미 보유
+							class="stFormEl01 ticket_retention_n"> <span p_tk_possession>미 보유
 								: 예매 완료 후 수령 대기중 </span>
 							<div class="ticket_retention_type_info_n">
 								티켓 수령 예정일을 선택 하세요<br> 결제 발생 시 구매자에게 티켓 전달 일정을 꼭 알려주세요
@@ -1049,6 +980,11 @@
 					<h3>
 						거래설명 <span id="pd_PINFO_etc" class="required">(필수)</span>
 					</h3>
+					<tr>
+                <td colspan="2">
+                    <textarea cols="150" rows="20" name="p_deal_check"></textarea>
+                </td>
+           		 </tr>
 					<div class="in_box_01">
 						<div id="goodsExplanation">
 							<textarea id="majorEditor" name="PROD_DESC"
@@ -1057,7 +993,7 @@
 								class="cke_1 cke cke_reset cke_chrome cke_editor_majorEditor cke_ltr cke_browser_webkit"
 								dir="ltr" lang="ko" role="application"
 								aria-labelledby="cke_majorEditor_arialbl">
-								<span id="cke_majorEditor_arialbl" class="cke_voice_label">리치
+								<!-- <span id="cke_majorEditor_arialbl" class="cke_voice_label">리치
 									텍스트 편집기, majorEditor</span>
 								<div class="cke_inner cke_reset" role="presentation">
 									<span id="cke_1_top" class="cke_top cke_reset_all"
@@ -1773,7 +1709,7 @@
 										class="cke_resizer cke_resizer_vertical cke_resizer_ltr"
 										title="크기 조절"
 										onmousedown="CKEDITOR.tools.callFunction(0, event)">◢</span></span>
-								</div>
+								</div> -->
 							</div>
 						</div>
 					</div>
@@ -1809,12 +1745,21 @@
 								<strong>매수 당 가격 (￦)</strong> <span class="span_total"> <input
 									type="hidden" id="bulkSellingPrice" name="SALE_PRICE_BULK"
 									class="textInp03 number_tr" value=""> <input
-									type="text" id="SPRICE_BULK" name="SPRICE_BULK"
+									type="text" id="SPRICE_BULK" name="p_pay"
 									class="input_style_02 txt_c"
 									style="font-size: 18px; font-weight: bold;"
-									placeholder="판매 가격 입력" maxlength="10">
+									placeholder="즉시 구매 가격" maxlength="10">
+								</span> <span class="span_total"> 
+								<!-- <input type="hidden"
+									id="bulkSellingPrice" name="SALE_PRICE_BULK"
+									class="textInp03 number_tr" value="">  -->
+									<input
+									type="text" id="SPRICE_BULK" name="p_min_bid"
+									class="input_style_02 txt_c"
+									style="font-size: 18px; font-weight: bold;"
+									placeholder="최소 입찰 가격" maxlength="10">
 								</span>
-								<div class="required_txt">가격이 평균보다 높으면 판매 확률이 낮아집니다.</div>
+								<!-- <div class="required_txt">가격이 평균보다 높으면 판매 확률이 낮아집니다.</div> -->
 							</div>
 						</div>
 
@@ -1856,58 +1801,7 @@
 				<!-- // 상품 정가 -->
 
 
-				<!-- 파워존  // -->
-				<li id="pd_PCOUPON" style="display: block;">
-					<h3 style="width: 230px !important;">
-						등록권 사용 <span>(선택)</span>
-						<!-- a class="btn_info btn_powerInfo"></a -->
-					</h3>
-					<div class="in_box_01" style="width: 705px;">
-						<ul class="no_line">
-							<li><label><input id="premiumUse" type="radio"
-									name="PREMIUM_YN" value="N" class="stFormEl01"
-									checked="checked"><span>사용 안 함</span></label></li>
-							<li><label><input type="radio" name="PREMIUM_YN"
-									value="Y" class="stFormEl01"><span>사용</span></label></li>
-						</ul>
-						<ul class="no_line">
-							<script id="premiumCouponListTmpl" type="text/x-jquery-tmpl">
 
-							{{each(i, row) list}}
-							<input type="hidden" name="USE_PREMIUM_COUP[{{= row.seq}}]" value="{{= row.qty}}" />
-							<li class="li_pwz"><label><span>{{= row.name}}({{= row.qty}}장)</span></label></li>
-							{{/each}}
-						</script>
-
-						</ul>
-					</div>
-					<div class="clear"></div>
-				</li>
-				<!-- // 파워존  -->
-				<!-- 쿠폰  // -->
-				<li id="pd_CCOUPON" style="display: block;">
-					<h3 style="width: 230px !important;">
-						판매수수료 할인 쿠폰 <span>(선택)</span>
-					</h3>
-					<div class="in_box_01" style="width: 700px;">
-						<div id="BELOW_COUP_N" class="CouponUse_txt" style="display: none">정가이하
-							상품은 할인쿠폰 사용 불가</div>
-						<div id="BELOW_COUP_Y" class="CouponUse_txt"
-							style="display: block;">
-							<a class="btn_sm_01" id="sellCouponPopupTrigger"
-								href="/web/myproduct/sellCouponListPop">쿠폰선택하기</a>
-							<div class="cupon_list_box">
-								<ul class="no_line cou_list">
-									<!-- <li>500원 구매 할인쿠폰 (멤버십 혜택)</li>
-								<li>[쿠폰존-신규] 3% 거래할인</li> -->
-								</ul>
-							</div>
-						</div>
-						<div class="clear"></div>
-					</div>
-					<div class="clear"></div>
-				</li>
-				<!-- // 쿠폰  -->
 
 				<!-- 판매 금액 확인   // -->
 				<li id="pd_TPRICE" style="display: block;">
@@ -1916,8 +1810,8 @@
 						<table class="table_st_03">
 							<tbody>
 								<tr>
-									<th>판매가격</th>
-									<th>할인쿠폰</th>
+									<th>즉시구매가격</th>
+									<th>최소입찰가격</th>
 									<th>판매수수료</th>
 									<th>실 수령금액</th>
 								</tr>
@@ -1953,7 +1847,7 @@
 										<div id="td_sellCharge" class="all_nb_txt">￦0</div>
 										<div id="td_pFanPower" class="fp_nb_txt"></div>
 									</td>
-									<td id="td_couponChk">미사용</td>
+									<td id="td_couponChk">￦0</td>
 									<td id="td_commisionCouponApplied">￦0</td>
 									<td id="td_totalEarnPriceIfSoldout">￦0</td>
 								</tr>
@@ -1969,9 +1863,9 @@
 				<input type="hidden" name="IS_TEMP" value="N">
 
 
-				<button type="button" id="registNormalTrigger" href="#"
-					class="btn_st_06"
-					style="width: 200px; display: block; margin: 20px auto;">등록</button>
+				<button type="submit" id="registNormalTrigger"
+					onclick="${cpath}/productListView.do" class="btn_st_06"
+					style="width: 200px; display: block; margin: 100px auto;">등록</button>
 				<div class="clear"></div>
 
 			</div>
@@ -1979,5 +1873,4 @@
 		</div>
 	</form>
 </body>
- <jsp:include page="footer.jsp"></jsp:include>
 </html>

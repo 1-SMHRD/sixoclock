@@ -1,4 +1,4 @@
-@charset "EUC-KR";
+@charset "UTF-8";
 
 /* head */
 * {
@@ -281,4 +281,6 @@ input#c3 {
     height: 30px !important;
     text-align: center !important;
 }
-
+.form-check {
+    margin: 22px !important;
+}

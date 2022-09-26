@@ -13,9 +13,11 @@
   		select * from t_product where pd_code=#{pd_code}
   	</select>
   	
-  	<insert id="sm1818Insert" parameterType="kr.dao.BoardVO">
-		insert into t_copy11(a1, b2, c3)
-		values(#{a1},#{b2},#{c3})
+  	<insert id="boardInsert2" parameterType="kr.dao.SalesVO">
+	insert into t_product11(p_show_date, p_tk_count, p_seat_info, p_prod_check, p_img_route,
+	p_deal_method, p_tk_possession, p_deal_check, p_min_bid, p_pay, p_date) 
+	values(#{p_show_date},#{p_tk_count},#{p_seat_info},#{p_prod_check},#{p_img_route},#{p_deal_method}
+	,#{p_tk_possession},#{p_deal_check},#{p_min_bid},#{p_pay},#{p_date})
 	</insert>
   	
 </mapper>

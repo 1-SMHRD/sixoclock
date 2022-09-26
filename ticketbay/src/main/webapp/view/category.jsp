@@ -16,7 +16,7 @@ window.onload = function (){
         document.getElementById("clickme").onclick = function(){
             
         	parent =  window.parentWindow
-            parent.location.href = "${cpath}/salesWrite.do"
+            parent.location.href = "${cpath}/salesWrite_page.do"
             window.close();
             
             
@@ -91,8 +91,6 @@ window.onload = function (){
 							style="transition-duration: 0ms; display: none; height: 351px; transform: translate(0px, 0px) translateZ(0px); transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);"></div>
 					</div>
 				</div>
-				<!-- //favList -->
-				<!-- favList -->
 				<div class="areaDeps deps3 dimDeps boxStyle2 js-scroll">
 
 					<!-- 세번째 카테고리 -->
