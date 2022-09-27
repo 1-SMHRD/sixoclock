@@ -16,9 +16,8 @@ window.onload = function (){
         document.getElementById("clickme").onclick = function(){
             
         	parent =  window.parentWindow
-            parent.location.href = "${cpath}/salesWrite_page.do"
+            parent.location.href = "${cpath}/salesWrite.do"
             window.close();
-            
             
             
             
@@ -35,7 +34,7 @@ window.onload = function (){
 	<!-- popupWrap -->
 	<div id="popupWrap" class="myservicePop threeDeps"
 		style="width: 600px;">
-		<form name="major" action="${cpath}/boardWrite.do">
+		<form name="major" action="${cpath}/category.do">
 			<input type="hidden" name="deps1CateSeq"> <input
 				type="hidden" name="categorySeq"> <input type="hidden"
 				name="categoryFullName"> <input type="hidden"
@@ -63,9 +62,13 @@ window.onload = function (){
 						style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">
 
 						<!-- 첫번째 카테고리 -->
+						<li>
+						<a>아이유</a>
+						</li>
+						
 						<input
 							style="width: 120px !important; height: 30px !important; text-align: center !important;"
-							type="text" id="a1" name="a1" placeholder="티켓제목">
+							type="text" id="a1" name="info1817" placeholder="티켓제목">
 
 					</ul>
 					<div class="iScrollVerticalScrollbar iScrollLoneScrollbar"
@@ -82,7 +85,7 @@ window.onload = function (){
 					<input
 						style="width: 120px !important; height: 30px !important; text-align: center !important;"
 						center !important; type="text" class="form-control" id="b2"
-						name="b2" placeholder="선택명">
+						name="count1817" placeholder="선택명">
 
 
 					<div class="iScrollVerticalScrollbar iScrollLoneScrollbar"

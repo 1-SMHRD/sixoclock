@@ -41,9 +41,18 @@ public class MyBatisDAO {
 	// 판매등록
 	public void boardInsert2(SalesVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
-		session.insert("boardInsert", vo);
+		session.insert("boardInsert2", vo);
 		session.commit();
 		session.close();
 		}
+
+	// 카테고리
+	public void boInsert(BoardVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.insert("boInsert", vo);
+		session.commit();
+		session.close();
+		
+	}
 	
 }
