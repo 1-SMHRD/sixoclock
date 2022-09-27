@@ -8,15 +8,27 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
-<link rel="stylesheet" href="${cpath}/css/salesWrite.css?after">
-<link rel="stylesheet" href="${cpath}/css/dealing.css?after">
+
 <link rel="stylesheet" href="${cpath}/css/styleList.css?after">
 <link rel="stylesheet" href="${cpath}/css/common.css?after">
 <link rel="stylesheet" href="${cpath}/css/header_sales.css?after">
+<link rel="stylesheet" href="${cpath}/css/dealing.css?after">
+<link rel="stylesheet" href="${cpath}/css/salesWrite.css?after">
+<script type="text/javascript">
+	var con = document.getElementById("checkbox18");
+	var con1 = document.getElementById("checkbox1818");
+con.addEventListener('click',()=> {
+	if (con1.style.display == 'none') {
+		con1.style.display = 'block';
+	} else { 
+		con1.style.display = 'none';
+	}
+}
+</script>
 <jsp:include page="header.jsp"></jsp:include>
 </head>
 <body class="goog-te-combo_in">
-	<form class="form-horizontal" action="${cpath}/SalesWrite.do"
+	<form class="form-horizontal" action="${cpath}/salesWrite.do"
 		method="post">
 		<div class="box_style_04 mt_20" style="display: block;">
 			<h2>상품정보 등록</h2>
@@ -31,7 +43,7 @@
 						<div class="ck_img_btn_gr">
 
 							<!-- 공연일 -->
-							<input name="p_code">
+							<input name="p_show_date">
 
 						</div>
 					</div>
@@ -52,579 +64,6 @@
 							<option value="2">특정일 사용</option>
 
 						</select>
-						<div id="useTermWrap">
-							<!-- 특정기간 사용일때 노출되는 폼 -->
-							<!-- calcArea -->
-							<div id="useTerm2" class="calcArea useTerm">
-								<!-- inpCal -->
-								<div class="inpCal">
-									<input type="text" name="START_DATE"
-										class="textInp03 input_style_01 hasDatepicker" title="검색 시작일"
-										style="width: 79px" id="dp1663305388884" readonly="readonly"><img
-										class="ui-datepicker-trigger" src="" alt="달력" title="달력">
-								</div>
-								<!-- //inpCal -->
-								<div>
-									<select name="START_DATE_HOUR"
-										class="stFormEl01 select_style_01" style="width: 80px;">
-
-										<option value="00">00시</option>
-
-										<option value="01">01시</option>
-
-										<option value="02">02시</option>
-
-										<option value="03">03시</option>
-
-										<option value="04">04시</option>
-
-										<option value="05">05시</option>
-
-										<option value="06">06시</option>
-
-										<option value="07">07시</option>
-
-										<option value="08">08시</option>
-
-										<option value="09">09시</option>
-
-										<option value="10">10시</option>
-
-										<option value="11">11시</option>
-
-										<option value="12">12시</option>
-
-										<option value="13">13시</option>
-
-										<option value="14">14시</option>
-
-										<option value="15">15시</option>
-
-										<option value="16">16시</option>
-
-										<option value="17">17시</option>
-
-										<option value="18">18시</option>
-
-										<option value="19">19시</option>
-
-										<option value="20">20시</option>
-
-										<option value="21">21시</option>
-
-										<option value="22">22시</option>
-
-										<option value="23">23시</option>
-
-									</select> <select name="START_DATE_MIN"
-										class="stFormEl01 select_style_01" style="width: 80px;">
-
-										<option value="00">00분</option>
-
-										<option value="01">01분</option>
-
-										<option value="02">02분</option>
-
-										<option value="03">03분</option>
-
-										<option value="04">04분</option>
-
-										<option value="05">05분</option>
-
-										<option value="06">06분</option>
-
-										<option value="07">07분</option>
-
-										<option value="08">08분</option>
-
-										<option value="09">09분</option>
-
-										<option value="10">10분</option>
-
-										<option value="11">11분</option>
-
-										<option value="12">12분</option>
-
-										<option value="13">13분</option>
-
-										<option value="14">14분</option>
-
-										<option value="15">15분</option>
-
-										<option value="16">16분</option>
-
-										<option value="17">17분</option>
-
-										<option value="18">18분</option>
-
-										<option value="19">19분</option>
-
-										<option value="20">20분</option>
-
-										<option value="21">21분</option>
-
-										<option value="22">22분</option>
-
-										<option value="23">23분</option>
-
-										<option value="24">24분</option>
-
-										<option value="25">25분</option>
-
-										<option value="26">26분</option>
-
-										<option value="27">27분</option>
-
-										<option value="28">28분</option>
-
-										<option value="29">29분</option>
-
-										<option value="30">30분</option>
-
-										<option value="31">31분</option>
-
-										<option value="32">32분</option>
-
-										<option value="33">33분</option>
-
-										<option value="34">34분</option>
-
-										<option value="35">35분</option>
-
-										<option value="36">36분</option>
-
-										<option value="37">37분</option>
-
-										<option value="38">38분</option>
-
-										<option value="39">39분</option>
-
-										<option value="40">40분</option>
-
-										<option value="41">41분</option>
-
-										<option value="42">42분</option>
-
-										<option value="43">43분</option>
-
-										<option value="44">44분</option>
-
-										<option value="45">45분</option>
-
-										<option value="46">46분</option>
-
-										<option value="47">47분</option>
-
-										<option value="48">48분</option>
-
-										<option value="49">49분</option>
-
-										<option value="50">50분</option>
-
-										<option value="51">51분</option>
-
-										<option value="52">52분</option>
-
-										<option value="53">53분</option>
-
-										<option value="54">54분</option>
-
-										<option value="55">55분</option>
-
-										<option value="56">56분</option>
-
-										<option value="57">57분</option>
-
-										<option value="58">58분</option>
-
-										<option value="59">59분</option>
-
-									</select>
-								</div>
-							</div>
-							<!-- //calcArea -->
-
-							<!-- calcArea -->
-							<div id="useTerm3" class="calcArea useTerm wd_450_lh35_ofw_auto"
-								style="visibility: hidden; position: absolute;">
-								<!-- inpCal -->
-								<div class="inpCal">
-									<input type="text" name="START_DATE"
-										class="textInp03 range-date-from input_style_01 hasDatepicker"
-										title="검색 시작일" id="dp1663305388885" readonly="readonly"
-										disabled=""><img class="ui-datepicker-trigger" src=""
-										alt="달력" title="달력">
-								</div>
-								<!-- //inpCal -->
-								<div class="float_l">
-									<select name="START_DATE_HOUR"
-										class="stFormEl01 select_style_01" disabled="">
-
-										<option value="00">00시</option>
-
-										<option value="01">01시</option>
-
-										<option value="02">02시</option>
-
-										<option value="03">03시</option>
-
-										<option value="04">04시</option>
-
-										<option value="05">05시</option>
-
-										<option value="06">06시</option>
-
-										<option value="07">07시</option>
-
-										<option value="08">08시</option>
-
-										<option value="09">09시</option>
-
-										<option value="10">10시</option>
-
-										<option value="11">11시</option>
-
-										<option value="12">12시</option>
-
-										<option value="13">13시</option>
-
-										<option value="14">14시</option>
-
-										<option value="15">15시</option>
-
-										<option value="16">16시</option>
-
-										<option value="17">17시</option>
-
-										<option value="18">18시</option>
-
-										<option value="19">19시</option>
-
-										<option value="20">20시</option>
-
-										<option value="21">21시</option>
-
-										<option value="22">22시</option>
-
-										<option value="23">23시</option>
-
-									</select> <select name="START_DATE_MIN"
-										class="stFormEl01 select_style_01" disabled="">
-
-										<option value="00">00분</option>
-
-										<option value="01">01분</option>
-
-										<option value="02">02분</option>
-
-										<option value="03">03분</option>
-
-										<option value="04">04분</option>
-
-										<option value="05">05분</option>
-
-										<option value="06">06분</option>
-
-										<option value="07">07분</option>
-
-										<option value="08">08분</option>
-
-										<option value="09">09분</option>
-
-										<option value="10">10분</option>
-
-										<option value="11">11분</option>
-
-										<option value="12">12분</option>
-
-										<option value="13">13분</option>
-
-										<option value="14">14분</option>
-
-										<option value="15">15분</option>
-
-										<option value="16">16분</option>
-
-										<option value="17">17분</option>
-
-										<option value="18">18분</option>
-
-										<option value="19">19분</option>
-
-										<option value="20">20분</option>
-
-										<option value="21">21분</option>
-
-										<option value="22">22분</option>
-
-										<option value="23">23분</option>
-
-										<option value="24">24분</option>
-
-										<option value="25">25분</option>
-
-										<option value="26">26분</option>
-
-										<option value="27">27분</option>
-
-										<option value="28">28분</option>
-
-										<option value="29">29분</option>
-
-										<option value="30">30분</option>
-
-										<option value="31">31분</option>
-
-										<option value="32">32분</option>
-
-										<option value="33">33분</option>
-
-										<option value="34">34분</option>
-
-										<option value="35">35분</option>
-
-										<option value="36">36분</option>
-
-										<option value="37">37분</option>
-
-										<option value="38">38분</option>
-
-										<option value="39">39분</option>
-
-										<option value="40">40분</option>
-
-										<option value="41">41분</option>
-
-										<option value="42">42분</option>
-
-										<option value="43">43분</option>
-
-										<option value="44">44분</option>
-
-										<option value="45">45분</option>
-
-										<option value="46">46분</option>
-
-										<option value="47">47분</option>
-
-										<option value="48">48분</option>
-
-										<option value="49">49분</option>
-
-										<option value="50">50분</option>
-
-										<option value="51">51분</option>
-
-										<option value="52">52분</option>
-
-										<option value="53">53분</option>
-
-										<option value="54">54분</option>
-
-										<option value="55">55분</option>
-
-										<option value="56">56분</option>
-
-										<option value="57">57분</option>
-
-										<option value="58">58분</option>
-
-										<option value="59">59분</option>
-
-									</select>
-								</div>
-								<em>~</em>
-								<!-- inpCal -->
-								<div class="inpCal">
-									<input type="text" name="END_DATE"
-										class="textInp03 range-date-to input_style_01 hasDatepicker"
-										title="검색 종료일" id="dp1663305388886" readonly="readonly"
-										disabled=""><img class="ui-datepicker-trigger" src=""
-										alt="달력" title="달력">
-								</div>
-								<!-- //inpCal -->
-								<div>
-									<select name="END_DATE_HOUR" class="stFormEl01 select_style_01"
-										disabled="">
-
-										<option value="00">00시</option>
-
-										<option value="01">01시</option>
-
-										<option value="02">02시</option>
-
-										<option value="03">03시</option>
-
-										<option value="04">04시</option>
-
-										<option value="05">05시</option>
-
-										<option value="06">06시</option>
-
-										<option value="07">07시</option>
-
-										<option value="08">08시</option>
-
-										<option value="09">09시</option>
-
-										<option value="10">10시</option>
-
-										<option value="11">11시</option>
-
-										<option value="12">12시</option>
-
-										<option value="13">13시</option>
-
-										<option value="14">14시</option>
-
-										<option value="15">15시</option>
-
-										<option value="16">16시</option>
-
-										<option value="17">17시</option>
-
-										<option value="18">18시</option>
-
-										<option value="19">19시</option>
-
-										<option value="20">20시</option>
-
-										<option value="21">21시</option>
-
-										<option value="22">22시</option>
-
-										<option value="23" selected="selected">23시</option>
-
-									</select> <select name="END_DATE_MIN" class="stFormEl01 select_style_01"
-										disabled="">
-
-										<option value="00">00분</option>
-
-										<option value="01">01분</option>
-
-										<option value="02">02분</option>
-
-										<option value="03">03분</option>
-
-										<option value="04">04분</option>
-
-										<option value="05">05분</option>
-
-										<option value="06">06분</option>
-
-										<option value="07">07분</option>
-
-										<option value="08">08분</option>
-
-										<option value="09">09분</option>
-
-										<option value="10">10분</option>
-
-										<option value="11">11분</option>
-
-										<option value="12">12분</option>
-
-										<option value="13">13분</option>
-
-										<option value="14">14분</option>
-
-										<option value="15">15분</option>
-
-										<option value="16">16분</option>
-
-										<option value="17">17분</option>
-
-										<option value="18">18분</option>
-
-										<option value="19">19분</option>
-
-										<option value="20">20분</option>
-
-										<option value="21">21분</option>
-
-										<option value="22">22분</option>
-
-										<option value="23">23분</option>
-
-										<option value="24">24분</option>
-
-										<option value="25">25분</option>
-
-										<option value="26">26분</option>
-
-										<option value="27">27분</option>
-
-										<option value="28">28분</option>
-
-										<option value="29">29분</option>
-
-										<option value="30">30분</option>
-
-										<option value="31">31분</option>
-
-										<option value="32">32분</option>
-
-										<option value="33">33분</option>
-
-										<option value="34">34분</option>
-
-										<option value="35">35분</option>
-
-										<option value="36">36분</option>
-
-										<option value="37">37분</option>
-
-										<option value="38">38분</option>
-
-										<option value="39">39분</option>
-
-										<option value="40">40분</option>
-
-										<option value="41">41분</option>
-
-										<option value="42">42분</option>
-
-										<option value="43">43분</option>
-
-										<option value="44">44분</option>
-
-										<option value="45">45분</option>
-
-										<option value="46">46분</option>
-
-										<option value="47">47분</option>
-
-										<option value="48">48분</option>
-
-										<option value="49">49분</option>
-
-										<option value="50">50분</option>
-
-										<option value="51">51분</option>
-
-										<option value="52">52분</option>
-
-										<option value="53">53분</option>
-
-										<option value="54">54분</option>
-
-										<option value="55">55분</option>
-
-										<option value="56">56분</option>
-
-										<option value="57">57분</option>
-
-										<option value="58">58분</option>
-
-										<option value="59" selected="selected">59분</option>
-
-									</select>
-								</div>
-							</div>
-							<!-- // calcArea -->
-							<!-- // 특정기간 사용일때 노출되는 폼 -->
-							<!-- // formWrap -->
-						</div>
 						<!-- 판매 매수 제한 문구 추가 시작 dp_b -->
 						<div class="required_txt mt_10 mb_-10" id="restrict_date"
 							style="display: none"></div>
@@ -649,7 +88,7 @@
 						<!-- 수량 -->
 						<!-- .required_input 말풍선 on/off -->
 						<input type="number" id="sellTotal" name="p_tk_count"
-							value="${vo.p_tk_count}" class="input_style_02 txt_c"
+							class="input_style_02 txt_c"
 							style="width: 205px !important;" maxlength="4"
 							placeholder="전체 수량 입력">
 						<div class="tip_txt_mp" id="restrict_txt" style="display: none">
@@ -725,11 +164,10 @@
 						<!-- // 구역 정보  -->
 						<input type="text" name="p_seat_info"
 							class="input_style_02 wd_470 box-sizing mb10"
-							placeholder="열 입력 EX)88" maxlength="10"> 
-							<input
+							placeholder="열 입력 EX)88" maxlength="10"> <input
 							type="text" name="p_seat_info"
 							class="input_style_02 wd_470 box-sizing"
-							placeholder="선택사항 : 추가정보 최대 10글자 입력 가능" maxlength="10"> 
+							placeholder="선택사항 : 추가정보 최대 10글자 입력 가능" maxlength="10">
 						<div class="required_txt mt_10">좌석정보는 숫자와 영문으로 입력하셔야 거래 성사율을
 							높일 수 있습니다.</div>
 						<div class="required_txt">특수문자, 한글 입력 시 외국인과의 거래 성사율이 현저히 낮아
@@ -746,35 +184,45 @@
 						상품 특이사항 <span>(중복선택가능)</span>
 					</h3>
 					<div class="float_r wd_760 mt5">
-						<div class="ck_img_btn_gr" >
+						<div class="ck_img_btn_gr">
 
 
 
-							<label class="ck_img_btn"> <input name="p_prod_check"
-								type="checkbox" data-code-name="판매자가 입장 도움" value="16">
+							<label class="ck_img_btn"> 
+							<input name="p_prod_check"
+							type="checkbox" data-code-name="판매자가 입장 도움" value="16">
 								<span>판매자가 입장 도움</span>
-							</label> <label class="ck_img_btn"> <input name="p_prod_check"
+							</label> <label class="ck_img_btn"> 
+							<input name="p_prod_check"
 								type="checkbox" data-code-name="예매처 ID로 상품 전달" value="2">
 								<span>예매처 ID로 상품 전달</span>
-							</label> <label class="ck_img_btn"> <input name="p_prod_check"
+							</label> <label class="ck_img_btn"> 
+							<input name="p_prod_check"
 								type="checkbox" data-code-name="18세 이상 이용가능" value="32">
 								<span>18세 이상 이용가능</span>
-							</label> <label class="ck_img_btn"> <input name="p_prod_check"
+							</label> <label class="ck_img_btn"> 
+							<input name="p_prod_check"
 								type="checkbox" data-code-name="할인티켓 - 학생" value="64"> <span>할인티켓
 									- 학생</span>
-							</label> <label class="ck_img_btn"> <input name="p_prod_check"
+							</label> <label class="ck_img_btn"> 
+							<input name="p_prod_check"
 								type="checkbox" data-code-name="할인티켓 - 장애인" value="128">
 								<span>할인티켓 - 장애인</span>
-							</label> <label class="ck_img_btn"> <input name="p_prod_check"
+							</label> <label class="ck_img_btn"> 
+							<input name="p_prod_check"
 								type="checkbox" data-code-name="할인티켓 - 경로자" value="256">
 								<span>할인티켓 - 경로자</span>
-							</label> <label class="ck_img_btn"> <input name="p_prod_check"
+							</label> <label class="ck_img_btn"> 
+							<input name="p_prod_check"
 								type="checkbox" data-code-name="여성명의" value="512"> <span>여성명의</span>
-							</label> <label class="ck_img_btn"> <input name="p_prod_check"
+							</label> <label class="ck_img_btn"> 
+							<input name="p_prod_check"
 								type="checkbox" data-code-name="남성명의" value="1024"> <span>남성명의</span>
-							</label> <label class="ck_img_btn"> <input name="p_prod_check"
+							</label> <label class="ck_img_btn"> 
+							<input name="p_prod_check"
 								type="checkbox" data-code-name="조기입장" value="2048"> <span>조기입장</span>
-							</label> <label class="ck_img_btn"> <input name="p_prod_check"
+							</label> <label class="ck_img_btn"> 
+							<input name="p_prod_check"
 								type="checkbox" data-code-name="재관람 티켓" value="4096"> <span>재관람
 									티켓</span>
 							</label>
@@ -790,37 +238,32 @@
 						상품 사진 <span class="">(선택)</span><span class="txt_info_01">업로드
 							이미지 저작권 및<br> 초상권 관련 책임은<br> 게시자 본인에게 있습니다.
 						</span>
-					</h3> 
-					<input type="hidden" name="PRODUCT_IMAGE_YN" value="N"> <input
-					type="hidden" id="defaultimagepath"> 
-					<input type="hidden"
-					name="REPLACE_IMAGE_YN" value="N"> 
-					<input type="hidden"
+					</h3> <input type="hidden" name="PRODUCT_IMAGE_YN" value="N"> <input
+					type="hidden" id="defaultimagepath"> <input type="hidden"
+					name="REPLACE_IMAGE_YN" value="N"> <input type="hidden"
 					id="adminRegCateImgPath" value="">
 					<div class="in_box_01">
 						<div class="product_photo_frame">
 							<ul class="list clearfix">
 								<input type="hidden" name="ATTACH_REPRESENT_IMAGE">
-								<li><input id="imagesAdd1" type="file" accept="image/*" name="p_img_route">
-									<span class="picImg"> 
-									<label for="imagesAdd1"> 
-									<img src="${cpath}/img/카메라.svg">
+								<li><input id="imagesAdd1" type="file" accept="image/*"
+									name="p_img_route"> <span class="picImg"> <label
+										for="imagesAdd1"> <img src="${cpath}/img/카메라.svg">
 									</label>
-								</span> 
-								<span class="del btnClose hidden-object" style="display: none;">
+								</span> <span class="del btnClose hidden-object" style="display: none;">
 								</span></li>
 
-								<li><input id="imagesAdd2" type="file" accept="image/*" name="p_img_route"><span
-									class="picImg"><label for="imagesAdd2"><img
-											src="${cpath}/img/카메라.svg"></label></span><span
+								<li><input id="imagesAdd2" type="file" accept="image/*"
+									name="p_img_route"><span class="picImg"><label
+										for="imagesAdd2"><img src="${cpath}/img/카메라.svg"></label></span><span
 									class="del btnClose hidden-object" style="display: none;"></span></li>
-								<li><input id="imagesAdd3" type="file" accept="image/*" name="p_img_route"><span
-									class="picImg"><label for="imagesAdd3"><img
-											src="${cpath}/img/카메라.svg"></label></span><span
+								<li><input id="imagesAdd3" type="file" accept="image/*"
+									name="p_img_route"><span class="picImg"><label
+										for="imagesAdd3"><img src="${cpath}/img/카메라.svg"></label></span><span
 									class="del btnClose hidden-object" style="display: none;"></span></li>
-								<li><input id="imagesAdd4" type="file" accept="image/*" name="p_img_route"><span
-									class="picImg"><label for="imagesAdd4"><img
-											src="${cpath}/img/카메라.svg"></label></span><span
+								<li><input id="imagesAdd4" type="file" accept="image/*"
+									name="p_img_route"><span class="picImg"><label
+										for="imagesAdd4"><img src="${cpath}/img/카메라.svg"></label></span><span
 									class="del btnClose hidden-object" style="display: none;"></span></li>
 							</ul>
 						</div>
@@ -836,7 +279,7 @@
 			<h2>거래방식 등록</h2>
 			<ul>
 				<!-- 거래 방식 선택 // -->
-				<li id="haha18">
+				<li>
 					<h3 class="h3_style_02">
 						거래 방식 선택 <span>(중복 선택 가능)</span><a class="btn_info btn_tranInfo"></a>
 					</h3>
@@ -844,7 +287,8 @@
 						<div class="modeTransaction">
 
 							<label class="TYPE_02"><input type="checkbox"
-								name="p_deal_method" value="2"><span
+								name="p_deal_method" value="2" id="checkbox18">
+								<span
 								class="TRANSACTION_TYPE2">배송거래</span></label> <label class="TYPE_01"><input
 								type="checkbox" name="TRANSACTION_TYPE" value="1"><span
 								class="p_deal_method">PIN거래(E-ticket)</span></label> <label
@@ -855,7 +299,7 @@
 								class="p_deal_method">기타</span></label>
 
 							<!-- 배송비 수정 -->
-							<span class="li_type_2" style="display: none;"> <span
+							<span class="li_type_2" style="display: none;" id="checkbox1818"> <span
 								class="TYPE_02_SUB" style="margin: 8px 0;">
 									<h4>배송비</h4>
 									<ul class="transaction_type_sub_box_info_txt">
@@ -944,8 +388,8 @@
 					<div class="in_box_01">
 						<label class="dp_b"> <input id="ticket_retention_type_y"
 							type="radio" name="ticket_retention_type" value="Y"
-							class="stFormEl01 ticket_retention_y"> <span name="p_tk_possession">보유 :
-								현재 티켓 보유중 </span>
+							class="stFormEl01 ticket_retention_y"> <span
+							name="p_tk_possession">보유 : 현재 티켓 보유중 </span>
 							<div class="ticket_retention_type_info_y">
 								결제 발생 시 구매자에게 티켓 전달 일정을 꼭 알려주세요
 								<!-- PIN(E-ticket), 배송거래의 경우<br>
@@ -953,8 +397,8 @@
 							</div>
 						</label> <label class="dp_b"> <input id="ticket_retention_type_n"
 							type="radio" name="ticket_retention_type" value="N"
-							class="stFormEl01 ticket_retention_n"> <span p_tk_possession>미 보유
-								: 예매 완료 후 수령 대기중 </span>
+							class="stFormEl01 ticket_retention_n"> <span
+							name="p_tk_possession">미 보유 : 예매 완료 후 수령 대기중 </span>
 							<div class="ticket_retention_type_info_n">
 								티켓 수령 예정일을 선택 하세요<br> 결제 발생 시 구매자에게 티켓 전달 일정을 꼭 알려주세요
 								<!-- 
@@ -981,10 +425,9 @@
 						거래설명 <span id="pd_PINFO_etc" class="required">(필수)</span>
 					</h3>
 					<tr>
-                <td colspan="2">
-                    <textarea cols="150" rows="20" name="p_deal_check"></textarea>
-                </td>
-           		 </tr>
+						<td colspan="2"><textarea cols="150" rows="20"
+								name="p_deal_check"></textarea></td>
+					</tr>
 					<div class="in_box_01">
 						<div id="goodsExplanation">
 							<textarea id="majorEditor" name="PROD_DESC"
@@ -1749,13 +1192,10 @@
 									class="input_style_02 txt_c"
 									style="font-size: 18px; font-weight: bold;"
 									placeholder="즉시 구매 가격" maxlength="10">
-								</span> <span class="span_total"> 
-								<!-- <input type="hidden"
+								</span> <span class="span_total"> <!-- <input type="hidden"
 									id="bulkSellingPrice" name="SALE_PRICE_BULK"
-									class="textInp03 number_tr" value="">  -->
-									<input
-									type="text" id="SPRICE_BULK" name="p_min_bid"
-									class="input_style_02 txt_c"
+									class="textInp03 number_tr" value="">  --> <input type="text"
+									id="SPRICE_BULK" name="p_min_bid" class="input_style_02 txt_c"
 									style="font-size: 18px; font-weight: bold;"
 									placeholder="최소 입찰 가격" maxlength="10">
 								</span>
@@ -1864,7 +1304,7 @@
 
 
 				<button type="submit" id="registNormalTrigger"
-					onclick="${cpath}/productListView.do" class="btn_st_06"
+					class="btn_st_06"
 					style="width: 200px; display: block; margin: 100px auto;">등록</button>
 				<div class="clear"></div>
 

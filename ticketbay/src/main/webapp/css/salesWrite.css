@@ -608,7 +608,84 @@ input[type="checkbox" i] {
 #pd_PIMG {
 	height: 120px;
 }
+.modeTransaction input[type=checkbox] + span {
+    box-sizing: border-box;
+    border-radius: 15px;
+    font-size: 18px !important;
+    display: inline-block;
+    padding: 8px 16px;
+    box-shadow: 0 0 5px #c5c5c5;
+    font-weight: bold;
+    border: 3px solid #fff;
+    background-image: none !important;
+    line-height: 30px !important;
+    margin: 10px 5px;
+    height: 50px;
+}
+.in_box_01 input[type=radio] + span, .in_box_01 input[type=checkbox] + span {
+    padding-left: 25px;
+    background: url(../img/icon_ck_off_v2.svg) 0 8px no-repeat;
+    background-size: 18px 18px;
+    height: 35px;
+    display: inline-block;
+    cursor: pointer;
+    line-height: 35px !important;
+    font-size: 15px !important;
+    font-family: NanumSquareRound !important;
+    color: #666 !important;
+}
+.modeTransaction input[type=checkbox] + span{
+	box-sizing: border-box;
+	border-radius: 15px;
+	/* font-size: 18px !important; */
+	/* display: inline-block; */
+	padding: 8px 16px;
+	box-shadow: 0 0 5px #c5c5c5;
+	font-weight: bold;
+	border: 3px solid #fff;
+	background-image:
+	none !important;
+	/* line-height: 30px !important; */
+	margin: 10px 5px;
+	height: 50px;
+}
+.modeTransaction input[type=checkbox]:checked + span{
+    line-height: 30px !important;
+    padding: 8px 16px !important;
+    height: 50px;
+    font-size: 18px !important;
+	}
+.modeTransaction input[type=checkbox]:checked + .TRANSACTION_TYPE1{border: 3px solid #90c324; color: #5d8a00 !important;}	
+.modeTransaction input[type=checkbox]:checked + .TRANSACTION_TYPE2{border: 3px solid #67abf9; color: #117dca !important;}
+.modeTransaction input[type=checkbox]:checked + .TRANSACTION_TYPE4{border: 3px solid #ffa427; color: #f57c00 !important;}
+.modeTransaction input[type=checkbox]:checked + .TRANSACTION_TYPE5{border: 3px solid #dd6af5; color: #cd5ae2 !important;}
 
+.li_type_1, .li_type_2, .li_type_4, .li_type_5, .li_type_16 {
+    border: 3px solid #eee;
+    border-radius: 15px;
+    padding: 15px 20px;
+    margin: 5px 5px 15px 5px;
+    /* background: #f7f7f7; */
+}
+.TYPE_01_SUB h4, .TYPE_02_SUB h4, .TYPE_04_SUB h4, .TYPE_05_SUB h4 {
+    font-family: NanumSquareRound !important;
+    color: #666 !important;
+    font-size: 16px;
+}
+.transaction_type_sub_box_info_txt li {
+    padding: 0 0 0 14px !important;
+    border-bottom: 0 !important;
+    font-family: NanumSquareRound !important;
+    font-size: 15px !important;
+    background: url(/resources/img/all_img/icon_d01.svg) 2px 11px no-repeat !important;
+    background-size: 5px 5px !important;
+}
+.li_type_2 .input_style_02, .li_type_4 .input_style_02 {
+    background-color: #fff !important;
+    border-bottom: 2px solid #c5c5c5 !important;
+    border-radius: 0 !important;
+    margin: 0 5px;
+}
 
 
 

@@ -9,7 +9,7 @@
 
 window.onload = function(){
     document.getElementById("goodsName").onclick = function(){
-       window2= window.open("${cpath}/category.do",
+       window2= window.open("${cpath}/categoryForm.do",
         		"카테고리선택","width=600px,height=780px,top=200px;");
        window2.parentWindow = window
     }

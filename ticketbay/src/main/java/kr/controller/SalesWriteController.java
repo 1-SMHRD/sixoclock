@@ -22,11 +22,21 @@ public class SalesWriteController implements Controller {
 		String p_prod_check =request.getParameter("p_prod_check");
 		String p_img_route =request.getParameter("p_img_route");
 		String p_deal_method =request.getParameter("p_deal_method");
-		String p_tk_possession =request.getParameter("p_tk_possession");
+		//String p_tk_possession =request.getParameter("p_tk_possession");
 		String p_deal_check =request.getParameter("p_deal_check");
 		int p_min_bid = Integer.parseInt(request.getParameter("p_min_bid"));
 		int p_pay = Integer.parseInt(request.getParameter("p_pay"));
-		String p_date =request.getParameter("p_date");
+		
+		System.out.println(p_show_date);
+		System.out.println(p_tk_count);
+		System.out.println(p_seat_info);
+		System.out.println(p_prod_check);
+		System.out.println(p_img_route);
+		System.out.println(p_deal_method);
+		//System.out.println(p_tk_possession);
+		System.out.println(p_deal_check);
+		System.out.println(p_min_bid);
+		System.out.println(p_pay);
 		
 		SalesVO vo = new SalesVO();
 		vo.setP_show_date(p_show_date);
@@ -35,17 +45,16 @@ public class SalesWriteController implements Controller {
 		vo.setP_prod_check(p_prod_check);
 		vo.setP_img_route(p_img_route);
 		vo.setP_deal_method(p_deal_method);
-		vo.setP_tk_possession(p_tk_possession);
+		//vo.setP_tk_possession(p_tk_possession);
 		vo.setP_deal_check(p_deal_check);
 		vo.setP_min_bid(p_min_bid);
 		vo.setP_pay(p_pay);
-		vo.setP_date(p_date);
 		
 		dao.boardInsert2(vo);
 		
 		
 		
-		return null;
+		return "redirect:/productListView.do";
 		
 		
 	}

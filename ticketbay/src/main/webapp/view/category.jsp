@@ -16,9 +16,8 @@ window.onload = function (){
         document.getElementById("clickme").onclick = function(){
             
         	parent =  window.parentWindow
-            parent.location.href = "${cpath}/salesWrite_page.do"
+            parent.location.href = "${cpath}/salesWrite.do"
             window.close();
-            
             
             
             
@@ -79,6 +78,16 @@ window.onload = function (){
 					  <li>
 					    <a>굿즈</a>
 					  </li>
+
+						<!-- 첫번째 카테고리 -->
+						<li>
+						<a>아이유</a>
+						</li>
+						
+						<input
+							style="width: 120px !important; height: 30px !important; text-align: center !important;"
+							type="text" id="a1" name="info1817" placeholder="티켓제목">
+
 					</ul>
 					<div class="iScrollVerticalScrollbar iScrollLoneScrollbar"
 						style="overflow: hidden; visibility: hidden; height: 345px;">
@@ -95,6 +104,12 @@ window.onload = function (){
 					    <a>아이유</a>
 					  </li>
 					</ul>
+
+					<!-- 두번째 카테고리 -->
+					<input
+						style="width: 120px !important; height: 30px !important; text-align: center !important;"
+						center !important; type="text" class="form-control" id="b2"
+						name="count1817" placeholder="선택명">
 
 
 					<div class="iScrollVerticalScrollbar iScrollLoneScrollbar"
