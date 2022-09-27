@@ -10,23 +10,30 @@
 <head>
 <meta charset="UTF-8">
 <title>상품리스트 | 티켓베이</title>
+<jsp:include page="header.jsp"></jsp:include>
 <link rel="stylesheet" href="${cpath}/css/styleList.css?after">
 <link rel="stylesheet" href="${cpath}/css/common.css?after">
-<link rel="stylesheet" href="${cpath}/css/new_list.css?after">
 <link rel="stylesheet" href="${cpath}/css/new_list_custom.css?after">
 <link rel="stylesheet" href="${cpath}/css/contents.css?after">
 <link rel="stylesheet" href="${cpath}/css/header_sales.css?after">
+<link rel="stylesheet" href="${cpath}/css/new_list.css?after">
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<jsp:include page="header.jsp"></jsp:include>
 </head>
 <body class="goog-te-combo_in">
 <div class="bg_04 wd_100p">
   <div id="all_gr" class="container clearfix" style="position: relative;">
-    <script type="text/javascript">
-    /* 전체상품보기 select 박스 */
-    
-    </script>
     <!-- // sidebar -->
+    
+    <script type="text/javascript">
+			
+       	  $(document).on("click","li",function(){
+       		  const arr=new Array();
+       		  arr.push($(this).attr('data-val'));
+       		  $('#filter_qty').html(arr);
+       	  })
+			       	  
+    </script>
+       	  
     <div id="sidebar" class="is-affixed" style="position: relative;">
       <div class="sidebar__inner" style="position: relative;">
         <!-- 카테고리정보 -->
@@ -59,26 +66,37 @@
        	  <!-- 사용날짜 -->
        	  <div id="filter_ticketDate_box">
        	    <h3 class="sd_new_tit_01">사용날짜</h3>
+       	    <div class="new_select_style_01_div">
+       	      <span id="filter_perform">전체</span>
+       	      <ul id="filter_perform_ul" class="new_select_style_01_div_sub wd_01 scroll_y" style="position: absolute; z-index: 9;">
+       	        <li data-val="전체">
+       	          <span>전체</span>
+       	        </li>
+       	        <li data-val="" data-view="">
+       	          <span>0000-00-00(x요일) 00:00</span>
+       	        </li>
+       	      </ul>
+       	    </div>
        	    <div id="useTerm2" class="calcArea useTerm">
-       	      <input type="date" id="filter_start" name="START_DATE" class="textInp03 input_style_01 wd_100p datepicker-here hasDatepicker"
+       	      <!-- <input type="date" id="filter_start" name="START_DATE" class="textInp03 input_style_01 wd_100p datepicker-here hasDatepicker"
 			  title="검색 시작일" style="position: inherit;">
-       	      <img class="ui-datepicker-trigger" alt="달력" title="달력">
+       	      <img class="ui-datepicker-trigger" alt="달력" title="달력"> -->
        	    </div>
        	  </div>
        	  <!-- 구매수량 선택 -->
        	  <div id="filter_qty_box">
        	    <div class="dp_fx_01 mt_10">
        	      <h3 class="sd_new_tit_01">구매수량</h3>
-       	      <label id="filter_togther_box" class="new_ck_img">
+       	      <!-- <label id="filter_togther_box" class="new_ck_img">
        	        <input id="filter_togther" name="filter_togther" type="checkbox">
        	        <span></span> 
        	        연석만 보기
-       	      </label>
+       	      </label> -->
        	    </div>
        	    <div class="new_select_style_01_div">
        	      <span id="filter_qty">전체</span>
        	      <ul id="filter_qty_ul" class="new_select_style_01_div_sub wd_01 scroll_no" style="position: absolute; z-index: 9;">
-       	        <li data-val><span>전체</span></li>
+       	        <li data-val="전체"><span>전체</span></li>
        	        <li data-val="1"><span>1</span></li>
        	        <li data-val="2"><span>2</span></li>
        	        <li data-val="3"><span>3</span></li>
@@ -89,7 +107,7 @@
        	    </div>
        	  </div>
        	  <!-- 지역 선택 -->
-       	  <div id="filter_loc_box">
+       	  <!-- <div id="filter_loc_box">
        	    <div class="dp_fx_01 mt_10">
        	      <h3 class="sd_new_tit_01">지역</h3>
        	    </div>
@@ -100,7 +118,7 @@
        	        <li data-val="2"><span>해외</span></li>
        	      </ul>
        	    </div>
-       	  </div>
+       	  </div> -->
        	  <!-- 좌석 정보 -->
        	  <div id="filter_seat_box">
        	    <h3 class="sd_new_tit_01 mt_10">좌석 선택</h3>
@@ -216,6 +234,11 @@
         </c:forEach>
       </div>
       <!-- 상품더보기 -->
+      <script type="text/javascript">
+        function moreList(){
+        	
+        }
+      </script>
       <a href="javascript: moreList();" id="list_more" class="info_txt_06 mt_10" style="width: 100%; font-weight: bold; border: 2px solid #a2bad8; color: #5089d2; dispaly: none;">+ 상품 더보기</a>
     </div>
     <div class="resize-sensor" style="position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden;">

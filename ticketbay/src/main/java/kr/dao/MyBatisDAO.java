@@ -30,6 +30,14 @@ public class MyBatisDAO {
 		return list;
 	}
 	
+	// 카테고리리스트 가져오기
+	public List<CategoryVO> cateList() {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<CategoryVO> catelist=session.selectList("cateList");
+		session.close();
+		return catelist;
+	}
+	
 	// 상세보기(pd_code)
 	public SalesVO getBypdCode(String pd_code) {
 		SqlSession session = sqlSessionFactory.openSession();

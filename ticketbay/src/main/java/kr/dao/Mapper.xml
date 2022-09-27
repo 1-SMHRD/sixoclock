@@ -8,6 +8,7 @@
   	<select id="allList" resultType="kr.dao.SalesVO">
   		select * from t_product
   	</select>
+  	
   	<!-- 상품코드 가져오기 -->
   	<select id="getBypdCode" parameterType="String" resultType="kr.dao.SalesVO">
   		select * from t_product where pd_code=#{pd_code}
@@ -19,5 +20,10 @@
 	values(#{p_show_date},#{p_tk_count},#{p_seat_info},#{p_prod_check},#{p_img_route},#{p_deal_method}
 	,#{p_tk_possession},#{p_deal_check},#{p_min_bid},#{p_pay},#{p_date})
 	</insert>
+	
+	<!-- 카테고리 가져오기 -->
+	<select id="cateList" resultType="kr.dao.CategoryVO">
+		select * from t_category
+	</select>
   	
 </mapper>

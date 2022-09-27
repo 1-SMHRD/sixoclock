@@ -5,11 +5,11 @@
 	box-sizing: border-box;
 }
 
-.container{
+/* .container{
 	max-width: 994px;
 	margin: 20px auto 0 auto;
 }
-
+ */
 #content{margin-left:320px;}
 
 #sidebar{
@@ -171,7 +171,7 @@
 }
 
 .dp_fx_01{display: flex; justify-content: space-between;}
-.dp_fx_02{display: fles;}
+/* .dp_fx_02{display: flex;} */
 
 
 /*  안심보상서비스  */
@@ -200,8 +200,8 @@
 .info_box_gr{
 	background: #e2e5ea;
 	border-radius: 15px;
-	padding: 15px;
-	height: 70px;
+	padding: 5px 15px 5px 15px;
+	/* height: 90px; */
 	overflow: hidden;
 	background: #e2e5ea no-repeat;
 	background-position: calc(100% - 20px) 20px !important;

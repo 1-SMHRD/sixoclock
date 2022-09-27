@@ -339,6 +339,9 @@ av, main, aside, header, footer, section {
     line-height: 39px;
     letter-spacing: -0.025em;
 }
+.myservice .prdTracking > div{width:823px;}
+.myservice .prdTracking > div:first-child:before{width:824px;}
+
 [class*='boxStyle01'] h2, [class*='boxStyle01'] h2 + p {
     float: left;
     margin-top: 28px;
@@ -967,3 +970,123 @@ select[class*='stFormEl'] { width: 160px; height: 30px; }
 }
 
 
+.prdTracking{margin-bottom:20px;}
+.prdTracking > div{
+	position: relative;
+	width: 992px;
+	border: 1px solid #c7c7c7;
+	border-top:none;
+	border-radius: 5px;
+	background-color: #fff;
+	box-shadow: 1px 2px 6px 0px rgba(0, 0, 0, 0.1);
+	margin: 0 auto;
+	behavior: url('/resources/js/plugin/pie.htc');
+}
+.prdTracking > div:first-child{
+	margin-top: 41px;
+	margin-bottom: 0;
+	border-radius: 0 0 5px 5px;
+	behavior: url('/resources/js/plugin/pie.htc');
+}
+.prdTracking > div:first-child:before{
+	content: '';
+	display: block;
+	width: 994px;
+	height: 3px;
+	background: #000;
+	position: absolute;
+	top: 0;
+	left: -1px
+}
+.prdTracking table{
+	width:100%;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+.prdTracking table th{
+	padding:15px 25px 7px 25px;
+	text-align:left;
+	font-weight:normal
+}
+.prdTracking table td{
+	border-radius:5px;
+	behavior: url('/resources/js/plugin/pie.htc');
+	text-align:center;
+	border-left:1px dashed #b6b6b6;
+	background:#fcfcfc;
+	vertical-align:middle;
+}
+.prdTracking table td div{
+	width: 116px;
+	padding: 0 15px 0 14px;
+}
+.prdTracking table th div{
+	overflow:hidden;
+	padding: 11px 0 6px 48px;
+}
+.prdTracking table .purchase{
+	background:url(../img/ico_purchase.gif) no-repeat;
+}
+.prdTracking table .sale{
+	background:url(../img/ico_sale.gif) no-repeat;
+}
+.prdTracking table th div strong{
+	display:block;
+	margin:0 0 3px 0;
+	font-size:18px;
+	font-family: NanumSquareRound;
+	line-height:18px;
+}
+.prdTracking table td div strong{
+	display:block;
+	float:left;
+	margin-top:10px;
+	margin-bottom:3px;
+	font-size:13px; 
+	font-family:NanumSquareRound;
+	line-height:13px;
+	letter-spacing:-0.025em;
+}
+.prdTracking table td .complete a.mT4{margin-top:4px;}
+.prdTracking table td .complete .bgbox{	background-position:0 0;}
+.prdTracking table td div a.bgbox{
+	display:block;
+	float:right;
+	color:#000;
+	font-family:Tahoma;
+	text-align:center;
+	background-image:url(../img/sp_circle.png);
+	background-repeat:no-repeat;
+	width:32px;
+	height:32px;
+	font-size:14px;
+	line-height:32px;
+}
+
+.complete.area{position: relative; float: left;}
+.complete .payStandby{
+	font-style:normal;
+	color:#79a3d6;
+	text-decoration:underline;
+	z-index:60;
+	display:inline-block;
+	text-indent:-11px;
+}
+
+.myservice .boxStyle,
+.myservice .boxStyleBg02,
+.myservice .boxStyleBg03,
+.myservice .boxStyleBg04{width:762px;}
+
+.boxStyle .head{overflow:hidden; margin:0 0 20px 0;}
+.boxStyle .head h2{float:left}
+.boxStyle .head h2 .tit{font-size:18px; font-weight:bold; font-family: NanumSquareRound; line-height:24px; }
+.boxStyle .head p{
+	float:left;
+	font-size:11px;
+	color:#767676;
+	margin-top:8px;
+	margin-left:8px;
+}
+
+.pinNumber{position:absolute; right:28px; top:21px;}

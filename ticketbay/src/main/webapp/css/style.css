@@ -30,7 +30,6 @@ Tags: black, green, white, two-columns, fixed-width, threaded-comments, sticky-p
 
 
 /* ======================
-   1. GENERAL SECTION => 부트스트랩 건들지마세용
  ====================== */
 
 * {
@@ -332,7 +331,7 @@ ul.navbar-nav li a{
     display: none;
     position: absolute;
     background-color: #ffffff;
-    min-width: 150px;
+    min-width: 200px;
     z-index: 1;
   }
   

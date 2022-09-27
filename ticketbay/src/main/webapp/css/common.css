@@ -28,6 +28,9 @@ body{
 caption {display: none;}
 input{background-color: none;}
 
+#wrap:before{content: ''; position: absolute; left: 0; width: 100%;}
+#wrap {position: relative; width: 100%; min-width: 995px;}
+
 [class*='textInp'], [class*='boxStyle']{behavior: url();}
 [class*='textInp']{
 	position: relative;

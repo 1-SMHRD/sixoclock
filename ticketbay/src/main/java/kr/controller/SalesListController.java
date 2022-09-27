@@ -19,6 +19,7 @@ public class SalesListController implements Controller {
 		MyBatisDAO dao=new MyBatisDAO();
 		List<SalesVO> list=dao.allList();
 		request.setAttribute("list", list);
+		
 		return "salesList";
 	}
 

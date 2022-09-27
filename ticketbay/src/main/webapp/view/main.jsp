@@ -1,4 +1,6 @@
-<%@page language="java" contentType="text/html; charset=UTF-8"
+<%@page import="kr.dao.CategoryVO"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -12,9 +14,9 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="images/favicon.png">
-        <link rel="stylesheet" href="${cpath}/css/style.css">
+        <link rel="stylesheet" href="${cpath}/css/style.css?after">
     </head>
-    
+
     <body>
         <!-- Header -->
         <section class="header-top-section">
@@ -29,6 +31,7 @@
                                 <li><a href="#"><i class="pe-7s-unlock">로그인</i></a></li>
                                 <li><a href="#"><i class="pe-7s-user">회원가입</i></a></li>
                                 <li><a href="${cpath}/sales.do"><i class="pe-7s-box1">판매등록</i></a></li>
+
                             </ul>
                         </div>
                     </div>
@@ -42,21 +45,105 @@
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        
+
                         </button>
                         <a class="navbar-brand" href="${cpath}/main.do"><b>T</b>icketbay</a>
                     </div>
 
+
                     <!-- Collect the nav links, forms, and other content for toggling -->
+                    <script type="text/javascript">
+                    
+                      if("${vo.cate_no}"=="${vo.up_cate_no}"){
+                    	  $('.dropdown-content').html('a')
+                      }
+                    
+                    </script>
+                    
+                    
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="${cpath}/main.do">Home</a></li>
-                            <li><a href="${cpath}/salesList.do">콘서트</a></li>
-                            <li><a href="${cpath}/salesList.do">스포츠</a></li>
-                            <li><a href="${cpath}/salesList.do">뮤지컬/연극</a></li>
-                            <li><a href="${cpath}/salesList.do">영화/전시</a></li>
-                            <li><a href="${cpath}/salesList.do">굿즈</a></li>
-                            <li><a href="${cpath}/salesList.do">정가이하</a></li>
+                            
+                            
+                            <div class="dropdown">
+                            	
+                                <li><span><button class="dropbtn" value="${vo.cate_no}">콘서트</button></span></li>
+                                <div class="dropdown-content">
+                                <c:forEach var="vo" items="${list}">
+                                <c:if test="${vo.up_cate_no eq '1000'}">
+                                    <a href="#">${vo.cate_name}</a>
+                                </c:if>
+                                </c:forEach>
+                                
+                                </div>
+                            </div>
+                            
+                            <div class="dropdown">
+                            	
+                                <li><span><button class="dropbtn" value="${vo.cate_no}">스포츠</button></span></li>
+                                <div class="dropdown-content">
+                                <c:forEach var="vo" items="${list}">
+                                <c:if test="${vo.up_cate_no eq '1001'}">
+                                    <a href="${cpath}/salesList.do?cate_no=${vo.cate_no}">${vo.cate_name}</a>
+                                </c:if>
+                                </c:forEach>
+                                
+                                </div>
+                            </div>
+                            
+                            <div class="dropdown">
+                            	
+                                <li><span><button class="dropbtn" value="${vo.cate_no}">뮤지컬/연극</button></span></li>
+                                <div class="dropdown-content">
+                                <c:forEach var="vo" items="${list}">
+                                <c:if test="${vo.up_cate_no eq '1002'}">
+                                    <a href="#">${vo.cate_name}</a>
+                                </c:if>
+                                </c:forEach>
+                                
+                                </div>
+                            </div>
+                            
+                            <div class="dropdown">
+                            	
+                                <li><span><button class="dropbtn" value="${vo.cate_no}">영화/전시</button></span></li>
+                                <div class="dropdown-content">
+                                <c:forEach var="vo" items="${list}">
+                                <c:if test="${vo.up_cate_no eq '1003'}">
+                                    <a href="#">${vo.cate_name}</a>
+                                </c:if>
+                                </c:forEach>
+                                
+                                </div>
+                            </div>
+                            
+                            <div class="dropdown">
+                            	
+                                <li><span><button class="dropbtn" value="${vo.cate_no}">굿즈</button></span></li>
+                                <div class="dropdown-content">
+                                <c:forEach var="vo" items="${list}">
+                                <c:if test="${vo.up_cate_no eq '1004'}">
+                                    <a href="#">${vo.cate_name}</a>
+                                </c:if>
+                                </c:forEach>
+                                
+                                </div>
+                            </div>
+                            
+                            <div class="dropdown">
+                            	
+                                <li><span><button class="dropbtn" value="${vo.cate_no}">정가이하</button></span></li>
+                                <div class="dropdown-content">
+                                <c:forEach var="vo" items="${list}">
+                                <c:if test="${vo.up_cate_no eq '1005'}">
+                                    <a href="#">${vo.cate_name}</a>
+                                </c:if>
+                                </c:forEach>
+                                
+                                </div>
+                            </div>
+                            
                         </ul>
                         <ul class="nav navbar-nav navbar-right cart-menu">
                         <li><a href="#" class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></a></li>
@@ -134,11 +221,11 @@
                                 <img src="${cpath}/img/이미지/무야호.jpg">
                                 <div><span></span></div>
                             </li>
-            
+
                             <li id="무야호2"><a href="https://www.ticketbay.co.kr/web/review/review">
                                 <img src="${cpath}/img/이미지/무야호2.png">
                                 <div><span></span></div></a>
-                               
+
                             </li>
 
                             <li>
@@ -168,38 +255,38 @@
                                 <a href=""><img src="${cpath}/img/이미지/나훈아.jpg">
                                     <div><span>나훈아</span></div></a>
                             </li>
-                
-            
+
+
                             <li>
                                 <a href=""> <img src="${cpath}/img/이미지/뉴진스.jpg">
                                     <div><span>뉴진스</span></div></a>
                             </li>
-            
-            
+
+
                             <li>
                                 <a href=""><img src="${cpath}/img/이미지/블랙핑크.jpg">
                                     <div><span>블랙핑크</span></div></a>
                             </li>
-                     
-            
+
+
                             <li>
                                 <a href=""><img src="${cpath}/img/이미지/아이브.jpg">
                                     <div><span>아이브</span></div></a>
                             </li>
-                     
-            
+
+
                             <li>
                                 <a href=""><img src="${cpath}/img/이미지/아이유.jpg">
                                     <div><span>아이유</span></div></a>
                             </li>
-            
-            
+
+
                             <li>
                                 <a href=""><img src="${cpath}/img/이미지/이종석.jpg">
                                     <div><span>이종석</span></div></a>
                             </li>
 
-            
+
                             <li>
                                 <a href=""><img src="${cpath}/img/이미지/소녀시대.jpg">
                                     <div><span>소녀시대</span></div></a>
@@ -211,8 +298,8 @@
                             </li>
                     </ul>
                 </div>
-            
-            
+
+
                 <div class="bn_gr_b">
                     <h2>FANding Market <span>지하철광고 쇼핑몰 팬딩마켓 ♥</span></h2>
                     <ul>
@@ -220,7 +307,7 @@
                                 <img src="${cpath}/img/이미지/팬딩마켓1.png">
                                 <div><span></span></div>
                             </li>
-            
+
                             <li>
                                 <img src="${cpath}/img/이미지/팬딩마켓2.png">
                                 <div><span></span></div>
@@ -232,9 +319,9 @@
                             </li>
                     </ul>
                 </div>
-            
-            
-            
+
+
+
                 <!--  후기 // -->
                 <link href="/resources/img/review_pc/review.css" type="text/css" rel="stylesheet">
                 <a href="/web/review/review">
@@ -243,8 +330,8 @@
                             <img src="${cpath}/img/이미지/리얼후기.jpg" alt="100% 리얼 후기"
                                 style="margin-bottom: -3px;">
                             <!-- 후기 글 영역 대분류, 제목, 내용, 작성자 명, 아이디 , 등록일자-->
-            
-            
+
+
                             <div class="re_view_item ">
                                 <div class="ctg_star_g">
                                     <span class="star-rating"><span class="star_img_05"></span></span>
@@ -268,22 +355,22 @@
                 <!-- 공지사항 // -->
                 <div class="news_gr">
                     <h2>공지사항</h2>
-            
+
                     <div>
                         <a href="https://www.ticketbay.co.kr/web/cs/noticeListView?seq=555" title="[공지] 자동 구매 확정 안내">
                             <h3
                                 style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap; width: 495px; font-size: 16px; margin-left: -5px;">
                                 [공지] 자동 구매 확정 안내 </h3>
                                 <span>안녕하세요. ticketbay입니다. <br>
-                                    
+
                                     티켓 사용일시가 경과되었음에도 구매자가 직접 구매확정을 하지 않는 경우 <br>
                                     공연/경기 다음 날 오후 3시 이후에 자동으로 구매확정 처리됩니다.
                                     <br>
-                                    
+
                                     앞으로도 더 나은 서비스를 제공하기 위해 노력하는 티켓베이가 되겠습니다. 감사합니다. <br> </span>
                         </a>
                     </div>
-            
+
                     <div class="clear"></div>
                 </div>
                 <!-- // 공지사항끝 -->
@@ -306,7 +393,7 @@
                                 </li>
                                 <li>
                                  <img src="${cpath}/img/이미지/약속3.png">
-                                 <span>입장 거부 시 <br> 결제대금 전액 보상 <br> <mark>(유료)</mark></span>
+                                 <span>입장 거부 시 <br> 결제대금 전액 보상  <mark>(유료)</mark></span>
                              </li>
                          </ul>
                    </div>
@@ -324,7 +411,7 @@
                 </div>
             </div>
 
-   
+
 
 
       	<!-- footer -->
@@ -366,7 +453,7 @@
                             <span>통신판매업신고 : 제 2022-광주동구-0831호</span>
                         </p>
 
-                        
+
                         <p>
                             <em style="color:#8c8c8c !important;">티켓베이는 통신판매 중개자이며, 통신판매의 당사자가 아닙니다. 따라서 티켓베이는 상품 거래정보 및 거래에 대하여 책임을 지지 않습니다.</em>					
                         </p>

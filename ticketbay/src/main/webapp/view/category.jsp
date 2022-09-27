@@ -35,7 +35,7 @@ window.onload = function (){
 	<!-- popupWrap -->
 	<div id="popupWrap" class="myservicePop threeDeps"
 		style="width: 600px;">
-		<form name="major" action="${cpath}/boardWrite.do">
+		<form name="major" action="${cpath}/category.do">
 			<input type="hidden" name="deps1CateSeq"> <input
 				type="hidden" name="categorySeq"> <input type="hidden"
 				name="categoryFullName"> <input type="hidden"
@@ -58,15 +58,27 @@ window.onload = function (){
 				</div>
 				<!-- //favList -->
 				<!-- areaPreferList -->
+				<script type="text/javascript">
+				
+				</script>
 				<div class="areaDeps deps1 boxStyle2 js-scroll">
 					<ul class="bulListSqGray"
 						style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">
-
-						<!-- 첫번째 카테고리 -->
-						<input
-							style="width: 120px !important; height: 30px !important; text-align: center !important;"
-							type="text" id="a1" name="a1" placeholder="티켓제목">
-
+					  <li>
+					    <a>콘서트</a>
+					  </li>
+					  <li>
+					    <a>스포츠</a>
+					  </li>
+					  <li>
+					    <a>뮤지컬/연극</a>
+					  </li>
+					  <li>
+					    <a>영화/전시</a>
+					  </li>
+					  <li>
+					    <a>굿즈</a>
+					  </li>
 					</ul>
 					<div class="iScrollVerticalScrollbar iScrollLoneScrollbar"
 						style="overflow: hidden; visibility: hidden; height: 345px;">
@@ -77,12 +89,12 @@ window.onload = function (){
 				<!-- //areaPreferList -->
 				<!-- favList -->
 				<div class="areaDeps deps2 boxStyle2 js-scroll selectCategory">
-
-					<!-- 두번째 카테고리 -->
-					<input
-						style="width: 120px !important; height: 30px !important; text-align: center !important;"
-						center !important; type="text" class="form-control" id="b2"
-						name="b2" placeholder="선택명">
+					<ul class="bulListSqGray"
+						style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">
+					  <li style="display: none;">
+					    <a>아이유</a>
+					  </li>
+					</ul>
 
 
 					<div class="iScrollVerticalScrollbar iScrollLoneScrollbar"
@@ -94,10 +106,10 @@ window.onload = function (){
 				<div class="areaDeps deps3 dimDeps boxStyle2 js-scroll">
 
 					<!-- 세번째 카테고리 -->
-					<input
+					<!-- <input
 						style="width: 120px !important; height: 30px !important; text-align: center !important;"
 						center !important; type="text" class="form-control" id="c3"
-						name="c3" placeholder="Enter title">
+						name="c3" placeholder="Enter title"> -->
 					<!-- formWrap(city01) -->
 					<div class="formWrap"
 						style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">
