@@ -1,6 +1,8 @@
-select * from t_product;
+select * from t_category;
 
+select * from T_PRODUCT;
 
+<<<<<<< HEAD
 create table t_category
 ( 
 cate_no varchar2(8) not null primary key,
@@ -172,3 +174,4 @@ insert into t_product (p_idx, u_id, p_biddate, p_buyImmed, p_minBid) values (432
 insert into t_product (p_idx, u_id, p_biddate, p_buyImmed, p_minBid) values (2131, 4123, '09/28/2022 10:25 PM', 200000, 5000);
 
 select * from t_product;
+

@@ -1,4 +1,4 @@
-<%@page import="kr.dao.SalesVO" %>
+<%@page import="kr.dao.SalesWriteVO" %>
 <%@page import="java.util.List" %>
 <%@page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -198,7 +198,8 @@
         <!-- 상품리스트 -->
         <c:forEach var="vo" items="${list}">
         <div>
-          <a id="product_link" href="${cpath}/salesDetail.do?pd_code=${vo.p_idx}">
+          <a id="product_link" href="${cpath}/salesDetail.do?pd_code=${vo.p_Idx}">
+
             <div class="item_style_01_gr">
               <div class="in_gr_01">
                 <div class="c2c_sub_day_txt">사용일 : ${vo.p_show_date}</div>

@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+#checkChoice {
+	background: gray;
+	margin: 200px;
+	padding: 50px;
+	border-radius: 50px;
+	color: white;
+}
+
+#container {
+	background-color: white;
+	margin: 50px;
+	padding: 50px;
+	border-style: outset;
+	border-width: 1px;
+	box-sizing: border-box;
+	border-radius: 50px;
+	display: flex;
+}
+
+#checkbox {
+	height: 200px;
+	margin: 50px;
+	padding: 50px;
+	border-style: inset;
+	border-width: 1px;
+	border-radius: 50px;
+	flex: 2;
+	box-sizing: border-box;
+}
+
+
+
+#acheck {
+	font-size: 30px;
+}
+
+#kakao {
+	font-size: 25px;
+	color: black;
+}

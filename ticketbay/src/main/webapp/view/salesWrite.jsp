@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -14,15 +15,11 @@
 <link rel="stylesheet" href="${cpath}/css/header_sales.css?after">
 <link rel="stylesheet" href="${cpath}/css/dealing.css?after">
 <link rel="stylesheet" href="${cpath}/css/salesWrite.css?after">
-<script type="text/javascript">
-
-
-
-</script>
 <jsp:include page="header.jsp"></jsp:include>
 </head>
 <body class="goog-te-combo_in">
 	<form class="form-horizontal" action="${cpath}/salesWrite.do" method="post">
+	  <input type="hidden" name="u_ID" value="${mvo.u_ID}">
 		<div class="tit_box_04">
 			<h2>판매등록</h2>
 		</div>
@@ -35,22 +32,24 @@
 						카테고리 <span class="required">(필수)</span>
 					</h3>
 					<div class="in_box_01">
-						<select id="locSelect" class="select_style_01 wd_470 mb10" name="category">
+						<select id="locSelect" class="select_style_01 wd_470 mb10" name="p_cateDeps1">
 						   <option value="">선택</option>
-						   <option value="">콘서트</option>
-						   <option value="">스포츠</option>
-						   <option value="">뮤지컬/연극</option>
-						   <option value="">영화/전시</option>
+						   <option value="콘서트">콘서트</option>
+						   <option value="스포츠">스포츠</option>
+						   <option value="뮤지컬/연극">뮤지컬/연극</option>
+						   <option value="영화/전시">영화/전시</option>
 						</select>
 					</div>
 					<div class="in_box_01">
-						<select id="locSelect" class="select_style_01 wd_470 mb10" name="category">
-						   <option value="">선택</option>
-						   <option value="">콘서트</option>
-						   <option value="">스포츠</option>
-						   <option value="">뮤지컬/연극</option>
-						   <option value="">영화/전시</option>
+						<select id="locSelect" class="select_style_01 wd_470 mb10" name="p_cateDeps2">
+						   <option>선택</option>
+						   <c:forEach var="vo" items="${list }">
+						   <c:if test="${vo.up_cate_no eq '1000' }">
+						   <option value="아이유">${vo.cate_name}</option>
+						   </c:if>
+						   </c:forEach>
 						</select>
+						
 					</div>
 					<div class="clear"></div>
 				</li>
@@ -64,10 +63,10 @@
 					<div class="float_r wd_760">
 						<div class="in_box_01">
 							<!-- 공연일 -->
-							<input type="date" name="START_DATE" 
+							<input type="date" name="p_indate" 
 								class="textInp03 input_style_01 hasDatepicker" 
 								title="공연일" style="width:79px; font-weight: bold;" id="dp1664287470517">
-								<input type="time" name="START_TIME" 
+								<input type="time" name="p_indate" 
 								class="textInp03 input_style_01 hasDatepicker" 
 								title="공연시간" style="width:79px; font-weight: bold;" id="time">
 							<div class="required_txt mt_10">
@@ -88,7 +87,7 @@
 					<div class="in_box_01">
 						<!-- 수량 -->
 						<!-- .required_input 말풍선 on/off -->
-						<input type="number" id="sellTotal" name="p_tk_count"
+						<input type="number" id="sellTotal" name="p_tkCount"
 							class="input_style_02 txt_c"
 							style="width: 205px !important;" maxlength="4"
 							placeholder="전체 수량 입력">
@@ -116,15 +115,15 @@
 					</h3>
 					<div class="in_box_01">
 						<!-- 구역 정보 없을 경우 기존  input 노출 -->
-						<input type="text" id="areaInput" name="p_seat_info"
+						<input type="text" id="areaInput" name="p_seatInfo"
 							class="input_style_02 wd_470 box-sizing mb10"
 							placeholder="구역(존/블럭) 입력 EX)A" maxlength="10"
 							style="display: block;">
 						<!-- // 구역 정보  -->
-						<input type="text" name="p_seat_info"
+						<input type="text" name="p_seatInfo"
 							class="input_style_02 wd_470 box-sizing mb10"
 							placeholder="열 입력 EX)88" maxlength="10">
-						<input type="text" name="p_seat_info"
+						<input type="text" name="p_seatInfo"
 							class="input_style_02 wd_470 box-sizing"
 							placeholder="선택사항 : 추가정보 최대 10글자 입력 가능" maxlength="10">
 						<div class="required_txt mt_10">좌석정보는 숫자와 영문으로 입력하셔야 거래 성사율을
@@ -143,33 +142,29 @@
 							이미지 저작권 및<br> 초상권 관련 책임은<br> 게시자 본인에게 있습니다.
 						</span>
 					</h3> 
-					<input type="hidden" name="PRODUCT_IMAGE_YN" value="N"> 
-					<input type="hidden" id="defaultimagepath">
-					<input type="hidden" name="REPLACE_IMAGE_YN" value="N">
-					<input type="hidden" id="adminRegCateImgPath" value="">
 					<div class="in_box_01">
 						<div class="product_photo_frame">
 							<ul class="list clearfix">
 								<li><input id="imagesAdd1" type="file" accept="image/*"
-									name="p_img_route"> <span class="picImg"> <label
+									name="p_imgRoute"> <span class="picImg"> <label
 										for="imagesAdd1"> <img src="${cpath}/img/카메라.svg">
 									</label>
 								</span> <span class="del btnClose hidden-object" style="display: none;">
 								</span></li>
 
 								<li>
-								<input id="imagesAdd2" type="file" accept="image/*" name="p_img_route" onchange="setThumnail(event);" multiple/>
+								<input id="imagesAdd2" type="file" accept="image/*" name="p_imgRoute" onchange="setThumnail(event);" multiple/>
 								<span class="picImg">
 								  <label for="imagesAdd2"><img src="${cpath}/img/카메라.svg"></label>
 								</span>
 								<span class="del btnClose hidden-object" style="display: none;"></span>
 								</li>
 								<li><input id="imagesAdd3" type="file" accept="image/*"
-									name="p_img_route"><span class="picImg"><label
+									name="p_imgRoute"><span class="picImg"><label
 										for="imagesAdd3"><img src="${cpath}/img/카메라.svg"></label></span><span
 									class="del btnClose hidden-object" style="display: none;"></span></li>
 								<li><input id="imagesAdd4" type="file" accept="image/*"
-									name="p_img_route"><span class="picImg"><label
+									name="p_imgRoute"><span class="picImg"><label
 										for="imagesAdd4"><img src="${cpath}/img/카메라.svg"></label></span><span
 									class="del btnClose hidden-object" style="display: none;"></span></li>
 							</ul>
@@ -194,18 +189,18 @@
 						<div class="modeTransaction">
 
 							<label class="TYPE_02">
-								<input type="checkbox" name="p_deal_method" value="베송거래">
+								<input type="checkbox" name="p_dealMethod" value="베송거래">
 								<span class="TRANSACTION_TYPE2">배송거래</span> </label>
 							<label class="TYPE_01">
 								<input
-								type="checkbox" name="p_deal_method" value="PIN거래(E-ticket)">
+								type="checkbox" name="p_dealMethod" value="PIN거래(E-ticket)">
 								<span class="TRANSACTION_TYPE1">PIN거래(E-ticket)</span></label>
 							<label class="TYPE_03">
-								<input type="checkbox" name="p_deal_method" value="현장거래">
+								<input type="checkbox" name="p_dealMethod" value="현장거래">
 								<span class="TRANSACTION_TYPE4">현장거래</span></label>
 							<label class="TYPE_05">
 								<input
-								type="checkbox" name="p_deal_method" value="기타">
+								type="checkbox" name="p_dealMethod" value="기타">
 								<span class="TRANSACTION_TYPE5">기타</span></label>
 
 							<!-- 배송비 수정 -->
@@ -298,7 +293,7 @@
 					<div class="in_box_01">
 						<label class="dp_b">
 							<input id="ticket_retention_type_y"
-							type="radio" name="p_tk_possession" value="Y"
+							type="radio" name="p_tkPossession" value="Y"
 							class="stFormEl01 ticket_retention_y">
 							<span>보유 : 현재 티켓 보유중 </span>
 							<div class="ticket_retention_type_info_y">
@@ -309,7 +304,7 @@
 						</label> 
 						<label class="dp_b">
 							<input id="ticket_retention_type_n"
-							type="radio" name="p_tk_possession" value="N"
+							type="radio" name="p_tkPossession" value="N"
 							class="stFormEl01 ticket_retention_n">
 							<span>미 보유 : 예매 완료 후 수령 대기중 </span>
 							<div class="ticket_retention_type_info_n">
@@ -341,7 +336,7 @@
 						<textarea cols="150" rows="10" 
 							style="width: 895px; border: solid 1px #efefef; border-radius: 15px; padding: 20px;
     						font-size: 15px; margin-top: 10px; font-weight: bold; font-family: NanumSquareRound; color: #666;"
-    						name="p_deal_check"  placeholder="특이사항을 작성해주세요"></textarea></td>
+    						name="p_dealInfo"  placeholder="특이사항을 작성해주세요"></textarea></td>
 					</tr>
 					<div class="in_box_01">
 						<div id="goodsExplanation">
@@ -381,7 +376,7 @@
 							<div class="t_pay_gr_txt_01">
 								<strong><span id="min_sale_price">
 								<input
-									type="date" id="p_bid_date" name="p_bid_date"
+									type="date" id="p_bid_date" name="p_biddate"
 									class="input_style_02 txt_c"
 									style="font-size: 16px; font-weight: bold;"
 									placeholder="입찰마감일" maxlength="10">
@@ -394,12 +389,12 @@
 								<strong>매수당가격 (￦)</strong>
 								<span class="span_total">
 								<input onkeyup="printPaynow()"
-									type="text" id="p_pay" name="p_pay"
+									type="text" id="p_pay" name="p_buyImmed"
 									class="input_style_02 txt_c"
 									style="font-size: 18px; font-weight: bold;"
 									placeholder="즉시 구매 가격" maxlength="10">
 								<input onkeyup="printPaybid()"
-									type="text"  id="p_min_bid" name="p_min_bid"
+									type="text"  id="p_min_bid" name="p_minBid"
 									class="input_style_02 txt_c"
 									style="font-size: 18px; font-weight: bold;"
 									placeholder="최소 입찰 가격" maxlength="10">
@@ -413,7 +408,7 @@
 							style="display: inline-block;">
 							<input name="BELOW_COST_USED" id="BELOW_COST_USED" type="hidden"
 								class="" value="N"> <label> <input
-								name="below_check" id="below_check" type="checkbox"
+								name="p_paycommission" id="below_check" type="checkbox"
 								class="ck_img" value=""> <span>정가이하로 판매 하겠습니다.
 									(수수료 무료)
 							</span></label>

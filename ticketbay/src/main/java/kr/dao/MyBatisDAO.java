@@ -8,6 +8,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import kr.dao.orderOVO;
+
 public class MyBatisDAO {
 	private static SqlSessionFactory sqlSessionFactory;
 	// 1. database 연결 -> config.xml과 MyBatis API 연결
@@ -23,9 +25,9 @@ public class MyBatisDAO {
 	}
 	
 	// 전체리스트 가져오기	
-	public List<SalesVO> allList(){
+	public List<SalesWriteVO> allList(){
 		SqlSession session = sqlSessionFactory.openSession();
-		List<SalesVO> list=session.selectList("allList");
+		List<SalesWriteVO> list=session.selectList("allList");
 		session.close();
 		return list;
 	}
@@ -38,30 +40,24 @@ public class MyBatisDAO {
 		return catelist;
 	}
 	
-	// 상세보기(pd_code)
-	public SalesVO getBypdCode(String pd_code) {
+	
+	
+	// 상세보기(p_Idx)
+	public SalesWriteVO getByp_Idx(String p_Idx) {
 		SqlSession session = sqlSessionFactory.openSession();
-		SalesVO vo=session.selectOne("getBypdCode", pd_code);
+		SalesWriteVO vo=session.selectOne("getByp_Idx", p_Idx);
 		session.close();
 		return vo;
 	}
 
 	// 판매등록
-	public void boardInsert2(SalesVO vo) {
+	public void salesInsert(SalesWriteVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
-		session.insert("boardInsert2", vo);
+		session.insert("salesInsert", vo);
 		session.commit();
 		session.close();
 		}
 
-	// 카테고리
-	public void boInsert(BoardVO vo) {
-		SqlSession session = sqlSessionFactory.openSession();
-		session.insert("boInsert", vo);
-		session.commit();
-		session.close();
-		
-	}
 	
 	public List<MemberVO> allMList() {
 		SqlSession session = sqlSessionFactory.openSession();
@@ -82,6 +78,13 @@ public class MyBatisDAO {
 		session.insert("memInsert", mvo);
 		session.commit();
 		session.close();
+	}
+
+	public orderOVO orderSheet(orderOVO ovo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		orderOVO ov=session.selectOne("orderOVO", ovo);
+		session.close();
+		return ov;
 	}
 	
 	public MemberVO memLogin(MemberVO vo) {
@@ -139,5 +142,4 @@ public class MyBatisDAO {
 		
 		return mvo;
 	}
-	
 }
