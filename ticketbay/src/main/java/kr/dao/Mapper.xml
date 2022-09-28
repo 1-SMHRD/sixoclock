@@ -9,10 +9,10 @@
   		select * from t_product
   	</select> -->
   	
-  	<!-- 상품코드 가져오기 -->
-  	<!-- <select id="getBypdCode" parameterType="String" resultType="kr.dao.SalesVO">
-  		select * from t_product where pd_code=#{pd_code}
-  	</select> -->
+  	<!-- p_Idx 가져오기 -->
+  	<select id="getBypdCode" parameterType="String" resultType="kr.dao.SalesWriteVO">
+  		select * from t_product where p_Idx=#{p_Idx}
+  	</select>
   	
 	
 	<!-- 카테고리 가져오기 -->
