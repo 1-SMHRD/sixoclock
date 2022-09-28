@@ -40,10 +40,10 @@ public class MyBatisDAO {
 	
 	
 	
-	// 상세보기(pd_code)
-	public SalesWriteVO getBypdCode(String pd_code) {
+	// 상세보기(p_Idx)
+	public SalesWriteVO getByp_Idx(String p_Idx) {
 		SqlSession session = sqlSessionFactory.openSession();
-		SalesWriteVO vo=session.selectOne("getBypdCode", pd_code);
+		SalesWriteVO vo=session.selectOne("getByp_Idx", p_Idx);
 		session.close();
 		return vo;
 	}

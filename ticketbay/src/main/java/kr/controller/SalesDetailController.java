@@ -16,10 +16,10 @@ public class SalesDetailController implements Controller {
 			throws ServletException, IOException {
 		
 		MyBatisDAO dao=new MyBatisDAO();
-		String pd_code=request.getParameter("pd_code");
-		SalesWriteVO vo=dao.getBypdCode(pd_code);
+		String p_Idx=request.getParameter("p_Idx");
+		SalesWriteVO vo=dao.getByp_Idx(p_Idx);
 		request.setAttribute("vo", vo);
-		System.out.println(pd_code);
+		System.out.println(p_Idx);
 		return "salesDetail";
 	}
 

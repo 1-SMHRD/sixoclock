@@ -43,12 +43,11 @@
 					<div class="in_box_01">
 						<select id="locSelect" class="select_style_01 wd_470 mb10" name="p_cateDeps2">
 						   <option>선택</option>
-						   <option value="아이유">아이유</option>
-						   <option value="아이유">아이유</option>
-						   <option value="아이유">아이유</option>
-						   <option value="아이유">아이유</option>
-						   <option value="아이유">아이유</option>
-						   <option value="아이유">아이유</option>
+						   <c:forEach var="vo" items="${list }">
+						   <c:if test="${vo.up_cate_no eq '1000' }">
+						   <option value="아이유">${vo.cate_name}</option>
+						   </c:if>
+						   </c:forEach>
 						</select>
 						
 					</div>
