@@ -30,7 +30,7 @@
                             <c:if test="${empty mvo }">
                                 <li><a href="#"><i class="pe-7s-gift">이벤트/혜택존</i></a></li>
                                 <li><a href="#"><i class="pe-7s-ticket">MY티켓베이</i></a></li>
-<<<<<<< HEAD
+
                                 <li><a href="${cpath}/signinpage.do"><i class="pe-7s-unlock">로그인</i></a></li>
                                 <li><a href="${cpath}/signuppage.do"><i class="pe-7s-user">회원가입</i></a></li>
                                 <li><a href="${cpath}/sales.do"><i class="pe-7s-box1">판매등록</i></a></li>
@@ -43,14 +43,7 @@
                                 <li><a href="${cpath}/sales.do"><i class="pe-7s-box1">판매등록</i></a></li>
                                 <li><a href="${cpath}/signout.do" onclick="signout();">로그아웃</i></a></li>
 							</c:if>
-							
-							
-=======
-                                <li><a href="#"><i class="pe-7s-unlock">로그인</i></a></li>
-                                <li><a href="#"><i class="pe-7s-user">회원가입</i></a></li>
-                                <li><a href="${cpath}/salesWriteForm.do"><i class="pe-7s-box1">판매등록</i></a></li>
 
->>>>>>> branch 'master' of https://github.com/1-SMHRD/sixoclock.git
                             </ul>
                         </div>
                     </div>

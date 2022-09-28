@@ -2,14 +2,10 @@ package kr.frontcontroller;
 
 import java.util.HashMap;
 
-<<<<<<< HEAD
 import kr.controller.AuctionpageController;
 import kr.controller.BidCancelController;
-import kr.controller.CategoryController;
-import kr.controller.CategoryFormController;
 import kr.controller.ChatroomController;
-=======
->>>>>>> branch 'master' of https://github.com/1-SMHRD/sixoclock.git
+
 import kr.controller.Controller;
 import kr.controller.DeleteUserController;
 import kr.controller.MainController;
@@ -19,7 +15,7 @@ import kr.controller.ProductListViewController;
 import kr.controller.SalesDetailController;
 import kr.controller.SalesListController;
 import kr.controller.SalesWriteController;
-<<<<<<< HEAD
+
 import kr.controller.SigninController;
 import kr.controller.SigninPController;
 import kr.controller.SignupController;
@@ -31,9 +27,8 @@ import kr.controller.UserinfoPController;
 import kr.controller.addDeliveryController;
 import kr.controller.addDeliveryPController;
 import kr.controller.SigninPController;
-=======
 import kr.controller.SalesWriteFormController;
->>>>>>> branch 'master' of https://github.com/1-SMHRD/sixoclock.git
+
 
 public class HandlerMapping {
 	private HashMap<String, Controller> mappings;	
@@ -46,7 +41,7 @@ public class HandlerMapping {
 		mappings.put("/salesWriteForm.do", new SalesWriteFormController());
 		mappings.put("/productListView.do", new ProductListViewController()); // 등록후 마이페이지
 		
-<<<<<<< HEAD
+
 		mappings.put("/mypage.do", new MyPageController());
 		
 		mappings.put("/signinpage.do", new SigninPController());
@@ -67,8 +62,7 @@ public class HandlerMapping {
 		
 		
 		
-=======
->>>>>>> branch 'master' of https://github.com/1-SMHRD/sixoclock.git
+
 	}
 	public Controller getController(String key) {
 		return mappings.get(key);
