@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kr.dao.MyBatisDAO;
-import kr.dao.SalesVO;
+import kr.dao.SalesWriteVO;
 
 public class SalesListController implements Controller {
 
@@ -17,8 +17,9 @@ public class SalesListController implements Controller {
 			throws ServletException, IOException {
 		
 		MyBatisDAO dao=new MyBatisDAO();
-		List<SalesVO> list=dao.allList();
+		List<SalesWriteVO> list=dao.allList();
 		request.setAttribute("list", list);
+		
 		return "salesList";
 	}
 

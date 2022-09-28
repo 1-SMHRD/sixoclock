@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kr.dao.MyBatisDAO;
-import kr.dao.SalesVO;
+import kr.dao.SalesWriteVO;
 
 public class SalesDetailController implements Controller {
 
@@ -17,7 +17,7 @@ public class SalesDetailController implements Controller {
 		
 		MyBatisDAO dao=new MyBatisDAO();
 		String pd_code=request.getParameter("pd_code");
-		SalesVO vo=dao.getBypdCode(pd_code);
+		SalesWriteVO vo=dao.getBypdCode(pd_code);
 		request.setAttribute("vo", vo);
 		System.out.println(pd_code);
 		return "salesDetail";

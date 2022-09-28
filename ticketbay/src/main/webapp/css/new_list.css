@@ -5,11 +5,11 @@
 	box-sizing: border-box;
 }
 
-.container{
+/* .container{
 	max-width: 994px;
 	margin: 20px auto 0 auto;
 }
-
+ */
 #content{margin-left:320px;}
 
 #sidebar{
@@ -85,13 +85,13 @@
 
 .wd_01{width: 270px;}
 
-.scroll_y{overflow-x: hidden; overflow-y: scroll; max-height: 350px;}
+.scroll_y{overflow-x: hidden; overflow-y: hidden; max-height: 350px;}
 .scroll_no{overflow-x: hidden; overflow-y: hidden; max-height: none;}
 
 
 /*  select 하위 영역  */
 
-.sub_div_on .new_select_style_01_div_sub{display: blcok;}
+.sub_div_on .new_select_style_01_div_sub{display: block;}
 .sub_div_on .new_select_style_01_div_sub span{padding: 0 0;}
 .new_select_style_01_div_sub li{border-bottom: 1px solid #eee; padding: 12px 12px;}
 .new_select_style_01_div_sub li:last-child{border-bottom: 0;}
@@ -171,7 +171,7 @@
 }
 
 .dp_fx_01{display: flex; justify-content: space-between;}
-.dp_fx_02{display: fles;}
+/* .dp_fx_02{display: flex;} */
 
 
 /*  안심보상서비스  */
@@ -200,8 +200,8 @@
 .info_box_gr{
 	background: #e2e5ea;
 	border-radius: 15px;
-	padding: 15px;
-	height: 70px;
+	padding: 5px 15px 5px 15px;
+	/* height: 90px; */
 	overflow: hidden;
 	background: #e2e5ea no-repeat;
 	background-position: calc(100% - 20px) 20px !important;
@@ -246,7 +246,7 @@
 }
 
 .item_no_txt{
-	height: 300px;
+	height: 396px;
     text-align: center;
     display: flex;
     align-items: center;

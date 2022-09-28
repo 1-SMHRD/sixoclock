@@ -1,4 +1,4 @@
-<%@page import="kr.dao.SalesVO" %>
+<%@page import="kr.dao.SalesWriteVO" %>
 <%@page import="java.util.List" %>
 <%@page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="${cpath}/css/new_list.css">
 <link rel="stylesheet" href="${cpath}/css/new_list_custom.css">
 <link rel="stylesheet" href="${cpath}/css/contents.css">
-<link rel="stylesheet" href="${cpath}/css/header.css">
+<link rel="stylesheet" href="${cpath}/css/header_sales.css">
 <link rel="stylesheet" href="${cpath}/css/styleList.css">
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
@@ -402,9 +402,7 @@
       </script>
     </div>
   </main>
-  
+  <jsp:include page="footer.jsp"></jsp:include>
 </div>
-
 </body>
-<jsp:include page="footer.jsp"></jsp:include>
 </html>

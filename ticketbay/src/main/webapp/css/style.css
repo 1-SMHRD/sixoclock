@@ -1,4 +1,21 @@
+/*	################################################################
+Theme Name: Pori
+Theme URI: http://www.themengraph.com/
+Author URI: http://www.themengraph.com/
+Description: Easy Docs 100% Responsive, Highly Customizable, Unlimited color schemes and SEO Friendly Theme using Twitter Bootstrap, specially designed for WordPress Marketplace Plugin ( http://wordpress.org/plugins/wpmarketplace/ ). If you want to build a full featured eshop or online marketplace, this theme and wp marketplace plugin could be a perfect choice for you, but still you can use this for for you personal blog site too, as Crypton has also all regular features like gallery, audio, video, chat and other post format support, archive pages, page with side bar, blog page to build your blog site. This theme is will make your website adaptable with any type of devices. Theme Features: WP Marketplace Plugin Support ,Custom Homepage Settings, 3 Page Templates, Custom Background Support, Unlimited Color Schemes, Search Engine Friendly.
+Author: Shah Zobayer Ahmed
+Version: 1.0.0
+License: GNU General Public License v3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Tags: black, green, white, two-columns, fixed-width, threaded-comments, sticky-post, microformats,  editor-style, custom-menu, custom-background, post-formats
 
+
+
+	1) GENERAL STRUCTURES
+	2) HEADER SECTION
+	3) MENU SECTION
+
+################################################################# */
 /* STYLE */
 @import url(font-awesome.css) screen;
 @import url(bootstrap.css) screen;
@@ -13,9 +30,23 @@
 
 
 /* ======================
-   1. GENERAL SECTION => 부트스트랩 건들지마세용
  ====================== */
 
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    position: relative;
+    background: rgb(236, 236, 236);
+    color: #656565;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+}
 
 .hidden {
     display: none;
@@ -105,34 +136,8 @@ a.remove {
     border-style: solid;
     border-width: 1px
 }
-h1,h2,h3,h4,h5,h6 {
-    letter-spacing: 0px;
-    font-weight: normal;
-    position: relative;
-    padding: 0 0 10px 0;
-    font-weight: normal;
-    font-family: 'Roboto', serif;
-    line-height: 140%;
-    color: #01090c;
-}
-h1 {
-    font-size: 22px;
-}
-h2 {
-    font-size: 20px;
-}
-h3 {
-    font-size: 18px;
-}
-h4 {
-    font-size: 16px;
-}
-h5 {
-    font-size: 14px;
-}
-h6 {
-    font-size: 13px;
-}
+
+
 .lead {
     font-family: 'Open Sans', Arial,sans-serif !important;
     font-size: 18px;
@@ -255,7 +260,9 @@ html, body, .wrapper{
     HEADER TOP SECTION
  */
 .header-top-section{
+    position: relative;
     display: block;
+    height: 40px;
     width: 100%;
     background: #000000;
     color: rgb(255, 255, 255);
@@ -288,6 +295,68 @@ html, body, .wrapper{
 .header-top-menu ul li a:hover, .header-top-menu ul li a:active, .header-top-menu ul li a:focus{
     background: transparent
 }
+
+
+/* 드롭다운 드롭다운 드롭다운 드롭다운 드롭다운 */
+ul.navbar-nav{
+    display: inline-flex;
+    float: none;
+}
+
+ul.navbar-nav li a{
+    font-size: 16px;
+    font-weight: 900;
+    background: transparent !important;
+}
+
+
+.dropbtn {
+    background: transparent;
+    margin-bottom: -5px;
+    color: #464444;
+    padding: 16px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    margin-right: 10px;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: block;
+  }
+  
+  .dropdown-content {
+    border: 0.5px solid #4e5153;
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 200px;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    font-size: 16px;
+    color:   #3a3a3a;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+.dropdown-content a:hover {background-color: rgb(212, 212, 212);}
+
+  
+.dropdown:hover .dropdown-content {
+    display:block;
+}
+  
+  .dropdown:hover .dropbtn {
+    color:#5EA204;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+
 
 /*
     HEADER SECTION
@@ -341,25 +410,11 @@ header.header-section.fixed {
     color: #555252 !important;
 }
 
-ul.navbar-nav{
-    background: transparent;
-    margin: 0 auto;
-    margin-bottom: -5px;
-    display: inline-flex;
-    float: none;
-}
 
-ul.navbar-nav li a{
-    font-size: 16px;
-    font-weight: 900;
-    color:  #555252 !important;
-    background: transparent !important;
-    text-transform: uppercase;
-
-}
-ul.navbar-nav li.active a, ul.navbar-nav li a:hover{
+ul.navbar-nav li.active a, ul.navbar-nav li{
     color: #5EA204 !important;
 }
+
 ul.navbar-nav.cart-menu li a{
     padding-right: 0;
     color: #0f0101;
@@ -608,220 +663,387 @@ a.carousel-control.right > span{
     display: none;
 }
 
-/*
-    SERVICE SECTION
- */
-.service-section{
-    display: block;
-    text-align: center;
-    padding: 100px 0 80px;
-}
 
-.service-item i{
-    font-size: 70px;
-    text-align: center;
-}
-.service-item h3{
-    font-size: 18px;
-    font-weight: 700;
-    color: #555252;
-    font-family: 'Open Sans', Arial, sans-serif;
-    text-transform: uppercase;
-}
-.service-item p{
-    font-size: 14px;
-    font-weight: 300;
-    color: #555252;
-    line-height: 24px;
-}
-.service-item:hover h3, .service-item:hover i{
-    color: #5EA204;
-}
-
-
-
-/* 추가목록!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!추가목록!!!!!!!!!!!!!!!!!!!! */
 
 /* 무야호 이미지 */
-.md_left .md_left_gl_img {
-    margin-top: 68px;
-    margin-left: -250px;
-    float: left;
-    box-shadow: 0 3px 5px rgb(0 0 0 / 10%);
-}
-/* 리얼거래후기 */
-.md_right .md_right_gl_img {
-    margin-top: 68px;
-    margin-right: -250px;
-    position: absolute;
-    top: 772px;
-    left: 95px;
-    box-shadow: 0 3px 5px rgb(0 0 0 / 10%);
+.bn_gr_b{
+    border-top: 1px solid black;
+    margin-top: 15px;
 }
 
-
-/* 티켓베이약속01 */
-.top_bn_gr {
-    margin-left: 3px;
-    border-radius: 10px;
-    box-shadow: 0 3px 5px rgb(0 0 0 / 10%);
-    margin-bottom: 10px;
-    margin-top: 338px;
-}
-
-.md_b_gr {
-    width: 230px;
-    float: right;
-    padding-right: 3px;
-    box-sizing: border-box;
-}
-
-.bn_promise_gr1 {
-    background: #fff;
-    box-shadow: 0 3px 5px rgb(0 0 0 / 10%);
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 10px;
-    padding: 25px 0 5px;
-    display:block;
-}
-
-.bn_promise_gr1 h2 {
-    font-family: NanumSquareRound, sans-serif !important;
-    color: #68ae05;
-    font-size: 21px;
-    margin: 0 0 0 0;
-    border-bottom: 1px solid #d4d4d4;
-    width: 100%;
-    line-height: 25px;
-    padding: 0px 0 16px 21px;
-}
-
-.bn_promise_gr1 ul {
-    padding: 12.5px 10px;
-}
-
-.bn_promise_gr1 ul li:not(:last-child) {
-    margin-bottom: 12px;
-}
-
-.bn_promise_gr1 ul li span {
-    display: block;
-    padding-left: 55px;
-    font-family: "NanumSquareRound";
-    font-size: 14px;
-    color: #666666;
+h2{
     font-weight: bold;
 }
-
-
-/* 카카오톡 채팅 */
-.tvc_popup_btn_inbox{
-    margin: auto;
-    border-image: none;
-    left: -255px;
-    top: 4px;
-
-    position: absolute;
-    box-shadow: 0px 3px 5px rgb(0 0 0 / 10%);
+.bn_gr_b h2,h3 {
+    letter-spacing: 0px;
+    font-weight: normal;
+    position: relative;
+    padding: 0 0 10px 0;
+    font-weight: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #5c6163;
 }
+
+.bn_gr_b #무야호1{
+    margin-top: -20px;
+    margin-left: -5px;
+}
+/* 리얼거래후기 */
+.bn_gr_b #무야호2 {
+    margin-top: -20px;
+    margin-left: 5px;
+}
+/* 카카오톡 배너 */
+.bn_gr_b #카카오톡{
+    margin-top: -20px;
+    margin-left: 5px;
+}
+
+/* SNS 배너 */
+.bn_gr_b #SNS{
+    margin-top: -20px;
+    margin-left: 3px;
+}
+
 
 /* 이용가이드/안전구매방법 */
 .mainBox03{
-    background: rgb(255, 255, 255);
-    border-radius: 10px;
+    background: rgb(243, 241, 241);
+    border-radius: 3px;
     box-shadow: 0 3px 5px rgb(0 0 0 / 10%);
     display: inline-block;
     position:absolute;
-    width: 230px;
-    right: -235px;
-    top: 4px;
+    width: 200px;
+    margin-top: -19px;
+    right: -573px;
 }
 
 .mainBox03 .a_01_box {
-    height: 76px;
+    height: 75px;
     display: block;
 }
 
 .mainBox03 .a_02_box {
-    height: 78px;
+    height: 75px;
     display: block;
 }
 
 .mainBox03 .a_03_box {
-    height: 76px;
+    height: 75px;
+    display: block;
 }
 
 .mainBox03 a {
     text-align: center;
     line-height: 76px;
     font-size: 19px;
-    color: #666;
+    color: rgb(92, 89, 89);
     text-indent: 0;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
 }
 
+/* 사이드바 목록 (티켓베이의약속)*/
+.bn_promise_gr1 {
+    border-top: 1px solid black;
+    background: #fff;
+    box-shadow: 0 3px 5px rgb(0 0 0 / 10%);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-left: 240px;
+    margin-bottom: 13px;
+    padding: 25px 0 5px;
+    width: 350px;
+    height: 365px;
+    margin-left: 755px;
+    margin-top: 1257px;
 
-/* 티켓베이를 더 알고싶다면? */
-.sns_popup_btn_inbox {
-    position: absolute;
-    width: -333px;
-    padding-top: 3px;
-    top: 2px;
-    background: rgb(250, 250, 250);
+}
+
+.bn_promise_gr1 h2 {
+    font-family: NanumSquareRound, sans-serif !important;
+    color:#5EA204;
+    font-weight: bold;
+    font-size: 21px;
+    margin: 0 0 0 0;
+    border-bottom: 1px solid #d4d4d4;
+    width: 100%;
+    float: none;
+    float: unset;
+    line-height: 25px;
+    padding: 0px 0 16px 21px;
+}
+
+.bn_promise_gr1.gr_01 ul {
+    padding: 12.5px 10px;
+}
+
+.bn_promise_gr1.gr_01 ul li {
+    border: 1px solid #dfdfdf;
+    border-radius: 10px;
+    padding: 0 13px;
+    display: flex;
+    align-items: center;
+    height: 87px;
+    background-repeat: no-repeat;
+    background-position: 13px center;
+}
+
+.bn_promise_gr1.gr_01 ul li span {
+    display: block;
+    padding-left: 35px;
+    font-family: "NanumSquareRound";
+    font-size: 15px;
+    color: #666666;
+    font-weight: bold;
+    background-repeat: no-repeat;
+    background-position: left center;
+    list-style: none;
+}
+
+
+/* 사이드바 목록 (고객센터) */
+.bn_promise_gr2 {
+    border-top: 1px solid black;
+    background: #fff;
+    box-shadow: 0 3px 5px rgb(0 0 0 / 10%);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-left: 240px;
+    margin-bottom: 15px;
+    padding: 25px 0 5px;
+    width: 350px;
+    margin-left: 755px;
+    margin-top: 15px;
+    height: 270px;
+}
+
+.bn_promise_gr2 h2 {
+    font-family: NanumSquareRound, sans-serif !important;
+    color:#5EA204;
+    font-weight: bold;
+    font-size: 21px;
+    margin: 0 0 0 0;
+    border-bottom: 1px solid #d4d4d4;
+    width: 100%;
+    float: none;
+    float: unset;
+    line-height: 25px;
+    padding: 0px 0 16px 21px;
+}
+
+.bn_promise_gr2.gr_02 ul {
+    padding: 10px 20px;
+}
+
+.bn_promise_gr2.gr_02 ul li {
+    padding: 6px 6px 6px 12px;
+    border-bottom: 0;
+    font-weight: normal;
+    list-style: none;
+}
+
+.bn_promise_gr2.gr_02 ul li a {
+    font-family: "NanumSquareRound";
+    font-size: 16px;
+}
+
+.call_info img {
+    border-radius: 100%;
+    margin: 12px auto 15px auto;
+    display: block;
+}
+
+.call_info .info {
+    text-align: center;
+    font-family: NanumSquareRound !important;
+    font-size: 20px;
+}
+
+/* ============추가목록 끝============ */
+
+
+.mBoxWrap {
+    margin: 0 0 0 -3px !important;
+    width: 1001px;
+    margin: 0 0 0 99px;
+    overflow: hidden;
+}
+
+.md_a_gr {
+    width: 753px;
+    float: left;
+    padding-left: 3px;
+}
+
+.bn_gr_b {
+    border-top: 1px solid #444;
+    width: 1100px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 25px 30px 5px 30px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
     box-shadow: 0 3px 5px rgb(0 0 0 / 10%);
 }
 
-img {
-    border: 0;
+.bn_gr_b h2 {
+    font-family: NanumSquareRound !important;
+    color: #5EA204;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 21px;
 }
-/*
-    OFFER SECTION
- */
-.offer-section{
+
+
+.bn_gr_b ul {
+    margin-left: -19px;
+}
+
+.bn_gr_b ul>a {
     display: block;
-    padding: 170px 0 130px;
+    float: left;
+}
+
+.bn_gr_b ul>a:nth-child(3)~a {
+    margin-top: 20px;
+}
+
+.bn_gr_b h2 span {
+    font-family: NanumSquareRound !important;
+    color: rgb(53, 52, 52);
+    font-size: 16px;
+    font-weight: normal;
+    padding-left: 5px;
+}
+
+.bn_gr_b ul li {
     position: relative;
-    width: 100%;
-    background: url(../images/offer-bg.jpg) no-repeat;
-    background-size: cover;
+    list-style: none;
+    float: left;
     text-align: center;
-    background-attachment: fixed;
-    color: #fff;
+    margin-left: 24px;
 }
 
-.offer-section:before{
-    content: "";
-    width: 100%;
-    height: 76%;
-    position: absolute;
-    display: block;
-    top: 5px;
-    background: #FFF;
+.bn_gr_b ul li div{
+    color: #000000;
+}
+
+.bn_gr_b ul li :hover{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.review_main_box {
+    border-top: 1px solid black;
+    width: 743px;
+    background: #fff;
     border-radius: 10px;
-    box-shadow: 0px 3px 5px rgb(0 0 0 / 10%);
+    padding: 25px 30px 0 30px;
+    box-sizing: border-box;
+    box-shadow: 0 3px 5px rgb(0 0 0 / 10%);
+    margin-bottom: 15px;
 }
 
-.offer-section h1{
-    font-size: 60px;
-    font-family: 'Open Sans';
-    font-weight: 900;
-    color: #fff;
-    display: block;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+.review_main_box .box_02g {
+    background: #fff !important;
+    padding-bottom: 1px !important;
 }
 
-.offer-section h2{
-    font-size: 38px;
-    font-weight: 300;
-    color: #fff;
-    font-family: 'Open Sans';
-    margin: 0;
-    padding: 0;
+.review_main_box .re_view_item {
+    box-shadow: 0 0 0 #ddd !important;
+    background-image: none !important;
+    border-top: 1px solid #f1f1f1;
+    border-radius: 0;
+    margin: 0 0 0 0 !important;
+    padding: 25px 0 25px 0;
 }
+
+.re_view_item .ctg_star_g span {
+    font-size: 15px;
+}
+
+.re_view_item h3 {
+    word-break: keep-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 7px 0;
+    line-height: 31px;
+    font-size: 21px;
+    font-family: NanumSquareRound, sans-serif !important;
+}
+
+.re_view_item p {
+    padding-bottom: 10px;
+    line-height: 26px;
+    word-break: keep-all;
+    font-size: 16px;
+    height: 45px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.re_view_item .info {
+    margin-top: 5px;
+}
+
+.re_view_item .info .name {
+    border-right: 1px solid #efefef;
+    margin-right: 8px;
+}
+
+.re_view_item .info span {
+    font-size: 13px;
+    color: #c3c3c3;
+    padding-right: 10px;
+}
+
+.news_gr {
+    border-top: 1px solid black;
+    width: 743px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px 30px 20px 30px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    box-shadow: 0 3px 5px rgb(0 0 0 / 10%);
+}
+
+.news_gr h2 {
+    font-family: NanumSquareRound !important;
+    color: #5EA204;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.news_gr h3 {
+    font-family: NanumSquareRound !important;
+    color: #666;
+    font-size: 18.5px;
+    font-weight: bold;
+    line-height: 21px;
+}
+
+.news_gr {
+    width: 743px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px 30px 20px 30px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    box-shadow: 0 3px 5px rgb(0 0 0 / 10%);
+}
+
+.mBoxWrap {
+    margin: 0 0 0 -3px !important;
+}
+
 
 
 
@@ -879,26 +1101,16 @@ img {
     font-size:larger;
 }
 #footer {
-    height: 280px !important;
+    height: 250px;
     background-color: #030303;
     display: flex;
+    position: relative;
 }
 
 #footer .tb_foot {
     overflow: hidden;
-    position: relative;
     width: 995px;
     margin: 0 auto;
-}
-
-ul{
-    display: block;
-    list-style-type: disc;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 40px;
 }
 
 .footer_menu li {
@@ -920,7 +1132,6 @@ ul{
     color: rgb(140, 140, 140);
     font-family: 돋움, Dotum;
     font-style: normal;
-    letter-spacing: 0px;
 }
 
 #footer address p {
@@ -928,7 +1139,7 @@ ul{
 }
 
 #footer address span {
-    margin-right: 18px !important;
+    margin-right: 18px;
 }
 
 #footer .copyright {
@@ -937,8 +1148,6 @@ ul{
     font-family: 'Arial';
     font-weight: bold;
 }
-
-
 
     @-webkit-keyframes preloader {
       0% {

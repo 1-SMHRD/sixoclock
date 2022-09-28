@@ -25,39 +25,124 @@ public class MyBatisDAO {
 	}
 	
 	// 전체리스트 가져오기	
-	public List<SalesVO> allList(){
+	public List<SalesWriteVO> allList(){
 		SqlSession session = sqlSessionFactory.openSession();
-		List<SalesVO> list=session.selectList("allList");
+		List<SalesWriteVO> list=session.selectList("allList");
 		session.close();
 		return list;
 	}
 	
-	// 상세보기(pd_code)
-	public SalesVO getBypdCode(String pd_code) {
+	// 카테고리리스트 가져오기
+	public List<CategoryVO> cateList() {
 		SqlSession session = sqlSessionFactory.openSession();
-		SalesVO vo=session.selectOne("getBypdCode", pd_code);
+		List<CategoryVO> catelist=session.selectList("cateList");
+		session.close();
+		return catelist;
+	}
+	
+	
+	
+	// 상세보기(pd_code)
+	public SalesWriteVO getBypdCode(String pd_code) {
+		SqlSession session = sqlSessionFactory.openSession();
+		SalesWriteVO vo=session.selectOne("getBypdCode", pd_code);
 		session.close();
 		return vo;
 	}
-	
-	public List<BoardVO> allList1() {
-		SqlSession session = sqlSessionFactory.openSession();
-		// select * from board order by idx desc
-		List<BoardVO> list1 =session.selectList("allList1");
-		session.close();//반납
-		return list1;
-	}
 
-	public void sm1818Insert(BoardVO vo) {
+	// 판매등록
+	public void salesInsert(SalesWriteVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
-		session.insert("sm1818Insert", vo);
+		session.insert("salesInsert", vo);
+		session.commit();
+		session.close();
+		}
+
+	
+	public List<MemberVO> allMList() {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<MemberVO> list = session.selectList("allMList");
+		session.close(); // 반납
+		return list;
+	}
+	
+	public List<DeliveryVO> allDList(String u_id) {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<DeliveryVO> dlist = session.selectList("allDList", u_id);
+		session.close(); // 반납
+		return dlist;
+	}
+	
+	public void memInsert(MemberVO mvo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.insert("memInsert", mvo);
 		session.commit();
 		session.close();
 	}
+<<<<<<< HEAD
 	public orderOVO orderSheet(orderOVO ovo) {
 		SqlSession session = sqlSessionFactory.openSession();
 		orderOVO ov=session.selectOne("orderOVO", ovo);
 		session.close();
 		return ov;
 
+=======
+	
+	public MemberVO memLogin(MemberVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		MemberVO mvo = session.selectOne("memLogin", vo);
+		session.close();
+		
+		System.out.println("dao");
+		
+		return mvo;
+	}
+	
+	public void memUpdate(MemberVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.update("memUpdate", vo);
+		session.commit();
+		session.close();
+	}
+	
+	public void memDelete(String u_ID) {
+		System.out.println("dao : " + u_ID);
+
+		SqlSession session = sqlSessionFactory.openSession();
+		session.delete("memDelete", u_ID);
+		session.commit();
+		session.close();
+	}
+	
+	public void addrInsert(DeliveryVO dvo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.insert("addrInsert", dvo);
+		session.commit();
+		session.close();
+	}
+	
+	public void cancelbidInsert(MoneyVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.insert("cancelbidInsert", vo);
+		session.commit();
+		session.close();
+	}
+	
+	public void moneyInsert(MoneyVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.insert("moneyInsert", vo);
+		session.commit();
+		session.close();
+	}
+	
+	public MemberVO getUserinfo(String u_id) {
+		SqlSession session = sqlSessionFactory.openSession();
+		MemberVO mvo = session.selectOne("getUserinfo", u_id);
+		
+		session.close();
+		
+		return mvo;
+	}
+	
+>>>>>>> branch 'master' of https://github.com/1-SMHRD/sixoclock
 }
