@@ -57,4 +57,4 @@ info1817 VARCHAR2(100),
 count1817 VARCHAR2(100)      
 )
 
-select * from t_product11;
+select * from t_category;

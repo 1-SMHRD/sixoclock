@@ -23,9 +23,9 @@ public class MyBatisDAO {
 	}
 	
 	// 전체리스트 가져오기	
-	public List<SalesVO> allList(){
+	public List<SalesWriteVO> allList(){
 		SqlSession session = sqlSessionFactory.openSession();
-		List<SalesVO> list=session.selectList("allList");
+		List<SalesWriteVO> list=session.selectList("allList");
 		session.close();
 		return list;
 	}
@@ -38,29 +38,22 @@ public class MyBatisDAO {
 		return catelist;
 	}
 	
+	
 	// 상세보기(pd_code)
-	public SalesVO getBypdCode(String pd_code) {
+	public SalesWriteVO getBypdCode(String pd_code) {
 		SqlSession session = sqlSessionFactory.openSession();
-		SalesVO vo=session.selectOne("getBypdCode", pd_code);
+		SalesWriteVO vo=session.selectOne("getBypdCode", pd_code);
 		session.close();
 		return vo;
 	}
 
 	// 판매등록
-	public void boardInsert2(SalesVO vo) {
+	public void salesWrite(SalesWriteVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
 		session.insert("boardInsert2", vo);
 		session.commit();
 		session.close();
 		}
 
-	// 카테고리
-	public void boInsert(BoardVO vo) {
-		SqlSession session = sqlSessionFactory.openSession();
-		session.insert("boInsert", vo);
-		session.commit();
-		session.close();
-		
-	}
 	
 }

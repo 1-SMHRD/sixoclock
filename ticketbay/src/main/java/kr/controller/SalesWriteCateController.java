@@ -7,20 +7,22 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kr.dao.CategoryVO;
 import kr.dao.MyBatisDAO;
-import kr.dao.SalesWriteVO;
 
-public class SalesListController implements Controller {
+public class SalesWriteCateController implements Controller {
 
 	@Override
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
 		MyBatisDAO dao=new MyBatisDAO();
-		List<SalesWriteVO> list=dao.allList();
+		List<CategoryVO> list=dao.cateList();
 		request.setAttribute("list", list);
 		
-		return "salesList";
+		
+		
+		return "salesWrite";
 	}
 
 }

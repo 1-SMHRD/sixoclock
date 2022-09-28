@@ -5,32 +5,19 @@
 <mapper namespace="kr.dao.Mapper">
   	
   	<!-- 전체리스트 -->
-  	<select id="allList" resultType="kr.dao.SalesVO">
+  	<!-- <select id="allList" resultType="kr.dao.SalesVO">
   		select * from t_product
-  	</select>
+  	</select> -->
   	
   	<!-- 상품코드 가져오기 -->
-  	<select id="getBypdCode" parameterType="String" resultType="kr.dao.SalesVO">
+  	<!-- <select id="getBypdCode" parameterType="String" resultType="kr.dao.SalesVO">
   		select * from t_product where pd_code=#{pd_code}
-  	</select>
+  	</select> -->
   	
-  	<insert id="boInsert" parameterType="kr.dao.BoardVO">
-	insert into test1817(info1817, count1817) 
-	values(#{info1817},#{count1817})
-	</insert>
-  	
-  	<insert id="boardInsert2" parameterType="kr.dao.SalesVO">
-	insert into t_product11(p_show_date, p_tk_count, p_seat_info, p_img_route,
-	p_deal_method, p_deal_check, p_min_bid, p_pay) 
-	values(#{p_show_date},#{p_tk_count},#{p_seat_info},#{p_img_route},#{p_deal_method}
-	,#{p_deal_check},#{p_min_bid},#{p_pay})
-	</insert>
 	
 	<!-- 카테고리 가져오기 -->
 	<select id="cateList" resultType="kr.dao.CategoryVO">
 		select * from t_category
 	</select>
 	
-  	
-  	
 </mapper>

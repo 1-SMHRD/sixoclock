@@ -1,3 +1,5 @@
+<%@page import="kr.dao.CategoryVO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -14,11 +16,6 @@
 <link rel="stylesheet" href="${cpath}/css/header_sales.css?after">
 <link rel="stylesheet" href="${cpath}/css/dealing.css?after">
 <link rel="stylesheet" href="${cpath}/css/salesWrite.css?after">
-<script type="text/javascript">
-
-
-
-</script>
 <jsp:include page="header.jsp"></jsp:include>
 </head>
 <body class="goog-te-combo_in">
@@ -36,21 +33,21 @@
 					</h3>
 					<div class="in_box_01">
 						<select id="locSelect" class="select_style_01 wd_470 mb10" name="category">
-						   <option value="">선택</option>
-						   <option value="">콘서트</option>
-						   <option value="">스포츠</option>
-						   <option value="">뮤지컬/연극</option>
-						   <option value="">영화/전시</option>
+						   <option>선택</option>
+						   <option>콘서트</option>
+						   <option>스포츠</option>
+						   <option>뮤지컬/연극</option>
+						   <option>영화/전시</option>
 						</select>
 					</div>
 					<div class="in_box_01">
 						<select id="locSelect" class="select_style_01 wd_470 mb10" name="category">
-						   <option value="">선택</option>
-						   <option value="">콘서트</option>
-						   <option value="">스포츠</option>
-						   <option value="">뮤지컬/연극</option>
-						   <option value="">영화/전시</option>
+						   <option>선택</option>
+						   <c:forEach var="vo" items="${list}">
+						   <option value="${vo.cate_name}">${vo.cate_name}</option>
+						   </c:forEach>
 						</select>
+						
 					</div>
 					<div class="clear"></div>
 				</li>
