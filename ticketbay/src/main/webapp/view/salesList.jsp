@@ -199,7 +199,7 @@
         <c:forEach var="vo" items="${list}">
         <div>
 
-          <a id="product_link" href="${cpath}/salesDetail.do?p_Idx=${vo.p_Idx}">
+          <a id="product_link" href="${cpath}/salesDetail.do?p_Idx=${vo.p_Idx}&u_id=${mvo.u_ID}">
 
             <div class="item_style_01_gr">
               <div class="in_gr_01">

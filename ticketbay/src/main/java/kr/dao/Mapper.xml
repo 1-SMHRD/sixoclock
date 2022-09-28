@@ -10,7 +10,7 @@
   	</select> -->
   	
   	<!-- p_Idx 가져오기 -->
-  	<select id="getBypdCode" parameterType="String" resultType="kr.dao.SalesWriteVO">
+  	<select id="getByp_Idx" parameterType="String" resultType="kr.dao.SalesWriteVO">
   		select * from t_product where p_Idx=#{p_Idx}
   	</select>
   	

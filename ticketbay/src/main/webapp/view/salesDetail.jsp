@@ -22,7 +22,6 @@
 </head>
 <body>
 
-<div>{vo.p}</div>
 
 <div id="container" class="bg_03 wd_100p">
   <!-- C2C 상단 영역 -->
