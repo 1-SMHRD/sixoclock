@@ -1,0 +1,234 @@
+
+#container * {
+    font-family: NanumSquareRound !important;
+    font-weight: bold !important;
+}
+
+.mem_join_size_wrap {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.mem_join_tab {
+    margin: 0 auto;
+    margin-bottom: 80px;
+    width: 600px;
+}
+
+.mem_join_tab ul{
+        display: block;
+        list-style-type: disc;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 40px;
+    }
+
+.mem_join_tab ul li {
+    text-align: center;
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    border: 1px solid #cdcfce;
+    margin-right: -1px;
+    list-style: none;
+}
+
+.mem_join_tab ul li.on a {
+    background: #90c843;
+    color: #fff;
+}
+
+.mem_join_tab ul li a {
+    position: relative;
+    font-weight: bold;
+    font-size: 14px;
+    color: #3d3d3d;
+    display: block;
+    width: 100%;
+    line-height: 43px;
+    background: #fff;
+}
+
+.mem_join_tab ul li.on a span {
+    background: url(../images/mem_down_arrow_on.gif) right center no-repeat;
+}
+
+.mem_join_tab ul li a span {
+    padding-right: 10px;
+}
+
+.mem_join_tab ul li a p {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100%;
+    font-size: 11px;
+    color: #fff;
+    text-align: center;
+    line-height: 1.4;
+    padding-top: 7px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#outbox {
+    position: relative;
+    width: 0px;
+    height: 0px;
+    top: -800px;
+    font-size: 0;
+}
+
+.white_list_line > ul {
+}
+
+.white_list_line > li {
+    margin-bottom: 30px;
+    list-style: none;
+}
+
+.white_list_line > li .input_box {
+    position: relative;
+    height: 50px;
+    padding: 0 20px;
+    border: 1px solid #c9c9c9;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.white_list_line > li input[type="text"], .white_list_line > li input[type="password"] {
+    width: 525px;
+    background: transparent;
+    border: 0;
+    box-sizing: border-box;
+    font-size: 18px;
+    line-height: 46px;
+    outline: 0;
+}
+
+.white_list_line .iconbox {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 50px;
+    height: 48px;
+    z-index: 1;
+}
+
+.white_list_line li p.notice {
+    margin-top: 5px;
+    color: #3d3d3d;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.white_list_line li p.notice span{
+    font-weight: bold;
+    color: #579703;
+}
+
+.white_list_line > li input[type="password"] {
+    width: 525px;
+    background: transparent;
+    border: 0;
+    box-sizing: border-box;
+    font-size: 18px;
+    line-height: 46px;
+    outline: 0;
+}
+
+.white_list_line li .pw_check_box {
+    position: relative;
+    display: block;
+    margin-top: 8px;
+}
+
+.white_list_line .iconbox {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 50px;
+    height: 48px;
+    z-index: 1;
+}
+
+.white_list_line li p.notice.warning {
+    color: #3d3d3d;
+}
+
+.mem_btn_wrap {
+    display: block;
+    margin-top: 40px;
+}
+
+.mem_btn_wrap .btn_signUp_st_01 {
+    background-color: rgb(243, 78, 78);
+    color: #fff;
+}
+
+.mem_btn_wrap .btn_signUp_ty_01 {
+    display: block;
+    width: 400px;
+    height: 56px;
+    margin: 0 auto;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 56px;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.years_14_pc {
+    margin-top: 10px;
+    margin-bottom: 90px;
+    text-align: center;
+    color: #252525;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+
+/* 티켓굿딜 */
+.type_all_box_gr {
+    width: 400px;
+    border-radius: 20px;
+    box-shadow: 1px 2px 6px 0px rgb(0 0 0 / 10%);
+    padding: 26px 30px;
+    background-color: #fff;
+    margin: auto;
+    margin-top: 80px;
+}
+
+.type_all_box_gr p{
+    text-align: center;
+}
+
+.type_all_box_gr h2 {
+    font-size: 26px;
+    color: #65a70c;
+    line-height: 35px;
+    margin: 5px auto 15px auto;
+    text-align: center;
+}
+
+.login_ch_01 {
+    margin: -5px auto 15px auto;
+    display: inherit;
+    width: 150px;
+    height: 80px;
+    background-size: 150px 80px;
+    background-image: url(/이미지/굿딜.jpg);
+}
