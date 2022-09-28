@@ -79,6 +79,7 @@ public class MyBatisDAO {
 		session.commit();
 		session.close();
 	}
+<<<<<<< HEAD
 
 	public orderOVO orderSheet(orderOVO ovo) {
 		SqlSession session = sqlSessionFactory.openSession();
@@ -86,6 +87,9 @@ public class MyBatisDAO {
 		session.close();
 		return ov;
 	}
+=======
+	
+>>>>>>> branch 'master' of https://github.com/1-SMHRD/sixoclock.git
 	
 	public MemberVO memLogin(MemberVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
@@ -141,5 +145,10 @@ public class MyBatisDAO {
 		session.close();
 		
 		return mvo;
+<<<<<<< HEAD
 	}
+=======
+	}
+	
+>>>>>>> branch 'master' of https://github.com/1-SMHRD/sixoclock.git
 }
