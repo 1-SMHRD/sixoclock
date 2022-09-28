@@ -102,9 +102,5 @@
   	<select id="getUserinfo" resultType="kr.dao.MemberVO" parameterType="String">
 		select * from test_user where u_id = #{u_id}
 	</select>
-<<<<<<< HEAD
-  	
-=======
-  	
->>>>>>> branch 'master' of https://github.com/1-SMHRD/sixoclock.git
+
 </mapper>
