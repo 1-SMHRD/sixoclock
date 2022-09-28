@@ -21,7 +21,6 @@ public class SalesWriteCateController implements Controller {
 		request.setAttribute("list", list);
 		
 		
-		
 		return "salesWrite";
 	}
 
