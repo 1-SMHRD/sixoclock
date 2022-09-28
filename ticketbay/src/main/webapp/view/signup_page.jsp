@@ -50,7 +50,7 @@
                 </li>
                 <li>
                     <div class="input_box">
-                        <input type="text" name="MEMBER_MOBILE_NO" value="" maxlength="13" class="input_text" placeholder="휴대폰 (필수)">
+                        <input type="text" name="MEMBER_MOBILE_NO" id="MEMBER_MOBILE_NO" value="" maxlength="13" class="input_text" placeholder="휴대폰 (필수)">
                     </div>
                     <p class="notice">거래를 위한 필수정보로 숫자만 입력해주세요</p>
                 </li>
@@ -71,6 +71,9 @@
 
     <script>
         // 로그인 후 넘어온 사용자의 정보를 담을 객체
+        
+        
+        
         let user_info = {
             user_id : null,
             user_pw : null,
@@ -97,8 +100,10 @@
             console.log(user_info.user_email);
             console.log(user_info.user_mobile);
 
-
-            registration_user();
+			if (user_info.user_email != null) {
+	            registration_user();
+				
+			}
 
         });
 
@@ -126,16 +131,19 @@
                 count++;
             }
 
-            // 임시 로그아웃 버튼
-            const button_area = document.getElementById('button_area');
-            button_area.innerHTML += " <button id='btn_logout'>네이버 로그아웃</button>";
-
-            const logout = document.getElementById('btn_logout');
-            logout.addEventListener('click', (e) => {
-                naverLogin.logout();
-                location.replace("http://210.223.239.139:8081/ticketbay/main.do");
-            })
+            
+            document.getElementById("MEMBER_NAME").disabled = true;
+			document.getElementById("MEMBER_EMAIL").disabled = true;
+			document.getElementById("MEMBER_MOBILE_NO").disabled = true;
         }
+        
+        user_info.user_id = "";
+        user_info.user_pw = "";
+        user_info.user_name = "";
+        user_info.user_email = "";
+        user_info.user_mobile = "";
+        
+        
         
         // 입력 조건에 맞지 않은 input 값이 있을시 form 전송 막기
         //document.querySelector(".form").addEventListener("submit", function (e) {

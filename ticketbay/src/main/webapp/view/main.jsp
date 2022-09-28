@@ -54,8 +54,7 @@
 		<script type="text/javascript">
 			
 		    const signout = () => {
-		    	console.log("-------------");
-		        location.replace("http://nid.naver.com/nidlogin.logout");
+		        location.href = "http://nid.naver.com/nidlogin.logout";
 		    }
 		</script>
 
