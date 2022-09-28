@@ -56,4 +56,81 @@ public class MyBatisDAO {
 		}
 
 	
+	public List<MemberVO> allMList() {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<MemberVO> list = session.selectList("allMList");
+		session.close(); // 반납
+		return list;
+	}
+	
+	public List<DeliveryVO> allDList(String u_id) {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<DeliveryVO> dlist = session.selectList("allDList", u_id);
+		session.close(); // 반납
+		return dlist;
+	}
+	
+	public void memInsert(MemberVO mvo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.insert("memInsert", mvo);
+		session.commit();
+		session.close();
+	}
+	
+	public MemberVO memLogin(MemberVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		MemberVO mvo = session.selectOne("memLogin", vo);
+		session.close();
+		
+		System.out.println("dao");
+		
+		return mvo;
+	}
+	
+	public void memUpdate(MemberVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.update("memUpdate", vo);
+		session.commit();
+		session.close();
+	}
+	
+	public void memDelete(String u_ID) {
+		System.out.println("dao : " + u_ID);
+
+		SqlSession session = sqlSessionFactory.openSession();
+		session.delete("memDelete", u_ID);
+		session.commit();
+		session.close();
+	}
+	
+	public void addrInsert(DeliveryVO dvo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.insert("addrInsert", dvo);
+		session.commit();
+		session.close();
+	}
+	
+	public void cancelbidInsert(MoneyVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.insert("cancelbidInsert", vo);
+		session.commit();
+		session.close();
+	}
+	
+	public void moneyInsert(MoneyVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.insert("moneyInsert", vo);
+		session.commit();
+		session.close();
+	}
+	
+	public MemberVO getUserinfo(String u_id) {
+		SqlSession session = sqlSessionFactory.openSession();
+		MemberVO mvo = session.selectOne("getUserinfo", u_id);
+		
+		session.close();
+		
+		return mvo;
+	}
+	
 }

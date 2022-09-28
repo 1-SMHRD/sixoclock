@@ -20,4 +20,56 @@
 		select * from t_category
 	</select>
 	
+	
+	
+	
+  	<select id="allMList" resultType="kr.dao.MemberVO">
+		select * from test_user
+	</select>
+	
+	<select id="allDList" resultType="kr.dao.DeliveryVO">
+		select * from test_deliverylist where u_ID = #{u_id}
+	</select>
+  	
+	<insert id="memInsert" parameterType="kr.dao.MemberVO">
+		insert into test_user(u_ID, u_PW, u_NAME, u_EMAIL, u_MOBILE) values (#{u_ID}, #{u_PW}, #{u_NAME}, #{u_EMAIL}, #{u_MOBILE})
+	</insert>
+	
+	<select id="memLogin" resultType="kr.dao.MemberVO" parameterType="kr.dao.MemberVO">
+		select * from test_user where u_id=#{u_ID} and u_pw=#{u_PW}
+	</select>
+	
+	<update id="memUpdate" parameterType="kr.dao.MemberVO">
+		update test_user set u_PW = #{u_PW}, u_MOBILE = #{u_MOBILE}, u_EMAIL = #{u_EMAIL} where u_ID = #{u_ID}
+	</update>
+	
+	<delete id="memDelete" parameterType="String">
+		begin
+			delete from test_user where u_ID = #{u_ID};
+			delete from test_deliverylist where d_ID = #{u_ID};
+		end;
+	</delete>
+	
+	<insert id="addrInsert" parameterType="kr.dao.DeliveryVO">
+		insert into test_deliverylist(u_id, d_name, d_post_code, d_addr, d_recipient, d_mobile) values (#{u_id}, #{d_name}, #{d_post_code}, #{d_addr}, #{d_recipient}, #{d_mobile})
+	</insert>
+	
+	<insert id="cancelbidInsert" parameterType="kr.dao.MoneyVO">
+		begin
+			insert into test_usemoney(u_id, m_now_money, m_classification, m_plus) values (#{u_ID}, #{m_NOW_MONEY}, #{m_CLASSIFICATION}, #{m_PLUS});
+			update test_user set u_money = #{m_NOW_MONEY} where u_id = #{u_ID};
+		end;
+	</insert>
+	
+	<insert id="moneyInsert" parameterType="kr.dao.MoneyVO">
+		begin
+			insert into test_usemoney(u_id, m_now_money, m_classification, m_minus) values (#{u_ID}, #{m_NOW_MONEY}, #{m_CLASSIFICATION}, #{m_MINUS});
+			update test_user set u_money = #{m_NOW_MONEY} where u_id = #{u_ID};
+		end;
+	</insert>
+  	
+  	<select id="getUserinfo" resultType="kr.dao.MemberVO" parameterType="String">
+		select * from test_user where u_id = #{u_id}
+	</select>
+  	
 </mapper>
