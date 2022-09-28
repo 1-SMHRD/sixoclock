@@ -143,10 +143,32 @@ select * from TEST_DELIVERYLIST;
 select * from TEST_USEMONEY;
 
 
+CREATE TABLE t_product
+(
+    p_idx              VARCHAR2(20), 
+    u_id               VARCHAR2(20),
+    p_cateDeps1        VARCHAR2(30), 
+    p_cateDeps2        VARCHAR2(30), 
+    p_indate           DATE        , 
+    p_tkCount          NUMBER(15, 0), 
+    p_seatInfo         VARCHAR2(400), 
+    p_imgRoute         VARCHAR2(400), 
+    p_dealMethod       VARCHAR2(400), 
+    p_tkPossession     CHAR(1)       , 
+    p_dealInfo         VARCHAR2(4000), 
+    p_biddate          DATE         , 
+    p_buyImmed         NUMBER(15, 0), 
+    p_minBid           NUMBER(15, 0), 
+    p_paycommission    NUMBER(15, 0), 
+    p_registerDate     DATE              DEFAULT SYSDATE NOT NULL, 
+     PRIMARY KEY (p_idx)
+)
+;
 
+insert into t_product (p_idx, u_id, p_biddate, p_buyImmed, p_minBid) values (123, zxcv, '09/28/2022 09:25 PM', 200000, 5000);
+insert into t_product (p_idx, u_id, p_biddate, p_buyImmed, p_minBid) values (321, asdf, '09/28/2022 05:25 PM', 200000, 5000);
+insert into t_product (p_idx, u_id, p_biddate, p_buyImmed, p_minBid) values (121, 123, '09/28/2022 07:25 PM', 200000, 5000);
+insert into t_product (p_idx, u_id, p_biddate, p_buyImmed, p_minBid) values (4321, ad, '09/28/2022 06:25 PM', 200000, 5000);
+insert into t_product (p_idx, u_id, p_biddate, p_buyImmed, p_minBid) values (2131, 4123, '09/28/2022 10:25 PM', 200000, 5000);
 
-
-
-=======
-select * from t_product11;
->>>>>>> branch 'master' of https://github.com/1-SMHRD/sixoclock.git
+select * from t_product;

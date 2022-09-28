@@ -198,7 +198,7 @@
         <!-- 상품리스트 -->
         <c:forEach var="vo" items="${list}">
         <div>
-          <a id="product_link" href="${cpath}/salesDetail.do?pd_code=${vo.pd_code}">
+          <a id="product_link" href="${cpath}/salesDetail.do?pd_code=${vo.p_idx}">
             <div class="item_style_01_gr">
               <div class="in_gr_01">
                 <div class="c2c_sub_day_txt">사용일 : ${vo.p_show_date}</div>

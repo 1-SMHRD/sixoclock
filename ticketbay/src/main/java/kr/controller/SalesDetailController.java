@@ -16,7 +16,7 @@ public class SalesDetailController implements Controller {
 			throws ServletException, IOException {
 		
 		MyBatisDAO dao=new MyBatisDAO();
-		String pd_code=request.getParameter("pd_code");
+		String pd_code=request.getParameter("p_idx");
 		SalesVO vo=dao.getBypdCode(pd_code);
 		request.setAttribute("vo", vo);
 		System.out.println(pd_code);

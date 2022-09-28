@@ -336,7 +336,7 @@
 		<div class="boxStyle" id="user_info_main" style="display: block">
 			
 			<!-- 비밀번호 확인 페이지 -->
-			<div id="check_user" style="display:none">
+			<div id="check_user" style="display:block">
 			
 				<div>
 					<p>비밀번호 확인</p>

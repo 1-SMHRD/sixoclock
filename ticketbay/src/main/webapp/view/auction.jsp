@@ -24,7 +24,7 @@
 </head>
 <body>
 
-	<h1>남은시간 : 2022년 9월 27일까지</h1>
+	<h1>판매 완료 일자 : 2022년 9월 27일까지</h1>
 	<h2 id="sample02"></h2>
 
 	<div>
@@ -159,7 +159,7 @@
 			timer = setInterval(showRemaining, 1000);
 		}
 		
-		countDownTimer('sample02', '09/27/2022 09:25 PM');
+		countDownTimer('sample02', '09/28/2022 09:25 PM');
 
 		var dateObj = new Date();
 		dateObj.setDate(dateObj.getDate() + 1);
