@@ -26,18 +26,39 @@
                     <div  class="col-md-6">
                         <div class="header-top-menu">
                             <ul class="nav nav-pills navbar-right">
+                            
+                            <c:if test="${empty mvo }">
                                 <li><a href="#"><i class="pe-7s-gift">이벤트/혜택존</i></a></li>
                                 <li><a href="#"><i class="pe-7s-ticket">MY티켓베이</i></a></li>
-                                <li><a href="#"><i class="pe-7s-unlock">로그인</i></a></li>
-                                <li><a href="#"><i class="pe-7s-user">회원가입</i></a></li>
+                                <li><a href="${cpath}/signinpage.do"><i class="pe-7s-unlock">로그인</i></a></li>
+                                <li><a href="${cpath}/signuppage.do"><i class="pe-7s-user">회원가입</i></a></li>
                                 <li><a href="${cpath}/sales.do"><i class="pe-7s-box1">판매등록</i></a></li>
-
+							</c:if>
+							
+							<c:if test="${!empty mvo }">
+                                <li><a href="${cpath}/mypage.do"><i class="pe-7s-unlock">${mvo.u_ID }님 환영합니다!</i></a></li>
+                                <li><a href="${cpath}/signout.do" onclick="signout();"><i class="pe-7s-gift">이벤트/혜택존</i></a></li>
+                                <li><a href="${cpath}/mypage.do"><i class="pe-7s-ticket">MY티켓베이</i></a></li>
+                                <li><a href="${cpath}/sales.do"><i class="pe-7s-box1">판매등록</i></a></li>
+                                <li><a href="javascript:signout();"><i class="pe-7s-unlock">로그아웃</i></a></li>
+							</c:if>
+							
+							
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+		
+		<script type="text/javascript">
+			
+		    const signout = () => {
+		    	console.log("-------------");
+		        location.replace("http://nid.naver.com/nidlogin.logout");
+		    }
+		</script>
+
 
         <header class="header-section">
             <nav class="navbar navbar-default">
