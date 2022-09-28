@@ -5,6 +5,7 @@ import java.util.HashMap;
 import kr.controller.AuctionpageController;
 import kr.controller.BidCancelController;
 import kr.controller.ChatroomController;
+
 import kr.controller.Controller;
 import kr.controller.DeleteUserController;
 import kr.controller.MainController;
@@ -15,6 +16,7 @@ import kr.controller.SalesDetailController;
 import kr.controller.SalesListController;
 import kr.controller.SalesWriteCateController;
 import kr.controller.SalesWriteController;
+
 import kr.controller.SigninController;
 import kr.controller.SigninPController;
 import kr.controller.SignupController;
@@ -28,6 +30,7 @@ import kr.controller.addDeliveryPController;
 import kr.controller.SigninPController;
 import kr.controller.SalesWriteFormController;
 
+
 public class HandlerMapping {
 	private HashMap<String, Controller> mappings;	
 	public HandlerMapping() {
@@ -40,6 +43,7 @@ public class HandlerMapping {
 		mappings.put("/salesWriteCate.do", new SalesWriteCateController());
 		mappings.put("/productListView.do", new ProductListViewController()); // 등록후 마이페이지
 		
+
 		mappings.put("/mypage.do", new MyPageController());
 		
 		mappings.put("/signinpage.do", new SigninPController());
