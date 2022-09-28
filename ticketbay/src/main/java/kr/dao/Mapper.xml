@@ -5,9 +5,9 @@
 <mapper namespace="kr.dao.Mapper">
   	
   	<!-- 전체리스트 -->
-  	<!-- <select id="allList" resultType="kr.dao.SalesVO">
-  		select * from t_product
-  	</select> -->
+  	<select id="allList" resultType="kr.dao.SalesWriteVO">
+  		select * from t_product order by p_buyimmed
+  	</select>
   	
   	<!-- p_Idx 가져오기 -->
   	<select id="getBypdCode" parameterType="String" resultType="kr.dao.SalesWriteVO">

@@ -20,6 +20,7 @@ public class SalesDetailController implements Controller {
 		SalesWriteVO vo=dao.getByp_Idx(p_Idx);
 		request.setAttribute("vo", vo);
 		System.out.println(p_Idx);
+		
 		return "salesDetail";
 	}
 
