@@ -19,8 +19,15 @@
 	<select id="cateList" resultType="kr.dao.CategoryVO">
 		select * from t_category
 	</select>
+
 	
-	
+	<insert id="salesInsert" parameterType="kr.dao.SalesWriteVO">
+		insert into t_product(p_Idx, u_id, p_cateDeps1, p_cateDeps2, p_indate, p_tkCount, p_seatInfo, p_imgRoute,
+			p_dealMethod, p_tkPossession, p_dealInfo, p_biddate, p_buyImmed, p_minBid)
+		values(pidx_seq.nextval, #{u_ID}, #{p_cateDeps1}, #{p_cateDeps2}, #{p_indate}, #{p_tkCount}, #{p_seatInfo},
+			#{p_imgRoute}, #{p_dealMethod}, #{p_tkPossession}, #{p_dealInfo}, #{p_biddate}, #{p_buyImmed},
+			#{p_minBid})
+	</insert>
 	
 	
   	<select id="allMList" resultType="kr.dao.MemberVO">

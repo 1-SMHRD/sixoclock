@@ -39,6 +39,7 @@ public class MyBatisDAO {
 	}
 	
 	
+	
 	// 상세보기(pd_code)
 	public SalesWriteVO getBypdCode(String pd_code) {
 		SqlSession session = sqlSessionFactory.openSession();
@@ -48,9 +49,9 @@ public class MyBatisDAO {
 	}
 
 	// 판매등록
-	public void salesWrite(SalesWriteVO vo) {
+	public void salesInsert(SalesWriteVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
-		session.insert("boardInsert2", vo);
+		session.insert("salesInsert", vo);
 		session.commit();
 		session.close();
 		}
