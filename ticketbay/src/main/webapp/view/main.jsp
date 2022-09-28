@@ -83,13 +83,15 @@
                             	
                                 <li><span><button class="dropbtn" value="${vo.cate_no}">콘서트</button></span></li>
                                 <div class="dropdown-content">
-                                <c:if test="${vo.up_cate_no eq '1000'}">
+                                <c:if test="${vo.p_cateDeps2 eq '하이라이트'}">
                                     <a href="${cpath}/slaesList.do">하이라이트</a>
+                                </c:if>
+                                <c:if test="${vo.p_cateDeps2 eq '블랙핑크'}">
                                     <a href="${cpath}/slaesList.do">블랙핑크</a>
+                                </c:if>
                                     <a href="${cpath}/slaesList.do">김호중</a>
                                     <a href="${cpath}/slaesList.do">그랜드 민트 페스티벌</a>
                                     <a href="${cpath}/slaesList.do">포레스텔라</a>
-                                </c:if>
                                 
                                 </div>
                             </div>

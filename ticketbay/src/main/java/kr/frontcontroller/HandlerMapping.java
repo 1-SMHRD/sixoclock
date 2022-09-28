@@ -14,17 +14,11 @@ import kr.controller.NaveridloginpageController;
 import kr.controller.ProductListViewController;
 import kr.controller.SalesDetailController;
 import kr.controller.SalesListController;
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'master' of https://github.com/1-SMHRD/sixoclock.git
 import kr.controller.RequestVerifyAuthController;
 import kr.controller.orderController;
 import kr.controller.orderPayController;
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'master' of https://github.com/1-SMHRD/sixoclock.git
 import kr.controller.SalesWriteCateController;
 import kr.controller.SalesWriteController;
 
@@ -41,10 +35,6 @@ import kr.controller.addDeliveryPController;
 import kr.controller.SigninPController;
 import kr.controller.SalesWriteFormController;
 
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'master' of https://github.com/1-SMHRD/sixoclock.git
 
 public class HandlerMapping {
 	private HashMap<String, Controller> mappings;	
@@ -53,17 +43,11 @@ public class HandlerMapping {
 		mappings.put("/main.do", new MainController());
 		mappings.put("/salesList.do", new SalesListController());
 		mappings.put("/salesDetail.do", new SalesDetailController());
-<<<<<<< HEAD
 
 		mappings.put("/orderSheet.do",new orderController());
 		mappings.put("/orderPay.do",new orderPayController());
 		mappings.put("/RequestVerifyAuth.do",new RequestVerifyAuthController());
 
-=======
-		 mappings.put("/orderSheet.do",new orderController());
-		   mappings.put("/orderPay.do",new orderPayController());
-		   mappings.put("/RequestVerifyAuth.do",new RequestVerifyAuthController());
->>>>>>> branch 'master' of https://github.com/1-SMHRD/sixoclock.git
 		mappings.put("/salesWrite.do", new SalesWriteController()); // 판매등록
 		mappings.put("/salesWriteForm.do", new SalesWriteFormController());
 		mappings.put("/salesWriteCate.do", new SalesWriteCateController());
@@ -87,12 +71,7 @@ public class HandlerMapping {
 		mappings.put("/usemoney.do", new UseMoneyController());
 		mappings.put("/bidcancel.do", new BidCancelController());
 		mappings.put("/chatroom.do", new ChatroomController());
-		
-<<<<<<< HEAD
 
-=======
-		
->>>>>>> branch 'master' of https://github.com/1-SMHRD/sixoclock.git
 		
 	}
 	public Controller getController(String key) {
