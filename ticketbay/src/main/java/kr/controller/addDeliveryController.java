@@ -19,11 +19,11 @@ public class addDeliveryController implements Controller {
 		String u_id = request.getParameter("u_id");
 		String d_name = request.getParameter("d_name");
 		String d_recipient = request.getParameter("d_recipient");
-		int d_postcode = Integer.parseInt(request.getParameter("d_postcode"));
+		String d_postcode = request.getParameter("d_postcode");
 		String d_address = request.getParameter("d_address");
 		String detailAddress = request.getParameter("detailAddress");
 		String extraAddress = request.getParameter("extraAddress");
-		int d_mobile = Integer.parseInt(request.getParameter("d_mobile"));
+		String d_mobile =   request.getParameter("d_mobile");
 		
 		String d_addr = d_address + " " + detailAddress + " " + extraAddress;
 		

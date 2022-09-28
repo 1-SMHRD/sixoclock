@@ -33,7 +33,7 @@ public class SignupController implements Controller {
 		MyBatisDAO dao = new MyBatisDAO();
 		dao.memInsert(mvo);
 		
-		return "signup";
+		return "redirect:/main.do";
 	}
 
 }

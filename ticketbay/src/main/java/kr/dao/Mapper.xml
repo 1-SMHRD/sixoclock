@@ -57,7 +57,7 @@
 	<delete id="memDelete" parameterType="String">
 		begin
 			delete from test_user where u_ID = #{u_ID};
-			delete from test_deliverylist where d_ID = #{u_ID};
+			delete from test_deliverylist where u_ID = #{u_ID};
 		end;
 	</delete>
 	
