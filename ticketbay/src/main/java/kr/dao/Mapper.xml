@@ -3,23 +3,6 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.dao.Mapper">
-<<<<<<< HEAD
-
-	<!-- 전체리스트 -->
-	<select id="allList" resultType="kr.dao.SalesVO">
-		select * from t_product
-	</select>
-	<!-- 상품코드 가져오기 -->
-	<select id="getBypdCode" parameterType="String"
-		resultType="kr.dao.SalesVO">
-		select * from t_product where pd_code=#{pd_code}
-	</select>
-
-	<insert id="sm1818Insert" parameterType="kr.dao.BoardVO">
-		insert into t_copy11(a1,
-		b2, c3)
-		values(#{a1},#{b2},#{c3})
-=======
   	
   	<!-- 전체리스트 -->
   	<!-- <select id="allList" resultType="kr.dao.SalesVO">
@@ -44,16 +27,13 @@
 		values(pidx_seq.nextval, #{u_ID}, #{p_cateDeps1}, #{p_cateDeps2}, #{p_indate}, #{p_tkCount}, #{p_seatInfo},
 			#{p_imgRoute}, #{p_dealMethod}, #{p_tkPossession}, #{p_dealInfo}, #{p_biddate}, #{p_buyImmed},
 			#{p_minBid})
->>>>>>> branch 'master' of https://github.com/1-SMHRD/sixoclock
 	</insert>
-<<<<<<< HEAD
 
-	<select id="ordersheet" parmeterType="kr.dao.orderOVO">
+	<select id="ordersheet" parameterType="kr.dao.orderOVO">
 		select * from t_performance_info where p_code=#{p_code}
 		select * from t_product where pd_code=#{pd_code}
 	</select>
 
-=======
 	
 	
   	<select id="allMList" resultType="kr.dao.MemberVO">
@@ -105,5 +85,4 @@
 		select * from test_user where u_id = #{u_id}
 	</select>
   	
->>>>>>> branch 'master' of https://github.com/1-SMHRD/sixoclock
 </mapper>

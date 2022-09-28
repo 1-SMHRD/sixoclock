@@ -83,11 +83,13 @@
                             	
                                 <li><span><button class="dropbtn" value="${vo.cate_no}">콘서트</button></span></li>
                                 <div class="dropdown-content">
-                                <c:forEach var="vo" items="${list}">
                                 <c:if test="${vo.up_cate_no eq '1000'}">
-                                    <a href="#">${vo.cate_name}</a>
+                                    <a href="${cpath}/slaesList.do">하이라이트</a>
+                                    <a href="${cpath}/slaesList.do">블랙핑크</a>
+                                    <a href="${cpath}/slaesList.do">김호중</a>
+                                    <a href="${cpath}/slaesList.do">그랜드 민트 페스티벌</a>
+                                    <a href="${cpath}/slaesList.do">포레스텔라</a>
                                 </c:if>
-                                </c:forEach>
                                 
                                 </div>
                             </div>

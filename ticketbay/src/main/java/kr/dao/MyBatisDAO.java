@@ -8,7 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import ticket.dao.orderOVO;
+import kr.dao.orderOVO;
 
 public class MyBatisDAO {
 	private static SqlSessionFactory sqlSessionFactory;
@@ -79,14 +79,7 @@ public class MyBatisDAO {
 		session.commit();
 		session.close();
 	}
-<<<<<<< HEAD
-	public orderOVO orderSheet(orderOVO ovo) {
-		SqlSession session = sqlSessionFactory.openSession();
-		orderOVO ov=session.selectOne("orderOVO", ovo);
-		session.close();
-		return ov;
-
-=======
+	
 	
 	public MemberVO memLogin(MemberVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
@@ -144,5 +137,4 @@ public class MyBatisDAO {
 		return mvo;
 	}
 	
->>>>>>> branch 'master' of https://github.com/1-SMHRD/sixoclock
 }

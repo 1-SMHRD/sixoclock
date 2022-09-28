@@ -42,12 +42,12 @@
 					</div>
 					<div class="in_box_01">
 						<select id="locSelect" class="select_style_01 wd_470 mb10" name="p_cateDeps2">
-						   <option>선택</option>
-						   <c:forEach var="vo" items="${list }">
-						   <c:if test="${vo.up_cate_no eq '1000' }">
-						   <option value="아이유">${vo.cate_name}</option>
-						   </c:if>
-						   </c:forEach>
+						   <option value="">선택</option>
+						   <option value="하이라이트">하이라이트</option>
+						   <option value="블랙핑크">블랙핑크</option>
+						   <option value="김호중">김호중</option>
+						   <option value="그랜드민트페스티벌">그랜드 민트 페스티벌</option>
+						   <option value="포레스텔라">포레스텔라</option>
 						</select>
 						
 					</div>
