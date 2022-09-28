@@ -3,19 +3,26 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.dao.Mapper">
-  	
-  	<!-- 전체리스트 -->
-  	<select id="allList" resultType="kr.dao.SalesVO">
-  		select * from t_product
-  	</select>
-  	<!-- 상품코드 가져오기 -->
-  	<select id="getBypdCode" parameterType="String" resultType="kr.dao.SalesVO">
-  		select * from t_product where pd_code=#{pd_code}
-  	</select>
-  	
-  	<insert id="sm1818Insert" parameterType="kr.dao.BoardVO">
-		insert into t_copy11(a1, b2, c3)
+
+	<!-- 전체리스트 -->
+	<select id="allList" resultType="kr.dao.SalesVO">
+		select * from t_product
+	</select>
+	<!-- 상품코드 가져오기 -->
+	<select id="getBypdCode" parameterType="String"
+		resultType="kr.dao.SalesVO">
+		select * from t_product where pd_code=#{pd_code}
+	</select>
+
+	<insert id="sm1818Insert" parameterType="kr.dao.BoardVO">
+		insert into t_copy11(a1,
+		b2, c3)
 		values(#{a1},#{b2},#{c3})
 	</insert>
-  	
+
+	<select id="ordersheet">
+		select * from t_performance_info where p_code=#{p_code}
+		select * from t_product where pd_code=#{pd_code}
+	</select>
+
 </mapper>
