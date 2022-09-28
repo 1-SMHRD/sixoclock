@@ -120,7 +120,7 @@ input[class*='stFormEl'], .stFormElCh01 {
     color: #666 !important;
     padding: 8px 28px 8px 10px;
     height: auto !important;
-    background: url(../img/달력.gif) right center no-repeat #fff !important;
+    background:#fff !important;
     background-position: calc(100% - 10px) 9px !important;
     background-size: 14px 14px !important;
     line-height: 15px;
@@ -307,9 +307,6 @@ a.cke_button {
     color: #474747;
     text-shadow: 0 1px 0 rgb(255 255 255 / 50%);
 }
-/* #java1818{
-height: 221px;	
-} */
 .t_pay_gr {
     border: 5px solid #efefef;
     border-radius: 30px;
@@ -323,7 +320,7 @@ height: 221px;
 }
 .t_pay_gr .tit_style_001:before {
     content: '!';
-    display: inline-block;
+    display: none;
     width: 15px;
     height: 15px;
     margin: 0 5px 0 0px;
@@ -345,7 +342,6 @@ height: 221px;
     display: inline-block;
     vertical-align: top;
     text-align: center;
-    border-right: 1px solid #dedede;
 }
 /* 배송거래 누르면 나타나는 */
 .li_type_1, .li_type_2, .li_type_4, .li_type_5, .li_type_16 {
@@ -526,9 +522,6 @@ input {
     border: 1px solid transparent;
     box-sizing: border-box;
 }
-#java1818{
-	height:221px;
-}
 #pd_PCOUPON{
 	height:65px;
 }
@@ -556,10 +549,12 @@ input {
 } */
 .t_pay_gr .t_pay_gr_txt_03 strong {
     display: block;
-    font-size: 16px !important;
+    font-size: 12px !important;
+    font-family: NanumSquareRound !important;
     font-weight: normal;
     text-align: right;
     padding-right: 10px;
+    padding-top: 10px;
 }
 .t_pay_gr .t_pay_gr_txt_01 span {
     font-size: 21px !important;
@@ -582,9 +577,21 @@ input {
     display: block;
     font-size: 21px !important;
 }
-.t_pay_gr #SPRICE_BULK {
+.t_pay_gr #p_pay {
     width: 260px !important;
+    margin-bottom: 10px;
 }
+.t_pay_gr #p_min_bid {
+    width: 260px !important;
+    margin-bottom: 10px;
+}
+.t_pay_gr #p_bid_date {
+    width: 260px !important;
+    margin-bottom: 10px;
+}
+
+
+
 .t_pay_gr .t_pay_gr_txt_03 {
     display: inline-block;
     width: 290px;

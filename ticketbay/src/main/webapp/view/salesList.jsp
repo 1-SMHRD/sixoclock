@@ -21,7 +21,7 @@
 </head>
 <body class="goog-te-combo_in">
 <div class="bg_04 wd_100p">
-  <div id="all_gr" class="container clearfix" style="position: relative;">
+  <div id="all_gr" class="container clearfix" style="position: relative; width: 970px;">
     <!-- // sidebar -->
     
     <script type="text/javascript">
@@ -34,7 +34,7 @@
 			       	  
     </script>
        	  
-    <div id="sidebar" class="is-affixed" style="position: relative;">
+    <div id="sidebar" class="is-affixed" style="position: relative; margin-top:10px;">
       <div class="sidebar__inner" style="position: relative;">
         <!-- 카테고리정보 -->
         <div class="sidebar_a_box">
@@ -180,9 +180,9 @@
     	})
     </script>
     <!-- content 영역 -->
-    <div id="content" style="width: 674px;">
+    <div id="content" style="width: 674px; margin-top:10px;">
       <div class="dp_fx_02 info_box_gr">
-        <h3>INFO</h3>
+        <h3 style="margin-top:20px;">INFO</h3>
         <div class="in_txt_gr">가수이름</div>
       </div>
       <div>

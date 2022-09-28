@@ -30,7 +30,7 @@
                                 <li><a href="#"><i class="pe-7s-ticket">MY티켓베이</i></a></li>
                                 <li><a href="#"><i class="pe-7s-unlock">로그인</i></a></li>
                                 <li><a href="#"><i class="pe-7s-user">회원가입</i></a></li>
-                                <li><a href="${cpath}/sales.do"><i class="pe-7s-box1">판매등록</i></a></li>
+                                <li><a href="${cpath}/salesWriteForm.do"><i class="pe-7s-box1">판매등록</i></a></li>
 
                             </ul>
                         </div>
@@ -52,13 +52,6 @@
 
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
-                    <script type="text/javascript">
-                    
-                      if("${vo.cate_no}"=="${vo.up_cate_no}"){
-                    	  $('.dropdown-content').html('a')
-                      }
-                    
-                    </script>
                     
                     
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

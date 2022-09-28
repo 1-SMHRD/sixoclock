@@ -20,9 +20,9 @@
 	</insert>
   	
   	<insert id="boardInsert2" parameterType="kr.dao.SalesVO">
-	insert into t_product11(p_show_date, p_tk_count, p_seat_info, p_prod_check, p_img_route,
+	insert into t_product11(p_show_date, p_tk_count, p_seat_info, p_img_route,
 	p_deal_method, p_deal_check, p_min_bid, p_pay) 
-	values(#{p_show_date},#{p_tk_count},#{p_seat_info},#{p_prod_check},#{p_img_route},#{p_deal_method}
+	values(#{p_show_date},#{p_tk_count},#{p_seat_info},#{p_img_route},#{p_deal_method}
 	,#{p_deal_check},#{p_min_bid},#{p_pay})
 	</insert>
 	

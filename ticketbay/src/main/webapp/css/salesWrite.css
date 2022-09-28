@@ -59,7 +59,7 @@ element.style {
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
 	border-bottom-color: rgb(239, 239, 239);
-	height: 65px;
+	/* height: 65px; */
 }
 
 * {
@@ -200,9 +200,10 @@ h3 {
 	border-radius: 8px !important;
 	font-size: 15px;
 	font-family: NanumSquareRound !important;
+	font-weight: bold;
 	color: #666 !important;
 	padding: 8px 30px 8px 10px;
-	height: 35px !important;
+	/* height: 35px !important; */
 	background: url(../img/좌석정보_체크.svg) right center no-repeat #fff
 		!important;
 	background-position: calc(100% - 12px) center !important;
@@ -590,11 +591,11 @@ input[type="checkbox" i] {
 }
 /* 등록안 내용 높이 */
 #pusedSelect {
-	height: 54px;
+	/* height: 54px; */
 }
 
 #pd_SINFO {
-	height: 240px;
+	/* height: 240px; */
 }
 
 #reg_seatheed_box {
@@ -613,7 +614,7 @@ input[type="checkbox" i] {
     border-radius: 15px;
     font-size: 18px !important;
     display: inline-block;
-    padding: 8px 16px;
+    padding: 5px 10px;
     box-shadow: 0 0 5px #c5c5c5;
     font-weight: bold;
     border: 3px solid #fff;
@@ -624,7 +625,7 @@ input[type="checkbox" i] {
 }
 .in_box_01 input[type=radio] + span, .in_box_01 input[type=checkbox] + span {
     padding-left: 25px;
-    background: url(../img/icon_ck_off_v2.svg) 0 8px no-repeat;
+    background: url(../img/icon_ck_off.svg) 0 8px no-repeat;
     background-size: 18px 18px;
     height: 35px;
     display: inline-block;

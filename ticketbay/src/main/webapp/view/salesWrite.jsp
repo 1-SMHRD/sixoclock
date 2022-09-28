@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>상품등록 | 티켓베이</title>
 
 <link rel="stylesheet" href="${cpath}/css/styleList.css?after">
 <link rel="stylesheet" href="${cpath}/css/common.css?after">
@@ -15,69 +15,70 @@
 <link rel="stylesheet" href="${cpath}/css/dealing.css?after">
 <link rel="stylesheet" href="${cpath}/css/salesWrite.css?after">
 <script type="text/javascript">
-	var con = document.getElementById("checkbox18");
-	var con1 = document.getElementById("checkbox1818");
-con.addEventListener('click',()=> {
-	if (con1.style.display == 'none') {
-		con1.style.display = 'block';
-	} else { 
-		con1.style.display = 'none';
-	}
-}
+
+
+
 </script>
 <jsp:include page="header.jsp"></jsp:include>
 </head>
 <body class="goog-te-combo_in">
-	<form class="form-horizontal" action="${cpath}/salesWrite.do"
-		method="post">
+	<form class="form-horizontal" action="${cpath}/salesWrite.do" method="post">
+		<div class="tit_box_04">
+			<h2>판매등록</h2>
+		</div>
 		<div class="box_style_04 mt_20" style="display: block;">
 			<h2>상품정보 등록</h2>
 			<ul>
+				
+				<li id="pd_category" style="display: block;">
+					<h3>
+						카테고리 <span class="required">(필수)</span>
+					</h3>
+					<div class="in_box_01">
+						<select id="locSelect" class="select_style_01 wd_470 mb10" name="category">
+						   <option value="">선택</option>
+						   <option value="">콘서트</option>
+						   <option value="">스포츠</option>
+						   <option value="">뮤지컬/연극</option>
+						   <option value="">영화/전시</option>
+						</select>
+					</div>
+					<div class="in_box_01">
+						<select id="locSelect" class="select_style_01 wd_470 mb10" name="category">
+						   <option value="">선택</option>
+						   <option value="">콘서트</option>
+						   <option value="">스포츠</option>
+						   <option value="">뮤지컬/연극</option>
+						   <option value="">영화/전시</option>
+						</select>
+					</div>
+					<div class="clear"></div>
+				</li>
+				
 				<!-- 공연일시 선택 // -->
-				<li id="pusedSelect" style="display: block;">
+				<li id="" style="display: block;">
 					<!-- 기존 id="pd_PUSEDATE" -->
 					<h3>
 						공연일 <span class="required">(필수)</span>
 					</h3>
 					<div class="float_r wd_760">
-						<div class="ck_img_btn_gr">
-
+						<div class="in_box_01">
 							<!-- 공연일 -->
-							<input name="p_show_date">
-
+							<input type="date" name="START_DATE" 
+								class="textInp03 input_style_01 hasDatepicker" 
+								title="공연일" style="width:79px; font-weight: bold;" id="dp1664287470517">
+								<input type="time" name="START_TIME" 
+								class="textInp03 input_style_01 hasDatepicker" 
+								title="공연시간" style="width:79px; font-weight: bold;" id="time">
+							<div class="required_txt mt_10">
+							사용일자가 종료되면 상품이 더 이상 노출되지 않습니다.</div>
+							<div class="required_txt">
+							사용일시를 정확히 선택하여야 구매자와의 분쟁을 방지할 수 있습니다.(사용시간까지 정확히 입력해주세요)</div>	
 						</div>
 					</div>
 					<div class="clear"></div>
 				</li>
 				<!-- // 공연일시 선택  -->
-
-				<!-- 기존 기타카테고리 선택 시 // -->
-				<li id="pd_PUSEDATE" style="display: none;">
-					<h3>
-						티켓 사용일시 <span class="required">(필수)</span>
-					</h3>
-					<div class="in_box_01">
-						<select id="useDate" name="TERM_TYPE"
-							class="stFormEl01 select_style_01 float_l mr_10" title="사용기간"
-							style="display: none">
-							<option value="">선택</option>
-							<option value="2">특정일 사용</option>
-
-						</select>
-						<!-- 판매 매수 제한 문구 추가 시작 dp_b -->
-						<div class="required_txt mt_10 mb_-10" id="restrict_date"
-							style="display: none"></div>
-						<!-- 판매 매수 제한 문구 추가 끝 -->
-						<div class="required_txt mt_10">사용일자가 종료되면 상품이 더 이상 노출되지
-							않습니다.</div>
-						<div class="required_txt">사용일시를 정확히 선택하여야 구매자와의 분쟁을 방지할 수
-							있습니다. (사용시간까지 정확히 입력해 주세요)</div>
-					</div>
-					<div class="clear"></div>
-				</li>
-				<!-- // 기존 기타카테고리 선택 시  -->
-
-
 
 				<!-- 티켓 매수  // -->
 				<li id="">
@@ -91,42 +92,16 @@ con.addEventListener('click',()=> {
 							class="input_style_02 txt_c"
 							style="width: 205px !important;" maxlength="4"
 							placeholder="전체 수량 입력">
-						<div class="tip_txt_mp" id="restrict_txt" style="display: none">
+						<div class="tip_txt_mp" id="restrict_txt" style="display: none;">
 							<span>판매 수량을 다시 입력해 주세요</span> <span class="tip_txt_mp_bg"></span>
 						</div>
-
-
-						<!-- 개별판매 -->
-						<span class="span_individual" style="display: none"> <input
-							type="hidden" id="sellPlace" name="SALE_PRICE"
-							class="textInp03 number_tr"> <input type="text"
-							id="SPRICE" name="SPRICE" class="input_style_02 txt_c"
-							style="width: 95px !important;" placeholder="판매  가격"
-							maxlength="10"> 원 <input type="hidden"
-							id="discountRegularPrice" name="discountRegularPrice"> <input
-							id="iTPlace" name="REGULAR_PRICE" type="text"
-							class="input_style_02 txt_c ml_10"
-							style="width: 95px !important;" maxlength="9"
-							placeholder="상품 정가 가격"> 원 <!-- <strong class="vtTxt strStyle04"><em id="discountRegularPrice">0</em>% 할인</strong> -->
-						</span>
-
-						<!-- 연석 체크 영역 // -->
-						<div class="mt_10 ml_10 mb_10" id="consecutive_type_box"
-							style="display: none;">
-							<label> <input name="consecutive_type"
-								id="consecutive_type" type="checkbox" class="ck_img" value="">
-								<span>연속된 좌석 입니다.</span>
-							</label>
-						</div>
-						<!-- // 연석 체크 영역 -->
 
 
 						<!-- 판매 매수 제한 문구 추가 시작 dp_b-->
 						<div class="required_txt mt_10" id="restrict_cnt"
 							style="display: none"></div>
 						<!-- 판매 매수 제한 문구 추가 끝 -->
-						<span class="required_txt pl_10 dp_b">상품 수량은 일괄로 한번에 판매
-							됩니다.</span>
+						<div class="required_txt pl_10 dp_b mt_10">상품 수량은 일괄로 한번에 판매됩니다.</div>
 
 
 					</div>
@@ -140,22 +115,6 @@ con.addEventListener('click',()=> {
 						좌석정보 <span class="required">(필수)</span>
 					</h3>
 					<div class="in_box_01">
-						<!-- <select id="gradeSelect" class="select_style_01 wd_470 mb10"
-							name="TICKET_GRADE">
-
-							<option value="">선택1</option>
-							<option data-regular-price="29000" data-seatplan-seq="77373"
-								value="A">A</option>
-						</select>  -->
-						<select id="locSelect" class="select_style_01 wd_470 mb10"
-							name="TICKET_FLOOR" style="display: none;">
-
-						</select>
-						<!-- 구역 정보 // -->
-						<select id="areaSelect" class="select_style_01 wd_470 mb10"
-							style="display: none;">
-
-						</select>
 						<!-- 구역 정보 없을 경우 기존  input 노출 -->
 						<input type="text" id="areaInput" name="p_seat_info"
 							class="input_style_02 wd_470 box-sizing mb10"
@@ -164,8 +123,8 @@ con.addEventListener('click',()=> {
 						<!-- // 구역 정보  -->
 						<input type="text" name="p_seat_info"
 							class="input_style_02 wd_470 box-sizing mb10"
-							placeholder="열 입력 EX)88" maxlength="10"> <input
-							type="text" name="p_seat_info"
+							placeholder="열 입력 EX)88" maxlength="10">
+						<input type="text" name="p_seat_info"
 							class="input_style_02 wd_470 box-sizing"
 							placeholder="선택사항 : 추가정보 최대 10글자 입력 가능" maxlength="10">
 						<div class="required_txt mt_10">좌석정보는 숫자와 영문으로 입력하셔야 거래 성사율을
@@ -177,75 +136,20 @@ con.addEventListener('click',()=> {
 				</li>
 				<!-- // 좌석 정보  -->
 
-
-				<!-- 상품 특이사항  // -->
-				<li id="reg_prodUnusual_box">
-					<h3 class="h3_style_02">
-						상품 특이사항 <span>(중복선택가능)</span>
-					</h3>
-					<div class="float_r wd_760 mt5">
-						<div class="ck_img_btn_gr">
-
-
-
-							<label class="ck_img_btn"> 
-							<input name="p_prod_check"
-							type="checkbox" data-code-name="판매자가 입장 도움" value="16">
-								<span>판매자가 입장 도움</span>
-							</label> <label class="ck_img_btn"> 
-							<input name="p_prod_check"
-								type="checkbox" data-code-name="예매처 ID로 상품 전달" value="2">
-								<span>예매처 ID로 상품 전달</span>
-							</label> <label class="ck_img_btn"> 
-							<input name="p_prod_check"
-								type="checkbox" data-code-name="18세 이상 이용가능" value="32">
-								<span>18세 이상 이용가능</span>
-							</label> <label class="ck_img_btn"> 
-							<input name="p_prod_check"
-								type="checkbox" data-code-name="할인티켓 - 학생" value="64"> <span>할인티켓
-									- 학생</span>
-							</label> <label class="ck_img_btn"> 
-							<input name="p_prod_check"
-								type="checkbox" data-code-name="할인티켓 - 장애인" value="128">
-								<span>할인티켓 - 장애인</span>
-							</label> <label class="ck_img_btn"> 
-							<input name="p_prod_check"
-								type="checkbox" data-code-name="할인티켓 - 경로자" value="256">
-								<span>할인티켓 - 경로자</span>
-							</label> <label class="ck_img_btn"> 
-							<input name="p_prod_check"
-								type="checkbox" data-code-name="여성명의" value="512"> <span>여성명의</span>
-							</label> <label class="ck_img_btn"> 
-							<input name="p_prod_check"
-								type="checkbox" data-code-name="남성명의" value="1024"> <span>남성명의</span>
-							</label> <label class="ck_img_btn"> 
-							<input name="p_prod_check"
-								type="checkbox" data-code-name="조기입장" value="2048"> <span>조기입장</span>
-							</label> <label class="ck_img_btn"> 
-							<input name="p_prod_check"
-								type="checkbox" data-code-name="재관람 티켓" value="4096"> <span>재관람
-									티켓</span>
-							</label>
-						</div>
-					</div>
-					<div class="clear"></div>
-				</li>
-				<!-- // 상품 특이사항  -->
-
 				<!-- 상품 사진  // -->
 				<li id="pd_PIMG">
 					<h3>
 						상품 사진 <span class="">(선택)</span><span class="txt_info_01">업로드
 							이미지 저작권 및<br> 초상권 관련 책임은<br> 게시자 본인에게 있습니다.
 						</span>
-					</h3> <input type="hidden" name="PRODUCT_IMAGE_YN" value="N"> <input
-					type="hidden" id="defaultimagepath"> <input type="hidden"
-					name="REPLACE_IMAGE_YN" value="N"> <input type="hidden"
-					id="adminRegCateImgPath" value="">
+					</h3> 
+					<input type="hidden" name="PRODUCT_IMAGE_YN" value="N"> 
+					<input type="hidden" id="defaultimagepath">
+					<input type="hidden" name="REPLACE_IMAGE_YN" value="N">
+					<input type="hidden" id="adminRegCateImgPath" value="">
 					<div class="in_box_01">
 						<div class="product_photo_frame">
 							<ul class="list clearfix">
-								<input type="hidden" name="ATTACH_REPRESENT_IMAGE">
 								<li><input id="imagesAdd1" type="file" accept="image/*"
 									name="p_img_route"> <span class="picImg"> <label
 										for="imagesAdd1"> <img src="${cpath}/img/카메라.svg">
@@ -253,10 +157,13 @@ con.addEventListener('click',()=> {
 								</span> <span class="del btnClose hidden-object" style="display: none;">
 								</span></li>
 
-								<li><input id="imagesAdd2" type="file" accept="image/*"
-									name="p_img_route"><span class="picImg"><label
-										for="imagesAdd2"><img src="${cpath}/img/카메라.svg"></label></span><span
-									class="del btnClose hidden-object" style="display: none;"></span></li>
+								<li>
+								<input id="imagesAdd2" type="file" accept="image/*" name="p_img_route" onchange="setThumnail(event);" multiple/>
+								<span class="picImg">
+								  <label for="imagesAdd2"><img src="${cpath}/img/카메라.svg"></label>
+								</span>
+								<span class="del btnClose hidden-object" style="display: none;"></span>
+								</li>
 								<li><input id="imagesAdd3" type="file" accept="image/*"
 									name="p_img_route"><span class="picImg"><label
 										for="imagesAdd3"><img src="${cpath}/img/카메라.svg"></label></span><span
@@ -286,17 +193,20 @@ con.addEventListener('click',()=> {
 					<div class="in_box_01">
 						<div class="modeTransaction">
 
-							<label class="TYPE_02"><input type="checkbox"
-								name="p_deal_method" value="2" id="checkbox18">
-								<span
-								class="TRANSACTION_TYPE2">배송거래</span></label> <label class="TYPE_01"><input
-								type="checkbox" name="TRANSACTION_TYPE" value="1"><span
-								class="p_deal_method">PIN거래(E-ticket)</span></label> <label
-								class="TYPE_03"><input type="checkbox"
-								name="TRANSACTION_TYPE" value="4"><span
-								class="p_deal_method">현장거래</span></label> <label class="TYPE_05"><input
-								type="checkbox" name="TRANSACTION_TYPE" value="16"><span
-								class="p_deal_method">기타</span></label>
+							<label class="TYPE_02">
+								<input type="checkbox" name="p_deal_method" value="베송거래">
+								<span class="TRANSACTION_TYPE2">배송거래</span> </label>
+							<label class="TYPE_01">
+								<input
+								type="checkbox" name="p_deal_method" value="PIN거래(E-ticket)">
+								<span class="TRANSACTION_TYPE1">PIN거래(E-ticket)</span></label>
+							<label class="TYPE_03">
+								<input type="checkbox" name="p_deal_method" value="현장거래">
+								<span class="TRANSACTION_TYPE4">현장거래</span></label>
+							<label class="TYPE_05">
+								<input
+								type="checkbox" name="p_deal_method" value="기타">
+								<span class="TRANSACTION_TYPE5">기타</span></label>
 
 							<!-- 배송비 수정 -->
 							<span class="li_type_2" style="display: none;" id="checkbox1818"> <span
@@ -386,19 +296,22 @@ con.addEventListener('click',()=> {
 						티켓보유 여부 <span class="required">(필수)</span>
 					</h3>
 					<div class="in_box_01">
-						<label class="dp_b"> <input id="ticket_retention_type_y"
-							type="radio" name="ticket_retention_type" value="Y"
-							class="stFormEl01 ticket_retention_y"> <span
-							name="p_tk_possession">보유 : 현재 티켓 보유중 </span>
+						<label class="dp_b">
+							<input id="ticket_retention_type_y"
+							type="radio" name="p_tk_possession" value="Y"
+							class="stFormEl01 ticket_retention_y">
+							<span>보유 : 현재 티켓 보유중 </span>
 							<div class="ticket_retention_type_info_y">
 								결제 발생 시 구매자에게 티켓 전달 일정을 꼭 알려주세요
 								<!-- PIN(E-ticket), 배송거래의 경우<br>
 							구매자 결제 이후 <b>72시간</b> 이내 전달 필수! -->
 							</div>
-						</label> <label class="dp_b"> <input id="ticket_retention_type_n"
-							type="radio" name="ticket_retention_type" value="N"
-							class="stFormEl01 ticket_retention_n"> <span
-							name="p_tk_possession">미 보유 : 예매 완료 후 수령 대기중 </span>
+						</label> 
+						<label class="dp_b">
+							<input id="ticket_retention_type_n"
+							type="radio" name="p_tk_possession" value="N"
+							class="stFormEl01 ticket_retention_n">
+							<span>미 보유 : 예매 완료 후 수령 대기중 </span>
 							<div class="ticket_retention_type_info_n">
 								티켓 수령 예정일을 선택 하세요<br> 결제 발생 시 구매자에게 티켓 전달 일정을 꼭 알려주세요
 								<!-- 
@@ -406,11 +319,10 @@ con.addEventListener('click',()=> {
 							선택 날짜 이후에는 자동으로 티켓 보유중으로 변경 됩니다.
 						 	-->
 								<div class="inpCal mt10">
-									<input type="text" id="RETENTION_DATE"
+									<input type="date" id="RETENTION_DATE"
 										name="TICKET_RETENTION_DATE"
 										class="textInp02 input_style_01 hasDatepicker" title="날짜 입력"
-										placeholder="날짜 입력" readonly="readonly"><img
-										class="ui-datepicker-trigger" src="" alt="달력" title="달력">
+										placeholder="날짜 입력">
 								</div>
 							</div>
 						</label>
@@ -425,8 +337,11 @@ con.addEventListener('click',()=> {
 						거래설명 <span id="pd_PINFO_etc" class="required">(필수)</span>
 					</h3>
 					<tr>
-						<td colspan="2"><textarea cols="150" rows="20"
-								name="p_deal_check"></textarea></td>
+						<td colspan="2">
+						<textarea cols="150" rows="10" 
+							style="width: 895px; border: solid 1px #efefef; border-radius: 15px; padding: 20px;
+    						font-size: 15px; margin-top: 10px; font-weight: bold; font-family: NanumSquareRound; color: #666;"
+    						name="p_deal_check"  placeholder="특이사항을 작성해주세요"></textarea></td>
 					</tr>
 					<div class="in_box_01">
 						<div id="goodsExplanation">
@@ -436,723 +351,6 @@ con.addEventListener('click',()=> {
 								class="cke_1 cke cke_reset cke_chrome cke_editor_majorEditor cke_ltr cke_browser_webkit"
 								dir="ltr" lang="ko" role="application"
 								aria-labelledby="cke_majorEditor_arialbl">
-								<!-- <span id="cke_majorEditor_arialbl" class="cke_voice_label">리치
-									텍스트 편집기, majorEditor</span>
-								<div class="cke_inner cke_reset" role="presentation">
-									<span id="cke_1_top" class="cke_top cke_reset_all"
-										role="presentation" style="height: auto; user-select: none;"><span
-										id="cke_8" class="cke_voice_label">편집자용 툴바들</span><span
-										id="cke_1_toolbox" class="cke_toolbox" role="group"
-										aria-labelledby="cke_8" onmousedown="return false;"><span
-											id="cke_13" class="cke_toolbar"
-											aria-labelledby="cke_13_label" role="toolbar"><span
-												id="cke_13_label" class="cke_voice_label">Document</span><span
-												class="cke_toolbar_start"></span><span class="cke_toolgroup"
-												role="presentation"><a id="cke_14"
-													class="cke_button cke_button__source  cke_button_off"
-													href="javascript:void('소스')" title="소스" tabindex="-1"
-													hidefocus="true" role="button"
-													aria-labelledby="cke_14_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(2,event);"
-													onfocus="return CKEDITOR.tools.callFunction(3,event);"
-													onclick="CKEDITOR.tools.callFunction(4,this);return false;"><span
-														class="cke_button_icon cke_button__source_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -1824px; background-size: auto;">&nbsp;</span><span
-														id="cke_14_label"
-														class="cke_button_label cke_button__source_label"
-														aria-hidden="false">소스</span></a></span><span class="cke_toolbar_end"></span></span><span
-											id="cke_15" class="cke_toolbar"
-											aria-labelledby="cke_15_label" role="toolbar"><span
-												id="cke_15_label" class="cke_voice_label">Clipboard/Undo</span><span
-												class="cke_toolbar_start"></span><span class="cke_toolgroup"
-												role="presentation"><a id="cke_16"
-													class="cke_button cke_button__cut cke_button_disabled "
-													href="javascript:void('잘라내기')" title="잘라내기" tabindex="-1"
-													hidefocus="true" role="button"
-													aria-labelledby="cke_16_label" aria-haspopup="false"
-													aria-disabled="true"
-													onkeydown="return CKEDITOR.tools.callFunction(5,event);"
-													onfocus="return CKEDITOR.tools.callFunction(6,event);"
-													onclick="CKEDITOR.tools.callFunction(7,this);return false;"><span
-														class="cke_button_icon cke_button__cut_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -312px; background-size: auto;">&nbsp;</span><span
-														id="cke_16_label"
-														class="cke_button_label cke_button__cut_label"
-														aria-hidden="false">잘라내기</span></a><a id="cke_17"
-													class="cke_button cke_button__copy cke_button_disabled "
-													href="javascript:void('복사하기')" title="복사하기" tabindex="-1"
-													hidefocus="true" role="button"
-													aria-labelledby="cke_17_label" aria-haspopup="false"
-													aria-disabled="true"
-													onkeydown="return CKEDITOR.tools.callFunction(8,event);"
-													onfocus="return CKEDITOR.tools.callFunction(9,event);"
-													onclick="CKEDITOR.tools.callFunction(10,this);return false;"><span
-														class="cke_button_icon cke_button__copy_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -264px; background-size: auto;">&nbsp;</span><span
-														id="cke_17_label"
-														class="cke_button_label cke_button__copy_label"
-														aria-hidden="false">복사하기</span></a><a id="cke_18"
-													class="cke_button cke_button__paste  cke_button_off"
-													href="javascript:void('붙여넣기')" title="붙여넣기" tabindex="-1"
-													hidefocus="true" role="button"
-													aria-labelledby="cke_18_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(11,event);"
-													onfocus="return CKEDITOR.tools.callFunction(12,event);"
-													onclick="CKEDITOR.tools.callFunction(13,this);return false;"><span
-														class="cke_button_icon cke_button__paste_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -360px; background-size: auto;">&nbsp;</span><span
-														id="cke_18_label"
-														class="cke_button_label cke_button__paste_label"
-														aria-hidden="false">붙여넣기</span></a><a id="cke_19"
-													class="cke_button cke_button__pastetext  cke_button_off"
-													href="javascript:void('텍스트로 붙여넣기')" title="텍스트로 붙여넣기"
-													tabindex="-1" hidefocus="true" role="button"
-													aria-labelledby="cke_19_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(14,event);"
-													onfocus="return CKEDITOR.tools.callFunction(15,event);"
-													onclick="CKEDITOR.tools.callFunction(16,this);return false;"><span
-														class="cke_button_icon cke_button__pastetext_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -1536px; background-size: auto;">&nbsp;</span><span
-														id="cke_19_label"
-														class="cke_button_label cke_button__pastetext_label"
-														aria-hidden="false">텍스트로 붙여넣기</span></a><a id="cke_20"
-													class="cke_button cke_button__pastefromword  cke_button_off"
-													href="javascript:void('MS Word 형식에서 붙여넣기')"
-													title="MS Word 형식에서 붙여넣기" tabindex="-1" hidefocus="true"
-													role="button" aria-labelledby="cke_20_label"
-													aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(17,event);"
-													onfocus="return CKEDITOR.tools.callFunction(18,event);"
-													onclick="CKEDITOR.tools.callFunction(19,this);return false;"><span
-														class="cke_button_icon cke_button__pastefromword_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -1584px; background-size: auto;">&nbsp;</span><span
-														id="cke_20_label"
-														class="cke_button_label cke_button__pastefromword_label"
-														aria-hidden="false">MS Word 형식에서 붙여넣기</span></a><span
-													class="cke_toolbar_separator" role="separator"></span><a
-													id="cke_21"
-													class="cke_button cke_button__undo cke_button_disabled "
-													href="javascript:void('취소')" title="취소" tabindex="-1"
-													hidefocus="true" role="button"
-													aria-labelledby="cke_21_label" aria-haspopup="false"
-													aria-disabled="true"
-													onkeydown="return CKEDITOR.tools.callFunction(20,event);"
-													onfocus="return CKEDITOR.tools.callFunction(21,event);"
-													onclick="CKEDITOR.tools.callFunction(22,this);return false;"><span
-														class="cke_button_icon cke_button__undo_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -1992px; background-size: auto;">&nbsp;</span><span
-														id="cke_21_label"
-														class="cke_button_label cke_button__undo_label"
-														aria-hidden="false">취소</span></a><a id="cke_22"
-													class="cke_button cke_button__redo cke_button_disabled "
-													href="javascript:void('재실행')" title="재실행" tabindex="-1"
-													hidefocus="true" role="button"
-													aria-labelledby="cke_22_label" aria-haspopup="false"
-													aria-disabled="true"
-													onkeydown="return CKEDITOR.tools.callFunction(23,event);"
-													onfocus="return CKEDITOR.tools.callFunction(24,event);"
-													onclick="CKEDITOR.tools.callFunction(25,this);return false;"><span
-														class="cke_button_icon cke_button__redo_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -1944px; background-size: auto;">&nbsp;</span><span
-														id="cke_22_label"
-														class="cke_button_label cke_button__redo_label"
-														aria-hidden="false">재실행</span></a></span><span
-												class="cke_toolbar_end"></span></span><span id="cke_23"
-											class="cke_toolbar" aria-labelledby="cke_23_label"
-											role="toolbar"><span id="cke_23_label"
-												class="cke_voice_label">Editing</span><span
-												class="cke_toolbar_start"></span><span class="cke_toolgroup"
-												role="presentation"><a id="cke_24"
-													class="cke_button cke_button__find  cke_button_off"
-													href="javascript:void('찾기')" title="찾기" tabindex="-1"
-													hidefocus="true" role="button"
-													aria-labelledby="cke_24_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(26,event);"
-													onfocus="return CKEDITOR.tools.callFunction(27,event);"
-													onclick="CKEDITOR.tools.callFunction(28,this);return false;"><span
-														class="cke_button_icon cke_button__find_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -528px; background-size: auto;">&nbsp;</span><span
-														id="cke_24_label"
-														class="cke_button_label cke_button__find_label"
-														aria-hidden="false">찾기</span></a><a id="cke_25"
-													class="cke_button cke_button__replace  cke_button_off"
-													href="javascript:void('바꾸기')" title="바꾸기" tabindex="-1"
-													hidefocus="true" role="button"
-													aria-labelledby="cke_25_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(29,event);"
-													onfocus="return CKEDITOR.tools.callFunction(30,event);"
-													onclick="CKEDITOR.tools.callFunction(31,this);return false;"><span
-														class="cke_button_icon cke_button__replace_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -552px; background-size: auto;">&nbsp;</span><span
-														id="cke_25_label"
-														class="cke_button_label cke_button__replace_label"
-														aria-hidden="false">바꾸기</span></a><span
-													class="cke_toolbar_separator" role="separator"></span><a
-													id="cke_26"
-													class="cke_button cke_button__selectall  cke_button_off"
-													href="javascript:void('전체선택')" title="전체선택" tabindex="-1"
-													hidefocus="true" role="button"
-													aria-labelledby="cke_26_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(32,event);"
-													onfocus="return CKEDITOR.tools.callFunction(33,event);"
-													onclick="CKEDITOR.tools.callFunction(34,this);return false;"><span
-														class="cke_button_icon cke_button__selectall_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -1728px; background-size: auto;">&nbsp;</span><span
-														id="cke_26_label"
-														class="cke_button_label cke_button__selectall_label"
-														aria-hidden="false">전체선택</span></a><span
-													class="cke_toolbar_separator" role="separator"></span><a
-													id="cke_27"
-													class="cke_button cke_button__scayt cke_button_off "
-													href="javascript:void('Spell Check')" title="Spell Check"
-													tabindex="-1" hidefocus="true" role="button"
-													aria-labelledby="cke_27_label" aria-haspopup="true"
-													onkeydown="return CKEDITOR.tools.callFunction(35,event);"
-													onfocus="return CKEDITOR.tools.callFunction(36,event);"
-													onclick="CKEDITOR.tools.callFunction(37,this);return false;"><span
-														class="cke_button_icon cke_button__scayt_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -1872px; background-size: auto;">&nbsp;</span><span
-														id="cke_27_label"
-														class="cke_button_label cke_button__scayt_label"
-														aria-hidden="false">Spell Check As You Type</span><span
-														class="cke_button_arrow"></span></a></span><span
-												class="cke_toolbar_end"></span></span><span
-											class="cke_toolbar_break"></span><span id="cke_28"
-											class="cke_toolbar" aria-labelledby="cke_28_label"
-											role="toolbar"><span id="cke_28_label"
-												class="cke_voice_label">Basic Styles</span><span
-												class="cke_toolbar_start"></span><span class="cke_toolgroup"
-												role="presentation"><a id="cke_29"
-													class="cke_button cke_button__bold  cke_button_off"
-													href="javascript:void('진하게')" title="진하게" tabindex="-1"
-													hidefocus="true" role="button"
-													aria-labelledby="cke_29_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(38,event);"
-													onfocus="return CKEDITOR.tools.callFunction(39,event);"
-													onclick="CKEDITOR.tools.callFunction(40,this);return false;"><span
-														class="cke_button_icon cke_button__bold_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -24px; background-size: auto;">&nbsp;</span><span
-														id="cke_29_label"
-														class="cke_button_label cke_button__bold_label"
-														aria-hidden="false">진하게</span></a><a id="cke_30"
-													class="cke_button cke_button__italic  cke_button_off"
-													href="javascript:void('이텔릭')" title="이텔릭" tabindex="-1"
-													hidefocus="true" role="button"
-													aria-labelledby="cke_30_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(41,event);"
-													onfocus="return CKEDITOR.tools.callFunction(42,event);"
-													onclick="CKEDITOR.tools.callFunction(43,this);return false;"><span
-														class="cke_button_icon cke_button__italic_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -48px; background-size: auto;">&nbsp;</span><span
-														id="cke_30_label"
-														class="cke_button_label cke_button__italic_label"
-														aria-hidden="false">이텔릭</span></a><a id="cke_31"
-													class="cke_button cke_button__underline  cke_button_off"
-													href="javascript:void('밑줄')" title="밑줄" tabindex="-1"
-													hidefocus="true" role="button"
-													aria-labelledby="cke_31_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(44,event);"
-													onfocus="return CKEDITOR.tools.callFunction(45,event);"
-													onclick="CKEDITOR.tools.callFunction(46,this);return false;"><span
-														class="cke_button_icon cke_button__underline_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -144px; background-size: auto;">&nbsp;</span><span
-														id="cke_31_label"
-														class="cke_button_label cke_button__underline_label"
-														aria-hidden="false">밑줄</span></a><a id="cke_32"
-													class="cke_button cke_button__strike  cke_button_off"
-													href="javascript:void('취소선')" title="취소선" tabindex="-1"
-													hidefocus="true" role="button"
-													aria-labelledby="cke_32_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(47,event);"
-													onfocus="return CKEDITOR.tools.callFunction(48,event);"
-													onclick="CKEDITOR.tools.callFunction(49,this);return false;"><span
-														class="cke_button_icon cke_button__strike_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -72px; background-size: auto;">&nbsp;</span><span
-														id="cke_32_label"
-														class="cke_button_label cke_button__strike_label"
-														aria-hidden="false">취소선</span></a><a id="cke_33"
-													class="cke_button cke_button__subscript  cke_button_off"
-													href="javascript:void('아래 첨자')" title="아래 첨자" tabindex="-1"
-													hidefocus="true" role="button"
-													aria-labelledby="cke_33_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(50,event);"
-													onfocus="return CKEDITOR.tools.callFunction(51,event);"
-													onclick="CKEDITOR.tools.callFunction(52,this);return false;"><span
-														class="cke_button_icon cke_button__subscript_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -96px; background-size: auto;">&nbsp;</span><span
-														id="cke_33_label"
-														class="cke_button_label cke_button__subscript_label"
-														aria-hidden="false">아래 첨자</span></a><a id="cke_34"
-													class="cke_button cke_button__superscript  cke_button_off"
-													href="javascript:void('위 첨자')" title="위 첨자" tabindex="-1"
-													hidefocus="true" role="button"
-													aria-labelledby="cke_34_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(53,event);"
-													onfocus="return CKEDITOR.tools.callFunction(54,event);"
-													onclick="CKEDITOR.tools.callFunction(55,this);return false;"><span
-														class="cke_button_icon cke_button__superscript_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -120px; background-size: auto;">&nbsp;</span><span
-														id="cke_34_label"
-														class="cke_button_label cke_button__superscript_label"
-														aria-hidden="false">위 첨자</span></a><span
-													class="cke_toolbar_separator" role="separator"></span><a
-													id="cke_35"
-													class="cke_button cke_button__removeformat  cke_button_off"
-													href="javascript:void('포맷 지우기')" title="포맷 지우기"
-													tabindex="-1" hidefocus="true" role="button"
-													aria-labelledby="cke_35_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(56,event);"
-													onfocus="return CKEDITOR.tools.callFunction(57,event);"
-													onclick="CKEDITOR.tools.callFunction(58,this);return false;"><span
-														class="cke_button_icon cke_button__removeformat_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -1680px; background-size: auto;">&nbsp;</span><span
-														id="cke_35_label"
-														class="cke_button_label cke_button__removeformat_label"
-														aria-hidden="false">포맷 지우기</span></a></span><span
-												class="cke_toolbar_end"></span></span><span id="cke_36"
-											class="cke_toolbar" aria-labelledby="cke_36_label"
-											role="toolbar"><span id="cke_36_label"
-												class="cke_voice_label">Paragraph</span><span
-												class="cke_toolbar_start"></span><span class="cke_toolgroup"
-												role="presentation"><a id="cke_37"
-													class="cke_button cke_button__numberedlist  cke_button_off"
-													href="javascript:void('순서있는 목록')" title="순서있는 목록"
-													tabindex="-1" hidefocus="true" role="button"
-													aria-labelledby="cke_37_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(59,event);"
-													onfocus="return CKEDITOR.tools.callFunction(60,event);"
-													onclick="CKEDITOR.tools.callFunction(61,this);return false;"><span
-														class="cke_button_icon cke_button__numberedlist_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -1368px; background-size: auto;">&nbsp;</span><span
-														id="cke_37_label"
-														class="cke_button_label cke_button__numberedlist_label"
-														aria-hidden="false">순서있는 목록</span></a><a id="cke_38"
-													class="cke_button cke_button__bulletedlist  cke_button_off"
-													href="javascript:void('순서없는 목록')" title="순서없는 목록"
-													tabindex="-1" hidefocus="true" role="button"
-													aria-labelledby="cke_38_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(62,event);"
-													onfocus="return CKEDITOR.tools.callFunction(63,event);"
-													onclick="CKEDITOR.tools.callFunction(64,this);return false;"><span
-														class="cke_button_icon cke_button__bulletedlist_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -1320px; background-size: auto;">&nbsp;</span><span
-														id="cke_38_label"
-														class="cke_button_label cke_button__bulletedlist_label"
-														aria-hidden="false">순서없는 목록</span></a><span
-													class="cke_toolbar_separator" role="separator"></span><a
-													id="cke_39"
-													class="cke_button cke_button__outdent cke_button_disabled "
-													href="javascript:void('내어쓰기')" title="내어쓰기" tabindex="-1"
-													hidefocus="true" role="button"
-													aria-labelledby="cke_39_label" aria-haspopup="false"
-													aria-disabled="true"
-													onkeydown="return CKEDITOR.tools.callFunction(65,event);"
-													onfocus="return CKEDITOR.tools.callFunction(66,event);"
-													onclick="CKEDITOR.tools.callFunction(67,this);return false;"><span
-														class="cke_button_icon cke_button__outdent_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -1032px; background-size: auto;">&nbsp;</span><span
-														id="cke_39_label"
-														class="cke_button_label cke_button__outdent_label"
-														aria-hidden="false">내어쓰기</span></a><a id="cke_40"
-													class="cke_button cke_button__indent  cke_button_off"
-													href="javascript:void('들여쓰기')" title="들여쓰기" tabindex="-1"
-													hidefocus="true" role="button"
-													aria-labelledby="cke_40_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(68,event);"
-													onfocus="return CKEDITOR.tools.callFunction(69,event);"
-													onclick="CKEDITOR.tools.callFunction(70,this);return false;"><span
-														class="cke_button_icon cke_button__indent_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -984px; background-size: auto;">&nbsp;</span><span
-														id="cke_40_label"
-														class="cke_button_label cke_button__indent_label"
-														aria-hidden="false">들여쓰기</span></a><span
-													class="cke_toolbar_separator" role="separator"></span><a
-													id="cke_41"
-													class="cke_button cke_button__blockquote  cke_button_off"
-													href="javascript:void('인용 블록')" title="인용 블록" tabindex="-1"
-													hidefocus="true" role="button"
-													aria-labelledby="cke_41_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(71,event);"
-													onfocus="return CKEDITOR.tools.callFunction(72,event);"
-													onclick="CKEDITOR.tools.callFunction(73,this);return false;"><span
-														class="cke_button_icon cke_button__blockquote_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -216px; background-size: auto;">&nbsp;</span><span
-														id="cke_41_label"
-														class="cke_button_label cke_button__blockquote_label"
-														aria-hidden="false">인용 블록</span></a><a id="cke_42"
-													class="cke_button cke_button__creatediv  cke_button_off"
-													href="javascript:void('Div 태그 생성')" title="Div 태그 생성"
-													tabindex="-1" hidefocus="true" role="button"
-													aria-labelledby="cke_42_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(74,event);"
-													onfocus="return CKEDITOR.tools.callFunction(75,event);"
-													onclick="CKEDITOR.tools.callFunction(76,this);return false;"><span
-														class="cke_button_icon cke_button__creatediv_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -480px; background-size: auto;">&nbsp;</span><span
-														id="cke_42_label"
-														class="cke_button_label cke_button__creatediv_label"
-														aria-hidden="false">Div 태그 생성</span></a><span
-													class="cke_toolbar_separator" role="separator"></span><a
-													id="cke_43"
-													class="cke_button cke_button__justifyleft cke_button_on"
-													href="javascript:void('왼쪽 정렬')" title="왼쪽 정렬" tabindex="-1"
-													hidefocus="true" role="button"
-													aria-labelledby="cke_43_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(77,event);"
-													onfocus="return CKEDITOR.tools.callFunction(78,event);"
-													onclick="CKEDITOR.tools.callFunction(79,this);return false;"
-													aria-pressed="true"><span
-														class="cke_button_icon cke_button__justifyleft_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -1128px; background-size: auto;">&nbsp;</span><span
-														id="cke_43_label"
-														class="cke_button_label cke_button__justifyleft_label"
-														aria-hidden="false">왼쪽 정렬</span></a><a id="cke_44"
-													class="cke_button cke_button__justifycenter  cke_button_off"
-													href="javascript:void('가운데 정렬')" title="가운데 정렬"
-													tabindex="-1" hidefocus="true" role="button"
-													aria-labelledby="cke_44_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(80,event);"
-													onfocus="return CKEDITOR.tools.callFunction(81,event);"
-													onclick="CKEDITOR.tools.callFunction(82,this);return false;"><span
-														class="cke_button_icon cke_button__justifycenter_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -1104px; background-size: auto;">&nbsp;</span><span
-														id="cke_44_label"
-														class="cke_button_label cke_button__justifycenter_label"
-														aria-hidden="false">가운데 정렬</span></a><a id="cke_45"
-													class="cke_button cke_button__justifyright  cke_button_off"
-													href="javascript:void('오른쪽 정렬')" title="오른쪽 정렬"
-													tabindex="-1" hidefocus="true" role="button"
-													aria-labelledby="cke_45_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(83,event);"
-													onfocus="return CKEDITOR.tools.callFunction(84,event);"
-													onclick="CKEDITOR.tools.callFunction(85,this);return false;"><span
-														class="cke_button_icon cke_button__justifyright_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -1152px; background-size: auto;">&nbsp;</span><span
-														id="cke_45_label"
-														class="cke_button_label cke_button__justifyright_label"
-														aria-hidden="false">오른쪽 정렬</span></a><a id="cke_46"
-													class="cke_button cke_button__justifyblock  cke_button_off"
-													href="javascript:void('양쪽 맞춤')" title="양쪽 맞춤" tabindex="-1"
-													hidefocus="true" role="button"
-													aria-labelledby="cke_46_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(86,event);"
-													onfocus="return CKEDITOR.tools.callFunction(87,event);"
-													onclick="CKEDITOR.tools.callFunction(88,this);return false;"><span
-														class="cke_button_icon cke_button__justifyblock_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -1080px; background-size: auto;">&nbsp;</span><span
-														id="cke_46_label"
-														class="cke_button_label cke_button__justifyblock_label"
-														aria-hidden="false">양쪽 맞춤</span></a><span
-													class="cke_toolbar_separator" role="separator"></span><a
-													id="cke_47"
-													class="cke_button cke_button__bidiltr cke_button_on"
-													href="javascript:void('택스트 방향이 왼쪽에서 오른쪽으로 ')"
-													title="택스트 방향이 왼쪽에서 오른쪽으로 " tabindex="-1" hidefocus="true"
-													role="button" aria-labelledby="cke_47_label"
-													aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(89,event);"
-													onfocus="return CKEDITOR.tools.callFunction(90,event);"
-													onclick="CKEDITOR.tools.callFunction(91,this);return false;"
-													aria-pressed="true"><span
-														class="cke_button_icon cke_button__bidiltr_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -168px; background-size: auto;">&nbsp;</span><span
-														id="cke_47_label"
-														class="cke_button_label cke_button__bidiltr_label"
-														aria-hidden="false">택스트 방향이 왼쪽에서 오른쪽으로 </span></a><a
-													id="cke_48"
-													class="cke_button cke_button__bidirtl  cke_button_off"
-													href="javascript:void('택스트 방향이 오른쪽에서 왼쪽으로')"
-													title="택스트 방향이 오른쪽에서 왼쪽으로" tabindex="-1" hidefocus="true"
-													role="button" aria-labelledby="cke_48_label"
-													aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(92,event);"
-													onfocus="return CKEDITOR.tools.callFunction(93,event);"
-													onclick="CKEDITOR.tools.callFunction(94,this);return false;"><span
-														class="cke_button_icon cke_button__bidirtl_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -192px; background-size: auto;">&nbsp;</span><span
-														id="cke_48_label"
-														class="cke_button_label cke_button__bidirtl_label"
-														aria-hidden="false">택스트 방향이 오른쪽에서 왼쪽으로</span></a></span><span
-												class="cke_toolbar_end"></span></span><span id="cke_49"
-											class="cke_toolbar" aria-labelledby="cke_49_label"
-											role="toolbar"><span id="cke_49_label"
-												class="cke_voice_label">Links</span><span
-												class="cke_toolbar_start"></span><span class="cke_toolgroup"
-												role="presentation"><a id="cke_50"
-													class="cke_button cke_button__link  cke_button_off"
-													href="javascript:void('링크 삽입/변경')" title="링크 삽입/변경"
-													tabindex="-1" hidefocus="true" role="button"
-													aria-labelledby="cke_50_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(95,event);"
-													onfocus="return CKEDITOR.tools.callFunction(96,event);"
-													onclick="CKEDITOR.tools.callFunction(97,this);return false;"><span
-														class="cke_button_icon cke_button__link_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -1248px; background-size: auto;">&nbsp;</span><span
-														id="cke_50_label"
-														class="cke_button_label cke_button__link_label"
-														aria-hidden="false">링크 삽입/변경</span></a><a id="cke_51"
-													class="cke_button cke_button__unlink cke_button_disabled "
-													href="javascript:void('링크 삭제')" title="링크 삭제" tabindex="-1"
-													hidefocus="true" role="button"
-													aria-labelledby="cke_51_label" aria-haspopup="false"
-													aria-disabled="true"
-													onkeydown="return CKEDITOR.tools.callFunction(98,event);"
-													onfocus="return CKEDITOR.tools.callFunction(99,event);"
-													onclick="CKEDITOR.tools.callFunction(100,this);return false;"><span
-														class="cke_button_icon cke_button__unlink_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -1272px; background-size: auto;">&nbsp;</span><span
-														id="cke_51_label"
-														class="cke_button_label cke_button__unlink_label"
-														aria-hidden="false">링크 삭제</span></a><a id="cke_52"
-													class="cke_button cke_button__anchor  cke_button_off"
-													href="javascript:void('책갈피 삽입/변경')" title="책갈피 삽입/변경"
-													tabindex="-1" hidefocus="true" role="button"
-													aria-labelledby="cke_52_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(101,event);"
-													onfocus="return CKEDITOR.tools.callFunction(102,event);"
-													onclick="CKEDITOR.tools.callFunction(103,this);return false;"><span
-														class="cke_button_icon cke_button__anchor_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -1224px; background-size: auto;">&nbsp;</span><span
-														id="cke_52_label"
-														class="cke_button_label cke_button__anchor_label"
-														aria-hidden="false">책갈피 삽입/변경</span></a></span><span
-												class="cke_toolbar_end"></span></span><span id="cke_53"
-											class="cke_toolbar" aria-labelledby="cke_53_label"
-											role="toolbar"><span id="cke_53_label"
-												class="cke_voice_label">Insert</span><span
-												class="cke_toolbar_start"></span><span class="cke_toolgroup"
-												role="presentation"><a id="cke_54"
-													class="cke_button cke_button__image  cke_button_off"
-													href="javascript:void('이미지')" title="이미지" tabindex="-1"
-													hidefocus="true" role="button"
-													aria-labelledby="cke_54_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(104,event);"
-													onfocus="return CKEDITOR.tools.callFunction(105,event);"
-													onclick="CKEDITOR.tools.callFunction(106,this);return false;"><span
-														class="cke_button_icon cke_button__image_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -936px; background-size: auto;">&nbsp;</span><span
-														id="cke_54_label"
-														class="cke_button_label cke_button__image_label"
-														aria-hidden="false">이미지</span></a><a id="cke_55"
-													class="cke_button cke_button__table  cke_button_off"
-													href="javascript:void('표')" title="표" tabindex="-1"
-													hidefocus="true" role="button"
-													aria-labelledby="cke_55_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(107,event);"
-													onfocus="return CKEDITOR.tools.callFunction(108,event);"
-													onclick="CKEDITOR.tools.callFunction(109,this);return false;"><span
-														class="cke_button_icon cke_button__table_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -1896px; background-size: auto;">&nbsp;</span><span
-														id="cke_55_label"
-														class="cke_button_label cke_button__table_label"
-														aria-hidden="false">표</span></a><a id="cke_56"
-													class="cke_button cke_button__horizontalrule  cke_button_off"
-													href="javascript:void('수평선 삽입')" title="수평선 삽입"
-													tabindex="-1" hidefocus="true" role="button"
-													aria-labelledby="cke_56_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(110,event);"
-													onfocus="return CKEDITOR.tools.callFunction(111,event);"
-													onclick="CKEDITOR.tools.callFunction(112,this);return false;"><span
-														class="cke_button_icon cke_button__horizontalrule_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -888px; background-size: auto;">&nbsp;</span><span
-														id="cke_56_label"
-														class="cke_button_label cke_button__horizontalrule_label"
-														aria-hidden="false">수평선 삽입</span></a><a id="cke_57"
-													class="cke_button cke_button__smiley  cke_button_off"
-													href="javascript:void('아이콘')" title="아이콘" tabindex="-1"
-													hidefocus="true" role="button"
-													aria-labelledby="cke_57_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(113,event);"
-													onfocus="return CKEDITOR.tools.callFunction(114,event);"
-													onclick="CKEDITOR.tools.callFunction(115,this);return false;"><span
-														class="cke_button_icon cke_button__smiley_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -1056px; background-size: auto;">&nbsp;</span><span
-														id="cke_57_label"
-														class="cke_button_label cke_button__smiley_label"
-														aria-hidden="false">아이콘</span></a><a id="cke_58"
-													class="cke_button cke_button__specialchar  cke_button_off"
-													href="javascript:void('특수문자 삽입')" title="특수문자 삽입"
-													tabindex="-1" hidefocus="true" role="button"
-													aria-labelledby="cke_58_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(116,event);"
-													onfocus="return CKEDITOR.tools.callFunction(117,event);"
-													onclick="CKEDITOR.tools.callFunction(118,this);return false;"><span
-														class="cke_button_icon cke_button__specialchar_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -1848px; background-size: auto;">&nbsp;</span><span
-														id="cke_58_label"
-														class="cke_button_label cke_button__specialchar_label"
-														aria-hidden="false">특수문자 삽입</span></a><a id="cke_59"
-													class="cke_button cke_button__pagebreak  cke_button_off"
-													href="javascript:void('인쇄시 페이지 나누기 삽입')"
-													title="인쇄시 페이지 나누기 삽입" tabindex="-1" hidefocus="true"
-													role="button" aria-labelledby="cke_59_label"
-													aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(119,event);"
-													onfocus="return CKEDITOR.tools.callFunction(120,event);"
-													onclick="CKEDITOR.tools.callFunction(121,this);return false;"><span
-														class="cke_button_icon cke_button__pagebreak_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -1488px; background-size: auto;">&nbsp;</span><span
-														id="cke_59_label"
-														class="cke_button_label cke_button__pagebreak_label"
-														aria-hidden="false">인쇄시 페이지 나누기 삽입</span></a></span><span
-												class="cke_toolbar_end"></span></span><span
-											class="cke_toolbar_break"></span><span id="cke_60"
-											class="cke_toolbar" aria-labelledby="cke_60_label"
-											role="toolbar"><span id="cke_60_label"
-												class="cke_voice_label">Styles</span><span
-												class="cke_toolbar_start"></span><span id="cke_9"
-												class="cke_combo cke_combo__styles  cke_combo_off"
-												role="presentation"><span id="cke_9_label"
-													class="cke_combo_label">스타일</span><a
-													class="cke_combo_button" title="전체 구성 스타일" tabindex="-1"
-													href="javascript:void('전체 구성 스타일')" hidefocus="true"
-													role="button" aria-labelledby="cke_9_label"
-													aria-haspopup="true"
-													onkeydown="return CKEDITOR.tools.callFunction(123,event,this);"
-													onfocus="return CKEDITOR.tools.callFunction(124,event);"
-													onclick="CKEDITOR.tools.callFunction(122,this);return false;"><span
-														id="cke_9_text"
-														class="cke_combo_text cke_combo_inlinelabel">스타일</span><span
-														class="cke_combo_open"><span
-															class="cke_combo_arrow"></span></span></a></span><span id="cke_10"
-												class="cke_combo cke_combo__format  cke_combo_off"
-												role="presentation"><span id="cke_10_label"
-													class="cke_combo_label">포맷</span><a
-													class="cke_combo_button" title="포맷" tabindex="-1"
-													href="javascript:void('포맷')" hidefocus="true" role="button"
-													aria-labelledby="cke_10_label" aria-haspopup="true"
-													onkeydown="return CKEDITOR.tools.callFunction(126,event,this);"
-													onfocus="return CKEDITOR.tools.callFunction(127,event);"
-													onclick="CKEDITOR.tools.callFunction(125,this);return false;"><span
-														id="cke_10_text" class="cke_combo_text">Normal</span><span
-														class="cke_combo_open"><span
-															class="cke_combo_arrow"></span></span></a></span><span id="cke_11"
-												class="cke_combo cke_combo__font  cke_combo_off"
-												role="presentation"><span id="cke_11_label"
-													class="cke_combo_label">폰트</span><a
-													class="cke_combo_button" title="폰트" tabindex="-1"
-													href="javascript:void('폰트')" hidefocus="true" role="button"
-													aria-labelledby="cke_11_label" aria-haspopup="true"
-													onkeydown="return CKEDITOR.tools.callFunction(129,event,this);"
-													onfocus="return CKEDITOR.tools.callFunction(130,event);"
-													onclick="CKEDITOR.tools.callFunction(128,this);return false;"><span
-														id="cke_11_text"
-														class="cke_combo_text cke_combo_inlinelabel">폰트</span><span
-														class="cke_combo_open"><span
-															class="cke_combo_arrow"></span></span></a></span><span id="cke_12"
-												class="cke_combo cke_combo__fontsize  cke_combo_off"
-												role="presentation"><span id="cke_12_label"
-													class="cke_combo_label">글자 크기</span><a
-													class="cke_combo_button" title="글자 크기" tabindex="-1"
-													href="javascript:void('글자 크기')" hidefocus="true"
-													role="button" aria-labelledby="cke_12_label"
-													aria-haspopup="true"
-													onkeydown="return CKEDITOR.tools.callFunction(132,event,this);"
-													onfocus="return CKEDITOR.tools.callFunction(133,event);"
-													onclick="CKEDITOR.tools.callFunction(131,this);return false;"><span
-														id="cke_12_text"
-														class="cke_combo_text cke_combo_inlinelabel">글자 크기</span><span
-														class="cke_combo_open"><span
-															class="cke_combo_arrow"></span></span></a></span><span
-												class="cke_toolbar_end"></span></span><span id="cke_61"
-											class="cke_toolbar" aria-labelledby="cke_61_label"
-											role="toolbar"><span id="cke_61_label"
-												class="cke_voice_label">Colors</span><span
-												class="cke_toolbar_start"></span><span class="cke_toolgroup"
-												role="presentation"><a id="cke_62"
-													class="cke_button cke_button__textcolor cke_button_off "
-													href="javascript:void('글자 색상')" title="글자 색상" tabindex="-1"
-													hidefocus="true" role="button"
-													aria-labelledby="cke_62_label" aria-haspopup="true"
-													onkeydown="return CKEDITOR.tools.callFunction(134,event);"
-													onfocus="return CKEDITOR.tools.callFunction(135,event);"
-													onclick="CKEDITOR.tools.callFunction(136,this);return false;"><span
-														class="cke_button_icon cke_button__textcolor_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -408px; background-size: auto;">&nbsp;</span><span
-														id="cke_62_label"
-														class="cke_button_label cke_button__textcolor_label"
-														aria-hidden="false">글자 색상</span><span
-														class="cke_button_arrow"></span></a><a id="cke_63"
-													class="cke_button cke_button__bgcolor cke_button_off "
-													href="javascript:void('배경 색상')" title="배경 색상" tabindex="-1"
-													hidefocus="true" role="button"
-													aria-labelledby="cke_63_label" aria-haspopup="true"
-													onkeydown="return CKEDITOR.tools.callFunction(137,event);"
-													onfocus="return CKEDITOR.tools.callFunction(138,event);"
-													onclick="CKEDITOR.tools.callFunction(139,this);return false;"><span
-														class="cke_button_icon cke_button__bgcolor_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -384px; background-size: auto;">&nbsp;</span><span
-														id="cke_63_label"
-														class="cke_button_label cke_button__bgcolor_label"
-														aria-hidden="false">배경 색상</span><span
-														class="cke_button_arrow"></span></a></span><span
-												class="cke_toolbar_end"></span></span><span id="cke_64"
-											class="cke_toolbar" aria-labelledby="cke_64_label"
-											role="toolbar"><span id="cke_64_label"
-												class="cke_voice_label">Tools</span><span
-												class="cke_toolbar_start"></span><span class="cke_toolgroup"
-												role="presentation"><a id="cke_65"
-													class="cke_button cke_button__maximize  cke_button_off"
-													href="javascript:void('최대')" title="최대" tabindex="-1"
-													hidefocus="true" role="button"
-													aria-labelledby="cke_65_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(140,event);"
-													onfocus="return CKEDITOR.tools.callFunction(141,event);"
-													onclick="CKEDITOR.tools.callFunction(142,this);return false;"><span
-														class="cke_button_icon cke_button__maximize_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -1392px; background-size: auto;">&nbsp;</span><span
-														id="cke_65_label"
-														class="cke_button_label cke_button__maximize_label"
-														aria-hidden="false">최대</span></a><a id="cke_66"
-													class="cke_button cke_button__showblocks  cke_button_off"
-													href="javascript:void('블록 보기')" title="블록 보기" tabindex="-1"
-													hidefocus="true" role="button"
-													aria-labelledby="cke_66_label" aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(143,event);"
-													onfocus="return CKEDITOR.tools.callFunction(144,event);"
-													onclick="CKEDITOR.tools.callFunction(145,this);return false;"><span
-														class="cke_button_icon cke_button__showblocks_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 -1776px; background-size: auto;">&nbsp;</span><span
-														id="cke_66_label"
-														class="cke_button_label cke_button__showblocks_label"
-														aria-hidden="false">블록 보기</span></a></span><span
-												class="cke_toolbar_end"></span></span><span id="cke_67"
-											class="cke_toolbar" aria-labelledby="cke_67_label"
-											role="toolbar"><span id="cke_67_label"
-												class="cke_voice_label">about</span><span
-												class="cke_toolbar_start"></span><span class="cke_toolgroup"
-												role="presentation"><a id="cke_68"
-													class="cke_button cke_button__about  cke_button_off"
-													href="javascript:void('CKEditor에 대하여')"
-													title="CKEditor에 대하여" tabindex="-1" hidefocus="true"
-													role="button" aria-labelledby="cke_68_label"
-													aria-haspopup="false"
-													onkeydown="return CKEDITOR.tools.callFunction(146,event);"
-													onfocus="return CKEDITOR.tools.callFunction(147,event);"
-													onclick="CKEDITOR.tools.callFunction(148,this);return false;"><span
-														class="cke_button_icon cke_button__about_icon"
-														style="background-image: url(https://www.ticketbay.co.kr/resources/js/plugin/ckeditor/plugins/icons.png?t=F0RD); background-position: 0 0px; background-size: auto;">&nbsp;</span><span
-														id="cke_68_label"
-														class="cke_button_label cke_button__about_label"
-														aria-hidden="false">CKEditor에 대하여</span></a></span><span
-												class="cke_toolbar_end"></span></span></span></span>
-									<div id="cke_1_contents" class="cke_contents cke_reset"
-										role="presentation" style="height: 200px;">
-										<span id="cke_71" class="cke_voice_label">도움이 필요하시면 ALT
-											0 을 누르세요</span>
-										<iframe src="" frameborder="0"
-											class="cke_wysiwyg_frame cke_reset"
-											style="width: 758px; height: 100%;"
-											title="리치 텍스트 편집기, majorEditor" aria-describedby="cke_71"
-											tabindex="0" allowtransparency="true"></iframe>
-									</div>
-									<span id="cke_1_bottom" class="cke_bottom cke_reset_all"
-										role="presentation" style="user-select: none;"><span
-										id="cke_1_resizer"
-										class="cke_resizer cke_resizer_vertical cke_resizer_ltr"
-										title="크기 조절"
-										onmousedown="CKEDITOR.tools.callFunction(0, event)">◢</span></span>
-								</div> -->
 							</div>
 						</div>
 					</div>
@@ -1167,39 +365,45 @@ con.addEventListener('click',()=> {
 		<div class="box_style_04 mt_20" style="display: block;">
 			<h2>판매가격 등록</h2>
 			<ul>
+			
+				
 
 				<!-- 판매 가격 // -->
-				<li id="java1818">
+				<li id="salespay">
 					<h3 style="width: 230px !important;">
 						판매 가격 <span class="required">(필수)</span>
 					</h3>
 					<div class="in_box_01" style="width: 700px;">
 						<div class="t_pay_gr">
-							<h4 class="tit_style_001">
-								<strong>등록 상품 기준 </strong>
-							</h4>
+							
+								<strong>입찰마감일</strong><br>
+							
 							<div class="t_pay_gr_txt_01">
-								<span>최저가</span> <strong><span id="min_sale_price">-</span></strong>
+								<strong><span id="min_sale_price">
+								<input
+									type="date" id="p_bid_date" name="p_bid_date"
+									class="input_style_02 txt_c"
+									style="font-size: 16px; font-weight: bold;"
+									placeholder="입찰마감일" maxlength="10">
+								</span></strong>
 							</div>
 							<div class="t_pay_gr_txt_02">
-								<span>평균가</span> <strong><span id="avg_sale_price">-</span></strong>
+								<span></span>
 							</div>
 							<div class="t_pay_gr_txt_03">
-								<strong>매수 당 가격 (￦)</strong> <span class="span_total"> <input
-									type="hidden" id="bulkSellingPrice" name="SALE_PRICE_BULK"
-									class="textInp03 number_tr" value=""> <input
-									type="text" id="SPRICE_BULK" name="p_pay"
+								<strong>매수당가격 (￦)</strong>
+								<span class="span_total">
+								<input onkeyup="printPaynow()"
+									type="text" id="p_pay" name="p_pay"
 									class="input_style_02 txt_c"
 									style="font-size: 18px; font-weight: bold;"
 									placeholder="즉시 구매 가격" maxlength="10">
-								</span> <span class="span_total"> <!-- <input type="hidden"
-									id="bulkSellingPrice" name="SALE_PRICE_BULK"
-									class="textInp03 number_tr" value="">  --> <input type="text"
-									id="SPRICE_BULK" name="p_min_bid" class="input_style_02 txt_c"
+								<input onkeyup="printPaybid()"
+									type="text"  id="p_min_bid" name="p_min_bid"
+									class="input_style_02 txt_c"
 									style="font-size: 18px; font-weight: bold;"
 									placeholder="최소 입찰 가격" maxlength="10">
 								</span>
-								<!-- <div class="required_txt">가격이 평균보다 높으면 판매 확률이 낮아집니다.</div> -->
 							</div>
 						</div>
 
@@ -1211,7 +415,7 @@ con.addEventListener('click',()=> {
 								class="" value="N"> <label> <input
 								name="below_check" id="below_check" type="checkbox"
 								class="ck_img" value=""> <span>정가이하로 판매 하겠습니다.
-									(수수료 무료)<!-- span id="below_commision_span">0</span>%)</span -->
+									(수수료 무료)
 							</span></label>
 						</div>
 						<!-- // 정가이하 체크 박스 영역 -->
@@ -1220,29 +424,19 @@ con.addEventListener('click',()=> {
 					<div class="clear"></div>
 				</li>
 				<!-- // 판매 가격 -->
-
-
-				<!-- 상품 정가  // -->
-				<li id="pd_BELOW" style="display: none">
-					<h3 style="width: 230px !important;">
-						상품 정가 <span class="required">(필수)</span>
-					</h3>
-					<div class="in_box_01" style="width: 700px;">
-						<input type="text" id="BELOW_PRICE" name="BELOW_PRICE"
-							class="input_style_02 txt_c" style="width: 170px !important;"
-							placeholder="1개의 정가 입력 (￦)" maxlength="10">
-						<div class="required_txt mt_10" style="display: block !important;">티켓
-							또는 상품 1개의 정상 가격을 입력하세요.</div>
-						<div class="required_txt" style="display: block !important;">정가이하
-							서비스를 악용 시 서비스 제제 및 수수료가 별도로 부과됩니다.</div>
-					</div>
-					<div class="clear"></div>
-				</li>
-				<!-- // 상품 정가 -->
-
-
-
-
+				
+				<script>
+				function printPaynow(){
+					let pay = document.getElementById("p_pay").value;
+					document.getElementById("td_pPay").innerText = "￦"+pay;
+				}
+				
+				function printPaybid(){
+					let pay = document.getElementById('p_min_bid').value;
+					document.getElementById("td_pMinBid").innerText = "￦"+pay;
+				}
+				
+				</script>
 				<!-- 판매 금액 확인   // -->
 				<li id="pd_TPRICE" style="display: block;">
 					<h3>판매 금액 확인</h3>
@@ -1253,43 +447,11 @@ con.addEventListener('click',()=> {
 									<th>즉시구매가격</th>
 									<th>최소입찰가격</th>
 									<th>판매수수료</th>
-									<th>실 수령금액</th>
 								</tr>
 								<tr>
-									<input type="hidden" id="sellCharge">
-									<!-- 판매가격 -->
-
-									<input type="hidden" id="fanPower" value="0.3">
-									<input type="hidden" id="commision" value="10.0">
-									<!-- 판매수수료(%) -->
-									<input type="hidden" id="commisionPrice">
-									<!-- 판매수수료(금액) -->
-									<input type="hidden" id="commisionCouponRate">
-									<input type="hidden" id="commisionCouponAmount" value="">
-									<input type="hidden" id="commisionCouponApplied"
-										class="textInp03 number_tr">
-									<input type="hidden" id="commisionCouponAppliedPrice"
-										class="textInp03 number_tr">
-									<input type="hidden" id="commisionCouponMaxAmount">
-									<!-- 쿠폰 최대 금액 -->
-
-
-									<input type="hidden" id="earnPricePerUnit" value="0">
-									<input type="hidden" id="totalEarnPriceIfSoldout" value="0">
-
-									<input type="hidden" id="belowTempCommision">
-									<input type="hidden" id="belowCommision" value="0.0">
-									<input type="hidden" id="belowTempFanPower">
-									<input type="hidden" id="belowFanPower" value="0.0">
-									<input type="hidden" id="belowUsed" value="true">
-
-									<td>
-										<div id="td_sellCharge" class="all_nb_txt">￦0</div>
-										<div id="td_pFanPower" class="fp_nb_txt"></div>
-									</td>
-									<td id="td_couponChk">￦0</td>
-									<td id="td_commisionCouponApplied">￦0</td>
-									<td id="td_totalEarnPriceIfSoldout">￦0</td>
+									<td id="td_pPay">￦0</td>
+									<td id="td_pMinBid">￦0</td>
+									<td id="td_pcommission">￦0</td>
 								</tr>
 							</tbody>
 						</table>
@@ -1305,12 +467,12 @@ con.addEventListener('click',()=> {
 
 				<button type="submit" id="registNormalTrigger"
 					class="btn_st_06"
-					style="width: 200px; display: block; margin: 100px auto;">등록</button>
+					style="width: 200px; display: block; margin: 50px auto 100px auto;">등록</button>
 				<div class="clear"></div>
 
 			</div>
 
 		</div>
 	</form>
-</body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>
