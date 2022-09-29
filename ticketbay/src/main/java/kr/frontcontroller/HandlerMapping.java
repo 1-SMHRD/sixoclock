@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import kr.controller.AuctionpageController;
 import kr.controller.BidCancelController;
+import kr.controller.ChatListController;
 import kr.controller.ChatroomController;
 
 import kr.controller.Controller;
@@ -71,6 +72,7 @@ public class HandlerMapping {
 		mappings.put("/usemoney.do", new UseMoneyController());
 		mappings.put("/bidcancel.do", new BidCancelController());
 		mappings.put("/chatroom.do", new ChatroomController());
+		mappings.put("/chatlist.do", new ChatListController());
 
 		
 	}

@@ -175,3 +175,43 @@ insert into t_product (p_idx, u_id, p_biddate, p_buyImmed, p_minBid) values (213
 
 select * from t_product;
 
+
+DROP TABLE t_chatting_room CASCADE CONSTRAINTS;
+DROP TRIGGER t_chatting_room_AI_TRG;
+DROP SEQUENCE t_chatting_room_SEQ; 
+
+CREATE TABLE t_chatting_room
+(
+    cr_code          NUMBER(15, 0)     NOT NULL, 
+    cr_login_id      VARCHAR2(20)      NOT NULL, 
+    cr_other_user    VARCHAR2(4000)    NOT NULL, 
+    cr_title         VARCHAR2(400)     NOT NULL, 
+    cr_open_dt       DATE              DEFAULT SYSDATE NOT NULL, 
+     PRIMARY KEY (cr_code)
+)
+;
+
+CREATE SEQUENCE t_chatting_room_SEQ
+START WITH 1
+INCREMENT BY 1;
+
+
+
+CREATE OR REPLACE TRIGGER t_chatting_room_AI_TRG
+BEFORE INSERT ON t_chatting_room 
+REFERENCING NEW AS NEW FOR EACH ROW 
+BEGIN 
+    SELECT t_chatting_room_SEQ.NEXTVAL
+    INTO :NEW.cr_code
+    FROM DUAL;
+END;
+;
+
+
+
+insert into t_chatting_room (cr_login_id, cr_other_user, cr_title) values ('asdf', 'zxcv', 'asdf & zxcv');
+
+
+select * from t_chatting_room;
+
+
