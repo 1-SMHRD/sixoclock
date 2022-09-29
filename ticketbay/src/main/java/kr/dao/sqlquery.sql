@@ -146,7 +146,7 @@ CREATE TABLE t_product
 )
 ;
 
-insert into t_product (p_idx, u_id, p_biddate, p_buyImmed, p_minBid) values (123, zxcv, '09/28/2022 09:25 PM', 200000, 5000);
+insert into t_product (p_idx, u_id, p_biddate, p_buyImmed, p_minBid) values (123, zxcv, '2022-09-30 00:00:00', 200000, 5000);
 insert into t_product (p_idx, u_id, p_biddate, p_buyImmed, p_minBid) values (321, asdf, '09/28/2022 05:25 PM', 200000, 5000);
 insert into t_product (p_idx, u_id, p_biddate, p_buyImmed, p_minBid) values (121, 123, '09/28/2022 07:25 PM', 200000, 5000);
 insert into t_product (p_idx, u_id, p_biddate, p_buyImmed, p_minBid) values (4321, ad, '09/28/2022 06:25 PM', 200000, 5000);

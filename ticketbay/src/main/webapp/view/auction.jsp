@@ -24,15 +24,15 @@
 </head>
 <body>
 
-<div> 상품 idx : ${vo.p_Idx }</div>
 
+<!-- 
 	<h1>판매 완료 일자 : ${vo.p_biddate}</h1>
 	<h2 id="biddate"></h2>
-
+ -->
 	<div>
 		<form method="post" action="${cpath}/chatroom.do?u_id=${mvo.u_ID}">
 			<span id="seller" name="seller" value="${vo.u_ID}">판매자 : ${vo.u_ID}</span> 
-			<button type="submit">대화하기</button>
+			<button id="chat_seller" type="submit" disabled>대화하기</button>
 		</form>
 	</div>
 
@@ -40,15 +40,45 @@
 
 		<div id="auction_area">
 			<form>
-				<span>시작입찰가</span><br>
-				<span>현재 최고가 : </span> <span id="maxbid_area"></span><br>
-				<span>최소입찰가 : </span>	<input id="minbid" name="minbid" type="number" value="${vo.p_minBid}" readonly>
-				<input id="btn_minbid" onclick="minbidmoney()" value="즉시입찰" type="button" disabled><br>
-				<span>입찰가 입력</span> <input id="bidamount" name="bidamount" type="number" min='0' step='1'>
-				<input id="btn_bidamount" onclick="amountbidmoney()" value="입찰" type="button" disabled><br>
-				<span>즉시 구매가</span> <input id="imm" name="immbid" value="${vo.p_buyImmed}" readonly>
-				<input id="btn_imm" onclick="imm_purchase()" value="즉시구매" type="button" disabled><br>
-				<span>소지금 : </span><span id="user_money">${mvo.u_MONEY} 원</span><br>
+			
+			<table width="320" height="300" cellpadding="20">
+				<thead>
+					<tr>
+						<th colspan="3" style="text-align:center">판매 완료 날짜</th>
+					</tr>
+					<tr>
+						<th colspan="3" id="biddate" style="text-align:center">ddddd${vo.p_biddate}</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>시작 입찰가</td><td style="text-align:right">${vo.p_minBid} 원</td>
+					</tr>
+					<tr>
+						<td>현재 최고가 : </td>
+						<td style="text-align:right"> <span id="maxbid_area"></span></td>
+					</tr>
+					<tr>
+						<td>최소 입찰가 : </td>
+						<td style="text-align:right"><input id="minbid" name="minbid" type="number" value="${vo.p_minBid}" readonly></td>
+						<td><input id="btn_minbid" onclick="minbidmoney()" value="즉시입찰" type="button" disabled></td>
+					</tr>
+					<tr>
+						<td>입찰가 입력</td>
+						<td style="text-align:right"><input id="bidamount" name="bidamount" type="number" min='0' step='1'></td>
+						<td><input id="btn_bidamount" onclick="amountbidmoney()" value="입찰" type="button" disabled></td>
+					</tr>
+					<tr>
+						<td>즉시 구매가</td>
+						<td style="text-align:right"><input id="imm" name="immbid" value="${vo.p_buyImmed}" readonly></td>
+						<td><input id="btn_imm" onclick="imm_purchase()" value="즉시구매" type="button" disabled></td>
+					</tr>
+					<tr>
+						<td>소지금 : </td>
+						<td style="text-align:right"><span id="user_money">${mvo.u_MONEY} 원</span></td>
+					</tr>
+				</tbody>
+			</table>
 			</form>
 			<br />
 			<!-- 콘솔 메시지의 역할을 하는 로그 텍스트 에리어.(수신 메시지도 표시한다.) -->
@@ -60,15 +90,44 @@
 
 		<div id="auction_area">
 			<form>
-				<span>시작입찰가</span><br>
-				<span>현재 최고가 : </span> <span id="maxbid_area"></span><br>
-				<span>최소입찰가 : </span>	<input id="minbid" name="minbid" type="number" value="${vo.p_minBid}" readonly>
-				<input id="btn_minbid" onclick="minbidmoney()" value="즉시입찰" type="button" ><br>
-				<span>입찰가 입력</span> <input id="bidamount" name="bidamount" type="number" min='0' step='1'>
-				<input id="btn_bidamount" onclick="amountbidmoney()" value="입찰" type="button" ><br>
-				<span>즉시 구매가</span> <input id="imm" name="immbid" value="${vo.p_buyImmed}" readonly>
-				<input id="btn_imm" onclick="imm_purchase()" value="즉시구매" type="button" ><br>
-				<span>소지금 : </span><span id="user_money">${mvo.u_MONEY} 원</span><br>
+				<table width="320" height="300" cellpadding="20">
+					<thead  >
+						<tr>
+							<th colspan="3" style="text-align:center">판매 완료 날짜</th>
+						</tr>
+						<tr>
+							<th colspan="3" style="text-align:center">ddddd${vo.p_biddate}</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>시작 입찰가</td><td style="text-align:right">${vo.p_minBid} 원</td>
+						</tr>
+						<tr>
+							<td>현재 최고가 : </td>
+							<td style="text-align:right"> <span id="maxbid_area"></span></td>
+						</tr>
+						<tr>
+							<td>최소 입찰가 : </td>
+							<td style="text-align:right"><input id="minbid" name="minbid" type="number" value="${vo.p_minBid}" readonly></td>
+							<td><input id="btn_minbid" onclick="minbidmoney()" value="즉시입찰" type="button"></td>
+						</tr>
+						<tr>
+							<td>입찰가 입력</td>
+							<td style="text-align:right"><input id="bidamount" name="bidamount" type="number" min='0' step='1'></td>
+							<td><input id="btn_bidamount" onclick="amountbidmoney()" value="입찰" type="button"></td>
+						</tr>
+						<tr>
+							<td>즉시 구매가</td>
+							<td style="text-align:right"><input id="imm" name="immbid" value="${vo.p_buyImmed}" readonly></td>
+							<td><input id="btn_imm" onclick="imm_purchase()" value="즉시구매" type="button"></td>
+						</tr>
+						<tr>
+							<td>소지금 : </td>
+							<td style="text-align:right"><span id="user_money">${mvo.u_MONEY} 원</span></td>
+						</tr>
+					</tbody>
+				</table>
 			</form>
 			<br />
 			<!-- 콘솔 메시지의 역할을 하는 로그 텍스트 에리어.(수신 메시지도 표시한다.) -->
@@ -165,6 +224,11 @@
 					document.getElementById("btn_bidamount").disabled = true;
 					document.getElementById("btn_imm").disabled = true;
 					
+					if (check_bid == 1) {
+						// send bidmoney, user_id, p_idx
+						document.getElementById("chat_seller").disabled = false;
+					}
+					
 					return;
 				} else if (distDt < 300000) {
 					document.getElementById(id).style.color = "red"
@@ -191,7 +255,8 @@
 			timer = setInterval(showRemaining, 1000);
 		}
 		
-		countDownTimer('biddate', parsedate);
+		//countDownTimer('biddate', parsedate);
+		countDownTimer('biddate', '09/28/2022 09:25 PM');
 
 		var dateObj = new Date();
 		dateObj.setDate(dateObj.getDate() + 1);
@@ -242,7 +307,14 @@
 			console.log("set_time : ", set_time);
 			console.log("temp_count : ", temp_count);
 						
-			messageTextArea.value += username + " : " + user_bid + "\n";
+			username = username.substring(0, 2) + "*****";
+			
+			if (temp_count == -1) {
+				messageTextArea.value += username + "님이" + user_bid + "원에 즉시 구매하셨습니다.\n";
+			} else {
+				messageTextArea.value += username + "님이" + user_bid + "원에 입찰 하셨습니다\n";
+			}
+			
 			maxbidArea.innerHTML = user_bid + "원";
 			document.getElementById("minbid").value = parseInt(user_bid * 1.1);
 			
@@ -359,7 +431,12 @@
 			
 			
 			// 콘솔 텍스트에 메시지를 출력한다.
-			messageTextArea.value += user + "(me) => " + bidmoney + "\n";
+			if (temp_count == -1) {
+				messageTextArea.value += user + "님이 " + bidmoney + "원에 즉시 구매하셨습니다.\n";
+				
+			} else {
+				messageTextArea.value += user + "님이 " + bidmoney + "원에 입찰 하셨습니다.\n";
+			}
 			maxbidArea.innerHTML = bidmoney + "원";
 			
 			document.getElementById("minbid").value = parseInt(bidmoney * 1.1);
