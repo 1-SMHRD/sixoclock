@@ -125,7 +125,7 @@
 			</ul>
 		  </li>
 		  <li class="nth5 activity">
-			<a href="javascript:void(0);">활동현황</a>
+			<a href="javascript:void(0);" onclick="detailUseMoney();">소지금 이용 내역</a>
 			<ul id="click05" class="subLnb feTabCont" style="display: none;">
 			  <li><a href="/web/mywant/wishProductListView">상품비교</a></li>
 			  <li><a href="/web/mycart/productListView">장바구니</a></li>
@@ -631,6 +631,11 @@
 		
 	
 	<script type="text/javascript">
+	
+		const detailUseMoney = () => {
+			
+			
+		}
 	
 		const displayUserinfoTab = () => {
 			console.log("displayUserinfoTab()");

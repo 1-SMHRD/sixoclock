@@ -153,4 +153,60 @@ insert into t_product (p_idx, u_id, p_biddate, p_buyImmed, p_minBid) values (432
 insert into t_product (p_idx, u_id, p_biddate, p_buyImmed, p_minBid) values (2131, 4123, '09/28/2022 10:25 PM', 200000, 5000);
 
 select * from t_product;
+update t_product set p_biddate = TO_DATE( '2022-09-30 12:00:00', 'YYYY/MM/DD HH:MI:SS PM') where p_idx = 96;
+update t_product set p_buyerid = NULL where p_idx = 96;
+
+
+DROP TABLE t_chatting_room CASCADE CONSTRAINTS;
+DROP TRIGGER t_chatting_room_AI_TRG;
+DROP SEQUENCE t_chatting_room_SEQ; 
+
+CREATE TABLE t_chatting_room
+(
+    cr_code          NUMBER(15, 0)     NOT NULL, 
+    cr_login_id      VARCHAR2(20)      NOT NULL, 
+    cr_other_user    VARCHAR2(4000)    NOT NULL, 
+    cr_title         VARCHAR2(400)     NOT NULL, 
+    cr_open_dt       DATE              DEFAULT SYSDATE NOT NULL, 
+     PRIMARY KEY (cr_code)
+)
+;
+
+CREATE SEQUENCE t_chatting_room_SEQ
+START WITH 1
+INCREMENT BY 1;
+
+
+
+CREATE OR REPLACE TRIGGER t_chatting_room_AI_TRG
+BEFORE INSERT ON t_chatting_room 
+REFERENCING NEW AS NEW FOR EACH ROW 
+BEGIN 
+    SELECT t_chatting_room_SEQ.NEXTVAL
+    INTO :NEW.cr_code
+    FROM DUAL;
+END;
+;
+
+
+
+insert into t_chatting_room (cr_login_id, cr_other_user, cr_title) values ('asdf', 'zxcv', 'asdf & zxcv');
+
+
+select * from t_chatting_room;
+
+DROP TABLE t_buylist CASCADE CONSTRAINTS;
+
+CREATE TABLE t_buylist
+(
+    p_idx         NUMBER(15, 0)    NULL, 
+    b_sellerid    VARCHAR2(20)     NULL, 
+    b_buyerid     VARCHAR2(20)     NULL, 
+    b_buymoney    NUMBER(15, 0)    NULL, 
+    b_buydate     DATE             DEFAULT SYSDATE NOT NULL,
+    b_check       CHAR(1)          DEFAULT '0' NULL   
+);
+
+select * from t_buylist;
+
 

@@ -164,4 +164,18 @@ public class MyBatisDAO {
 
 	}
 	
+	public void updatesales(SalesWriteVO svo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.update("updatesales", svo);
+		session.commit();
+		session.close();
+	}
+	
+	public void insertBuyList(BuyListVO bvo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.insert("insertBuyList", bvo);
+		session.commit();
+		session.close();
+	}
+	
 }

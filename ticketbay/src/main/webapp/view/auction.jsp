@@ -24,6 +24,10 @@
 </head>
 <body>
 
+<div>
+	<input type="button" onclick="btn5min()" value="5분">
+	<input type="button" onclick="btn1min()" value="1분">
+</div>
 
 <!-- 
 	<h1>판매 완료 일자 : ${vo.p_biddate}</h1>
@@ -44,19 +48,19 @@
 			<table width="320" height="300" cellpadding="20">
 				<thead>
 					<tr>
-						<th colspan="3" style="text-align:center">판매 완료 날짜</th>
+						<th style="text-align:center">판매 완료 날짜</th><th colspan="2" id="biddate11" style="text-align:center">${vo.p_biddate}</th>
 					</tr>
 					<tr>
-						<th colspan="3" id="biddate" style="text-align:center">ddddd${vo.p_biddate}</th>
+						<th style="text-align:center">남은 시간</th><th colspan="2" id="biddate" style="text-align:center">${vo.p_biddate}</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td>시작 입찰가</td><td style="text-align:right">${vo.p_minBid} 원</td>
+						<td>시작 입찰가</td><td colspan="2" style="text-align:right">${vo.p_minBid} 원</td>
 					</tr>
 					<tr>
 						<td>현재 최고가 : </td>
-						<td style="text-align:right"> <span id="maxbid_area"></span></td>
+						<td colspan="2" style="text-align:right"> <span id="maxbid_area"></span></td>
 					</tr>
 					<tr>
 						<td>최소 입찰가 : </td>
@@ -75,7 +79,7 @@
 					</tr>
 					<tr>
 						<td>소지금 : </td>
-						<td style="text-align:right"><span id="user_money">${mvo.u_MONEY} 원</span></td>
+						<td colspan="2" style="text-align:right"><span id="user_money">${mvo.u_MONEY} 원</span></td>
 					</tr>
 				</tbody>
 			</table>
@@ -93,19 +97,19 @@
 				<table width="320" height="300" cellpadding="20">
 					<thead  >
 						<tr>
-							<th colspan="3" style="text-align:center">판매 완료 날짜</th>
+							<th style="text-align:center">판매 완료 날짜</th><th colspan="2" id="biddate11" style="text-align:center">${vo.p_biddate}</th>
 						</tr>
 						<tr>
-							<th colspan="3" style="text-align:center">ddddd${vo.p_biddate}</th>
+							<th style="text-align:center">남은 시간</th><th colspan="2" id="biddate" style="text-align:center">${vo.p_biddate}</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td>시작 입찰가</td><td style="text-align:right">${vo.p_minBid} 원</td>
+							<td>시작 입찰가</td><td colspan="2" style="text-align:right">${vo.p_minBid} 원</td>
 						</tr>
 						<tr>
 							<td>현재 최고가 : </td>
-							<td style="text-align:right"> <span id="maxbid_area"></span></td>
+							<td colspan="2" style="text-align:right"> <span  id="maxbid_area"></span></td>
 						</tr>
 						<tr>
 							<td>최소 입찰가 : </td>
@@ -124,7 +128,7 @@
 						</tr>
 						<tr>
 							<td>소지금 : </td>
-							<td style="text-align:right"><span id="user_money">${mvo.u_MONEY} 원</span></td>
+							<td colspan="2" style="text-align:right"><span id="user_money">${mvo.u_MONEY} 원</span></td>
 						</tr>
 					</tbody>
 				</table>
@@ -150,9 +154,22 @@
 		
 		let biddate = "${vo.p_biddate}"
 		let	parsedate = '';
+		let timelimit = 0;
 		
 			//2022-09-30 00:00:00
 			//09/28/2022 09:25 PM
+			
+		const btn5min = () => {
+			set_time = new Date();
+			set_time.setMinutes(set_time.getMinutes() + 5);
+			temp_count = 1;
+		}
+		
+		const btn1min = (timelimit) => {
+			set_time = new Date();
+			set_time.setSeconds(set_time.getSeconds() + 62);
+			temp_count = 1;
+		}
 		
 		const dateparse = () => {
 			console.log(biddate);
@@ -211,7 +228,25 @@
 				//console.log("temp_count",temp_count);
 				//console.log("_vDate", _vDate)
 				//console.log(distDt);
-
+				
+				console.log("buy :", "${vo.p_buyerid}");
+				console.log("id :", "${mvo.u_ID}");
+				console.log("distDt", distDt);
+				
+				let buyerid = "${vo.p_buyerid}";
+				let loginid = "${mvo.u_ID}";
+				console.log(buyerid);
+				console.log(buyerid == loginid);
+				
+				if (buyerid != "") { 
+					distDt = -1;
+					console.log("distDt", distDt);
+					if (buyerid == loginid) {
+						console.log('df',check_bid)
+						check_bid = 2;
+					}
+				}
+				
 				if (distDt < 0) {
 					clearInterval(timer);
 					document.getElementById(id).style.color = "red"
@@ -226,6 +261,16 @@
 					
 					if (check_bid == 1) {
 						// send bidmoney, user_id, p_idx
+						$.ajax({
+							url : "${cpath}/updatesales.do",
+							type : "post",
+							data : {"u_id" : "${mvo.u_ID}", "p_Idx" : "${vo.p_Idx}", "seller" : "${vo.u_ID}", "buymoney" : bidmoney},
+							success : () => {
+								document.getElementById("chat_seller").disabled = false;
+							},
+							error : () => {alert("ajax error")}
+						});
+					} else if (check_bid == 2) {
 						document.getElementById("chat_seller").disabled = false;
 					}
 					
@@ -255,8 +300,8 @@
 			timer = setInterval(showRemaining, 1000);
 		}
 		
-		//countDownTimer('biddate', parsedate);
-		countDownTimer('biddate', '09/28/2022 09:25 PM');
+		countDownTimer('biddate', parsedate);
+		// countDownTimer('biddate', '09/28/2022 09:25 PM');
 
 		var dateObj = new Date();
 		dateObj.setDate(dateObj.getDate() + 1);
