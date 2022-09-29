@@ -49,6 +49,15 @@ public class MyBatisDAO {
 		return catelist;
 	}
 	
+	// 구매상품 가져오기
+	public List<BuyListVO> buyList(String u_ID){
+		System.out.println(u_ID);
+		SqlSession session = sqlSessionFactory.openSession();
+		List<BuyListVO> list=session.selectList("buyList", u_ID);
+		session.close();
+		return list;
+	}
+	
 	// 등록상품 삭제하기
 	public void salesDelete(String p_Idx) {
 		SqlSession session = sqlSessionFactory.openSession();
@@ -56,7 +65,6 @@ public class MyBatisDAO {
 		session.commit();
 		session.close();
 	}
-	
 	
 	// 상세보기(p_Idx)
 	public SalesWriteVO getByp_Idx(String p_Idx) {

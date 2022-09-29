@@ -12,6 +12,7 @@ import kr.controller.DeleteUserController;
 import kr.controller.MainController;
 import kr.controller.MyPageController;
 import kr.controller.NaveridloginpageController;
+import kr.controller.ProductBuyViewController;
 import kr.controller.ProductListViewController;
 import kr.controller.SalesDetailController;
 import kr.controller.SalesListController;
@@ -52,7 +53,9 @@ public class HandlerMapping {
 
 		mappings.put("/salesWrite.do", new SalesWriteController()); // 판매등록
 		mappings.put("/salesWriteForm.do", new SalesWriteFormController());
-		mappings.put("/productListView.do", new ProductListViewController()); // 등록후 마이페이지
+		mappings.put("/productListView.do", new ProductListViewController()); // 내가 판매한 상품
+		mappings.put("/productBuyView.do", new ProductBuyViewController()); // 내가 구매한 상품
+		
 		mappings.put("/salesDelete.do", new SalesDeleteController());
 
 		mappings.put("/mypage.do", new MyPageController());

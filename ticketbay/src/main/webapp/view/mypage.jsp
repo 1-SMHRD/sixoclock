@@ -95,13 +95,7 @@
 	<div class="boxStyle01 myServiceLnb">
 	  <ul class="myClass6">
 		  <li class="nth1 order">
-			<a href="#">내가 구매한 상품</a>
-			<!-- <ul id="click01" class="subLnb feTabCont" style="display: none;">
-			  2017-05-15 Left Menu 변경
-			  <li><a href="/web/myorder/orderListView">거래 진행 상품</a></li>
-			  <li><a href="/web/myorder/completeOrderListView">거래 완료 상품</a></li>
-			  <li><a href="/web/myorder/cancelOrderListView">거래 취소 상품</a></li>
-			</ul> -->
+			<a href="${cpath}/productBuyView.do?u_ID=${mvo.u_ID}">내가 구매한 상품</a>
 		  </li>
 		  <li class="nth2 sell">
 			<a href="${cpath}/productListView.do?u_ID=${mvo.u_ID}">내가 판매한 상품</a>

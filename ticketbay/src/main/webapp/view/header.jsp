@@ -60,7 +60,7 @@
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                         
                         </button>
-                        <a class="navbar-brand" href="#"><b>T</b>ticketbay</a>
+                        <a class="navbar-brand" href="${cpath}/main.do"><b>T</b>icketbay</a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
