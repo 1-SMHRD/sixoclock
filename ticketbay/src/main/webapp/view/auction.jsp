@@ -24,6 +24,10 @@
 </head>
 <body>
 
+<div>
+	<input type="button" onclick="btn5min()" value="5분">
+	<input type="button" onclick="btn1min()" value="1분">
+</div>
 
 <!-- 
 	<h1>판매 완료 일자 : ${vo.p_biddate}</h1>
@@ -150,9 +154,22 @@
 		
 		let biddate = "${vo.p_biddate}"
 		let	parsedate = '';
+		let timelimit = 0;
 		
 			//2022-09-30 00:00:00
 			//09/28/2022 09:25 PM
+			
+		const btn5min = () => {
+			set_time = new Date();
+			set_time.setMinutes(set_time.getMinutes() + 5);
+			temp_count = 1;
+		}
+		
+		const btn1min = (timelimit) => {
+			set_time = new Date();
+			set_time.setSeconds(set_time.getSeconds() + 62);
+			temp_count = 1;
+		}
 		
 		const dateparse = () => {
 			console.log(biddate);
@@ -247,7 +264,7 @@
 						$.ajax({
 							url : "${cpath}/updatesales.do",
 							type : "post",
-							data : {"u_id" : "${mvo.u_ID}", "p_Idx" : "${vo.p_Idx}"},
+							data : {"u_id" : "${mvo.u_ID}", "p_Idx" : "${vo.p_Idx}", "seller" : "${vo.u_ID}", "buymoney" : bidmoney},
 							success : () => {
 								document.getElementById("chat_seller").disabled = false;
 							},

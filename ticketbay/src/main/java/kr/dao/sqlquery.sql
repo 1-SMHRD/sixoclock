@@ -195,7 +195,7 @@ insert into t_chatting_room (cr_login_id, cr_other_user, cr_title) values ('asdf
 
 select * from t_chatting_room;
 
-create
+DROP TABLE t_buylist CASCADE CONSTRAINTS;
 
 CREATE TABLE t_buylist
 (
@@ -203,8 +203,10 @@ CREATE TABLE t_buylist
     b_sellerid    VARCHAR2(20)     NULL, 
     b_buyerid     VARCHAR2(20)     NULL, 
     b_buymoney    NUMBER(15, 0)    NULL, 
-    b_buydate     DATE             NULL, 
+    b_buydate     DATE             DEFAULT SYSDATE NOT NULL,
     b_check       CHAR(1)          DEFAULT '0' NULL   
 );
+
+select * from t_buylist;
 
 

@@ -99,4 +99,8 @@
 		update t_product set p_buyerid = #{p_buyerid} where p_idx = #{p_Idx}
 	</update>
 
+	<insert id="insertBuyList" parameterType="kr.dao.BuyListVO">
+		insert into t_buylist(p_idx, b_sellerid, b_buyerid, b_buymoney) values (#{p_idx}, #{b_sellerid}, #{b_buyerid}, #{b_buymoney})
+	</insert>
+
 </mapper>

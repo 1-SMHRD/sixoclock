@@ -163,4 +163,11 @@ public class MyBatisDAO {
 		session.close();
 	}
 	
+	public void insertBuyList(BuyListVO bvo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.insert("insertBuyList", bvo);
+		session.commit();
+		session.close();
+	}
+	
 }
