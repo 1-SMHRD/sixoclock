@@ -148,7 +148,7 @@
 
 <!-- main -->
 <main id="contents" class="myservice">
-<div id="tempdiv" style="display: none;">
+<div id="tempdiv">
   <div class="prdTracking">
     <div>
       <table>
@@ -645,6 +645,7 @@
 			$("#update_info").css("display", "none");
 			$("#d_list_tab").css("display", "none");
 			$("#u_delete_tab").css("display", "none");
+			$("#tempdiv").css("display", "none");
 			
 		}
 		
@@ -673,7 +674,7 @@
 			$("#update_info").css("display", "none");
 			$("#d_list_tab").css("display", "none");
 			$("#u_delete_tab").css("display", "none");
-			
+			$("#tempdiv").css("display", "none")
 			$("#CHECK_PW").val("");
 		}
 		

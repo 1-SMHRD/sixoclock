@@ -29,20 +29,20 @@
     <div class="c2c_top_box_gr mt_10 brd30_sdw">
       <!-- 좌측 -->
       <div class="c2c_a_gr cp_view_box">
-        <div name="productCompare" class="compare_list_icon cp_icon_p" data-compare-seq="5330574" data-type="N">비교담기</div>
-        <div class="c2c_ctg_list">콘서트 > 이름 > 장소</div>
-        <div class="c2c_pd_tit">좌석정보</div>
+        <div class="c2c_ctg_list">콘서트 > ${vo.cate_name}</div>
+        <div class="c2c_pd_tit"></div>
         <div class="c2c_sub_info_txt">
-          <span>층</span>
-          <span>S</span>
+          <span>${fn:split(vo.p_seatInfo, ' ')[0]}구역</span>
+          <span>${fn:split(vo.p_seatInfo, ' ')[1]}열</span>
+          <span>${fn:split(vo.p_seatInfo, ' ')[2]}</span>
         </div>
         <div>
-          <div class="new_UNUSUAL_LIST_gr">
+          <!-- <div class="new_UNUSUAL_LIST_gr">
             <span>통로석</span>
-          </div>
+          </div> -->
           <div class="clear"></div>
-          <span class="new_PROD_DISP_NO_gr mb10" id="use_date" data-use-date="">사용일 : </span>
-          <span class="new_PROD_DISP_NO_gr" id="new_prod_no" data-prod-no="">상품	번호 : </span>
+          <span class="new_PROD_DISP_NO_gr mb10" id="use_date" data-use-date="">사용일 : ${vo.p_indate}</span>
+          <span class="new_PROD_DISP_NO_gr" id="new_prod_no" data-prod-no="">상품	번호 : ${vo.p_Idx}</span>
         </div>
       </div>
       <!-- 우측 -->
@@ -97,8 +97,8 @@
           </li>
         </ul>
         <div id="dtailTab01" class="feTabCont prodViewTab current" style="display: block;">
-          <p> 상세내용 가져오기 </p>
-          <div class="productImage_box"> 첨부 이미지 </div>
+          <p>${vo.p_dealInfo} </p>
+          <div class="productImage_box"> ${vo.p_imgRoute} </div>
         </div>
         <div id="dtailTab04" class="feTabCont prodViewTab" style="display: none;">
           <h3>상품 결제 안내</h3>

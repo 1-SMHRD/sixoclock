@@ -6,7 +6,7 @@
 
   	<!-- 전체리스트 -->
   	<select id="allList" resultType="kr.dao.SalesWriteVO">
-  		select * from t_product order by p_buyimmed
+  		select * from t_product where cate_name=#{cate_name} order by p_buyimmed
   	</select>
   	
   	<!-- 전체리스트 정렬 -> p_Idx-->
@@ -18,6 +18,11 @@
   	<select id="getByp_Idx" parameterType="String" resultType="kr.dao.SalesWriteVO">
   		select * from t_product where p_Idx=#{p_Idx}
   	</select>
+  	
+  	<!-- 등록된 글 삭제 -->
+  	<delete id="salesDelete">
+  		delete from t_product where p_Idx=#{p_Idx}
+  	</delete>
   	
 	
 	<!-- 카테고리 가져오기 -->

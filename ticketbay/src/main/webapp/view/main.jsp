@@ -48,7 +48,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
 		
 		<script type="text/javascript">
@@ -85,7 +84,7 @@
                                 <div class="dropdown-content">
                                 <c:forEach var="vo" items="${list}">
                                 <c:if test="${vo.up_cate_no eq '1000'}">
-                                    <a href="#" value="${vo.cate_no}">${vo.cate_name}</a>
+                                    <a href="${cpath}/salesList.do?cate_name=${vo.cate_name}" value="${vo.cate_no}">${vo.cate_name}</a>
                                 </c:if>
                                 </c:forEach>
                                 
