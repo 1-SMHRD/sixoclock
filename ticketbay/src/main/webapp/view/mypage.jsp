@@ -307,6 +307,46 @@
   </div>
 </div>
 
+	<!-- 소지금 이용 내역 탭 -->
+	
+	<div id="usemoneytab" style="display: none">
+		<h3 class="boxTitles mt_40">
+						<span>소지금 이용 내역</span>
+					</h3>
+					<table class="tableStyle shippingAddr">
+						<caption>받는 주소 정보</caption>
+						<colgroup>
+							<col style="width: 100px;">
+							<col style="width: 150px;">
+							<col style="width: 150px;">
+							<col style="width: 100px;">
+							<col style="width: 75px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th class="th_txt_style_01" scope="col">사용 내역</th>
+								<th class="th_txt_style_01" scope="col" colspan="2">사용 금액</th>
+								<th class="th_txt_style_01" scope="col">사용 날짜</th>
+								<th class="th_txt_style_01" scope="col">현재 소지금</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach var="uvo" items="${uMList }">
+								<tr>
+									<td>${uvo.m_CLASSIFICATION}</td>
+									<td> +${uvo.m_PLUS}원</td>
+									<td> -${uvo.m_MINUS}원</td>
+									<td>${uvo.m_DATE}</td>
+									<td>${uvo.m_NOW_MONEY}원</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+	</div>
+	
+	<!-- //소지금 이용 내역 탭 -->
+
+
 	<!-- 회원정보 수정 탭 -->
 	<div id="userinfotab" style="display: none">
 		<!-- 회원정보 수정 배너 -->
@@ -626,14 +666,15 @@
 	</div>
 	<!-- //회원정보 수정 탭 -->
 	
-		
-		
-		
+	
 	
 	<script type="text/javascript">
 	
 		const detailUseMoney = () => {
-			
+			$("#userinfotab").css("display", "none");
+			$("#usemoneytab").css("display", "block");
+			$("#tempdiv").css("display", "none");
+
 			
 		}
 	
@@ -646,6 +687,8 @@
 			$("#d_list_tab").css("display", "none");
 			$("#u_delete_tab").css("display", "none");
 			$("#tempdiv").css("display", "none");
+			$("#usemoneytab").css("display", "none");
+
 			
 		}
 		
@@ -660,6 +703,7 @@
 				console.log("eq")
 				$("#check_user").css("display", "none");
 				$("#update_info").css("display", "block");
+				$("#usemoneytab").css("display", "none");
 				
 				parseEmail();
 			}
@@ -676,6 +720,7 @@
 			$("#u_delete_tab").css("display", "none");
 			$("#tempdiv").css("display", "none")
 			$("#CHECK_PW").val("");
+			$("#usemoneytab").css("display", "none");
 		}
 		
 		const display_d_list = () => {
@@ -684,7 +729,7 @@
 			$("#update_info").css("display", "none");
 			$("#d_list_tab").css("display", "block");
 			$("#u_delete_tab").css("display", "none");
-			
+			$("#usemoneytab").css("display", "none");
 			$("#CHECK_PW").val("");
 		}
 		
@@ -694,7 +739,7 @@
 			$("#update_info").css("display", "none");
 			$("#d_list_tab").css("display", "none");
 			$("#u_delete_tab").css("display", "block");
-			
+			$("#usemoneytab").css("display", "none");
 			$("#CHECK_PW").val("");
 		}
 		

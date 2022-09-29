@@ -58,6 +58,10 @@
 	<select id="allDList" resultType="kr.dao.DeliveryVO">
 		select * from test_deliverylist where u_ID = #{u_id}
 	</select>
+
+	<select id="uMList" resultType="kr.dao.MoneyVO" parameterType="String">
+		select * from test_usemoney where u_ID = #{u_id}
+	</select>
   	
 	<insert id="memInsert" parameterType="kr.dao.MemberVO">
 		insert into test_user(u_ID, u_PW, u_NAME, u_EMAIL, u_MOBILE) values (#{u_ID}, #{u_PW}, #{u_NAME}, #{u_EMAIL}, #{u_MOBILE})
