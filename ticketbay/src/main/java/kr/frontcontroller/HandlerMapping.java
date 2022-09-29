@@ -11,6 +11,7 @@ import kr.controller.DeleteUserController;
 import kr.controller.MainController;
 import kr.controller.MyPageController;
 import kr.controller.NaveridloginpageController;
+import kr.controller.PayController;
 import kr.controller.ProductListViewController;
 import kr.controller.SalesDetailController;
 import kr.controller.SalesListController;
@@ -46,6 +47,7 @@ public class HandlerMapping {
 
 		mappings.put("/orderSheet.do",new orderController());
 		mappings.put("/orderPay.do",new orderPayController());
+		mappings.put("/Pay.do",new PayController());
 		mappings.put("/RequestVerifyAuth.do",new RequestVerifyAuthController());
 
 		mappings.put("/salesWrite.do", new SalesWriteController()); // 판매등록

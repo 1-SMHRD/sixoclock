@@ -14,21 +14,21 @@
 	<header>
 		<div id="container">
 			<span id="title">결제정보를 입력해주세요</span>
-			<form id="orderPay.view" name="" method="POST">
+			<form id="orderPay.do" name="" method="POST">
 				<div id="goodname">
-					<input type="text" name="goodname" value="${ovo.pd_code}">
+					<input type="text" name="goodname" value="${vo.p_code}">
 				</div>
 				<div id="name">
-					<input type="text" name="buyername" value="" placeholder="이름">
+					<input type="text" name="buyername" value="${vo.u_NAME}">
 				</div>
 				<div id="phone">
-					<input type="text" name="buyertel" value="" placeholder="전화번호">
+					<input type="text" name="buyertel" value="${vo.u_MOBILE}">
 				</div>
 				<div id="mail">
-					<input type="text" name="buyeremail" value="" placeholder="Email">
+					<input type="text" name="buyeremail" value="${vo.u_EMAIL}">
 				</div>
 				<div id="money">
-					<input type="text" name="price" value="${ovo.p_buy_immed}">
+					<input type="text" name="price" value="${vo.p_buy_immed}">
 				</div>
 				<input type="hidden" name="mid" value="INIpayTest">
 				<!-- 에스크로테스트 : iniescrow0, 빌링(정기과금)테스트 : INIBillTst -->
@@ -50,7 +50,7 @@
 
 			</form>
 			<div>
-				<button onclick="INIStdPay.pay('SendPayForm_id')"
+				<button onclick="INIStdPay.pay('paycheck.do')"
 					style="padding: 10px; margin-left: 2.5%">결제요청</button>
 				
 			</div>

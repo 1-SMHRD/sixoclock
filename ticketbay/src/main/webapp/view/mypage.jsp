@@ -430,7 +430,7 @@
 								<tr>
 									<th scope="row">휴대폰</th>
 									<td colspan="3"><input class="textInp03" id="mobile" name="mobile" value="${mvo.u_MOBILE}">
-									<input type="button" class="btn" value="본인인증"></td>
+									<input type="button" class="btn" value="본인인증" onclick="window.open('check.jsp')"></td>
 								</tr>
 								<tr>
 									<th scope="row">이메일</th>

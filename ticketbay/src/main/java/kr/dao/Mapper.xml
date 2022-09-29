@@ -37,6 +37,10 @@
 		select * from t_performance_info where p_code=#{p_code}
 		select * from t_product where pd_code=#{pd_code}
 	</select>
+	<select id="orderPay" parameterType="kr.dao.payVO">
+		select * from t_user where u_NAME=#{u_NAME}
+		select * from t_product where pd_code=#{pd_code}
+	</select>
 
 
 	
