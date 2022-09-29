@@ -32,8 +32,8 @@
         <div class="c2c_ctg_list">콘서트 > ${vo.cate_name}</div>
         <div class="c2c_pd_tit"></div>
         <div class="c2c_sub_info_txt">
-          <span>${fn:split(vo.p_seatInfo, ' ')[0]}구역</span>
-          <span>${fn:split(vo.p_seatInfo, ' ')[1]}열</span>
+          <span>${fn:split(vo.p_seatInfo, ' ')[0]}</span>
+          <span>${fn:split(vo.p_seatInfo, ' ')[1]}</span>
           <span>${fn:split(vo.p_seatInfo, ' ')[2]}</span>
         </div>
         <div>

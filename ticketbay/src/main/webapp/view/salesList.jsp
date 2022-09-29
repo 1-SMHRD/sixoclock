@@ -214,8 +214,8 @@
                 <div class="c2c_sub_day_txt">사용일 : ${fn:split(vo.p_indate," ")[0]}</div>
                 
                 <div class="c2c_sub_info_txt">
-                  <span>${fn:split(vo.p_seatInfo, ' ')[0]}구역</span>
-                  <span>${fn:split(vo.p_seatInfo, ' ')[1]}열</span>
+                  <span>${fn:split(vo.p_seatInfo, ' ')[0]}</span>
+                  <span>${fn:split(vo.p_seatInfo, ' ')[1]}</span>
                   <span>${fn:split(vo.p_seatInfo, ' ')[2]}</span>
                 </div>
               </div>

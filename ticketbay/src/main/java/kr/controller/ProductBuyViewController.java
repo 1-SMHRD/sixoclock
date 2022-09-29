@@ -24,7 +24,7 @@ public class ProductBuyViewController implements Controller {
 		request.setAttribute("list", list);
 		
 		
-		return "productBuyView";	
+		return "productBuyView";
 	}
 
 }
