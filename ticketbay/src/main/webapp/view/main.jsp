@@ -1,3 +1,4 @@
+<%@page import="kr.dao.CategoryVO"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -56,7 +57,6 @@
 		        location.href = "http://nid.naver.com/nidlogin.logout";
 		    }
 		</script>
-		
 
 
         <header class="header-section">
@@ -78,11 +78,85 @@
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="${cpath}/main.do">Home</a></li>
                             
-                            <li><a href="${cpath}/salesList.do" class="dropbtn" >콘서트</a></li>
-                            <li><a class="dropbtn" >스포츠</a></li>
-                            <li><a class="dropbtn" >뮤지컬/연극</a></li>
-                            <li><a class="dropbtn" >영화/전시</a></li>
-                            <li><a class="dropbtn" >정가이하</a></li>
+                            
+                            <div class="dropdown">
+                            	
+                                <li><span><button class="dropbtn">콘서트</button></span></li>
+                                <div class="dropdown-content">
+                                <c:forEach var="vo" items="${list}">
+                                <c:if test="${vo.up_cate_no eq '1000'}">
+                                    <a href="#" value="${vo.cate_no}">${vo.cate_name}</a>
+                                </c:if>
+                                </c:forEach>
+                                
+                                </div>
+                            </div>
+                            
+                            <div class="dropdown">
+                            	
+                                <li><span><button class="dropbtn"s>스포츠</button></span></li>
+                                <div class="dropdown-content">
+                                <c:forEach var="vo" items="${catelist}">
+                                <c:if test="${vo.up_cate_no eq '1001'}">
+                                    <a href="${cpath}/salesList.do?cate_no=${vo.cate_no}" value="${vo.cate_no}">${vo.cate_name}</a>
+                                </c:if>
+                                </c:forEach>
+                                
+                                </div>
+                            </div>
+                            
+                            <div class="dropdown">
+                            	
+                                <li><span><button class="dropbtn">뮤지컬/연극</button></span></li>
+                                <div class="dropdown-content">
+                                <c:forEach var="vo" items="${list}">
+                                <c:if test="${vo.up_cate_no eq '1002'}">
+                                    <a href="#"  value="${vo.cate_no}" >${vo.cate_name}</a>
+                                </c:if>
+                                </c:forEach>
+                                
+                                </div>
+                            </div>
+                            
+                            <div class="dropdown">
+                            	
+                                <li><span><button class="dropbtn">영화/전시</button></span></li>
+                                <div class="dropdown-content">
+                                <c:forEach var="vo" items="${list}">
+                                <c:if test="${vo.up_cate_no eq '1003'}">
+                                    <a href="#"  value="${vo.cate_no}">${vo.cate_name}</a>
+                                </c:if>
+                                </c:forEach>
+                                
+                                </div>
+                            </div>
+                            
+                            <div class="dropdown">
+                            	
+                                <li><span><button class="dropbtn" value="${vo.cate_no}">굿즈</button></span></li>
+                                <div class="dropdown-content">
+                                <c:forEach var="vo" items="${list}">
+                                <c:if test="${vo.up_cate_no eq '1004'}">
+                                    <a href="#">${vo.cate_name}</a>
+                                </c:if>
+                                </c:forEach>
+                                
+                                </div>
+                            </div>
+                            
+                            <div class="dropdown">
+                            	
+                                <li><span><button class="dropbtn" value="${vo.cate_no}">정가이하</button></span></li>
+                                <div class="dropdown-content">
+                                <c:forEach var="vo" items="${list}">
+                                <c:if test="${vo.up_cate_no eq '1005'}">
+                                    <a href="#">${vo.cate_name}</a>
+                                </c:if>
+                                </c:forEach>
+                                
+                                </div>
+                            </div>
+                            
                         </ul>
                         <ul class="nav navbar-nav navbar-right cart-menu">
                         <li><a href="#" class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></a></li>

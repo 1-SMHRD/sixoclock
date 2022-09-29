@@ -22,6 +22,7 @@
 </head>
 <body>
 
+
 <div id="container" class="bg_03 wd_100p">
   <!-- C2C 상단 영역 -->
   <main id="contents" class="wd_100p">
@@ -46,64 +47,10 @@
       </div>
       <!-- 우측 -->
       <div class="c2c_b_gr">
-        <!-- 수량 & 가격정보 -->
-        <ul class="c2c_b_sub01_gr">
-          <li>
-            <h3>장당 가격</h3>
-            <span class="pd_m">\000,000</span>
-            <span class="pd_sale_m"> 정가이하 금액</span>
-            <div class="clear"></div>
-            <div style="display: block; text-align: right;">
-              <span class="REGULAR_PRICE new_REGULAR_PRICE">정가이하</span>
-              <span class="BTN_RP new_BTN_RP">신고</span>
-            </div>
-          </li>
-          <li>
-            <h3>구매 수량</h3>
-            <span class="pd_pd_ea">
-              <ul>
-                <li>
-                  <span class="btn_ea_edit_txt">n장</span>
-                </li>
-              </ul>
-            </span>
-            <div class="clear"></div>
-          </li>
-          <li>
-            <h3>총 가격</h3>
-            <span id="TotalPrice" class="c2c_all_m">\000,000</span>
-            <div class="clear"></div>
-          </li>
-        </ul>
-        <!-- 거래방식 -->
-        <div class="c2c_b_sub02_gr">
-          <h3>거래방식 선택</h3>
-          <ul class="in_box_01 float_l TRANSACTION_TYPE_ck mt5 mb5">
-            <li>
-              <label for="TRANSACTION_TYPE_02">
-                <input id="TRANSACTION_TYPE_02" type="radio" name="TRANSACTION_TYPE" value="2">
-                <span>배송거래 방식</span>
-              </label>
-              <span class="product_ea_info">배송비: </span>
-            </li>
-            <li>
-              <span class="new_TICKET_RETENTION_gr" style="padding: 10px 0 0 0;">
-                 ※ 
-                <b>티켓보유 상태</b>
-              </span>
-            </li>
-          </ul>
-          <div class="clear"></div>
-        </div>
-        <!-- 버튼영역 -->
-        <div class="c2c_b_sub03_gr pd_box_sub_btn">
-          <button id="purchaseBtn" class="wd_100p">구매하기</button>
-        </div>
-        <!-- 안심보상 -->
-        <div class="safe_s_phrase">
-          <span class="symbol_middle">*</span>
-          입장안심 서비스 이용 가능
-        </div>
+     
+     	<jsp:include page="auction.jsp"></jsp:include>
+     
+     
       </div>
       <!-- 안전거래 안내 -->
       <div class="c2c_c_gr">

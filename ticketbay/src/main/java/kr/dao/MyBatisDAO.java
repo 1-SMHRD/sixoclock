@@ -32,6 +32,14 @@ public class MyBatisDAO {
 		return list;
 	}
 	
+	// 전체리스트 가져오기(ID)	
+		public List<SalesWriteVO> idxallList(String u_ID){
+			SqlSession session = sqlSessionFactory.openSession();
+			List<SalesWriteVO> list=session.selectList("idxallList", u_ID);
+			session.close();
+			return list;
+		}
+	
 	// 카테고리리스트 가져오기
 	public List<CategoryVO> cateList() {
 		SqlSession session = sqlSessionFactory.openSession();
@@ -79,7 +87,16 @@ public class MyBatisDAO {
 		session.commit();
 		session.close();
 	}
-	
+
+
+	public orderOVO orderSheet(orderOVO ovo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		orderOVO ov=session.selectOne("orderOVO", ovo);
+		session.close();
+		return ov;
+	}
+
+
 	
 	public MemberVO memLogin(MemberVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
@@ -135,6 +152,8 @@ public class MyBatisDAO {
 		session.close();
 		
 		return mvo;
+
+
 	}
 	
 }

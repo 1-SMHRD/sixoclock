@@ -14,10 +14,11 @@ import kr.controller.NaveridloginpageController;
 import kr.controller.ProductListViewController;
 import kr.controller.SalesDetailController;
 import kr.controller.SalesListController;
+
 import kr.controller.RequestVerifyAuthController;
 import kr.controller.orderController;
 import kr.controller.orderPayController;
-import kr.controller.SalesWriteCateController;
+
 import kr.controller.SalesWriteController;
 
 import kr.controller.SigninController;
@@ -41,12 +42,13 @@ public class HandlerMapping {
 		mappings.put("/main.do", new MainController());
 		mappings.put("/salesList.do", new SalesListController());
 		mappings.put("/salesDetail.do", new SalesDetailController());
-		 mappings.put("/orderSheet.do",new orderController());
-		   mappings.put("/orderPay.do",new orderPayController());
-		   mappings.put("/RequestVerifyAuth.do",new RequestVerifyAuthController());
+
+		mappings.put("/orderSheet.do",new orderController());
+		mappings.put("/orderPay.do",new orderPayController());
+		mappings.put("/RequestVerifyAuth.do",new RequestVerifyAuthController());
+
 		mappings.put("/salesWrite.do", new SalesWriteController()); // 판매등록
 		mappings.put("/salesWriteForm.do", new SalesWriteFormController());
-		mappings.put("/salesWriteCate.do", new SalesWriteCateController());
 		mappings.put("/productListView.do", new ProductListViewController()); // 등록후 마이페이지
 		
 
@@ -67,8 +69,7 @@ public class HandlerMapping {
 		mappings.put("/usemoney.do", new UseMoneyController());
 		mappings.put("/bidcancel.do", new BidCancelController());
 		mappings.put("/chatroom.do", new ChatroomController());
-		
-		
+
 		
 	}
 	public Controller getController(String key) {

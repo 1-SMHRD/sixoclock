@@ -24,12 +24,14 @@
 </head>
 <body>
 
-	<h1>남은시간 : 2022년 9월 27일까지</h1>
-	<h2 id="sample02"></h2>
+<div> 상품 idx : ${vo.p_Idx }</div>
+
+	<h1>판매 완료 일자 : ${vo.p_biddate}</h1>
+	<h2 id="biddate"></h2>
 
 	<div>
 		<form method="post" action="${cpath}/chatroom.do?u_id=${mvo.u_ID}">
-			<span id="seller" name="seller" value="qwer">판매자 : qwer</span><br>
+			<span id="seller" name="seller" value="${vo.u_ID}">판매자 : ${vo.u_ID}</span> 
 			<button type="submit">대화하기</button>
 		</form>
 	</div>
@@ -38,14 +40,13 @@
 
 		<div id="auction_area">
 			<form>
-				<p>${mvo.u_ID }</p>
 				<span>시작입찰가</span><br>
 				<span>현재 최고가 : </span> <span id="maxbid_area"></span><br>
-				<span>최소입찰가 : </span>	<input id="minbid" name="minbid" type="number" readonly>
+				<span>최소입찰가 : </span>	<input id="minbid" name="minbid" type="number" value="${vo.p_minBid}" readonly>
 				<input id="btn_minbid" onclick="minbidmoney()" value="즉시입찰" type="button" disabled><br>
 				<span>입찰가 입력</span> <input id="bidamount" name="bidamount" type="number" min='0' step='1'>
 				<input id="btn_bidamount" onclick="amountbidmoney()" value="입찰" type="button" disabled><br>
-				<span>즉시 구매가</span> <input id="imm" name="immbid" value="1234" readonly>
+				<span>즉시 구매가</span> <input id="imm" name="immbid" value="${vo.p_buyImmed}" readonly>
 				<input id="btn_imm" onclick="imm_purchase()" value="즉시구매" type="button" disabled><br>
 				<span>소지금 : </span><span id="user_money">${mvo.u_MONEY} 원</span><br>
 			</form>
@@ -59,14 +60,13 @@
 
 		<div id="auction_area">
 			<form>
-				<p>${mvo.u_ID }</p>
 				<span>시작입찰가</span><br>
 				<span>현재 최고가 : </span> <span id="maxbid_area"></span><br>
-				<span>최소입찰가 : </span>	<input id="minbid" name="minbid" type="number" readonly>
+				<span>최소입찰가 : </span>	<input id="minbid" name="minbid" type="number" value="${vo.p_minBid}" readonly>
 				<input id="btn_minbid" onclick="minbidmoney()" value="즉시입찰" type="button" ><br>
 				<span>입찰가 입력</span> <input id="bidamount" name="bidamount" type="number" min='0' step='1'>
 				<input id="btn_bidamount" onclick="amountbidmoney()" value="입찰" type="button" ><br>
-				<span>즉시 구매가</span> <input id="imm" name="immbid" value="1234" readonly>
+				<span>즉시 구매가</span> <input id="imm" name="immbid" value="${vo.p_buyImmed}" readonly>
 				<input id="btn_imm" onclick="imm_purchase()" value="즉시구매" type="button" ><br>
 				<span>소지금 : </span><span id="user_money">${mvo.u_MONEY} 원</span><br>
 			</form>
@@ -88,7 +88,39 @@
 		let bidmoney = 0;
 		let user_money = parseInt("${mvo.u_MONEY}");
 		console.log(user_money);
-	
+		
+		let biddate = "${vo.p_biddate}"
+		let	parsedate = '';
+		
+			//2022-09-30 00:00:00
+			//09/28/2022 09:25 PM
+		
+		const dateparse = () => {
+			console.log(biddate);
+			
+			let ymd = biddate.split(' ')[0];
+			let hms = biddate.split(' ')[1];
+			console.log(ymd, hms);
+			
+			let yyy = ymd.split('-')[0];
+			let mmm = ymd.split('-')[1];
+			let ddd = ymd.split('-')[2];
+			
+			console.log(yyy);
+			console.log(mmm);
+			console.log(ddd);
+			
+			let hhh = hms.split(':')[0];
+			let mimi = hms.split(':')[1];
+			console.log(hhh);
+			console.log(mimi);
+			
+			parsedate = mmm + '/' + ddd + '/' + yyy + ' ' + hhh + ':' + mimi + ' AM';
+			console.log(parsedate);
+		}
+		
+		dateparse();
+		
 		const countDownTimer = function(id, date) {
 			var _vDate = new Date(date); // 전달 받은 일자
 			var _second = 1000;
@@ -159,7 +191,7 @@
 			timer = setInterval(showRemaining, 1000);
 		}
 		
-		countDownTimer('sample02', '09/27/2022 09:25 PM');
+		countDownTimer('biddate', parsedate);
 
 		var dateObj = new Date();
 		dateObj.setDate(dateObj.getDate() + 1);

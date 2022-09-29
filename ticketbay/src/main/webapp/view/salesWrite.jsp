@@ -16,10 +16,17 @@
 <link rel="stylesheet" href="${cpath}/css/dealing.css?after">
 <link rel="stylesheet" href="${cpath}/css/salesWrite.css?after">
 <jsp:include page="header.jsp"></jsp:include>
+<script type="text/javascript">
+	
+
+</script>
+
 </head>
 <body class="goog-te-combo_in">
-	<form class="form-horizontal" action="${cpath}/salesWrite.do" method="post">
+	<form class="form-horizontal" action="${cpath}/salesWrite.do?u_id=${mvo.u_ID}" method="post">
 	  <input type="hidden" name="u_ID" value="${mvo.u_ID}">
+	  
+	  
 		<div class="tit_box_04">
 			<h2>판매등록</h2>
 		</div>
@@ -32,22 +39,28 @@
 						카테고리 <span class="required">(필수)</span>
 					</h3>
 					<div class="in_box_01">
-						<select id="locSelect" class="select_style_01 wd_470 mb10" name="p_cateDeps1">
-						   <option value="">선택</option>
-						   <option value="콘서트">콘서트</option>
-						   <option value="스포츠">스포츠</option>
-						   <option value="뮤지컬/연극">뮤지컬/연극</option>
-						   <option value="영화/전시">영화/전시</option>
+						<select id="locSelect" class="select_style_01 wd_470 mb10" name="category">
+						   <option value="" selected="selected">선택</option>
+						   <option value="cate1">콘서트</option>
+						   <option value="cate2">스포츠</option>
+						   <option value="cate3">뮤지컬/연극</option>
+						   <option value="cate4">영화/전시</option>
 						</select>
 					</div>
 					<div class="in_box_01">
-						<select id="locSelect" class="select_style_01 wd_470 mb10" name="p_cateDeps2">
+						<select id="locSelect" class="select_style_01 wd_470 mb10" name="cate_name">
 						   <option value="">선택</option>
-						   <option value="하이라이트">하이라이트</option>
-						   <option value="블랙핑크">블랙핑크</option>
-						   <option value="김호중">김호중</option>
-						   <option value="그랜드민트페스티벌">그랜드 민트 페스티벌</option>
-						   <option value="포레스텔라">포레스텔라</option>
+						   <c:forEach var="vo" items="${list}">
+						   <c:if test="${vo.up_cate_no eq '1000'}">
+						   <option value=${vo.cate_name}>${vo.cate_name}</option>
+						   
+						   </c:if>
+						   </c:forEach>
+						    <c:forEach var="vo" items="${list}">
+						   <c:if test="${vo.up_cate_no eq '1001'}">
+						   <option id="subcate2" value="${vo.cate_name}" style="display: none;">${vo.cate_name}</option>
+						   </c:if>
+						   </c:forEach>
 						</select>
 						
 					</div>
@@ -63,16 +76,14 @@
 					<div class="float_r wd_760">
 						<div class="in_box_01">
 							<!-- 공연일 -->
-							<input type="date" name="p_indate" 
+							<input type="date" name="date" 
 								class="textInp03 input_style_01 hasDatepicker" 
-								title="공연일" style="width:79px; font-weight: bold;" id="dp1664287470517">
-								<input type="time" name="p_indate" 
+								title="공연일" style="width:79px; font-weight: bold;" id="date">
+								<input type="time" name="time" 
 								class="textInp03 input_style_01 hasDatepicker" 
 								title="공연시간" style="width:79px; font-weight: bold;" id="time">
 							<div class="required_txt mt_10">
 							사용일자가 종료되면 상품이 더 이상 노출되지 않습니다.</div>
-							<div class="required_txt">
-							사용일시를 정확히 선택하여야 구매자와의 분쟁을 방지할 수 있습니다.(사용시간까지 정확히 입력해주세요)</div>	
 						</div>
 					</div>
 					<div class="clear"></div>
@@ -80,7 +91,7 @@
 				<!-- // 공연일시 선택  -->
 
 				<!-- 티켓 매수  // -->
-				<li id="">
+				<li>
 					<h3>
 						티켓 매수 <span class="required">(필수)</span>
 					</h3>
@@ -115,15 +126,15 @@
 					</h3>
 					<div class="in_box_01">
 						<!-- 구역 정보 없을 경우 기존  input 노출 -->
-						<input type="text" id="areaInput" name="p_seatInfo"
+						<input type="text" id="areaInput" name="seatInfo1"
 							class="input_style_02 wd_470 box-sizing mb10"
 							placeholder="구역(존/블럭) 입력 EX)A" maxlength="10"
 							style="display: block;">
 						<!-- // 구역 정보  -->
-						<input type="text" name="p_seatInfo"
+						<input type="text" name="seatInfo2"
 							class="input_style_02 wd_470 box-sizing mb10"
 							placeholder="열 입력 EX)88" maxlength="10">
-						<input type="text" name="p_seatInfo"
+						<input type="text" name="seatInfo3"
 							class="input_style_02 wd_470 box-sizing"
 							placeholder="선택사항 : 추가정보 최대 10글자 입력 가능" maxlength="10">
 						<div class="required_txt mt_10">좌석정보는 숫자와 영문으로 입력하셔야 거래 성사율을
@@ -189,18 +200,18 @@
 						<div class="modeTransaction">
 
 							<label class="TYPE_02">
-								<input type="checkbox" name="p_dealMethod" value="베송거래">
+								<input type="checkbox" name="dealMethod1" value="베송거래">
 								<span class="TRANSACTION_TYPE2">배송거래</span> </label>
 							<label class="TYPE_01">
 								<input
-								type="checkbox" name="p_dealMethod" value="PIN거래(E-ticket)">
+								type="checkbox" name="dealMethod2" value="PIN거래(E-ticket)">
 								<span class="TRANSACTION_TYPE1">PIN거래(E-ticket)</span></label>
 							<label class="TYPE_03">
-								<input type="checkbox" name="p_dealMethod" value="현장거래">
+								<input type="checkbox" name="dealMethod3" value="현장거래">
 								<span class="TRANSACTION_TYPE4">현장거래</span></label>
 							<label class="TYPE_05">
 								<input
-								type="checkbox" name="p_dealMethod" value="기타">
+								type="checkbox" name="dealMethod4" value="기타">
 								<span class="TRANSACTION_TYPE5">기타</span></label>
 
 							<!-- 배송비 수정 -->
@@ -298,8 +309,6 @@
 							<span>보유 : 현재 티켓 보유중 </span>
 							<div class="ticket_retention_type_info_y">
 								결제 발생 시 구매자에게 티켓 전달 일정을 꼭 알려주세요
-								<!-- PIN(E-ticket), 배송거래의 경우<br>
-							구매자 결제 이후 <b>72시간</b> 이내 전달 필수! -->
 							</div>
 						</label> 
 						<label class="dp_b">
@@ -309,13 +318,9 @@
 							<span>미 보유 : 예매 완료 후 수령 대기중 </span>
 							<div class="ticket_retention_type_info_n">
 								티켓 수령 예정일을 선택 하세요<br> 결제 발생 시 구매자에게 티켓 전달 일정을 꼭 알려주세요
-								<!-- 
-							구매자 결제 후 전달 가능한 날짜 입력<br>
-							선택 날짜 이후에는 자동으로 티켓 보유중으로 변경 됩니다.
-						 	-->
 								<div class="inpCal mt10">
 									<input type="date" id="RETENTION_DATE"
-										name="TICKET_RETENTION_DATE"
+										name="tkPossession2"
 										class="textInp02 input_style_01 hasDatepicker" title="날짜 입력"
 										placeholder="날짜 입력">
 								</div>
@@ -407,9 +412,10 @@
 						<div class="s_ctg_box_gr mt_10" id="below_div"
 							style="display: inline-block;">
 							<input name="BELOW_COST_USED" id="BELOW_COST_USED" type="hidden"
-								class="" value="N"> <label> <input
+								class="" value="N">
+								<label> <input
 								name="p_paycommission" id="below_check" type="checkbox"
-								class="ck_img" value=""> <span>정가이하로 판매 하겠습니다.
+								class="ck_img" value="Y"> <span>정가이하로 판매 하겠습니다.
 									(수수료 무료)
 							</span></label>
 						</div>

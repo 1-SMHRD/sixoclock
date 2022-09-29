@@ -83,7 +83,7 @@
 		<!-- //popupCont -->
 		<!-- btnArea -->
 		<div class="btnArea">
-			<button type="submit" class="btn">배송지 추가</button>
+			<button type="submit" class="btn" onclick="reload()">배송지 추가</button>
 		</div>
 		<!-- //btnArea -->
 	</div>

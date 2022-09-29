@@ -13,7 +13,6 @@
 <jsp:include page="header.jsp"></jsp:include>
 <link rel="stylesheet" href="${cpath}/css/styleList.css?after">
 <link rel="stylesheet" href="${cpath}/css/common.css?after">
-
 <link rel="stylesheet" href="${cpath}/css/contents.css?after">
 <link rel="stylesheet" href="${cpath}/css/header_sales.css?after">
 <link rel="stylesheet" href="${cpath}/css/new_list.css?after">
@@ -199,7 +198,9 @@
         <!-- 상품리스트 -->
         <c:forEach var="vo" items="${list}">
         <div>
-          <a id="product_link" href="${cpath}/salesDetail.do?p_Idx=${vo.p_Idx}">
+
+          <a id="product_link" href="${cpath}/salesDetail.do?p_Idx=${vo.p_Idx}&u_id=${mvo.u_ID}">
+
             <div class="item_style_01_gr">
               <div class="in_gr_01">
                 <div class="c2c_sub_day_txt">사용일 : ${fn:split(vo.p_indate," ")[0]}</div>
