@@ -153,6 +153,8 @@ insert into t_product (p_idx, u_id, p_biddate, p_buyImmed, p_minBid) values (432
 insert into t_product (p_idx, u_id, p_biddate, p_buyImmed, p_minBid) values (2131, 4123, '09/28/2022 10:25 PM', 200000, 5000);
 
 select * from t_product;
+update t_product set p_biddate = TO_DATE( '2022-09-30 12:00:00', 'YYYY/MM/DD HH:MI:SS PM') where p_idx = 96;
+update t_product set p_buyerid = NULL where p_idx = 96;
 
 
 DROP TABLE t_chatting_room CASCADE CONSTRAINTS;
