@@ -23,7 +23,7 @@
 
 </head>
 <body class="goog-te-combo_in">
-	<form class="form-horizontal" action="${cpath}/salesWrite.do?u_id=${mvo.u_ID}" method="post">
+	<form class="form-horizontal" action="${cpath}/salesWrite.do?u_ID=${mvo.u_ID}" method="post">
 	  <input type="hidden" name="u_ID" value="${mvo.u_ID}">
 	  
 	  
@@ -200,7 +200,7 @@
 						<div class="modeTransaction">
 
 							<label class="TYPE_02">
-								<input type="checkbox" name="dealMethod1" value="베송거래">
+								<input type="checkbox" name="dealMethod1" value="배송거래">
 								<span class="TRANSACTION_TYPE2">배송거래</span> </label>
 							<label class="TYPE_01">
 								<input

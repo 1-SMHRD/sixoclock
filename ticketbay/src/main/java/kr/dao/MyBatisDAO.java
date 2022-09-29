@@ -24,10 +24,11 @@ public class MyBatisDAO {
 		}
 	}
 	
+	
 	// 전체리스트 가져오기	
-	public List<SalesWriteVO> allList(){
+	public List<SalesWriteVO> allList(String cate_name){
 		SqlSession session = sqlSessionFactory.openSession();
-		List<SalesWriteVO> list=session.selectList("allList");
+		List<SalesWriteVO> list=session.selectList("allList", cate_name);
 		session.close();
 		return list;
 	}
@@ -48,6 +49,13 @@ public class MyBatisDAO {
 		return catelist;
 	}
 	
+	// 등록상품 삭제하기
+	public void salesDelete(String p_Idx) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.delete("salesDelete", p_Idx);
+		session.commit();
+		session.close();
+	}
 	
 	
 	// 상세보기(p_Idx)

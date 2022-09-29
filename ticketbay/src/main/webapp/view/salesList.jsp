@@ -34,19 +34,23 @@
 			       	  
     </script>
        	  
-    <div id="sidebar" class="is-affixed" style="position: relative; margin-top:10px;">
+    <div id="sidebar" class="is-affixed" style="position: relative; margin-top:10px; margin-bottom:15px;">
       <div class="sidebar__inner" style="position: relative;">
         <!-- 카테고리정보 -->
         <div class="sidebar_a_box">
-          <div class="new_ctg_style_01_div"><span> ${vo.p_cateDeps2} </span></div>
+          <div class="new_ctg_style_01_div">
+          <c:forEach var="vo" items="${list}" begin="0" end="0">
+          <span>${vo.cate_name}</span>
+          </c:forEach>
+          </div>
           <div id="filter_category_box">
             <div class="new_select_style_01_div mb10" id="selList">
               <span class="label"> 전체상품보기 </span>
-              <ul class="new_select_style_01_div_sub wd_01 scroll_y" style="position: absolute; z-index: 9;">
+              <%-- <ul class="new_select_style_01_div_sub wd_01 scroll_y" style="position: absolute; z-index: 9;">
                 <a href="#">
-                 <li class="obtionitem"><span> 콘서트장소 - 날짜만큼 a태그 생성 </span></li>
+                 <li class="obtionitem"><span> ${vo.p_indate} </span></li>
                 </a>
-              </ul>
+              </ul> --%>
             </div>
           </div>
         </div>
@@ -72,9 +76,11 @@
        	        <li data-val="전체">
        	          <span>전체</span>
        	        </li>
+       	        <c:forEach var="vo" items="${list}">
        	        <li data-val="" data-view="">
-       	          <span>0000-00-00(x요일) 00:00</span>
+       	          <span>${vo.p_indate}</span>
        	        </li>
+       	        </c:forEach>
        	      </ul>
        	    </div>
        	    <div id="useTerm2" class="calcArea useTerm">
@@ -125,7 +131,9 @@
        	    <div class="new_select_style_01_div mt_01">
        	      <span id="filter_grade">전체</span>
        	      <ul id="filter_grade_ul" class="new_select_style_01_div_sub wd_01 scroll_y bottom20" style="position: absolute; z-index: 9;">
-       	        <li>좌석정보</li>
+       	        <c:forEach var="vo" items="${list}" begin="0" end="0">
+       	        <li>${fn:split(vo.p_seatInfo," ")[0]}열</li>
+       	        </c:forEach>
        	      </ul>
        	    </div>
        	    <input type="hidden" id="filter_area">
@@ -181,10 +189,10 @@
     </script>
     <!-- content 영역 -->
     <div id="content" style="width: 674px; margin-top:10px;">
-      <div class="dp_fx_02 info_box_gr">
+      <%-- <div class="dp_fx_02 info_box_gr">
         <h3 style="margin-top:20px;">INFO</h3>
-        <div class="in_txt_gr">${vo.p_cateDeps2}</div>
-      </div>
+        <div class="in_txt_gr">${vo.cate_name}</div>
+      </div> --%>
       <div>
         <!-- 상품이 없는 경우 -->
         <c:if test="${empty list}">
@@ -206,18 +214,24 @@
                 <div class="c2c_sub_day_txt">사용일 : ${fn:split(vo.p_indate," ")[0]}</div>
                 
                 <div class="c2c_sub_info_txt">
-                  <span>${vo.p_seatInfo}</span>
+                  <span>${fn:split(vo.p_seatInfo, ' ')[0]}구역</span>
+                  <span>${fn:split(vo.p_seatInfo, ' ')[1]}열</span>
+                  <span>${fn:split(vo.p_seatInfo, ' ')[2]}</span>
                 </div>
-                <%-- <div class="new_UNUSUAL_LIST_gr">
-                <c:if test="${!empty vo.p_prod_check}">
-                  <span>${vo.p_prod_check} -> 상품 특이사항(인덱스로 가져오나?)</span>
-                </c:if>
-                </div> --%>
               </div>
               <div class="in_gr_03">
                 <div class="in_gr_txt">
-                  <span>${vo.p_dealMethod}</span>
-                  <div class="in_day_txt">티켓보유여부</div>
+                  <c:forEach var="i" begin="0" end="3">
+                  <c:if test="${fn:split(vo.p_dealMethod, ' ')[i] != 'null'}">
+                  <span>${fn:split(vo.p_dealMethod, ' ')[i]}</span>
+                  </c:if>
+                  </c:forEach>
+                  <c:if test="${vo.p_tkPossession == 'Y'}">
+                  <div class="in_day_txt">티켓보유중</div>
+                  </c:if>
+                  <c:if test="${vo.p_tkPossession == 'N'}">
+                  <div class="in_day_txt">티켓미보유</div>
+                  </c:if>
                 </div>
               </div>
               <div class="in_gr_04">

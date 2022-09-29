@@ -5,11 +5,16 @@
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="${cpath}/css/productListView.css">
+<link rel="stylesheet" href="${cpath}/css/productListView.css?after">
 <head>
 <meta charset="EUC-KR">
 <title>상품등록관리 | 티켓베이</title>
 <jsp:include page="header.jsp"></jsp:include>
+<script type="text/javascript">
+	function goDel(p_Idx){
+		location.href="${cpath}/salesDelet.do?p_Idx="+p_Idx;
+	}
+</script>
 </head>
 <body>
 	<form action="${cpath}/productListView.do?u_id=${mvo.u_ID}" method="post">
@@ -195,7 +200,7 @@
 							<!-- leftColum -->
 
 							<div>
-								<a href="#" id="btnProductDelete"><img
+								<a href="#" id="btnProductDelete" onclick="goDel(${vo.p_Idx})"><img
 									src="${cpath}/img/productListView/btn_gDel.gif" alt="삭제"></a>
 								<a href="${cpath}/salesWriteForm.do"><img
 									src="${cpath}/img/productListView/btn_bToSell.gif" alt="판매등록"></a>
@@ -206,13 +211,13 @@
 						<table class="tableStyle">
 							<caption>내가 판매한 상품 - 상품등록관리</caption>
 							<colgroup>
-								<col style="width: 108px;">
+								<col style="width: 95px;">
 								<col style="width: auto;">
-								<col style="width: 108px;">
-								<col style="width: 93px">
-								<col style="width: 88px;">
-								<col style="width: 80px;">
+								<col style="width: 90px;">
+								<col style="width: 90px">
+								<col style="width: 150px;">
 								<col style="width: 40px;">
+								<%-- <col style="width: 40px;"> --%>
 								<col style="width: 78px;">
 							</colgroup>
 							<thead>
@@ -223,9 +228,8 @@
 									<th scope="col">즉시구매단가</th>
 									<th scope="col">최소입찰금액</th>
 									<th scope="col">거래방식</th>
-									<th scope="col">수량<em class="fc_10">(잔여/총)</em></th>
-									<th scope="col">거래중</th>
-									<th scope="col">판매상태</th>
+									<th scope="col">수량</th>
+									<th scope="col">거래상태</th>
 								</tr>
 							</thead>
 							<c:forEach var="vo" items="${list}">
@@ -242,27 +246,38 @@
 													</p>
 												</div>
 												<br> 
-												<span class="date">게시글 등록 날짜 ${fn:split(vo.p_indate," ")[0]}</span>
+												<span class="date">${fn:split(vo.p_registerdate," ")[0]}</span>
 											</label>
 										</div>
 									</td>
 									<td>
 										<!-- tbProductInfo -->
 										<div class="tbProductInfo1">
-											<a href="javascript:detail('3882106851360');"> <em
-												class="bPath">[콘서트 &gt; 더팩트 뮤직 어워즈 &gt; TMA 2022]</em>
-												<p>${vo.p_seatInfo}</p> <i> vo.p_indate </i>
+											<a href="${cpath}/salesDetail.do?p_Idx=${vo.p_Idx}&u_id=${mvo.u_ID}"> <em
+												class="bPath">[콘서트 &gt; ${vo.cate_name}]</em>
+												<p>${vo.p_seatInfo}</p> <i> ${vo.p_indate} </i>
 											</a>
 										</div>
 									</td>
 									<td><span class="bePrice01"><em>${vo.p_buyImmed}</em>원</span></td>
 									<td><span class="bePrice01"><em>${vo.p_minBid}</em>원</span></td>
-									<td class="mid"><span>${vo.p_dealMethod}</span></td>
-									<td class="bgG"><span class="colorG"><em
-											class="fntW">1</em>/1</span></td>
-									<td class="bgG">0</td>
-									<td class="bgG"><span>판매중지</span> <span><a href="#"
-											class="btnReEnroll btn_table_sub_03">재등록</a></span></td>
+									
+									<td class="mid">
+									<c:forEach var="i" begin="0" end="3">
+									<c:if test="${fn:split(vo.p_dealMethod,' ')[i] != 'null'}">
+									<span>${fn:split(vo.p_dealMethod," ")[i]}</span></c:if></c:forEach>
+									</td>
+									
+									<td class="bgG">
+									<span class="colorG"><em class="fntW">${vo.p_tkCount}</em></span>
+									</td>
+									
+									<c:if test="${vo.p_buyerid == 'null'}">
+									<td class="bgG"><span>거래중</span></td>
+									</c:if>
+									<c:if test="${vo.p_buyerid != 'null'}">
+									<td class="bgG"><span>거래완료</span></td>
+									</c:if>
 								</tr>
 							</tbody>
 							</c:forEach>
