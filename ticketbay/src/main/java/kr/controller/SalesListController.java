@@ -17,7 +17,9 @@ public class SalesListController implements Controller {
 			throws ServletException, IOException {
 		
 		MyBatisDAO dao=new MyBatisDAO();
-		List<SalesWriteVO> list=dao.allList();
+		String cate_name = request.getParameter("cate_name");
+		System.out.println("리스트"+cate_name);
+		List<SalesWriteVO> list=dao.allList(cate_name);
 		request.setAttribute("list", list);
 		
 		return "salesList";

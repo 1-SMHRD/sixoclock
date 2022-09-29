@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import kr.controller.AuctionpageController;
 import kr.controller.BidCancelController;
+import kr.controller.ChatListController;
 import kr.controller.ChatroomController;
 
 import kr.controller.Controller;
@@ -17,16 +18,17 @@ import kr.controller.SalesDetailController;
 import kr.controller.SalesListController;
 
 import kr.controller.RequestVerifyAuthController;
+import kr.controller.SalesDeleteController;
 import kr.controller.orderController;
 import kr.controller.orderPayController;
 
-import kr.controller.SalesWriteCateController;
 import kr.controller.SalesWriteController;
 
 import kr.controller.SigninController;
 import kr.controller.SigninPController;
 import kr.controller.SignupController;
 import kr.controller.SignupPController;
+import kr.controller.UpdateSalesController;
 import kr.controller.SignoutController;
 import kr.controller.UpdateUserController;
 import kr.controller.UseMoneyController;
@@ -52,9 +54,8 @@ public class HandlerMapping {
 
 		mappings.put("/salesWrite.do", new SalesWriteController()); // 판매등록
 		mappings.put("/salesWriteForm.do", new SalesWriteFormController());
-		mappings.put("/salesWriteCate.do", new SalesWriteCateController());
 		mappings.put("/productListView.do", new ProductListViewController()); // 등록후 마이페이지
-		
+		mappings.put("/salesDelete.do", new SalesDeleteController());
 
 		mappings.put("/mypage.do", new MyPageController());
 		
@@ -73,6 +74,8 @@ public class HandlerMapping {
 		mappings.put("/usemoney.do", new UseMoneyController());
 		mappings.put("/bidcancel.do", new BidCancelController());
 		mappings.put("/chatroom.do", new ChatroomController());
+		mappings.put("/chatlist.do", new ChatListController());
+		mappings.put("/updatesales.do", new UpdateSalesController());
 
 		
 	}

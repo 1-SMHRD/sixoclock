@@ -24,13 +24,22 @@ public class MyBatisDAO {
 		}
 	}
 	
+	
 	// 전체리스트 가져오기	
-	public List<SalesWriteVO> allList(){
+	public List<SalesWriteVO> allList(String cate_name){
 		SqlSession session = sqlSessionFactory.openSession();
-		List<SalesWriteVO> list=session.selectList("allList");
+		List<SalesWriteVO> list=session.selectList("allList", cate_name);
 		session.close();
 		return list;
 	}
+	
+	// 전체리스트 가져오기(ID)	
+		public List<SalesWriteVO> idxallList(String u_ID){
+			SqlSession session = sqlSessionFactory.openSession();
+			List<SalesWriteVO> list=session.selectList("idxallList", u_ID);
+			session.close();
+			return list;
+		}
 	
 	// 카테고리리스트 가져오기
 	public List<CategoryVO> cateList() {
@@ -40,6 +49,13 @@ public class MyBatisDAO {
 		return catelist;
 	}
 	
+	// 등록상품 삭제하기
+	public void salesDelete(String p_Idx) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.delete("salesDelete", p_Idx);
+		session.commit();
+		session.close();
+	}
 	
 	
 	// 상세보기(p_Idx)
@@ -146,6 +162,20 @@ public class MyBatisDAO {
 		return mvo;
 
 
+	}
+	
+	public void updatesales(SalesWriteVO svo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.update("updatesales", svo);
+		session.commit();
+		session.close();
+	}
+	
+	public void insertBuyList(BuyListVO bvo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.insert("insertBuyList", bvo);
+		session.commit();
+		session.close();
 	}
 	
 }

@@ -17,28 +17,38 @@ public class SalesWriteController implements Controller {
 
 		MyBatisDAO dao = new MyBatisDAO();
 		String u_ID=request.getParameter("u_ID");
-		String p_cateDeps1=request.getParameter("p_cateDeps1");
-		String p_cateDeps2=request.getParameter("p_cateDeps2");
-		String p_indate=request.getParameter("p_indate");
+		String cate_name=request.getParameter("cate_name");
+		String date=request.getParameter("date");
+		String time=request.getParameter("time");
 		int p_tkCount=Integer.parseInt(request.getParameter("p_tkCount"));
-		String p_seatInfo=request.getParameter("p_seatInfo");
+		String seatInfo1=request.getParameter("seatInfo1");
+		String seatInfo2=request.getParameter("seatInfo2");
+		String seatInfo3=request.getParameter("seatInfo3");
 		String p_imgRoute=request.getParameter("p_imgRoute");
-		String p_dealMethod=request.getParameter("p_dealMethod");
+		String dealMethod1=request.getParameter("dealMethod1");
+		String dealMethod2=request.getParameter("dealMethod2");
+		String dealMethod3=request.getParameter("dealMethod3");
+		String dealMethod4=request.getParameter("dealMethod4");
 		String p_tkPossession=request.getParameter("p_tkPossession");
 		String p_dealInfo=request.getParameter("p_dealInfo");
 		String p_biddate=request.getParameter("p_biddate");
 		int p_buyImmed=Integer.parseInt(request.getParameter("p_buyImmed"));
 		int p_minBid=Integer.parseInt(request.getParameter("p_minBid"));
 		
+		String p_indate = date + " " + time;
+		
+		String p_seatInfo = seatInfo1 + " " + seatInfo2 + " " + seatInfo3;
+		String p_dealMethod = dealMethod1+" "+dealMethod2+" "+dealMethod3+" "+dealMethod4;
+		
 		System.out.println(u_ID);
 		System.out.println(p_tkCount);
-		System.out.println(p_cateDeps1);
+		System.out.println(cate_name);
+		System.out.println(p_indate);
 		
 		
 		SalesWriteVO vo = new SalesWriteVO();
 		vo.setU_ID(u_ID);
-		vo.setP_cateDeps1(p_cateDeps1);
-		vo.setP_cateDeps2(p_cateDeps2);
+		vo.setCate_name(cate_name);
 		vo.setP_indate(p_indate);
 		vo.setP_tkCount(p_tkCount);
 		vo.setP_seatInfo(p_seatInfo);
@@ -52,7 +62,7 @@ public class SalesWriteController implements Controller {
 		
 		dao.salesInsert(vo);
 		
-		return "redirect:/productListView.do";
+		return "redirect:/salesList.do";
 		
 		
 	}

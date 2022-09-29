@@ -842,9 +842,6 @@ caption {
 .myservice .tableStyle .formWrap span {
     line-height: 130%;
 }
-.myorderList tr td span:first-child, .boxStyleView tr td span:first-child, .boxStyle tbody tr td span:first-child {
-    height: 20px;
-}
 .rid .tableStyle span, .myservice .tableStyle span {
     display: block;
     line-height: 180%;

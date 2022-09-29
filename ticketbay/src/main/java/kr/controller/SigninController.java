@@ -1,6 +1,7 @@
 package kr.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -35,9 +36,19 @@ public class SigninController implements Controller {
 					// success login --> make session
 					HttpSession session = request.getSession();
 					session.setAttribute("mvo", mvo);
+					
+					return "redirect:/main.do";
+				} else {
+					response.setContentType("text/html; charset=UTF-8");
+					PrintWriter out = response.getWriter();
+					String cpath=request.getContextPath();
+					
+					out.println("<script>alert('아이디 또는 비밀번호가 일치하지 않습니다.'); location.href = '" + cpath + "/signinpage.do';</script>"); 
+					out.close();
+					return "redirect:/signinpage.do";
 				}
 				
-				return "redirect:/main.do";
+				
 	}
 
 }

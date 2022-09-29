@@ -96,22 +96,15 @@
 	  <ul class="myClass6">
 		  <li class="nth1 order">
 			<a href="#">내가 구매한 상품</a>
-			<ul id="click01" class="subLnb feTabCont" style="display: none;">
-			  <!-- 2017-05-15 Left Menu 변경 -->
+			<!-- <ul id="click01" class="subLnb feTabCont" style="display: none;">
+			  2017-05-15 Left Menu 변경
 			  <li><a href="/web/myorder/orderListView">거래 진행 상품</a></li>
 			  <li><a href="/web/myorder/completeOrderListView">거래 완료 상품</a></li>
 			  <li><a href="/web/myorder/cancelOrderListView">거래 취소 상품</a></li>
-			</ul>
+			</ul> -->
 		  </li>
 		  <li class="nth2 sell">
-			<a href="javascript:void(0);">내가 판매한 상품</a>
-			<ul id="click02" class="subLnb feTabCont" style="display: none;">
- 			  <!-- 2017-05-15 Left Menu 변경 -->
-			  <li class="current"><a href="/web/myproduct/productListView">상품 등록 관리</a></li>
-			  <li><a href="/web/mysell/sellProductListView">거래 진행 상품</a></li>
-			  <li><a href="/web/mysell/completeProductListView">거래 완료 상품</a></li>
-			  <li><a href="/web/mysell/cancelProductListView">취소승인 / 취소</a></li>
-			</ul>
+			<a href="${cpath}/productListView.do?u_ID=${mvo.u_ID}">내가 판매한 상품</a>
 		  </li>
 		  <li class="nth3 benefit">
 			<a href="javascript:void(0);">혜택 관리</a>
@@ -132,7 +125,7 @@
 			</ul>
 		  </li>
 		  <li class="nth5 activity">
-			<a href="javascript:void(0);">활동현황</a>
+			<a href="javascript:void(0);" onclick="detailUseMoney();">소지금 이용 내역</a>
 			<ul id="click05" class="subLnb feTabCont" style="display: none;">
 			  <li><a href="/web/mywant/wishProductListView">상품비교</a></li>
 			  <li><a href="/web/mycart/productListView">장바구니</a></li>
@@ -155,7 +148,7 @@
 
 <!-- main -->
 <main id="contents" class="myservice">
-<div id="tempdiv" style="display: none">
+<div id="tempdiv">
   <div class="prdTracking">
     <div>
       <table>
@@ -639,6 +632,11 @@
 	
 	<script type="text/javascript">
 	
+		const detailUseMoney = () => {
+			
+			
+		}
+	
 		const displayUserinfoTab = () => {
 			console.log("displayUserinfoTab()");
 			$("#userinfotab").css("display", "block");
@@ -647,6 +645,7 @@
 			$("#update_info").css("display", "none");
 			$("#d_list_tab").css("display", "none");
 			$("#u_delete_tab").css("display", "none");
+			$("#tempdiv").css("display", "none");
 			
 		}
 		
@@ -675,7 +674,7 @@
 			$("#update_info").css("display", "none");
 			$("#d_list_tab").css("display", "none");
 			$("#u_delete_tab").css("display", "none");
-			
+			$("#tempdiv").css("display", "none")
 			$("#CHECK_PW").val("");
 		}
 		

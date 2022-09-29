@@ -1,27 +1,25 @@
 package kr.controller;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kr.dao.CategoryVO;
 import kr.dao.MyBatisDAO;
 
-public class SalesWriteCateController implements Controller {
+public class SalesDeleteController implements Controller {
 
 	@Override
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
 		MyBatisDAO dao=new MyBatisDAO();
-		List<CategoryVO> list=dao.cateList();
-		request.setAttribute("list", list);
+		String p_Idx=request.getParameter("p_Idx");
+		dao.salesDelete(p_Idx);
 		
 		
-		return "salesWrite";
+		return "redirect:/productListView.do";
 	}
 
 }
