@@ -97,6 +97,13 @@ public class MyBatisDAO {
 		return dlist;
 	}
 	
+	public List<MoneyVO> uMList(String u_id) {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<MoneyVO> uMList = session.selectList("uMList", u_id);
+		session.close(); // 반납
+		return uMList;
+	}
+	
 	public void memInsert(MemberVO mvo) {
 		SqlSession session = sqlSessionFactory.openSession();
 		session.insert("memInsert", mvo);
