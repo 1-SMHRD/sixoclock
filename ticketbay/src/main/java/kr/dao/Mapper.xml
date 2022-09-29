@@ -116,5 +116,16 @@
 	<insert id="insertBuyList" parameterType="kr.dao.BuyListVO">
 		insert into t_buylist(p_idx, b_sellerid, b_buyerid, b_buymoney) values (#{p_idx}, #{b_sellerid}, #{b_buyerid}, #{b_buymoney})
 	</insert>
+	
+	<update id="getBcheck" parameterType="int">
+		update t_buylist set b_check = '1' where p_idx = #{pidx}
+	</update>
+	
+	<insert id="setMoneyPlus" parameterType="kr.dao.MoneyVO">
+		begin
+			insert into test_usemoney(u_id, m_now_money, m_classification, m_plus) values (#{u_ID}, #{m_NOW_MONEY}, #{m_CLASSIFICATION}, #{m_PLUS});
+			update test_user set u_money = #{m_NOW_MONEY} where u_id = #{u_ID};
+		end;
+	</insert>
 
 </mapper>

@@ -10,6 +10,7 @@
 <meta charset="EUC-KR">
 <title>상품등록관리 | 티켓베이</title>
 <jsp:include page="header.jsp"></jsp:include>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript">
 	function goDel(p_Idx){
 		location.href="${cpath}/salesDelet.do?p_Idx="+p_Idx;
@@ -247,9 +248,14 @@
 									<span>${vo.b_sellerid}</span>
 									</td>
 									
+					
 									
-									
-									<td class="bgG"><button>거래중</button></td>
+									<c:if test="${vo.b_check eq 0}">
+										<td class="bgG"><input id="btn_confirm${vo.p_idx}" type='button' onclick="confirmM(${vo.p_idx}, '${vo.b_sellerid}', ${vo.b_buymoney})" value="거래중"></td>
+									</c:if>
+									<c:if test="${vo.b_check eq 1}">
+										<td class="bgG"><input id="btn_confirm${vo.p_idx}" type='button' onclick="confirmM(${vo.p_idx}, '${vo.b_sellerid}', ${vo.b_buymoney})" value="거래완료" disabled></td>
+									</c:if>
 									
 									
 								</tr>
@@ -278,5 +284,26 @@
 		</div>
 	</form>
 </body>
+
+<script type="text/javascript">
+
+	const confirmM = (pidx, bsellerid, bmoney) => {
+			
+		console.log(pidx, bsellerid, bmoney)
+			
+ 		$.ajax({
+ 			url : "${cpath}/confirmM.do",
+ 			type : "post",
+ 			data : {"p_idx" : pidx, "b_seller" : bsellerid, "b_money" : bmoney},
+			success : () => {
+				$("#btn_confirm" + pidx).attr("disabled", true);
+				$("#btn_confirm" + pidx).val('거래완료');
+ 			},
+ 			error : () => {alert("ajax error")}
+ 		});
+	}
+
+</script>
+
 <jsp:include page="footer.jsp"></jsp:include>
 </html>

@@ -6,7 +6,7 @@ import kr.controller.AuctionpageController;
 import kr.controller.BidCancelController;
 import kr.controller.ChatListController;
 import kr.controller.ChatroomController;
-
+import kr.controller.ConfirmMController;
 import kr.controller.Controller;
 import kr.controller.DeleteUserController;
 import kr.controller.MainController;
@@ -77,6 +77,7 @@ public class HandlerMapping {
 		mappings.put("/chatroom.do", new ChatroomController());
 		mappings.put("/chatlist.do", new ChatListController());
 		mappings.put("/updatesales.do", new UpdateSalesController());
+		mappings.put("/confirmM.do", new ConfirmMController());
 
 		
 	}

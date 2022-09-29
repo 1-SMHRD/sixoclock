@@ -193,4 +193,18 @@ public class MyBatisDAO {
 		session.close();
 	}
 	
+	public void getBcheck(int pidx) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.update("getBcheck", pidx);
+		session.commit();
+		session.close();
+	}
+	
+	public void setMoneyPlus(MoneyVO mvo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.insert("setMoneyPlus", mvo);
+		session.commit();
+		session.close();
+	}
+	
 }
