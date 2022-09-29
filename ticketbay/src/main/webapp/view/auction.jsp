@@ -436,11 +436,17 @@
 				if (user_money < parseInt(bidmoney)) {
 					alert("소지 금액이 부족합니다");
 					return ;
-				} else {
+				} else if(user_money>= parseInt(bidmoney)){
 					check_bid = 1;
 					temp_count = -1;
 					sendMessage(bidmoney);
-				} 
+				
+					
+				} else{
+					response.sendRedirect("orderPay.jsp");
+					
+				}
+				
 			} 
 		}
 		

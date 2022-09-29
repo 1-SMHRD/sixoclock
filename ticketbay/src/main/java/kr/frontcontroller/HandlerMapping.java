@@ -35,6 +35,7 @@ import kr.controller.UseMoneyController;
 import kr.controller.UserinfoPController;
 import kr.controller.addDeliveryController;
 import kr.controller.addDeliveryPController;
+import kr.controller.checkController;
 import kr.controller.SigninPController;
 import kr.controller.SalesWriteFormController;
 
@@ -48,6 +49,7 @@ public class HandlerMapping {
 		mappings.put("/salesDetail.do", new SalesDetailController());
 
 		mappings.put("/orderSheet.do",new orderController());
+		mappings.put("/check.do",new checkController());
 		mappings.put("/orderPay.do",new orderPayController());
 		mappings.put("/Pay.do",new PayController());
 		mappings.put("/RequestVerifyAuth.do",new RequestVerifyAuthController());

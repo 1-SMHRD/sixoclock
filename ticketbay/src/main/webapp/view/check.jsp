@@ -31,7 +31,7 @@
 
 <header id="checkChoice">
 
-		<b id="acheck"> 최초 구매, 판매 시 본인 확인을 위해서 1회에 한해 본인인증을 실행합니다 </b>
+		<b id="acheck"> 본인 확인을 위해서 1회에 한해 본인인증을 실행합니다 </b>
 
 		<div id="container" class="check">
 			<div id="checkbox1">

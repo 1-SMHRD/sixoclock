@@ -15,7 +15,7 @@
    * 카카오톡 사용자에게 본인인증을 요청합니다.
    */
   // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
-  String ClientCode = "020040000001";
+  String ClientCode = "c8CFZn94kcCbExnTPJ7j";
   
   // 본인인증 요청 정보 Object
   RequestVerifyAuth requestObj = new RequestVerifyAuth();

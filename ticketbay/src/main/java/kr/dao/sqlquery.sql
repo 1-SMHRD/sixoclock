@@ -209,4 +209,4 @@ CREATE TABLE t_buylist
 
 select * from t_buylist;
 
-
+insert into t_user()
