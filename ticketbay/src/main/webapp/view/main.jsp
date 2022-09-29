@@ -81,28 +81,11 @@
                             
                             <div class="dropdown">
                             	
-                                <li><span><button class="dropbtn" value="${vo.cate_no}">콘서트</button></span></li>
-                                <div class="dropdown-content">
-                                <c:if test="${vo.p_cateDeps2 eq '하이라이트'}">
-                                    <a href="${cpath}/slaesList.do">하이라이트</a>
-                                </c:if>
-                                <c:if test="${vo.p_cateDeps2 eq '블랙핑크'}">
-                                    <a href="${cpath}/slaesList.do">블랙핑크</a>
-                                </c:if>
-                                    <a href="${cpath}/slaesList.do">김호중</a>
-                                    <a href="${cpath}/slaesList.do">그랜드 민트 페스티벌</a>
-                                    <a href="${cpath}/slaesList.do">포레스텔라</a>
-                                
-                                </div>
-                            </div>
-                            
-                            <div class="dropdown">
-                            	
-                                <li><span><button class="dropbtn" value="${vo.cate_no}">스포츠</button></span></li>
+                                <li><span><button class="dropbtn">콘서트</button></span></li>
                                 <div class="dropdown-content">
                                 <c:forEach var="vo" items="${list}">
-                                <c:if test="${vo.up_cate_no eq '1001'}">
-                                    <a href="${cpath}/salesList.do?cate_no=${vo.cate_no}">${vo.cate_name}</a>
+                                <c:if test="${vo.up_cate_no eq '1000'}">
+                                    <a href="#" value="${vo.cate_no}">${vo.cate_name}</a>
                                 </c:if>
                                 </c:forEach>
                                 
@@ -111,11 +94,24 @@
                             
                             <div class="dropdown">
                             	
-                                <li><span><button class="dropbtn" value="${vo.cate_no}">뮤지컬/연극</button></span></li>
+                                <li><span><button class="dropbtn"s>스포츠</button></span></li>
+                                <div class="dropdown-content">
+                                <c:forEach var="vo" items="${catelist}">
+                                <c:if test="${vo.up_cate_no eq '1001'}">
+                                    <a href="${cpath}/salesList.do?cate_no=${vo.cate_no}" value="${vo.cate_no}">${vo.cate_name}</a>
+                                </c:if>
+                                </c:forEach>
+                                
+                                </div>
+                            </div>
+                            
+                            <div class="dropdown">
+                            	
+                                <li><span><button class="dropbtn">뮤지컬/연극</button></span></li>
                                 <div class="dropdown-content">
                                 <c:forEach var="vo" items="${list}">
                                 <c:if test="${vo.up_cate_no eq '1002'}">
-                                    <a href="#">${vo.cate_name}</a>
+                                    <a href="#"  value="${vo.cate_no}" >${vo.cate_name}</a>
                                 </c:if>
                                 </c:forEach>
                                 
@@ -124,11 +120,11 @@
                             
                             <div class="dropdown">
                             	
-                                <li><span><button class="dropbtn" value="${vo.cate_no}">영화/전시</button></span></li>
+                                <li><span><button class="dropbtn">영화/전시</button></span></li>
                                 <div class="dropdown-content">
                                 <c:forEach var="vo" items="${list}">
                                 <c:if test="${vo.up_cate_no eq '1003'}">
-                                    <a href="#">${vo.cate_name}</a>
+                                    <a href="#"  value="${vo.cate_no}">${vo.cate_name}</a>
                                 </c:if>
                                 </c:forEach>
                                 

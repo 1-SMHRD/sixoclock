@@ -20,7 +20,6 @@ import kr.controller.RequestVerifyAuthController;
 import kr.controller.orderController;
 import kr.controller.orderPayController;
 
-import kr.controller.SalesWriteCateController;
 import kr.controller.SalesWriteController;
 
 import kr.controller.SigninController;
@@ -51,7 +50,6 @@ public class HandlerMapping {
 
 		mappings.put("/salesWrite.do", new SalesWriteController()); // 판매등록
 		mappings.put("/salesWriteForm.do", new SalesWriteFormController());
-		mappings.put("/salesWriteCate.do", new SalesWriteCateController());
 		mappings.put("/productListView.do", new ProductListViewController()); // 등록후 마이페이지
 		
 

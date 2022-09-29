@@ -13,10 +13,10 @@
 <jsp:include page="header.jsp"></jsp:include>
 <link rel="stylesheet" href="${cpath}/css/styleList.css?after">
 <link rel="stylesheet" href="${cpath}/css/common.css?after">
-<link rel="stylesheet" href="${cpath}/css/new_list_custom.css?after">
 <link rel="stylesheet" href="${cpath}/css/contents.css?after">
 <link rel="stylesheet" href="${cpath}/css/header_sales.css?after">
 <link rel="stylesheet" href="${cpath}/css/new_list.css?after">
+<link rel="stylesheet" href="${cpath}/css/new_list_custom.css?after">
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body class="goog-te-combo_in">
@@ -38,13 +38,13 @@
       <div class="sidebar__inner" style="position: relative;">
         <!-- 카테고리정보 -->
         <div class="sidebar_a_box">
-          <div class="new_ctg_style_01_div"><span> 가수 이름 </span></div>
+          <div class="new_ctg_style_01_div"><span> ${vo.p_cateDeps2} </span></div>
           <div id="filter_category_box">
             <div class="new_select_style_01_div mb10" id="selList">
               <span class="label"> 전체상품보기 </span>
               <ul class="new_select_style_01_div_sub wd_01 scroll_y" style="position: absolute; z-index: 9;">
                 <a href="#">
-                 <li class="optionitem"><span> 콘서트장소 - 날짜만큼 a태그 생성 </span></li>
+                 <li class="obtionitem"><span> 콘서트장소 - 날짜만큼 a태그 생성 </span></li>
                 </a>
               </ul>
             </div>
@@ -183,7 +183,7 @@
     <div id="content" style="width: 674px; margin-top:10px;">
       <div class="dp_fx_02 info_box_gr">
         <h3 style="margin-top:20px;">INFO</h3>
-        <div class="in_txt_gr">가수이름</div>
+        <div class="in_txt_gr">${vo.p_cateDeps2}</div>
       </div>
       <div>
         <!-- 상품이 없는 경우 -->
@@ -203,32 +203,28 @@
 
             <div class="item_style_01_gr">
               <div class="in_gr_01">
-                <div class="c2c_sub_day_txt">사용일 : ${vo.p_show_date}</div>
+                <div class="c2c_sub_day_txt">사용일 : ${fn:split(vo.p_indate," ")[0]}</div>
                 
                 <div class="c2c_sub_info_txt">
-                  <span>${fn:split(vo.p_seat_info," ")[0]}구역 -> 좌석정보(상품)</span>
-                  <span>${fn:split(vo.p_seat_info," ")[1]}열</span>
-                  <span>${fn:split(vo.p_seat_info," ")[2]}</span>
-                  <span>${fn:split(vo.p_seat_info," ")[3]}</span>
+                  <span>${vo.p_seatInfo}</span>
                 </div>
-                <div class="new_UNUSUAL_LIST_gr">
+                <%-- <div class="new_UNUSUAL_LIST_gr">
                 <c:if test="${!empty vo.p_prod_check}">
                   <span>${vo.p_prod_check} -> 상품 특이사항(인덱스로 가져오나?)</span>
                 </c:if>
-                </div>
+                </div> --%>
               </div>
               <div class="in_gr_03">
                 <div class="in_gr_txt">
-                  <span>${fn:split(vo.p_deal_method," ")[0]} -> 거래방식</span>
-                  <span>${fn:split(vo.p_deal_method," ")[1]}</span>
+                  <span>${vo.p_dealMethod}</span>
                   <div class="in_day_txt">티켓보유여부</div>
                 </div>
               </div>
               <div class="in_gr_04">
                 <div name="productCompare" class="compare_list_icon" data-compare-seq="" data-type="N">비교담기</div>
-                <div class="pd_ea_txt_gr">${vo.p_tk_count}매 -> 판매수량</div>
-                <div><strong>${vo.p_buy_immed}원 -> 가격</strong></div>
-                <div class="Safe_list_icon">입장안심 이용 여부?? 어디서??</div>
+                <div class="pd_ea_txt_gr">${vo.p_tkCount}매</div>
+                <div><strong>${vo.p_buyImmed}원</strong></div>
+                <!-- <div class="Safe_list_icon">입장안심 이용 여부?? 어디서??</div> -->
               </div>
             </div>
           </a>

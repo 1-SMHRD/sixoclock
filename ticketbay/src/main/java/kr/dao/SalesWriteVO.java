@@ -4,8 +4,7 @@ public class SalesWriteVO {
 
 	private String p_Idx;
 	private String u_ID;
-	private String p_cateDeps1;
-	private String p_cateDeps2;
+	private String cate_name;
 	private String p_indate;
 	private int p_tkCount;
 	private String p_seatInfo;
@@ -16,17 +15,18 @@ public class SalesWriteVO {
 	private String p_biddate;
 	private int p_buyImmed;
 	private int p_minBid;
+	private String p_buyerid;
+	private String p_registerdate;
 	
-	public SalesWriteVO() {} ;
-	
-	public SalesWriteVO(String p_Idx, String u_ID, String p_cateDeps1, String p_cateDeps2, String p_indate,
-			int p_tkCount, String p_seatInfo, String p_imgRoute, String p_dealMethod, String p_tkPossession,
-			String p_dealInfo, String p_biddate, int p_buyImmed, int p_minBid) {
+	public SalesWriteVO() {}
+
+	public SalesWriteVO(String p_Idx, String u_ID, String cate_name, String p_indate, int p_tkCount, String p_seatInfo,
+			String p_imgRoute, String p_dealMethod, String p_tkPossession, String p_dealInfo, String p_biddate,
+			int p_buyImmed, int p_minBid, String p_buyerid, String p_registerdate) {
 		super();
 		this.p_Idx = p_Idx;
 		this.u_ID = u_ID;
-		this.p_cateDeps1 = p_cateDeps1;
-		this.p_cateDeps2 = p_cateDeps2;
+		this.cate_name = cate_name;
 		this.p_indate = p_indate;
 		this.p_tkCount = p_tkCount;
 		this.p_seatInfo = p_seatInfo;
@@ -37,6 +37,8 @@ public class SalesWriteVO {
 		this.p_biddate = p_biddate;
 		this.p_buyImmed = p_buyImmed;
 		this.p_minBid = p_minBid;
+		this.p_buyerid = p_buyerid;
+		this.p_registerdate = p_registerdate;
 	}
 
 	public String getP_Idx() {
@@ -55,20 +57,12 @@ public class SalesWriteVO {
 		this.u_ID = u_ID;
 	}
 
-	public String getP_cateDeps1() {
-		return p_cateDeps1;
+	public String getCate_name() {
+		return cate_name;
 	}
 
-	public void setP_cateDeps1(String p_cateDeps1) {
-		this.p_cateDeps1 = p_cateDeps1;
-	}
-
-	public String getP_cateDeps2() {
-		return p_cateDeps2;
-	}
-
-	public void setP_cateDeps2(String p_cateDeps2) {
-		this.p_cateDeps2 = p_cateDeps2;
+	public void setCate_name(String cate_name) {
+		this.cate_name = cate_name;
 	}
 
 	public String getP_indate() {
@@ -151,17 +145,30 @@ public class SalesWriteVO {
 		this.p_minBid = p_minBid;
 	}
 
+	public String getP_buyerid() {
+		return p_buyerid;
+	}
+
+	public void setP_buyerid(String p_buyerid) {
+		this.p_buyerid = p_buyerid;
+	}
+
+	public String getP_registerdate() {
+		return p_registerdate;
+	}
+
+	public void setP_registerdate(String p_registerdate) {
+		this.p_registerdate = p_registerdate;
+	}
 
 	@Override
 	public String toString() {
-		return "SalesWriteVO [p_Idx=" + p_Idx + ", u_ID=" + u_ID + ", p_cateDeps1=" + p_cateDeps1 + ", p_cateDeps2="
-				+ p_cateDeps2 + ", p_indate=" + p_indate + ", p_tkCount=" + p_tkCount + ", p_seatInfo=" + p_seatInfo
-				+ ", p_imgRoute=" + p_imgRoute + ", p_dealMethod=" + p_dealMethod + ", p_tkPossession=" + p_tkPossession
-				+ ", p_dealInfo=" + p_dealInfo + ", p_biddate=" + p_biddate + ", p_buyImmed=" + p_buyImmed
-				+ ", p_minBid=" + p_minBid + "]";
+		return "SalesWriteVO [p_Idx=" + p_Idx + ", u_ID=" + u_ID + ", cate_name=" + cate_name + ", p_indate=" + p_indate
+				+ ", p_tkCount=" + p_tkCount + ", p_seatInfo=" + p_seatInfo + ", p_imgRoute=" + p_imgRoute
+				+ ", p_dealMethod=" + p_dealMethod + ", p_tkPossession=" + p_tkPossession + ", p_dealInfo=" + p_dealInfo
+				+ ", p_biddate=" + p_biddate + ", p_buyImmed=" + p_buyImmed + ", p_minBid=" + p_minBid + ", p_buyerid="
+				+ p_buyerid + ", p_registerdate=" + p_registerdate + "]";
 	}
-	
-	
-	
+
 	
 }
