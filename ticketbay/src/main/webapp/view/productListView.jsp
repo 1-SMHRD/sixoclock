@@ -85,7 +85,7 @@
 					<!-- MY티켓베이 개인회원 레프트메뉴 -->
 					<div class="boxStyle01 myServiceLnb">
 						<ul class="myClass6">
-							<li class="nth1 order"><a href="#">내가 구매한 상품</a></li>
+							<li class="nth1 order"><a href="${cpath}/productBuyView.do?u_ID=${mvo.u_ID}">내가 구매한 상품</a></li>
 							<li class="nth2 sell current"><a href="#">내가 판매한 상품</a></li>
 							<li class="nth3 benefit"><a href="#">혜택 관리</a>
 								<ul class="subLnb feTabCont" style="display: none;">

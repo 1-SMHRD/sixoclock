@@ -86,7 +86,7 @@
 					<div class="boxStyle01 myServiceLnb">
 						<ul class="myClass6">
 							<li class="nth1 order current"><a href="#">내가 구매한 상품</a></li>
-							<li class="nth2 sell"><a href="#">내가 판매한 상품</a></li>
+							<li class="nth2 sell"><a href="${cpath}/productListView.do?u_ID=${mvo.u_ID}">내가 판매한 상품</a></li>
 							<li class="nth3 benefit"><a href="#">혜택 관리</a>
 								<ul class="subLnb feTabCont" style="display: none;">
 									<li><a href="/web/mycash/depositHistoryListView">예치금 관리</a></li>
@@ -200,27 +200,22 @@
 						<table class="tableStyle">
 							<caption>내가 구매한 상품 - 상품등록관리</caption>
 							<colgroup>
-								<col style="width: 95px;">
-								<col style="width: auto;">
 								<col style="width: 90px;">
-								<col style="width: 90px">
 								<col style="width: 150px;">
-								<col style="width: 40px;">
-								<%-- <col style="width: 40px;"> --%>
-								<col style="width: 78px;">
+								<col style="width: 150px;">
+								<col style="width: 150px;">
+								<col style="width: 100px;">
 							</colgroup>
 							<thead>
 								<tr>
+									<th scope="col">구매날짜</th>
 									<th scope="col">상품번호</th>
-									<th scope="col">상품정보</th>
-									<th scope="col">즉시구매단가</th>
-									<th scope="col">최소입찰금액</th>
-									<th scope="col">거래방식</th>
-									<th scope="col">수량</th>
-									<th scope="col">거래상태</th>
+									<th scope="col">구매금액</th>
+									<th scope="col">판매자</th>
+									<th scope="col">구매상태</th>
 								</tr>
 							</thead>
-							<c:forEach var="vo" items="${slist}">
+							<c:forEach var="vo" items="${list}">
 							<tbody>
 
 								<tr>
@@ -228,44 +223,35 @@
 										<!-- formWrap -->
 										<div class="formWrap">
 											<label> 
-												<div class="orderInfo">
+												<%-- <div class="orderInfo">
 													<p>
 														<a href="#">${vo.p_Idx}</a>
 													</p>
 												</div>
-												<br> 
-												<span class="date">${fn:split(vo.p_registerdate," ")[0]}</span>
+												<br>  --%>
+												<span class="date">${fn:split(vo.b_buydate," ")[0]}</span>
 											</label>
 										</div>
 									</td>
 									<td>
 										<!-- tbProductInfo -->
 										<div class="tbProductInfo1">
-											<a href="${cpath}/salesDetail.do?p_Idx=${vo.p_Idx}&u_id=${mvo.u_ID}"> <em
-												class="bPath">[콘서트 &gt; ${vo.cate_name}]</em>
-												<p>${vo.p_seatInfo}</p> <i> ${vo.p_indate} </i>
+											<a href="#"> <em
+												class="bPath">${vo.p_idx}</em>
 											</a>
 										</div>
 									</td>
-									<td><span class="bePrice01"><em>${vo.p_buyImmed}</em>원</span></td>
-									<td><span class="bePrice01"><em>${vo.p_minBid}</em>원</span></td>
+									<td><span class="bePrice01"><em>${vo.b_buymoney}</em>원</span></td>
 									
 									<td class="mid">
-									<c:forEach var="i" begin="0" end="3">
-									<c:if test="${fn:split(vo.p_dealMethod,' ')[i] != 'null'}">
-									<span>${fn:split(vo.p_dealMethod," ")[i]}</span></c:if></c:forEach>
+									<span>${vo.b_sellerid}</span>
 									</td>
 									
-									<td class="bgG">
-									<span class="colorG"><em class="fntW">${vo.p_tkCount}</em></span>
-									</td>
 									
-									<c:if test="${vo.p_buyerid == 'null'}">
-									<td class="bgG"><span>거래중</span></td>
-									</c:if>
-									<c:if test="${vo.p_buyerid != 'null'}">
-									<td class="bgG"><span>거래완료</span></td>
-									</c:if>
+									
+									<td class="bgG"><button>거래중</button></td>
+									
+									
 								</tr>
 							</tbody>
 							</c:forEach>
@@ -285,11 +271,6 @@
 							</div>
 						</div>
 
-						<%-- <div style="text-align: right;">
-							<a href="#" id="btnExcelDownload"><img
-								src="${cpath}/img/productListView/btn_excel_down.gif"
-								alt="EXCEL 다운로드"></a>
-						</div> --%>
 					</div>
 				</div>
 				<!-- //boxStyle -->

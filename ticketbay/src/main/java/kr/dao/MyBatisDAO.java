@@ -36,9 +36,9 @@ public class MyBatisDAO {
 	// 전체리스트 가져오기(ID)	
 		public List<SalesWriteVO> idxallList(String u_ID){
 			SqlSession session = sqlSessionFactory.openSession();
-			List<SalesWriteVO> list=session.selectList("idxallList", u_ID);
+			List<SalesWriteVO> slist=session.selectList("idxallList", u_ID);
 			session.close();
-			return list;
+			return slist;
 		}
 	
 	// 카테고리리스트 가져오기

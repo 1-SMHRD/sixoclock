@@ -37,7 +37,6 @@
   	  <div class="logo"><a href="/web/myservice/myserviceMain"><img src="${cpath}/img/productListView/tit_myservice07.png" alt="my 티켓베이"></a></div>
 	  <div class="my_info_box">
 	    <h3>어서오세요 <strong><span>${mvo.u_NAME }</span> 회원님</strong></h3>
-		  <p>* 충만한 팬파워! 혜택으로 보답할께요~</p>
 		  <a href="/web/couponzone/couponZoneView" class="rankDetail member"><img src="${cpath}/img/productListView/btn_mem_benefit_v2.png" alt="혜택 보러가기"></a>
 	  </div>
 	  <ul class="rankPointList">
@@ -62,7 +61,7 @@
 		  <li>
 			<a href="/web/mymsg/messageListView">
 			  <span class="tit"><img src="${cpath}/img/productListView/알림메시지.gif" alt="알림메시지"></span>
-			  <strong class="point"><span>1</span> 개</strong>
+			  <strong class="point"><span>0</span> 개</strong>
 			</a>
 		  </li>
 		  <li>
@@ -95,8 +94,7 @@
 	<div class="boxStyle01 myServiceLnb">
 	  <ul class="myClass6">
 		  <li class="nth1 order">
-			<a href="${cpath}/productBuyView.do?u_ID=${mvo.u_ID}">내가 구매한 상품</a>
-		  </li>
+			<a href="${cpath}/productBuyView.do?u_ID=${mvo.u_ID}">내가 구매한 상품</a> </li>
 		  <li class="nth2 sell">
 			<a href="${cpath}/productListView.do?u_ID=${mvo.u_ID}">내가 판매한 상품</a>
 		  </li>
@@ -235,7 +233,7 @@
       </table>
     </div>
   </div>
-  <div class="boxStyle" id="orderList">
+ <%--  <div class="boxStyle" id="orderList">
     <div class="head">
       <h2><span class="tit">최근 구매한 상품</span></h2>
       <p>최근 6개월</p>
@@ -266,8 +264,8 @@
         </tr>
       </tbody>
     </table>
-  </div>
-  <div class="boxStyle" id="sellList">
+  </div> --%>
+<%--   <div class="boxStyle" id="sellList">
     <div class="head">
       <h2><span class="tit">최근 판매한 상품</span></h2>
       <p>최근 6개월</p>
@@ -298,7 +296,7 @@
         </tr>
       </tbody>
     </table>
-  </div>
+  </div> --%>
 </div>
 
 	<!-- 회원정보 수정 탭 -->

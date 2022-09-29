@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/53a8c415f1.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="${cpath}/css/로그인.css">
-<title>Insert title here</title>
+<title>로그인 | 티켓베이</title>
 
 <style type="text/css">
 

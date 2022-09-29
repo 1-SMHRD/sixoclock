@@ -23,8 +23,6 @@ public class ProductBuyViewController implements Controller {
 		List<BuyListVO> list=dao.buyList(u_ID);
 		request.setAttribute("list", list);
 		
-		List<SalesWriteVO> slist=dao.idxallList("u_ID");
-		request.setAttribute("slist", slist);
 		
 		return "productBuyView";	
 	}
