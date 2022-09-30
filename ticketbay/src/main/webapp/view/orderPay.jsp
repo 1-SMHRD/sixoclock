@@ -8,6 +8,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script language="javascript" type="text/javascript"
 	src="https://stdpay.inicis.com/stdjs/INIStdPay.js" charset="UTF-8"></script>
+	<script> 
+	const but_click =()=> {
+		alter ("충전되었습니다.");
+		response.redirect:(mypage.do);
+	}
+	</script>
 </head>
 
 <body>
@@ -19,13 +25,13 @@
 					<input type="text" name="goodname" value="소지금">
 				</div>
 				<div id="name">
-					<input type="text" name="buyername" value="${vo.u_NAME}">
+					<input type="text" name="buyername" value="${mvo.u_NAME}">
 				</div>
 				<div id="phone">
-					<input type="text" name="buyertel" value="${vo.u_MOBILE}">
+					<input type="text" name="buyertel" value="${mvo.u_MOBILE}">
 				</div>
 				<div id="mail">
-					<input type="text" name="buyeremail" value="${vo.u_EMAIL}">
+					<input type="text" name="buyeremail" value="${mvo.u_EMAIL}">
 				</div>
 				<div id="money">
 					<input type="text" name="price" value="" placeholder ="충전할 금액을 입력하세요">
@@ -50,7 +56,7 @@
 
 			</form>
 			<div>
-				<button onclick="INIStdPay.pay('paycheck.do')"
+				<button onclick="but_click"
 					style="padding: 10px; margin-left: 2.5%">충전하기</button>
 				
 			</div>
