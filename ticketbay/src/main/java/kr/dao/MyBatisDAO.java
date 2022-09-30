@@ -112,12 +112,7 @@ public class MyBatisDAO {
 	}
 
 
-	public orderOVO orderSheet(orderOVO ovo) {
-		SqlSession session = sqlSessionFactory.openSession();
-		orderOVO ov=session.selectOne("orderOVO", ovo);
-		session.close();
-		return ov;
-	}
+	
 
 
 	

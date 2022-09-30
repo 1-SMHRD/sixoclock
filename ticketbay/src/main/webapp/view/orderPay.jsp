@@ -8,12 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script language="javascript" type="text/javascript"
 	src="https://stdpay.inicis.com/stdjs/INIStdPay.js" charset="UTF-8"></script>
-	<script> 
-	const but_click =()=> {
-		alter ("충전되었습니다.");
-		response.redirect:(mypage.do);
-	}
-	</script>
+	
 </head>
 
 <body>
@@ -61,5 +56,11 @@
 				
 			</div>
 	</header>
+	<script> 
+	const but_click =()=> {
+		alert("충전되었습니다.");
+		response.redirect:("mypage.do");
+	}
+	</script>
 </body>
 </html>

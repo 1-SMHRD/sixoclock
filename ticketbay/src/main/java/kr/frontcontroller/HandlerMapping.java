@@ -23,7 +23,7 @@ import kr.controller.SalesListController;
 
 import kr.controller.RequestVerifyAuthController;
 import kr.controller.SalesDeleteController;
-import kr.controller.orderController;
+
 import kr.controller.orderPayController;
 
 import kr.controller.SalesWriteController;
@@ -52,7 +52,7 @@ public class HandlerMapping {
 		mappings.put("/salesList.do", new SalesListController());
 		mappings.put("/salesDetail.do", new SalesDetailController());
 
-		mappings.put("/orderSheet.do",new orderController());
+		
 		mappings.put("/check.do",new checkController());
 		mappings.put("/orderPay.do",new orderPayController());
 		mappings.put("/RequestVerifyAuth.do",new RequestVerifyAuthController());

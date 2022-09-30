@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import kr.dao.MemberVO;
 import kr.dao.MyBatisDAO;
-import kr.dao.orderOVO;
+
 
 public class orderPayController implements Controller {
 
