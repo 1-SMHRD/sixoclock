@@ -95,9 +95,9 @@
                             	
                                 <li><span><button class="dropbtn"s>스포츠</button></span></li>
                                 <div class="dropdown-content">
-                                <c:forEach var="vo" items="${catelist}">
+                                <c:forEach var="vo" items="${list}">
                                 <c:if test="${vo.up_cate_no eq '1001'}">
-                                    <a href="${cpath}/salesList.do?cate_no=${vo.cate_no}" value="${vo.cate_no}">${vo.cate_name}</a>
+                                    <a href="${cpath}/salesList.do?cate_name=${vo.cate_name}" value="${vo.cate_no}">${vo.cate_name}</a>
                                 </c:if>
                                 </c:forEach>
                                 
@@ -110,7 +110,7 @@
                                 <div class="dropdown-content">
                                 <c:forEach var="vo" items="${list}">
                                 <c:if test="${vo.up_cate_no eq '1002'}">
-                                    <a href="#"  value="${vo.cate_no}" >${vo.cate_name}</a>
+                                    <a href="${cpath}/salesList.do?cate_name=${vo.cate_name}" value="${vo.cate_no}" >${vo.cate_name}</a>
                                 </c:if>
                                 </c:forEach>
                                 
@@ -123,7 +123,7 @@
                                 <div class="dropdown-content">
                                 <c:forEach var="vo" items="${list}">
                                 <c:if test="${vo.up_cate_no eq '1003'}">
-                                    <a href="#"  value="${vo.cate_no}">${vo.cate_name}</a>
+                                    <a href="${cpath}/salesList.do?cate_name=${vo.cate_name}"  value="${vo.cate_no}">${vo.cate_name}</a>
                                 </c:if>
                                 </c:forEach>
                                 
@@ -136,7 +136,7 @@
                                 <div class="dropdown-content">
                                 <c:forEach var="vo" items="${list}">
                                 <c:if test="${vo.up_cate_no eq '1004'}">
-                                    <a href="#">${vo.cate_name}</a>
+                                    <a href="${cpath}/salesList.do?cate_name=${vo.cate_name}">${vo.cate_name}</a>
                                 </c:if>
                                 </c:forEach>
                                 
@@ -149,7 +149,7 @@
                                 <div class="dropdown-content">
                                 <c:forEach var="vo" items="${list}">
                                 <c:if test="${vo.up_cate_no eq '1005'}">
-                                    <a href="#">${vo.cate_name}</a>
+                                    <a href="${cpath}/salesList.do?cate_name=${vo.cate_name}">${vo.cate_name}</a>
                                 </c:if>
                                 </c:forEach>
                                 

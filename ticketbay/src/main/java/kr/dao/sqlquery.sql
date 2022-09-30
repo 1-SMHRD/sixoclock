@@ -81,6 +81,8 @@ INSERT INTO test_user (u_id, u_pw, u_name, u_email, u_mobile) VALUES ('sdf', 'sd
 
 update test_user set u_money = 999999999 where u_ID = 'asdf';
 update test_user set u_money = 999999999 where u_ID = 'u_id 5';
+update test_user set u_money = 999999999 where u_ID = 'jaeyyy22';
+update test_user set u_money = 999999999 where u_ID = 'qwer';
 
 
 

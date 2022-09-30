@@ -17,95 +17,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
     <link rel="stylesheet" href="${cpath}/css/회원가입.css">
     <title>Document</title>
 </head>
 <body>
 
 
-    <script>
-        // 로그인 후 넘어온 사용자의 정보를 담을 객체
-        
-        
-        
-        let user_info = {
-            user_id : null,
-            user_pw : null,
-            user_name : null,
-            user_email : null,
-            user_mobile : null,
-        };
-
-        // 네아로를 이용한 사용자의 정보
-        var naverLogin = new naver.LoginWithNaverId({
-            clientId: 'c8CFZn94kcCbExnTPJ7j'
-        });
-
-        naverLogin.getLoginStatus((status) => {
-            console.log(naverLogin.user);
-            console.log('----------------');
-
-            // 네이버로 부터 받은 사용자 정보 객체에 담기
-            user_info.user_name = naverLogin.user.name;
-            user_info.user_email = naverLogin.user.email;
-            user_info.user_mobile = naverLogin.user.mobile;
-
-            console.log(user_info.user_name);
-            console.log(user_info.user_email);
-            console.log(user_info.user_mobile);
-
-			if (user_info.user_email != null) {
-	            registration_user();
-				
-			}
-
-        });
-
-        // 최초 로그인시 회원가입 창에 문자를 자동 입력하기 위한 함수
-        const registration_user = () => {
-            // 문자를 자동 입력받는 선택자들을 담은 임시 변?
-            let temp_uinfo = document.querySelectorAll('.white_list_line input');
-
-            // 휴대전화 번호 파싱 ( '-' 문자 지우기)
-            if (user_info.user_mobile != undefined || user_info.user_mobile != null) {
-                user_info.user_mobile = user_info.user_mobile.replace(/-/g, '');
-            }
-
-            console.log(user_info);
-            
-            // 반복문에 쓰일 임시 인덱스
-            let count = 0;
-            // 객체 정보가 undefined or null값이 아닐시 회원가입창에 자동 입력
-            for (const key in user_info) {
-                console.log(key, user_info[key], count, temp_uinfo[count]);
-                if (user_info[key] != undefined || user_info[key] != null) {
-                    temp_uinfo[count].value = user_info[key];
-                    // console.log(key, user_info[key], count, temp_uinfo[count])
-                }
-                count++;
-            }
-
-            
-            document.getElementById("MEMBER_NAME").disabled = true;
-			document.getElementById("MEMBER_EMAIL").disabled = true;
-			document.getElementById("MEMBER_MOBILE_NO").disabled = true;
-        }
-        
-        user_info.user_id = "";
-        user_info.user_pw = "";
-        user_info.user_name = "";
-        user_info.user_email = "";
-        user_info.user_mobile = "";
-        
-        
-        
-        // 입력 조건에 맞지 않은 input 값이 있을시 form 전송 막기
-        //document.querySelector(".form").addEventListener("submit", function (e) {
-       	//	if () {
-        // 		e.preventDefault();
-        //	}  
-        //})
-    </script>
+    
     
     
     <div class="type_all_box_gr">
@@ -155,7 +75,7 @@
                             </li>
                             <li>
                                 <div class="input_box">
-                                    <input type="text" name="MEMBER_NAME" id="MEMBER_NAME" value="" maxlength="50" class="input_text">
+                                    <input type="text" name="MEMBER_NAME" id="MEMBER_NAME" maxlength="50" class="input_text11">
                                     <span class="placeholder"></span>
                                     <span class="iconbox"></span>
                                 </div>
@@ -163,7 +83,7 @@
                             </li>
                             <li id="email">
                                 <div class="input_box">
-                                    <input type="text" name="MEMBER_EMAIL" id="MEMBER_EMAIL" value="" maxlength="100" class="input_text" list="email_options_MEMBER_EMAIL"><ul id="email_options_MEMBER_EMAIL" class="email_options" style="display: none;"></ul>
+                                    <input type="text" name="MEMBER_EMAIL" id="MEMBER_EMAIL" maxlength="100" class="input_text11" list="email_options_MEMBER_EMAIL"><ul id="email_options_MEMBER_EMAIL" class="email_options" style="display: none;"></ul>
                                     <span class="placeholder"></span>
                                     <span class="iconbox"></span>
                                 </div>
@@ -171,7 +91,7 @@
                             </li>
                             <li>
                                 <div class="input_box">
-                                    <input type="text" name="MEMBER_MOBILE_NO" value="" maxlength="13" class="input_text">
+                                    <input type="text" id="MEMBER_MOBILE_NO" name="MEMBER_MOBILE_NO" maxlength="13" class="input_text11">
                                     <span class="placeholder"></span>
                                     <span class="iconbox"></span>
                                 </div>
@@ -191,5 +111,99 @@
             </div>
         </div>
     </div>
+    
+    
+    <script>
+        // 로그인 후 넘어온 사용자의 정보를 담을 객체
+        
+        
+        
+        let user_info = {
+            user_id : null,
+            user_pw : null,
+            user_name : null,
+            user_email : null,
+            user_mobile : null,
+        };
+
+        // 네아로를 이용한 사용자의 정보
+        var naverLogin = new naver.LoginWithNaverId({
+            clientId: 'c8CFZn94kcCbExnTPJ7j'
+        });
+
+        naverLogin.getLoginStatus((status) => {
+            console.log(naverLogin.user);
+            console.log('----------------');
+
+            // 네이버로 부터 받은 사용자 정보 객체에 담기
+            user_info.user_name = naverLogin.user.name;
+            user_info.user_email = naverLogin.user.email;
+            user_info.user_mobile = naverLogin.user.mobile;
+
+            console.log(user_info.user_name);
+            console.log(user_info.user_email);
+            console.log(user_info.user_mobile);
+
+			if (user_info.user_email != null) {
+	            registration_user();
+				
+			}
+
+        });
+
+        // 최초 로그인시 회원가입 창에 문자를 자동 입력하기 위한 함수
+        const registration_user = () => {
+            // 문자를 자동 입력받는 선택자들을 담은 임시 변?
+            //let temp_uinfo = document.querySelectorAll('.white_list_line input');
+
+            // 휴대전화 번호 파싱 ( '-' 문자 지우기)
+            if (user_info.user_mobile != undefined || user_info.user_mobile != null) {
+                user_info.user_mobile = user_info.user_mobile.replace(/-/g, '');
+            }
+
+            console.log(user_info);
+            
+            // 반복문에 쓰일 임시 인덱스
+            let count = 0;
+            // 객체 정보가 undefined or null값이 아닐시 회원가입창에 자동 입력
+            /*for (const key in user_info) {
+                console.log(key, user_info[key], count, temp_uinfo[count]);
+                if (user_info[key] != undefined || user_info[key] != null) {
+                    temp_uinfo[count].value = user_info[key];
+                    // console.log(key, user_info[key], count, temp_uinfo[count])
+                }
+                count++;
+            }*/
+            
+
+			$('#MEMBER_NAME').val(user_info.user_name);
+			$('#MEMBER_EMAIL').val(user_info.user_email);
+			$('#MEMBER_MOBILE_NO').val(user_info.user_mobile);
+			
+			console.log($('#MEMBER_NAME').val())
+			console.log($('#MEMBER_EMAIL').val())
+			console.log($('#MEMBER_MOBILE_NO').val())
+
+            
+            document.getElementById("MEMBER_NAME").readonly = true;
+			document.getElementById("MEMBER_EMAIL").readonly = true;
+			document.getElementById("MEMBER_MOBILE_NO").readonly = true;
+        }
+        
+        user_info.user_id = "";
+        user_info.user_pw = "";
+        user_info.user_name = "";
+        user_info.user_email = "";
+        user_info.user_mobile = "";
+        
+        
+        
+        // 입력 조건에 맞지 않은 input 값이 있을시 form 전송 막기
+        //document.querySelector(".form").addEventListener("submit", function (e) {
+       	//	if () {
+        // 		e.preventDefault();
+        //	}  
+        //})
+    </script>
 </body>
 </html>

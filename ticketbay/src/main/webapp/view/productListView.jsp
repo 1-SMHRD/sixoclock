@@ -101,7 +101,7 @@
 									<li><a href="/web/mymsg/receivePinNumberListView">PIN번호함</a></li>
 									<li><a href="/web/mymsg/keepMessageListView">메시지 보관함</a></li>
 								</ul></li>
-							<li class="nth5 activity"><a href="#">활동현황</a>
+							<li class="nth5 activity"><a href="#">소지금 이용 내역</a>
 								<ul class="subLnb feTabCont" style="display: none;">
 									<li><a href="/web/mywant/wishProductListView">상품비교</a></li>
 									<li><a href="/web/mycart/productListView">장바구니</a></li>
@@ -272,10 +272,10 @@
 									<span class="colorG"><em class="fntW">${vo.p_tkCount}</em></span>
 									</td>
 									
-									<c:if test="${vo.p_buyerid == 'null'}">
+									<c:if test="${vo.p_buyerid == null}">
 									<td class="bgG"><span>거래중</span></td>
 									</c:if>
-									<c:if test="${vo.p_buyerid != 'null'}">
+									<c:if test="${vo.p_buyerid != null}">
 									<td class="bgG"><span>거래완료</span></td>
 									</c:if>
 								</tr>
