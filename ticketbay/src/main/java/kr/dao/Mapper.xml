@@ -65,7 +65,7 @@
 	</select>
 
 	<select id="uMList" resultType="kr.dao.MoneyVO" parameterType="String">
-		select * from test_usemoney where u_ID = #{u_id}
+		select * from test_usemoney where u_ID = #{u_id} order by m_date desc
 	</select>
   	
 	<insert id="memInsert" parameterType="kr.dao.MemberVO">

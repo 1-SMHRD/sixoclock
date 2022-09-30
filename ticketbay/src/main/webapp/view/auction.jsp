@@ -451,12 +451,13 @@
 			console.log("remaining_time" + remaining_time);
 			
 			set_time = new Date();
-			set_time.setSeconds(set_time.getSeconds() + 62);
+			
 
 			// temp_count = 1;
 			
 			if (remaining_time < 60000) {
 				console.log("------------");
+				set_time.setSeconds(set_time.getSeconds() + 62);
 				if (temp_count != -1) {
 					temp_count = 1;
 				}
