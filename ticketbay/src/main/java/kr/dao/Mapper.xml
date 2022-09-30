@@ -11,12 +11,12 @@
   	
   	<!-- 전체리스트 정렬 -> p_Idx-->
   	<select id="idxallList" resultType="kr.dao.SalesWriteVO">
-  		select * from t_product where u_ID=#{u_ID} order by p_Idx
+  		select * from t_product where u_ID=#{u_ID} order by p_registerdate
   	</select>
   	
   	<!-- 구매리스트 가져오기 -->
   	<select id="buyList" resultType="kr.dao.BuyListVO" parameterType="String">
-  		select * from t_buylist where b_buyerid=#{u_ID} order by p_Idx
+  		select * from t_buylist where b_buyerid=#{u_ID} order by b_buydate
   	</select>
   	
   	<!-- p_Idx 가져오기 -->
