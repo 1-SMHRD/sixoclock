@@ -30,6 +30,13 @@ public class SignupController implements Controller {
 		mvo.setU_MOBILE(mem_mobile_no);
 		mvo.setU_MONEY(0);
 		
+		System.out.println(mem_id);
+		System.out.println(mem_pw);
+		System.out.println(mem_name);
+		System.out.println(mem_email);
+		System.out.println(mem_mobile_no);
+		
+		
 		MyBatisDAO dao = new MyBatisDAO();
 		dao.memInsert(mvo);
 		
