@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +19,7 @@
 			<span id="title">결제정보를 입력해주세요</span>
 			<form id="orderPay.do" name="" method="POST">
 				<div id="goodname">
-					<input type="text" name="goodname" value="소지금">
+					<input  name="goodname" value="소지금">
 				</div>
 				<div id="name">
 					<input type="text" name="buyername" value="${mvo.u_NAME}">
@@ -51,7 +53,7 @@
 
 			</form>
 			<div>
-				<button onclick="but_click"
+				<button onclick="but_click();"
 					style="padding: 10px; margin-left: 2.5%">충전하기</button>
 				
 			</div>
@@ -59,7 +61,6 @@
 	<script> 
 	const but_click =()=> {
 		alert("충전되었습니다.");
-		response.redirect:("mypage.do");
 	}
 	</script>
 </body>
