@@ -16,7 +16,7 @@
 			<span id="title">결제정보를 입력해주세요</span>
 			<form id="orderPay.do" name="" method="POST">
 				<div id="goodname">
-					<input type="text" name="goodname" value="${vo.p_code}">
+					<input type="text" name="goodname" value="소지금">
 				</div>
 				<div id="name">
 					<input type="text" name="buyername" value="${vo.u_NAME}">
@@ -28,7 +28,7 @@
 					<input type="text" name="buyeremail" value="${vo.u_EMAIL}">
 				</div>
 				<div id="money">
-					<input type="text" name="price" value="${vo.p_buy_immed}">
+					<input type="text" name="price" value="" placeholder ="충전할 금액을 입력하세요">
 				</div>
 				<input type="hidden" name="mid" value="INIpayTest">
 				<!-- 에스크로테스트 : iniescrow0, 빌링(정기과금)테스트 : INIBillTst -->
@@ -51,7 +51,7 @@
 			</form>
 			<div>
 				<button onclick="INIStdPay.pay('paycheck.do')"
-					style="padding: 10px; margin-left: 2.5%">결제요청</button>
+					style="padding: 10px; margin-left: 2.5%">충전하기</button>
 				
 			</div>
 	</header>

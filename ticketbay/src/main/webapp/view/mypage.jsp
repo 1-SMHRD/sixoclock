@@ -37,7 +37,6 @@
   	  <div class="logo"><a href="/web/myservice/myserviceMain"><img src="${cpath}/img/productListView/tit_myservice07.png" alt="my 티켓베이"></a></div>
 	  <div class="my_info_box">
 	    <h3>어서오세요 <strong><span>${mvo.u_NAME }</span> 회원님</strong></h3>
-		  <p>* 충만한 팬파워! 혜택으로 보답할께요~</p>
 		  <a href="/web/couponzone/couponZoneView" class="rankDetail member"><img src="${cpath}/img/productListView/btn_mem_benefit_v2.png" alt="혜택 보러가기"></a>
 	  </div>
 	  <ul class="rankPointList">
@@ -62,7 +61,7 @@
 		  <li>
 			<a href="/web/mymsg/messageListView">
 			  <span class="tit"><img src="${cpath}/img/productListView/알림메시지.gif" alt="알림메시지"></span>
-			  <strong class="point"><span>1</span> 개</strong>
+			  <strong class="point"><span>0</span> 개</strong>
 			</a>
 		  </li>
 		  <li>
@@ -95,14 +94,7 @@
 	<div class="boxStyle01 myServiceLnb">
 	  <ul class="myClass6">
 		  <li class="nth1 order">
-			<a href="#">내가 구매한 상품</a>
-			<!-- <ul id="click01" class="subLnb feTabCont" style="display: none;">
-			  2017-05-15 Left Menu 변경
-			  <li><a href="/web/myorder/orderListView">거래 진행 상품</a></li>
-			  <li><a href="/web/myorder/completeOrderListView">거래 완료 상품</a></li>
-			  <li><a href="/web/myorder/cancelOrderListView">거래 취소 상품</a></li>
-			</ul> -->
-		  </li>
+			<a href="${cpath}/productBuyView.do?u_ID=${mvo.u_ID}">내가 구매한 상품</a> </li>
 		  <li class="nth2 sell">
 			<a href="${cpath}/productListView.do?u_ID=${mvo.u_ID}">내가 판매한 상품</a>
 		  </li>
@@ -241,7 +233,7 @@
       </table>
     </div>
   </div>
-  <div class="boxStyle" id="orderList">
+ <%--  <div class="boxStyle" id="orderList">
     <div class="head">
       <h2><span class="tit">최근 구매한 상품</span></h2>
       <p>최근 6개월</p>
@@ -272,8 +264,8 @@
         </tr>
       </tbody>
     </table>
-  </div>
-  <div class="boxStyle" id="sellList">
+  </div> --%>
+<%--   <div class="boxStyle" id="sellList">
     <div class="head">
       <h2><span class="tit">최근 판매한 상품</span></h2>
       <p>최근 6개월</p>
@@ -304,8 +296,48 @@
         </tr>
       </tbody>
     </table>
-  </div>
+  </div> --%>
 </div>
+
+	<!-- 소지금 이용 내역 탭 -->
+	
+	<div id="usemoneytab" style="display: none">
+		<h3 class="boxTitles mt_40">
+						<span>소지금 이용 내역</span><button type="button" onclick="location.href='orderPay.jsp'">소지금 충전하기</button>
+					</h3>
+					<table class="tableStyle shippingAddr">
+						<caption>받는 주소 정보</caption>
+						<colgroup>
+							<col style="width: 100px;">
+							<col style="width: 150px;">
+							<col style="width: 150px;">
+							<col style="width: 100px;">
+							<col style="width: 75px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th class="th_txt_style_01" scope="col">사용 내역</th>
+								<th class="th_txt_style_01" scope="col" colspan="2">사용 금액</th>
+								<th class="th_txt_style_01" scope="col">사용 날짜</th>
+								<th class="th_txt_style_01" scope="col">현재 소지금</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach var="uvo" items="${uMList }">
+								<tr>
+									<td>${uvo.m_CLASSIFICATION}</td>
+									<td> +${uvo.m_PLUS}원</td>
+									<td> -${uvo.m_MINUS}원</td>
+									<td>${uvo.m_DATE}</td>
+									<td>${uvo.m_NOW_MONEY}원</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+	</div>
+	
+	<!-- //소지금 이용 내역 탭 -->
+
 
 	<!-- 회원정보 수정 탭 -->
 	<div id="userinfotab" style="display: none">
@@ -626,14 +658,15 @@
 	</div>
 	<!-- //회원정보 수정 탭 -->
 	
-		
-		
-		
+	
 	
 	<script type="text/javascript">
 	
 		const detailUseMoney = () => {
-			
+			$("#userinfotab").css("display", "none");
+			$("#usemoneytab").css("display", "block");
+			$("#tempdiv").css("display", "none");
+
 			
 		}
 	
@@ -646,6 +679,8 @@
 			$("#d_list_tab").css("display", "none");
 			$("#u_delete_tab").css("display", "none");
 			$("#tempdiv").css("display", "none");
+			$("#usemoneytab").css("display", "none");
+
 			
 		}
 		
@@ -660,6 +695,7 @@
 				console.log("eq")
 				$("#check_user").css("display", "none");
 				$("#update_info").css("display", "block");
+				$("#usemoneytab").css("display", "none");
 				
 				parseEmail();
 			}
@@ -676,6 +712,7 @@
 			$("#u_delete_tab").css("display", "none");
 			$("#tempdiv").css("display", "none")
 			$("#CHECK_PW").val("");
+			$("#usemoneytab").css("display", "none");
 		}
 		
 		const display_d_list = () => {
@@ -684,7 +721,7 @@
 			$("#update_info").css("display", "none");
 			$("#d_list_tab").css("display", "block");
 			$("#u_delete_tab").css("display", "none");
-			
+			$("#usemoneytab").css("display", "none");
 			$("#CHECK_PW").val("");
 		}
 		
@@ -694,7 +731,7 @@
 			$("#update_info").css("display", "none");
 			$("#d_list_tab").css("display", "none");
 			$("#u_delete_tab").css("display", "block");
-			
+			$("#usemoneytab").css("display", "none");
 			$("#CHECK_PW").val("");
 		}
 		

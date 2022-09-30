@@ -6,13 +6,13 @@ public class MoneyVO {
 	private String m_CLASSIFICATION;
 	private int m_PLUS;
 	private int m_MINUS;
-	private int m_DATE;
+	private String m_DATE;
 	
 	public MoneyVO() {
 		super();
 	}
 
-	public MoneyVO(String u_ID, int m_NOW_MONEY, String m_CLASSIFICATION, int m_PLUS, int m_MINUS, int m_DATE) {
+	public MoneyVO(String u_ID, int m_NOW_MONEY, String m_CLASSIFICATION, int m_PLUS, int m_MINUS, String m_DATE) {
 		super();
 		this.u_ID = u_ID;
 		this.m_NOW_MONEY = m_NOW_MONEY;
@@ -62,11 +62,11 @@ public class MoneyVO {
 		this.m_MINUS = m_MINUS;
 	}
 
-	public int getM_DATE() {
+	public String getM_DATE() {
 		return m_DATE;
 	}
 
-	public void setM_DATE(int m_DATE) {
+	public void setM_DATE(String m_DATE) {
 		this.m_DATE = m_DATE;
 	}
 

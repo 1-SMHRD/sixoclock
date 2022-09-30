@@ -36,9 +36,9 @@ public class MyBatisDAO {
 	// 전체리스트 가져오기(ID)	
 		public List<SalesWriteVO> idxallList(String u_ID){
 			SqlSession session = sqlSessionFactory.openSession();
-			List<SalesWriteVO> list=session.selectList("idxallList", u_ID);
+			List<SalesWriteVO> slist=session.selectList("idxallList", u_ID);
 			session.close();
-			return list;
+			return slist;
 		}
 	
 	// 카테고리리스트 가져오기
@@ -49,6 +49,15 @@ public class MyBatisDAO {
 		return catelist;
 	}
 	
+	// 구매상품 가져오기
+	public List<BuyListVO> buyList(String u_ID){
+		System.out.println(u_ID);
+		SqlSession session = sqlSessionFactory.openSession();
+		List<BuyListVO> list=session.selectList("buyList", u_ID);
+		session.close();
+		return list;
+	}
+	
 	// 등록상품 삭제하기
 	public void salesDelete(String p_Idx) {
 		SqlSession session = sqlSessionFactory.openSession();
@@ -56,7 +65,6 @@ public class MyBatisDAO {
 		session.commit();
 		session.close();
 	}
-	
 	
 	// 상세보기(p_Idx)
 	public SalesWriteVO getByp_Idx(String p_Idx) {
@@ -87,6 +95,13 @@ public class MyBatisDAO {
 		List<DeliveryVO> dlist = session.selectList("allDList", u_id);
 		session.close(); // 반납
 		return dlist;
+	}
+	
+	public List<MoneyVO> uMList(String u_id) {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<MoneyVO> uMList = session.selectList("uMList", u_id);
+		session.close(); // 반납
+		return uMList;
 	}
 	
 	public void memInsert(MemberVO mvo) {
@@ -174,6 +189,20 @@ public class MyBatisDAO {
 	public void insertBuyList(BuyListVO bvo) {
 		SqlSession session = sqlSessionFactory.openSession();
 		session.insert("insertBuyList", bvo);
+		session.commit();
+		session.close();
+	}
+	
+	public void getBcheck(int pidx) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.update("getBcheck", pidx);
+		session.commit();
+		session.close();
+	}
+	
+	public void setMoneyPlus(MoneyVO mvo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.insert("setMoneyPlus", mvo);
 		session.commit();
 		session.close();
 	}

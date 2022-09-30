@@ -62,7 +62,9 @@ public class SalesWriteController implements Controller {
 		
 		dao.salesInsert(vo);
 		
-		return "redirect:/salesList.do";
+		String url="redirect:/productListView.do?u_ID="+u_ID;
+		System.out.println(url);
+		return url;
 		
 		
 	}

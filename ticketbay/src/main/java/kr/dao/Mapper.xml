@@ -6,12 +6,17 @@
 
   	<!-- 전체리스트 -->
   	<select id="allList" resultType="kr.dao.SalesWriteVO">
-  		select * from t_product where cate_name=#{cate_name} order by p_buyimmed
+  		select * from t_product where cate_name=#{cate_name} order by p_minBid
   	</select>
   	
   	<!-- 전체리스트 정렬 -> p_Idx-->
   	<select id="idxallList" resultType="kr.dao.SalesWriteVO">
   		select * from t_product where u_ID=#{u_ID} order by p_Idx
+  	</select>
+  	
+  	<!-- 구매리스트 가져오기 -->
+  	<select id="buyList" resultType="kr.dao.BuyListVO" parameterType="String">
+  		select * from t_buylist where b_buyerid=#{u_ID} order by p_Idx
   	</select>
   	
   	<!-- p_Idx 가져오기 -->
@@ -65,6 +70,10 @@
 	<select id="allDList" resultType="kr.dao.DeliveryVO">
 		select * from test_deliverylist where u_ID = #{u_id}
 	</select>
+
+	<select id="uMList" resultType="kr.dao.MoneyVO" parameterType="String">
+		select * from test_usemoney where u_ID = #{u_id}
+	</select>
   	
 	<insert id="memInsert" parameterType="kr.dao.MemberVO">
 		insert into test_user(u_ID, u_PW, u_NAME, u_EMAIL, u_MOBILE) values (#{u_ID}, #{u_PW}, #{u_NAME}, #{u_EMAIL}, #{u_MOBILE})
@@ -113,6 +122,17 @@
 
 	<insert id="insertBuyList" parameterType="kr.dao.BuyListVO">
 		insert into t_buylist(p_idx, b_sellerid, b_buyerid, b_buymoney) values (#{p_idx}, #{b_sellerid}, #{b_buyerid}, #{b_buymoney})
+	</insert>
+	
+	<update id="getBcheck" parameterType="int">
+		update t_buylist set b_check = '1' where p_idx = #{pidx}
+	</update>
+	
+	<insert id="setMoneyPlus" parameterType="kr.dao.MoneyVO">
+		begin
+			insert into test_usemoney(u_id, m_now_money, m_classification, m_plus) values (#{u_ID}, #{m_NOW_MONEY}, #{m_CLASSIFICATION}, #{m_PLUS});
+			update test_user set u_money = #{m_NOW_MONEY} where u_id = #{u_ID};
+		end;
 	</insert>
 
 </mapper>

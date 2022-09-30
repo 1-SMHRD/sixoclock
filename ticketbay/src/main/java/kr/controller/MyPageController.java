@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kr.dao.DeliveryVO;
+import kr.dao.MoneyVO;
 import kr.dao.MyBatisDAO;
 
 public class MyPageController implements Controller {
@@ -22,8 +23,10 @@ public class MyPageController implements Controller {
 		
 		MyBatisDAO dao = new MyBatisDAO();
 		List<DeliveryVO> dlist = dao.allDList(u_id);
+		List<MoneyVO> umoneylist = dao.uMList(u_id);
 		
 		request.setAttribute("dlist", dlist);
+		request.setAttribute("uMList", umoneylist);
 		
 		return "mypage";
 	}

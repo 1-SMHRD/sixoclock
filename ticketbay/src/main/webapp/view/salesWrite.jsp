@@ -52,13 +52,13 @@
 						   <option value="">선택</option>
 						   <c:forEach var="vo" items="${list}">
 						   <c:if test="${vo.up_cate_no eq '1000'}">
-						   <option value=${vo.cate_name}>${vo.cate_name}</option>
+						   <option value="${vo.cate_name}">${vo.cate_name}</option>
 						   
 						   </c:if>
 						   </c:forEach>
 						    <c:forEach var="vo" items="${list}">
 						   <c:if test="${vo.up_cate_no eq '1001'}">
-						   <option id="subcate2" value="${vo.cate_name}" style="display: none;">${vo.cate_name}</option>
+						   <option value="${vo.cate_name}" style="display: none;">${vo.cate_name}</option>
 						   </c:if>
 						   </c:forEach>
 						</select>

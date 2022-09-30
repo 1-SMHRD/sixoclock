@@ -208,4 +208,13 @@ CREATE TABLE t_buylist
 );
 
 select * from t_buylist;
+<<<<<<< HEAD
 
+=======
+
+insert into t_buylist (p_idx, b_sellerid, b_buyerid, b_buymoney) values (123, 'zxcv', 'asdf' , 123456);
+insert into t_buylist (p_idx, b_sellerid, b_buyerid, b_buymoney) values (1, 'zxcv', 'asdf' , 32);
+insert into t_buylist (p_idx, b_sellerid, b_buyerid, b_buymoney) values (3, 'zxcv', 'asdf' , 1234);
+insert into t_buylist (p_idx, b_sellerid, b_buyerid, b_buymoney) values (2, 'zxcv', 'asdf' , 1233124);
+insert into t_buylist (p_idx, b_sellerid, b_buyerid, b_buymoney) values (4, 'zxcv', 'asdf' , 12233);
+>>>>>>> branch 'master' of https://github.com/1-SMHRD/sixoclock.git

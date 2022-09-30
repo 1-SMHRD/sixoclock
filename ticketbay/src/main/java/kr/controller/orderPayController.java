@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kr.dao.MemberVO;
 import kr.dao.MyBatisDAO;
 import kr.dao.orderOVO;
 
@@ -14,14 +15,17 @@ public class orderPayController implements Controller {
 	@Override
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		 String u_NAME = request.getParameter("u_NAME");
+		 String u_EMAIL = request.getParameter("u_EMAIL");
+		 String u_MOBILE = request.getParameter("u_MOBILE");
+		
+		
+		MemberVO vo = new MemberVO();
+		vo.setU_EMAIL(u_EMAIL);
+		vo.setU_MOBILE(u_MOBILE);
+		vo.setU_NAME(u_NAME);
 
-		String pd_code = request.getParameter("pd_code");
-		int p_buy_immed = Integer.parseInt("p_buy_immed");
-		orderOVO ovo = new orderOVO();
-		ovo.setP_buy_immed(p_buy_immed);
-		ovo.setPd_code(pd_code);
-
-		return "redirect:?.view";
+		return "redirect:mypage.do";
 	}
 
 }

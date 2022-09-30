@@ -10,6 +10,7 @@
 <meta charset="EUC-KR">
 <title>상품등록관리 | 티켓베이</title>
 <jsp:include page="header.jsp"></jsp:include>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript">
 	function goDel(p_Idx){
 		location.href="${cpath}/salesDelet.do?p_Idx="+p_Idx;
@@ -17,7 +18,7 @@
 </script>
 </head>
 <body>
-	<form action="${cpath}/productListView.do?u_id=${mvo.u_ID}" method="post">
+	<form action="${cpath}/productBuyView.do?u_id=${mvo.u_ID}" method="post">
 		<div id="container">
 			<div class="contentsMenu">
 				<!-- 티켓팅 예매내역 확인 FORM -->
@@ -85,8 +86,8 @@
 					<!-- MY티켓베이 개인회원 레프트메뉴 -->
 					<div class="boxStyle01 myServiceLnb">
 						<ul class="myClass6">
-							<li class="nth1 order"><a href="${cpath}/productBuyView.do?u_ID=${mvo.u_ID}">내가 구매한 상품</a></li>
-							<li class="nth2 sell current"><a href="#">내가 판매한 상품</a></li>
+							<li class="nth1 order current"><a href="#">내가 구매한 상품</a></li>
+							<li class="nth2 sell"><a href="${cpath}/productListView.do?u_ID=${mvo.u_ID}">내가 판매한 상품</a></li>
 							<li class="nth3 benefit"><a href="#">혜택 관리</a>
 								<ul class="subLnb feTabCont" style="display: none;">
 									<li><a href="/web/mycash/depositHistoryListView">예치금 관리</a></li>
@@ -122,7 +123,7 @@
 				<!-- boxStyle01 -->
 				<div class="boxStyle01"
 					style="padding-top: 0px; padding-bottom: 10px;">
-					<h2 class="prdEroll">내가 판매한 상품</h2>
+					<h2 class="prdEroll">내가 구매한 상품</h2>
 				</div>
 
 				<!-- boxStyle -->
@@ -195,41 +196,24 @@
 
 					<!-- conStyle -->
 					<div class="conStyle">
-						<!-- optionArea -->
-						<div class="optionArea">
-							<!-- leftColum -->
-
-							<div>
-								<a href="#" id="btnProductDelete" onclick="goDel(${vo.p_Idx})"><img
-									src="${cpath}/img/productListView/btn_gDel.gif" alt="삭제"></a>
-								<a href="${cpath}/salesWriteForm.do"><img
-									src="${cpath}/img/productListView/btn_bToSell.gif" alt="판매등록"></a>
-							</div>
-						</div>
 
 						<!-- tableStyle -->
 						<table class="tableStyle">
-							<caption>내가 판매한 상품 - 상품등록관리</caption>
+							<caption>내가 구매한 상품 - 상품등록관리</caption>
 							<colgroup>
-								<col style="width: 95px;">
-								<col style="width: auto;">
 								<col style="width: 90px;">
-								<col style="width: 90px">
 								<col style="width: 150px;">
-								<col style="width: 40px;">
-								<%-- <col style="width: 40px;"> --%>
-								<col style="width: 78px;">
+								<col style="width: 150px;">
+								<col style="width: 150px;">
+								<col style="width: 100px;">
 							</colgroup>
 							<thead>
 								<tr>
-									<th scope="col">상품번호/<br>등록일
-									</th>
-									<th scope="col">상품정보</th>
-									<th scope="col">즉시구매단가</th>
-									<th scope="col">최소입찰금액</th>
-									<th scope="col">거래방식</th>
-									<th scope="col">수량</th>
-									<th scope="col">거래상태</th>
+									<th scope="col">구매날짜</th>
+									<th scope="col">상품번호</th>
+									<th scope="col">구매금액</th>
+									<th scope="col">판매자</th>
+									<th scope="col">구매상태</th>
 								</tr>
 							</thead>
 							<c:forEach var="vo" items="${list}">
@@ -240,44 +224,40 @@
 										<!-- formWrap -->
 										<div class="formWrap">
 											<label> 
-												<div class="orderInfo">
+												<%-- <div class="orderInfo">
 													<p>
 														<a href="#">${vo.p_Idx}</a>
 													</p>
 												</div>
-												<br> 
-												<span class="date">${fn:split(vo.p_registerdate," ")[0]}</span>
+												<br>  --%>
+												<span class="date">${fn:split(vo.b_buydate," ")[0]}</span>
 											</label>
 										</div>
 									</td>
 									<td>
 										<!-- tbProductInfo -->
 										<div class="tbProductInfo1">
-											<a href="${cpath}/salesDetail.do?p_Idx=${vo.p_Idx}&u_id=${mvo.u_ID}"> <em
-												class="bPath">[콘서트 &gt; ${vo.cate_name}]</em>
-												<p>${vo.p_seatInfo}</p> <i> ${vo.p_indate} </i>
+											<a href="#"> <em
+												class="bPath">${vo.p_idx}</em>
 											</a>
 										</div>
 									</td>
-									<td><span class="bePrice01"><em>${vo.p_buyImmed}</em>원</span></td>
-									<td><span class="bePrice01"><em>${vo.p_minBid}</em>원</span></td>
+									<td><span class="bePrice01"><em>${vo.b_buymoney}</em>원</span></td>
 									
 									<td class="mid">
-									<c:forEach var="i" begin="0" end="3">
-									<c:if test="${fn:split(vo.p_dealMethod,' ')[i] != 'null'}">
-									<span>${fn:split(vo.p_dealMethod," ")[i]}</span></c:if></c:forEach>
+									<span>${vo.b_sellerid}</span>
 									</td>
 									
-									<td class="bgG">
-									<span class="colorG"><em class="fntW">${vo.p_tkCount}</em></span>
-									</td>
+					
 									
-									<c:if test="${vo.p_buyerid == 'null'}">
-									<td class="bgG"><span>거래중</span></td>
+									<c:if test="${vo.b_check eq 0}">
+										<td class="bgG"><input id="btn_confirm${vo.p_idx}" type='button' onclick="confirmM(${vo.p_idx}, '${vo.b_sellerid}', ${vo.b_buymoney})" value="거래중"></td>
 									</c:if>
-									<c:if test="${vo.p_buyerid != 'null'}">
-									<td class="bgG"><span>거래완료</span></td>
+									<c:if test="${vo.b_check eq 1}">
+										<td class="bgG"><input id="btn_confirm${vo.p_idx}" type='button' onclick="confirmM(${vo.p_idx}, '${vo.b_sellerid}', ${vo.b_buymoney})" value="거래완료" disabled></td>
 									</c:if>
+									
+									
 								</tr>
 							</tbody>
 							</c:forEach>
@@ -297,11 +277,6 @@
 							</div>
 						</div>
 
-						<%-- <div style="text-align: right;">
-							<a href="#" id="btnExcelDownload"><img
-								src="${cpath}/img/productListView/btn_excel_down.gif"
-								alt="EXCEL 다운로드"></a>
-						</div> --%>
 					</div>
 				</div>
 				<!-- //boxStyle -->
@@ -309,5 +284,26 @@
 		</div>
 	</form>
 </body>
+
+<script type="text/javascript">
+
+	const confirmM = (pidx, bsellerid, bmoney) => {
+			
+		console.log(pidx, bsellerid, bmoney)
+			
+ 		$.ajax({
+ 			url : "${cpath}/confirmM.do",
+ 			type : "post",
+ 			data : {"p_idx" : pidx, "b_seller" : bsellerid, "b_money" : bmoney},
+			success : () => {
+				$("#btn_confirm" + pidx).attr("disabled", true);
+				$("#btn_confirm" + pidx).val('거래완료');
+ 			},
+ 			error : () => {alert("ajax error")}
+ 		});
+	}
+
+</script>
+
 <jsp:include page="footer.jsp"></jsp:include>
 </html>

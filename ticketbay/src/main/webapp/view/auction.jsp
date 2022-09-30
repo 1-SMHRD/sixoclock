@@ -1,18 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 
-<%@page import="kr.dao.MyBatisDAO"%> 
-<%@page import="kr.dao.MemberVO"%>    
+<%@page import="kr.dao.MyBatisDAO"%>
+<%@page import="kr.dao.MemberVO"%>
 <%@page import="kr.dao.DeliveryVO"%>
 <%@page import="java.util.List"%>
-    
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-<% MyBatisDAO dao = new MyBatisDAO(); %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
-<c:set var="newLine" value="<%='\n' %>"/>
-<c:set var="cpath" value="${pageContext.request.contextPath}"/>
+<%
+MyBatisDAO dao = new MyBatisDAO();
+%>
+
+<c:set var="newLine" value="<%='\n'%>" />
+<c:set var="cpath" value="${pageContext.request.contextPath}" />
 
 
 <!DOCTYPE html>
@@ -20,22 +22,24 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
 
-<div>
-	<input type="button" onclick="btn5min()" value="5분">
-	<input type="button" onclick="btn1min()" value="1분">
-</div>
+	<div>
+		<input type="button" onclick="btn5min()" value="5분"> <input
+			type="button" onclick="btn1min()" value="1분">
+	</div>
 
-<!-- 
+	<!-- 
 	<h1>판매 완료 일자 : ${vo.p_biddate}</h1>
 	<h2 id="biddate"></h2>
  -->
 	<div>
 		<form method="post" action="${cpath}/chatroom.do?u_id=${mvo.u_ID}">
-			<span id="seller" name="seller" value="${vo.u_ID}">판매자 : ${vo.u_ID}</span> 
+			<span id="seller" name="seller" value="${vo.u_ID}">판매자 :
+				${vo.u_ID}</span>
 			<button id="chat_seller" type="submit" disabled>대화하기</button>
 		</form>
 	</div>
@@ -44,45 +48,56 @@
 
 		<div id="auction_area">
 			<form>
-			
-			<table width="320" height="300" cellpadding="20">
-				<thead>
-					<tr>
-						<th style="text-align:center">판매 완료 날짜</th><th colspan="2" id="biddate11" style="text-align:center">${vo.p_biddate}</th>
-					</tr>
-					<tr>
-						<th style="text-align:center">남은 시간</th><th colspan="2" id="biddate" style="text-align:center">${vo.p_biddate}</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>시작 입찰가</td><td colspan="2" style="text-align:right">${vo.p_minBid} 원</td>
-					</tr>
-					<tr>
-						<td>현재 최고가 : </td>
-						<td colspan="2" style="text-align:right"> <span id="maxbid_area"></span></td>
-					</tr>
-					<tr>
-						<td>최소 입찰가 : </td>
-						<td style="text-align:right"><input id="minbid" name="minbid" type="number" value="${vo.p_minBid}" readonly></td>
-						<td><input id="btn_minbid" onclick="minbidmoney()" value="즉시입찰" type="button" disabled></td>
-					</tr>
-					<tr>
-						<td>입찰가 입력</td>
-						<td style="text-align:right"><input id="bidamount" name="bidamount" type="number" min='0' step='1'></td>
-						<td><input id="btn_bidamount" onclick="amountbidmoney()" value="입찰" type="button" disabled></td>
-					</tr>
-					<tr>
-						<td>즉시 구매가</td>
-						<td style="text-align:right"><input id="imm" name="immbid" value="${vo.p_buyImmed}" readonly></td>
-						<td><input id="btn_imm" onclick="imm_purchase()" value="즉시구매" type="button" disabled></td>
-					</tr>
-					<tr>
-						<td>소지금 : </td>
-						<td colspan="2" style="text-align:right"><span id="user_money">${mvo.u_MONEY} 원</span></td>
-					</tr>
-				</tbody>
-			</table>
+
+				<table width="320" height="300" cellpadding="20">
+					<thead>
+						<tr>
+							<th style="text-align: center">판매 완료 날짜</th>
+							<th colspan="2" id="biddate11" style="text-align: center">${vo.p_biddate}</th>
+						</tr>
+						<tr>
+							<th style="text-align: center">남은 시간</th>
+							<th colspan="2" id="biddate" style="text-align: center">${vo.p_biddate}</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>시작 입찰가</td>
+							<td colspan="2" style="text-align: right">${vo.p_minBid}원</td>
+						</tr>
+						<tr>
+							<td>현재 최고가 :</td>
+							<td colspan="2" style="text-align: right"><span
+								id="maxbid_area"></span></td>
+						</tr>
+						<tr>
+							<td>최소 입찰가 :</td>
+							<td style="text-align: right"><input id="minbid"
+								name="minbid" type="number" value="${vo.p_minBid}" readonly></td>
+							<td><input id="btn_minbid" onclick="minbidmoney()"
+								value="즉시입찰" type="button" disabled></td>
+						</tr>
+						<tr>
+							<td>입찰가 입력</td>
+							<td style="text-align: right"><input id="bidamount"
+								name="bidamount" type="number" min='0' step='1'></td>
+							<td><input id="btn_bidamount" onclick="amountbidmoney()"
+								value="입찰" type="button" disabled></td>
+						</tr>
+						<tr>
+							<td>즉시 구매가</td>
+							<td style="text-align: right"><input id="imm" name="immbid"
+								value="${vo.p_buyImmed}" readonly></td>
+							<td><input id="btn_imm" onclick="imm_purchase()"
+								value="즉시구매" type="button" disabled></td>
+						</tr>
+						<tr>
+							<td>소지금 :</td>
+							<td colspan="2" style="text-align: right"><span
+								id="user_money">${mvo.u_MONEY} 원</span></td>
+						</tr>
+					</tbody>
+				</table>
 			</form>
 			<br />
 			<!-- 콘솔 메시지의 역할을 하는 로그 텍스트 에리어.(수신 메시지도 표시한다.) -->
@@ -95,40 +110,51 @@
 		<div id="auction_area">
 			<form>
 				<table width="320" height="300" cellpadding="20">
-					<thead  >
+					<thead>
 						<tr>
-							<th style="text-align:center">판매 완료 날짜</th><th colspan="2" id="biddate11" style="text-align:center">${vo.p_biddate}</th>
+							<th style="text-align: center">판매 완료 날짜</th>
+							<th colspan="2" id="biddate11" style="text-align: center">${vo.p_biddate}</th>
 						</tr>
 						<tr>
-							<th style="text-align:center">남은 시간</th><th colspan="2" id="biddate" style="text-align:center">${vo.p_biddate}</th>
+							<th style="text-align: center">남은 시간</th>
+							<th colspan="2" id="biddate" style="text-align: center">${vo.p_biddate}</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td>시작 입찰가</td><td colspan="2" style="text-align:right">${vo.p_minBid} 원</td>
+							<td>시작 입찰가</td>
+							<td colspan="2" style="text-align: right">${vo.p_minBid}원</td>
 						</tr>
 						<tr>
-							<td>현재 최고가 : </td>
-							<td colspan="2" style="text-align:right"> <span  id="maxbid_area"></span></td>
+							<td>현재 최고가 :</td>
+							<td colspan="2" style="text-align: right"><span
+								id="maxbid_area"></span></td>
 						</tr>
 						<tr>
-							<td>최소 입찰가 : </td>
-							<td style="text-align:right"><input id="minbid" name="minbid" type="number" value="${vo.p_minBid}" readonly></td>
-							<td><input id="btn_minbid" onclick="minbidmoney()" value="즉시입찰" type="button"></td>
+							<td>최소 입찰가 :</td>
+							<td style="text-align: right"><input id="minbid"
+								name="minbid" type="number" value="${vo.p_minBid}" readonly></td>
+							<td><input id="btn_minbid" onclick="minbidmoney()"
+								value="즉시입찰" type="button"></td>
 						</tr>
 						<tr>
 							<td>입찰가 입력</td>
-							<td style="text-align:right"><input id="bidamount" name="bidamount" type="number" min='0' step='1'></td>
-							<td><input id="btn_bidamount" onclick="amountbidmoney()" value="입찰" type="button"></td>
+							<td style="text-align: right"><input id="bidamount"
+								name="bidamount" type="number" min='0' step='1'></td>
+							<td><input id="btn_bidamount" onclick="amountbidmoney()"
+								value="입찰" type="button"></td>
 						</tr>
 						<tr>
 							<td>즉시 구매가</td>
-							<td style="text-align:right"><input id="imm" name="immbid" value="${vo.p_buyImmed}" readonly></td>
-							<td><input id="btn_imm" onclick="imm_purchase()" value="즉시구매" type="button"></td>
+							<td style="text-align: right"><input id="imm" name="immbid"
+								value="${vo.p_buyImmed}" readonly></td>
+							<td><input id="btn_imm" onclick="imm_purchase()"
+								value="즉시구매" type="button"></td>
 						</tr>
 						<tr>
-							<td>소지금 : </td>
-							<td colspan="2" style="text-align:right"><span id="user_money">${mvo.u_MONEY} 원</span></td>
+							<td>소지금 :</td>
+							<td colspan="2" style="text-align: right"><span
+								id="user_money">${mvo.u_MONEY} 원</span></td>
 						</tr>
 					</tbody>
 				</table>
@@ -436,14 +462,13 @@
 				if (user_money < parseInt(bidmoney)) {
 					alert("소지 금액이 부족합니다");
 					return ;
-				} else if(user_money>= parseInt(bidmoney)){
+				} else {
 					check_bid = 1;
 					temp_count = -1;
 					sendMessage(bidmoney);
 				
 					
-				} else{
-					response.sendRedirect("orderPay.jsp");
+
 					
 				}
 				

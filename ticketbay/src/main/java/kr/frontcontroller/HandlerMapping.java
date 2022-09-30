@@ -6,13 +6,17 @@ import kr.controller.AuctionpageController;
 import kr.controller.BidCancelController;
 import kr.controller.ChatListController;
 import kr.controller.ChatroomController;
-
+import kr.controller.ConfirmMController;
 import kr.controller.Controller;
 import kr.controller.DeleteUserController;
 import kr.controller.MainController;
 import kr.controller.MyPageController;
 import kr.controller.NaveridloginpageController;
-import kr.controller.PayController;
+<<<<<<< HEAD
+
+=======
+import kr.controller.ProductBuyViewController;
+>>>>>>> branch 'master' of https://github.com/1-SMHRD/sixoclock.git
 import kr.controller.ProductListViewController;
 import kr.controller.SalesDetailController;
 import kr.controller.SalesListController;
@@ -51,12 +55,13 @@ public class HandlerMapping {
 		mappings.put("/orderSheet.do",new orderController());
 		mappings.put("/check.do",new checkController());
 		mappings.put("/orderPay.do",new orderPayController());
-		mappings.put("/Pay.do",new PayController());
 		mappings.put("/RequestVerifyAuth.do",new RequestVerifyAuthController());
 
 		mappings.put("/salesWrite.do", new SalesWriteController()); // 판매등록
 		mappings.put("/salesWriteForm.do", new SalesWriteFormController());
-		mappings.put("/productListView.do", new ProductListViewController()); // 등록후 마이페이지
+		mappings.put("/productListView.do", new ProductListViewController()); // 내가 판매한 상품
+		mappings.put("/productBuyView.do", new ProductBuyViewController()); // 내가 구매한 상품
+		
 		mappings.put("/salesDelete.do", new SalesDeleteController());
 
 		mappings.put("/mypage.do", new MyPageController());
@@ -78,6 +83,7 @@ public class HandlerMapping {
 		mappings.put("/chatroom.do", new ChatroomController());
 		mappings.put("/chatlist.do", new ChatListController());
 		mappings.put("/updatesales.do", new UpdateSalesController());
+		mappings.put("/confirmM.do", new ConfirmMController());
 
 		
 	}
